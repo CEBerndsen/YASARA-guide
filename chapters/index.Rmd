@@ -1,0 +1,11 @@
+---
+title: "A Guide to YASARA"
+author: "Chris Berndsen"
+date: "`r Sys.Date()`"
+documentclass: book
+link-citations: yes
+bibliography: yasara.bib
+biblio-style: apalike
+output: html_document
+description: "A guide for the visualization program YASARA and the uses of the program"
+---
