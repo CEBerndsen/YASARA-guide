@@ -1,17 +1,20 @@
 # Introduction
 
-##  Why read this book
+
+###  Why read this book
 
 This guide serves to introduce students, educators, and other interested parties to the basics of the program _YASARA_ and its use in illustrating and analyzing biomolecule structure. I wrote this for students in my class, however it developed into a guide for those who wanted to explore structures using freely available resources. 
 
-## What is in this guide?
+
+### What is in this guide?
 
 This guide contains 3 main parts:
 1. Guide to YASARA functions for users 
 2. Analysis and Illustration of molecular structure using YASARA
 3. Incorporating YASARA into an educational setting 
 
-## A note on using the command line
+
+### A note on using the command line
 
 GUIs are great, however it is worth knowing how to use the command line to increase speed and control. Yes, it is not as easy, especially for new users, but restricting your use to activities that are easy is a limited existence. 
 
@@ -21,21 +24,30 @@ Menu1>menu2>menu3>choice
 
 and code chunk with comments:
 
+```{r chunkshow, echo=TRUE, warning=FALSE, message=FALSE, eval=FALSE}
 
-For R, it will be via code chunks and for Excel  via menus. Other programs will be described as appropriate.
+# This is a comment in code
+> This is code that can be executed
 
-## End of section checks and active reading 
+```
+
+For R, it will be via code chunks and for Excel via menus. Other programs will be described as appropriate with images.
+
+### End of section checks and active reading 
 
 I encourage you to **actively read** this book.  Try to follow along descriptions in the program and recreate my results. Most sections in Parts 1 and 2 will end with a few tasks to complete to ensure that the reader understands the material. This is not required or graded, just an aid in learning to use the program.  Answers are provided in the answers chapter along with explanations.
 
-## Questions and corrections
 
-I make mistakes. If you find an error or something does not make sense let me know via the GitHub page for this book.  You can also maka pull request for corrections or helpful additions.
+### Questions and corrections
+
+I make mistakes. If you find an error or something does not make sense let me know via the [GitHub page for this book](https://github.com/CEBerndsen/YASARA-guide).  You can also maka pull request for corrections or helpful additions.
+
 
 ## Acknowledgements 
 
-## Who owns YASARA and the other programs in this book
+
+### Who owns YASARA and the other programs in this book
 
 I have no claims to YASARA or any of the other programs described in this guide. Citations and links are provided where appropriate to give authors credit where due. I receive no compensation from any of the developers; I just enjoy using their software.
 
-I have written macros and R scripts that are referenced in this guide and I have made those freely available here under an MIT License.
+I have written macros and R scripts that are referenced in this guide and I have made those freely available [here](https://github.com/CEBerndsen/YASARA-guide) under an MIT License.
