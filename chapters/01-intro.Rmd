@@ -1,7 +1,7 @@
 # Introduction
 
 
-###  Why read this book
+### Why read this book
 
 This guide serves to introduce students, educators, and other interested parties to the basics of the program _YASARA_ and its use in illustrating and analyzing biomolecule structure. I wrote this for students in my class, however it developed into a guide for those who wanted to explore structures using freely available resources. 
 
