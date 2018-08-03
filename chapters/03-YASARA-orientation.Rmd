@@ -52,7 +52,7 @@ The HUD can be hid or revealed by pressing the "Insert" key. This will be import
 
 ## The Console {#console}
 
-You can manipulate the view and perform analysis of the molecules in YASARA through two methods: the **Console** and the **Menu Tree** (\@ref(Menu)). 
+You can manipulate the view and perform analysis of the molecules in YASARA through two methods: the **Console** and the **Menu system** (\@ref(Menu)). 
 
 The console can be accessed by pressing the Space Bar. The console will appear at the bottom of the program window as shown in Figure \@ref(fig:console). Pressing the Space Bar a second time will result in a larger console window. To hide the console, click your mouse in the program window somewhere outside of the console area.
 
@@ -77,20 +77,125 @@ Commands are typed directly into the console in the YASARA command system or Pyt
 
 If you want to repeat or edit a command that you have already executed, whether in the console or using the interactive GUI or the menus, pressing Space Bar followed by the Up Arrow copies the previous command and allows you to repeat or edit the command to tweak the outcome. In YASARA~view~ this is limited to the previous *ten commands* so if you know you are going to use a complex command again, copy it out before it is lost! 
 
-### Tangent on using the command line
+### Tangent on using the command line and the interactive menus
 
-Users who are new to YASARA are often hesitant to use the console to perform tasks. For my students, they report this is due to inexperience with non-GUI interfaces and a fear of not knowing what to do. *I get it*. It took me nearly 3 years of using YASARA before I became comfortable even opening the console regularly and even today, I still struggle to get the command line to work. 
+Users who are new to YASARA are often hesitant to use the console to perform tasks. For my students, they report this is due to inexperience with non-GUI interfaces and a fear of not knowing what to do. ***I get it***. It took me nearly 3 years of using YASARA before I became comfortable even opening the console regularly and even today, I still struggle to get the command line to work and to find the correct commands. 
 
-## Menu Tree {#Menu}
+**BUT**
+
+knowing *how* the program makes changes to the contents of the window is valuable for understanding what happened if it is not readily apparent and if you need help, having a sense of the command that is causing problems will make finding aid easier. As you become more experienced, you might begin to find command line is more versatile and even faster (assuming you type efficiently). 
+
+**For beginners**, start by using the menus and checking the console for the command. Then start using the console to refine choices after using the menus to make the command. Finally, as you feel confident do as much as you can using the console. 
+
+
+## Menu System {#Menu}
+
+In addition to the console, YASARA can be controlled using the Menu System which has three parts: the *Top Menu*, the *Top Row Buttons*, and the *Pop-up Menus*. 
+
+### Top Menu
+
+The **Top Menu** will look familiar to users who use the Microsoft suite of programs or most modern productivity software. The 8 top-level categories are shown in the green box in Figure \@ref(fig:menutree). We will explore several of this categories in more depth in later chapters. One note to make now is that the *Analyze* category is inaccessible until a molecule is loaded. This is shown as being in light grey, compared to the black of other categories. In general, if a menu category or option cannot be used under the current conditions, it will be colored grey. 
+
+```{r menutree, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="Menu Bar of YASARA showing the Top Menu inside the green box and the Top row buttons inside the light blue box", fig.align='center'}
+
+open <- image_read("../YASARA_guide/images/opening.PNG")
+
+boxtop <- image_draw(open)
+rect(0, 25, 630, 60, border = "green", lty = "dashed", lwd = 10)
+rect(640, 25, 1040, 60, border = "skyblue", lty = "dashed", lwd = 10)
+
+image_draw(boxtop)
+
+```
 
 ### Top row buttons
 
+The **Top row buttons** are quick ways to perform tasks such as center the view or open a new scene. The buttons are indicated by the light blue box in Figure \@ref(fig:menutree). The buttons will vary depending what version of YASARA being used however there are a few common and useful ones, which are highlighted below. 
+
+  * ![box-select](../YASARA_guide/images/boxsel.PNG) : This button allows you to select parts of a model in a box
+  
+  * ![area-select](../YASARA_guide/images/areasel.PNG) : This button allows you to select parts of a model in an arbitrary area which is somewhat circular. This is similar to the lasso tool seen in other programs.  
+  
+  * ![clear](../YASARA_guide/images/clear.PNG) : This button clears everything out of the YASARA window. Typically you will get a warning to avoid inadvertant loss of data.
+  
+  * ![center](../YASARA_guide/images/center.PNG) : This button centers the active models in the window. This really useful early on until you gain experience orienting molecules. 
+  
+  * ![rotate](../YASARA_guide/images/rotate.PNG) : This button rotates all the active models in the window. This button is often a source of frustrating for you when things start rotating unexpectedly. 
+
 ### Pop-up menu
+
+```{r pop, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="Example of the pop-up menu in YASARA", fig.align='center'}
+
+popm <- image_read("../YASARA_guide/images/pop-menu.png")
+
+image_draw(popm)
+
+```
+
+In addition to the visible command options and readouts of YASARA like the Top Menu (\@ref(Menu)) and the HUD (\@ref(HUD)), there are ways to access commands on a selection. Referred to here as the pop-up menu (\@ref(pop)), this menu can be accessed after a selection has been made by clicking on the selection using the right mouse button. Many of the options in the pop-up menu are found with some digging through the top menu, so this pop-up menu is a fast, easy way to find some of the most used commands. The pop-up menu is only accessible with a model loaded into YASARA. 
 
 ## Where to find help {#help}
 
+***HELP!!!!*** 
+
+This is probably the most requested piece of information. The reason for putting this underneath all the orientation is to make getting help easier. YASARA has a specific set of words and phrases. Knowing the "jargon" of YASARA makes limiting the amount of information during a help request easier. 
+
 ### SearchDoc
+
+The SearchDoc function can be found two ways:
+
+Help>Search User Manual^[Remember that menu commands will be designated as Menu Category>Sub-option>Sub-sub-option>...]
+
+**OR**
+
+Press the Space Bar to open the console and type SearchDoc followed by the inquiry word or command.  See code chunk below for examples. 
+
+```{r searchdoc, echo=TRUE, warning=FALSE, message=FALSE, eval=FALSE, fig.cap="Examples of using the SearchDoc command in the YASARA console"}
+# Search for every help page containing the word color
+>SearchDoc color
+
+# Search for every help page referencing the word PDB
+>SearchDoc PDB
+
+```
+
+
+The help page will open as a webpage in your default web browser (\@ref(fig:helpind)). This page will list every time that word or phrase appears in the YASARA documentation. 
+
+```{r helpind, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="Results of using SearchDoc part 1: Initial search results", fig.align='center'}
+
+hlpi <- image_read("../YASARA_guide/images/helpindex.PNG")
+
+hlpp <- image_read("../YASARA_guide/images/helppage1.PNG")
+
+
+image_draw(hlpi)
+
+```
+
+Clicking on any of the blue links will take you to the page for the command as shown in \@ref(fig:helppage). These pages have 3 parts: 
+
+  1. The box showing information on the command
+  
+  2. A brief text description of the command and purpose
+  
+  3. Examples of how to use the command in the console or in a macro.
+
+```{r helppage, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="Results of using SearchDoc part 2: The help page for the ColorBG command", fig.align='center'}
+
+image_draw(hlpp)
+
+```
+
+Like this reference, the *Menu* row in the box describes where in the Menus this command is found. This is most useful early on and as you learn more about YASARA, the examples become useful too. Often you can compare what happened in your console to the examples to make sure that you are looking at the right command and using the correct arguments. 
 
 ### Help Movies
 
+While not formally part of the help system, users can click on the *Help* category in the top menu and then choose *Play Help Movie* (Help>Play Help Movie) to access YASARA rendered movies introducing users to a variety of topics. The movies are interactive and useful for first-time users, however they are not searchable and can take a while to find a specific topic. Therefore, I recommend going through the help movies once or twice early on, but using SearchDoc as you become more experienced. 
+
 ## File system {#files}
+
+
+
+
+## Knowledge Self-Checks
