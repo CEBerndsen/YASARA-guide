@@ -1,22 +1,22 @@
 # Obtaining YASARA
 
-### What is YASARA
+## What is YASARA
 
 YASARA stands for *Yet Another Scientific Artificial Reality Application* and allows interactive viewing, manipulation, and analysis of molecular data and models. The simplest version of YASARA, YASARA~view~, is freely available via the internet at: [http://www.yasara.org/viewdl.htm](http://www.yasara.org/viewdl.htm) 
 
 For a fee, more [capable versions of YASARA](http://www.yasara.org/yasaradl.htm) are available. However, the majority of this book will deal with the functions in free version of YASARA, YASARA~view~. 
 
-### Download YASARA~view~
+## Download YASARA~view~
 
 Visit the [YASARA~view~](http://www.yasara.org/viewdl.htm) website and enter the appropriate information into the menu. If you are unsure about 32-bit or 64-bit, in Windows this information is shown by clicking on *This PC* in the Windows Explorer then System Properties.  System Type will indicate 32-bit or 64-bit as shown in \@ref(fig:os) .
 
-```{r label = os, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2}
+```{r os, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="The steps to find operating system for a Windows user"}
 library(cowplot)
 library(magick)
 
-pc <- image_read("../images/This_PC.PNG")
-prop <- image_read("../images/Sys_prop.PNG")
-os <- image_read("../images/Sys_type.PNG")
+pc <- image_read("../YASARA_guide/images/This_PC.PNG")
+prop <- image_read("../YASARA_guide/images/Sys_prop.PNG")
+os <- image_read("../YASARA_guide/images/Sys_type.PNG")
 
 pc <- ggdraw() + draw_image(pc, scale = 0.8)
 prop <- ggdraw() + draw_image(prop, scale = 0.8)
@@ -27,7 +27,7 @@ plot_grid(pc, prop, NULL, os, labels = c(1, 2,"", 3), rel_widths = c(1, 1, 0.3, 
 
 Once you have submitted the information, you will receive an email which will let you download the YASARA program.
 
-### Installing YASARA
+## Installing YASARA
 
 Move the YASARA program (Mac) or install package (Windows) to an appropriate folder. I have found that installing and running YASARA from the Downloads folder is not a good idea. On Macs, it seems that programs in the Downloads folder are not given read/write permission which can cause issues with running YASARA.
 
