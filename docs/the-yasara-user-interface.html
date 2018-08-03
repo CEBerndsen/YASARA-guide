@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="introduction.html">
-<link rel="next" href="the-yasara-user-interface.html">
+<link rel="prev" href="obtaining-yasara.html">
+<link rel="next" href="exercise-answers.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -158,37 +158,97 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="obtaining-yasara" class="section level1">
-<h1><span class="header-section-number">Chapter 2</span> Obtaining YASARA</h1>
-<div id="what-is-yasara" class="section level2">
-<h2><span class="header-section-number">2.1</span> What is YASARA</h2>
-<p>YASARA stands for <em>Yet Another Scientific Artificial Reality Application</em> and allows interactive viewing, manipulation, and analysis of molecular data and models. The simplest version of YASARA, YASARA<sub>view</sub>, is freely available via the internet at: <a href="http://www.yasara.org/viewdl.htm" class="uri">http://www.yasara.org/viewdl.htm</a></p>
-<p>For a fee, more <a href="http://www.yasara.org/yasaradl.htm">capable versions of YASARA</a> are available. However, the majority of this book will deal with the functions in free version of YASARA, YASARA<sub>view</sub>.</p>
-</div>
-<div id="download-yasaraview" class="section level2">
-<h2><span class="header-section-number">2.2</span> Download YASARA<sub>view</sub></h2>
-<p>Visit the <a href="http://www.yasara.org/viewdl.htm">YASARA<sub>view</sub></a> website and enter the appropriate information into the menu. If you are unsure about 32-bit or 64-bit, in Windows this information is shown by clicking on <em>This PC</em> in the Windows Explorer then System Properties. System Type will indicate 32-bit or 64-bit as shown in <a href="obtaining-yasara.html#fig:os">2.1</a> .</p>
-<div class="figure"><span id="fig:os"></span>
-<img src="YASARA-guide_files/figure-html/os-1.png" alt="The steps to find operating system for a Windows user" width="672" />
+<div id="the-yasara-user-interface" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> The YASARA user interface</h1>
+<p>Open YASARA and you should see a screen that looks similar to <a href="the-yasara-user-interface.html#fig:opening">3.1</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:opening"></span>
+<img src="YASARA-guide_files/figure-html/opening-1.png" alt="The initial YASARA screen" width="747" />
 <p class="caption">
-Figure 2.1: The steps to find operating system for a Windows user
+Figure 3.1: The initial YASARA screen
 </p>
 </div>
-<p>Once you have submitted the information, you will receive an email which will let you download the YASARA program.</p>
+<p>When a file is loaded it will appear in the center of the display in one of the various visualiation styles to be covered in a section <a href="#style"><strong>??</strong></a>. So far we have not learned to load a molecule or to select anything, <em>so do not panic!</em> This chapter is one to read to start and then read again after you have read through Chapters 4 to 7.</p>
+<p>The next sections will orient you to the Heads-up Display (<a href="the-yasara-user-interface.html#HUD">3.1</a>), the command line console <a href="the-yasara-user-interface.html#console">3.2</a>, the top Menu <a href="the-yasara-user-interface.html#Menu">3.3</a>, and the file organization (<a href="the-yasara-user-interface.html#files">3.5</a>), and includes a section on where to find help (<a href="the-yasara-user-interface.html#help">3.4</a>).</p>
+<div id="HUD" class="section level2">
+<h2><span class="header-section-number">3.1</span> Heads Up Display (HUD)</h2>
+<p>The <em>Heads-up Display or HUD</em> in YASARA<sub>view</sub> consists of two main pieces: the <strong>Atom Properties</strong> list and the <strong>Scene Content</strong> <a href="the-yasara-user-interface.html#fig:hud">3.2</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:hud"></span>
+<img src="YASARA-guide_files/figure-html/hud-1.png" alt="Heads-Up Display in YASARA. The Atom properties area is shown inside the yellow box, while the Scene Content table is shown in the red box" width="747" />
+<p class="caption">
+Figure 3.2: Heads-Up Display in YASARA. The Atom properties area is shown inside the yellow box, while the Scene Content table is shown in the red box
+</p>
 </div>
-<div id="installing-yasara" class="section level2">
-<h2><span class="header-section-number">2.3</span> Installing YASARA</h2>
-<p>Move the YASARA program (Mac) or install package (Windows) to an appropriate folder. I have found that installing and running YASARA from the Downloads folder is not a good idea. On Macs, it seems that programs in the Downloads folder are not given read/write permission which can cause issues with running YASARA.</p>
+<div id="atom-properties" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Atom Properties</h3>
+<p>The <strong>Atom Properties</strong> list describes the characteristics of a selected atom. These characteristics include the identifying traits such as element, what residue:Mol:Object it is a part of, and where it is located. Further characteristics place it within the context of the molecule being displayed under the section <em>Bonds</em>. Finally, there is a section containing 3 items: <em>Marked Distance, Marked Angle</em>, and <em>Marked Dihedral</em>. These are types of measurements we will use in Chapter <a href="#measure"><strong>??</strong></a>.</p>
+</div>
+<div id="scene-content" class="section level3">
+<h3><span class="header-section-number">3.1.2</span> Scene Content</h3>
+<p>The <strong>Scene Content</strong> table shows what models<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> are loaded into the system. There are 5 columns in this table: <em>Obj, Name, Vis, Act</em>, and <em>Atom</em>.</p>
+<ul>
+<li><p><strong>Obj</strong>: Numerical assignment of the Obj. This is a useful indentifier for commands to maniupulate the Obj.</p></li>
+<li><p><strong>Name</strong>: Indicates the name of the model. Typically this is the <a href="https://www.rcsb.org/pdb/staticHelp.do?p=help/advancedsearch/pdbIDs.html">PDB ID</a>, however you can rename the Object.</p></li>
+<li><p><strong>Vis</strong>: Stands for “Visible”. When a file is loaded, this will default “Yes”. Left-clicking with the mouse on “Yes”, will change it to “No” and the model will disappear<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>.</p></li>
+<li><p><strong>Act</strong>: Stands for “Active”. When a file is loaded, this will default to “Yes”. A file that is active can be manipulated and is included in the view screen if <strong>Vis</strong> is set to “Yes. To change this to”No&quot; the Object must be removed from the screen <a href="#remove"><strong>??</strong></a>.</p></li>
+<li><p><strong>Atom</strong>: This column shows the number of the first atom in the Object. Like <strong>Obj</strong> this number can be useful for manipulating the view and other commands.</p></li>
+</ul>
+</div>
+<div id="hiding-the-hud" class="section level3">
+<h3><span class="header-section-number">3.1.3</span> Hiding the HUD</h3>
+<p>The HUD can be hid or revealed by pressing the “Insert” key. This will be important when taking screenshots or making figures as covered in Chapter <a href="#save"><strong>??</strong></a>.</p>
+</div>
+</div>
+<div id="console" class="section level2">
+<h2><span class="header-section-number">3.2</span> The Console</h2>
+<p>You can manipulate the view and perform analysis of the molecules in YASARA through two methods: the <strong>Console</strong> and the <strong>Menu Tree</strong> (<a href="the-yasara-user-interface.html#Menu">3.3</a>).</p>
+<p>The console can be accessed by pressing the Space Bar. The console will appear at the bottom of the program window as shown in Figure <a href="the-yasara-user-interface.html#fig:console">3.3</a>. Pressing the Space Bar a second time will result in a larger console window. To hide the console, click your mouse in the program window somewhere outside of the console area.</p>
+<div class="figure" style="text-align: center"><span id="fig:console"></span>
+<img src="YASARA-guide_files/figure-html/console-1.png" alt="The console in YASARA, just another name for the command line. Left panel shows the small console window and the right panel shows the large console window" width="672" />
+<p class="caption">
+Figure 3.3: The console in YASARA, just another name for the command line. Left panel shows the small console window and the right panel shows the large console window
+</p>
+</div>
+<div id="tangent-on-using-the-command-line" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> Tangent on using the command line</h3>
+</div>
+</div>
+<div id="Menu" class="section level2">
+<h2><span class="header-section-number">3.3</span> Menu Tree</h2>
+<div id="top-row-buttons" class="section level3">
+<h3><span class="header-section-number">3.3.1</span> Top row buttons</h3>
+</div>
+<div id="pop-up-menu" class="section level3">
+<h3><span class="header-section-number">3.3.2</span> Pop-up menu</h3>
+</div>
+</div>
+<div id="help" class="section level2">
+<h2><span class="header-section-number">3.4</span> Where to find help</h2>
+<div id="searchdoc" class="section level3">
+<h3><span class="header-section-number">3.4.1</span> SearchDoc</h3>
+</div>
+<div id="help-movies" class="section level3">
+<h3><span class="header-section-number">3.4.2</span> Help Movies</h3>
+</div>
+</div>
+<div id="files" class="section level2">
+<h2><span class="header-section-number">3.5</span> File system</h2>
 
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>When I say <strong>Model</strong> I am referring to a file that is loaded in YASARA that displays as a molecule. The main file types that do this are .pdb, .sce, and .yob and will be covered more extensively in the next chapter<a href="the-yasara-user-interface.html#fnref1">↩</a></p></li>
+<li id="fn2"><p>While the model will disappear any commands that you execute will apply the model!<a href="the-yasara-user-interface.html#fnref2">↩</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="the-yasara-user-interface.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="obtaining-yasara.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="exercise-answers.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
