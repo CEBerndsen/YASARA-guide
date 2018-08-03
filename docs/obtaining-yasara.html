@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>A Guide to YASARA</title>
+  <meta name="description" content="A guide for the visualization program YASARA and the uses of the program">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="A Guide to YASARA" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="A guide for the visualization program YASARA and the uses of the program" />
+  <meta name="github-repo" content="<a href="https://github.com/CEBerndsen/YASARA-guide" class="uri">https://github.com/CEBerndsen/YASARA-guide</a>" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="A Guide to YASARA" />
+  
+  <meta name="twitter:description" content="A guide for the visualization program YASARA and the uses of the program" />
+  
+
+<meta name="author" content="Chris Berndsen">
+
+
+<meta name="date" content="2018-08-03">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="introduction.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A guide to biomolecule visualization and analysis in YASARA</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.0.1" data-path="introduction.html"><a href="introduction.html#why-read-this-book"><i class="fa fa-check"></i><b>1.0.1</b> Why read this book</a></li>
+<li class="chapter" data-level="1.0.2" data-path="introduction.html"><a href="introduction.html#what-is-in-this-guide"><i class="fa fa-check"></i><b>1.0.2</b> What is in this guide?</a></li>
+<li class="chapter" data-level="1.0.3" data-path="introduction.html"><a href="introduction.html#a-note-on-using-the-command-line"><i class="fa fa-check"></i><b>1.0.3</b> A note on using the command line</a></li>
+<li class="chapter" data-level="1.0.4" data-path="introduction.html"><a href="introduction.html#end-of-section-checks-and-active-reading"><i class="fa fa-check"></i><b>1.0.4</b> End of section checks and active reading</a></li>
+<li class="chapter" data-level="1.0.5" data-path="introduction.html"><a href="introduction.html#questions-and-corrections"><i class="fa fa-check"></i><b>1.0.5</b> Questions and corrections</a></li>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#acknowledgements"><i class="fa fa-check"></i><b>1.1</b> Acknowledgements</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="introduction.html"><a href="introduction.html#who-owns-yasara-and-the-other-programs-in-this-book"><i class="fa fa-check"></i><b>1.1.1</b> Who owns YASARA and the other programs in this book</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="obtaining-yasara.html"><a href="obtaining-yasara.html"><i class="fa fa-check"></i><b>2</b> Obtaining YASARA</a><ul>
+<li class="chapter" data-level="2.0.1" data-path="obtaining-yasara.html"><a href="obtaining-yasara.html#what-is-yasara"><i class="fa fa-check"></i><b>2.0.1</b> What is YASARA</a></li>
+<li class="chapter" data-level="2.0.2" data-path="obtaining-yasara.html"><a href="obtaining-yasara.html#download-yasaraview"><i class="fa fa-check"></i><b>2.0.2</b> Download YASARA<sub>view</sub></a></li>
+<li class="chapter" data-level="2.0.3" data-path="obtaining-yasara.html"><a href="obtaining-yasara.html#installing-yasara"><i class="fa fa-check"></i><b>2.0.3</b> Installing YASARA</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Guide to YASARA</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="obtaining-yasara" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Obtaining YASARA</h1>
+<div id="what-is-yasara" class="section level3">
+<h3><span class="header-section-number">2.0.1</span> What is YASARA</h3>
+<p>YASARA stands for <em>Yet Another Scientific Artificial Reality Application</em> and allows interactive viewing, manipulation, and analysis of molecular data and models. The simplest version of YASARA, YASARA<sub>view</sub>, is freely available via the internet at: <a href="http://www.yasara.org/viewdl.htm" class="uri">http://www.yasara.org/viewdl.htm</a></p>
+<p>For a fee, more <a href="http://www.yasara.org/yasaradl.htm">capable versions of YASARA</a> are available. However, the majority of this book will deal with the functions in free version of YASARA, YASARA<sub>view</sub>.</p>
+</div>
+<div id="download-yasaraview" class="section level3">
+<h3><span class="header-section-number">2.0.2</span> Download YASARA<sub>view</sub></h3>
+<p>Visit the <a href="http://www.yasara.org/viewdl.htm">YASARA<sub>view</sub></a> website and enter the appropriate information into the menu. If you are unsure about 32-bit or 64-bit, in Windows this information is shown by clicking on <em>This PC</em> in the Windows Explorer then System Properties. System Type will indicate 32-bit or 64-bit as shown in <a href="obtaining-yasara.html#fig:os">2.1</a> .</p>
+<div class="figure"><span id="fig:os"></span>
+<img src="YASARA-guide_files/figure-html/os-1.png" alt="The steps to find operating system for a Windows user" width="672" />
+<p class="caption">
+Figure 2.1: The steps to find operating system for a Windows user
+</p>
+</div>
+<p>Once you have submitted the information, you will receive an email which will let you download the YASARA program.</p>
+</div>
+<div id="installing-yasara" class="section level3">
+<h3><span class="header-section-number">2.0.3</span> Installing YASARA</h3>
+<p>Move the YASARA program (Mac) or install package (Windows) to an appropriate folder. I have found that installing and running YASARA from the Downloads folder is not a good idea. On Macs, it seems that programs in the Downloads folder are not given read/write permission which can cause issues with running YASARA.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduction.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
