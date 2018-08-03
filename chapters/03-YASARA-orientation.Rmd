@@ -1,1 +1,96 @@
 # The YASARA user interface
+
+Open YASARA and you should see a screen that looks similar to \@ref(fig:opening).
+
+```{r opening, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="The initial YASARA screen", fig.align='center'}
+
+open <- image_read("../YASARA_guide/images/opening.PNG")
+
+open
+
+```
+
+When a file is loaded it will appear in the center of the display in one of the various visualiation styles to be covered in a section \@ref(style). So far we have not learned to load a molecule or to select anything, _so do not panic!_ This chapter is one to read to start and then read again after you have read through Chapters 4 to 7. 
+
+The next sections will orient you to the Heads-up Display (\@ref(HUD)), the command line console \@ref(console), the top Menu \@ref(Menu), and the file organization (\@ref(files)), and includes a section on where to find help (\@ref(help)).
+
+## Heads Up Display (HUD) {#HUD}
+
+The *Heads-up Display or HUD* in YASARA~view~ consists of two main pieces: the **Atom Properties** list and the **Scene Content** \@ref(fig:hud).
+
+```{r hud, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="Heads-Up Display in YASARA. The Atom properties area is shown inside the yellow box, while the Scene Content table is shown in the red box", fig.align='center'}
+
+open <- image_read("../YASARA_guide/images/opening.PNG")
+
+openbox <- image_draw(open)
+rect(1200, 40, 1490, 550, border = "red", lty = "dashed", lwd = 10)
+rect(0, 40, 250, 600, border = "yellow", lty = "dashed", lwd = 10)
+
+image_draw(openbox)
+
+```
+
+### Atom Properties
+The **Atom Properties** list describes the characteristics of a selected atom. These characteristics include the identifying traits such as element, what residue:Mol:Object it is a part of, and where it is located. Further characteristics place it within the context of the molecule being displayed under the section *Bonds*. Finally, there is a section containing 3 items: *Marked Distance, Marked Angle*, and *Marked Dihedral*. These are types of measurements we will use in Chapter \@ref(measure).   
+
+### Scene Content
+The **Scene Content** table shows what models^[When I say **Model** I am referring to a file that is loaded in YASARA that displays as a molecule. The main file types that do this are .pdb, .sce, and .yob and will be covered more extensively in the next chapter] are loaded into the system. There are 5 columns in this table: *Obj, Name, Vis, Act*, and *Atom*. 
+
+  * **Obj**: Numerical assignment of the Obj. This is a useful indentifier for commands to maniupulate the Obj.
+  
+  * **Name**: Indicates the name of the model. Typically this is the [PDB ID](https://www.rcsb.org/pdb/staticHelp.do?p=help/advancedsearch/pdbIDs.html), however you can rename the Object.
+  
+  * **Vis**: Stands for "Visible". When a file is loaded, this will default "Yes". Left-clicking with the mouse on "Yes", will change it to "No" and the model will disappear^[While the model will disappear any commands that you execute will apply the model!]. 
+  
+  * **Act**: Stands for "Active". When a file is loaded, this will default to "Yes". A file that is active can be manipulated and is included in the view screen if **Vis** is set to "Yes. To change this to "No" the Object must be removed from the screen \@ref(remove).
+  
+  * **Atom**: This column shows the number of the first atom in the Object. Like **Obj** this number can be useful for manipulating the view and other commands.
+  
+### Hiding the HUD
+
+The HUD can be hid or revealed by pressing the "Insert" key. This will be important when taking screenshots or making figures as covered in Chapter \@ref(save).
+
+## The Console {#console}
+
+You can manipulate the view and perform analysis of the molecules in YASARA through two methods: the **Console** and the **Menu Tree** (\@ref(Menu)). 
+
+The console can be accessed by pressing the Space Bar. The console will appear at the bottom of the program window as shown in Figure \@ref(fig:console). Pressing the Space Bar a second time will result in a larger console window. To hide the console, click your mouse in the program window somewhere outside of the console area.
+
+```{r console, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="The console in YASARA, just another name for the command line. Left panel shows the small console window and the right panel shows the large console window", fig.align='center', fig.fullwidth=TRUE}
+library(cowplot)
+
+
+small <- image_read("../YASARA_guide/images/littleconsole.PNG")
+
+big <- image_read("../YASARA_guide/images/bigconsole.PNG")
+
+small <- ggdraw() + draw_image(small)
+big <- ggdraw() + draw_image(big)
+
+plot_grid(small, big, nrow = 1)
+
+```
+
+Commands are typed directly into the console in the YASARA command system or Python. You can also copy and paste into the console using the Ctrl+C followed by Ctrl+V keys. Additionally you can copy console text by hightlighting and pressing Ctrl+C. The latter activity will be a useful tool when we get to the chapter on Making Movies (\@ref(movies)). 
+
+### Up Arrow!
+
+If you want to repeat or edit a command that you have already executed, whether in the console or using the interactive GUI or the menus, pressing Space Bar followed by the Up Arrow copies the previous command and allows you to repeat or edit the command to tweak the outcome. In YASARA~view~ this is limited to the previous *ten commands* so if you know you are going to use a complex command again, copy it out before it is lost! 
+
+### Tangent on using the command line
+
+Users who are new to YASARA are often hesitant to use the console to perform tasks. For my students, they report this is due to inexperience with non-GUI interfaces and a fear of not knowing what to do. *I get it*. It took me nearly 3 years of using YASARA before I became comfortable even opening the console regularly and even today, I still struggle to get the command line to work. 
+
+## Menu Tree {#Menu}
+
+### Top row buttons
+
+### Pop-up menu
+
+## Where to find help {#help}
+
+### SearchDoc
+
+### Help Movies
+
+## File system {#files}
