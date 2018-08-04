@@ -1,0 +1,28 @@
+# File types and how to work with them in YASARA
+
+## Common model file types
+
+YASARA loads numerous types of files, however we will limit our discussion to just three: .pdb, .yob, and .sce. These file types are the most capable and easiest to export to other programs. 
+
+Information on the other file types that YASARA can work with can be found using the SearchDoc command. 
+
+### .pdb files
+
+[.pdb formatted files](https://www.rcsb.org/pdb/static.do?p=file_formats/pdb/index.html) are the gold standard for recording the three dimensional structures of biomolecules. Most visualization programs take .pdb files and many structural analysis methods start with a .pdb file or data generated from a .pdb file. Moreover, the [Research Collaboratory for Structural Bioinformatics or RCSB or Protein Databank](https://www.rcsb.org/) stores the structural information on the >100,000 biomolecules in the database in .pdb format. Therefore, the first files you should know how to use are .pdb files.
+
+A .pdb file consists of a few parts shown in Figure \@ref(fig:pdb). A .pdb file can be viewed in a plain text editor such as TextEdit or NotePad and reveals that it consists largely of the atom identifiers, the coordinates for each atom in the molecule, the temperature or B-factor and the header.
+
+```{r pdb, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="The PDB file format", fig.align='center'}
+
+
+
+
+```
+
+.pdb files are easy to move across several programs but are limited in that they contain only location information and the reliability of those locations. Any manipulations that are performed to color or stylize the molecule are not included.
+
+### .yob files
+
+
+
+
