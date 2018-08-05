@@ -33,6 +33,19 @@ With more content, comes a need to be careful to keep track of the information e
 
 ## What does Obj vs. Mol vs. Res vs. Atom mean?
 
+YASARA organizes models at several levels, which permits easier control of manipulations to the model. **In the simplest sense, an Object consists of one or more Mol (Molecules) which consists of one or more Res (Residues) which consist of one or more Atoms.** Let's unpack each level in a bit more detail before showing how this might be useful.
 
+  * Obj (Objects) -- Objs are the highest level of organization. An object is a complete model composed of one or more molecules. Objects can be split into several objects. Objects are typically numbered.
+  
+  * Mol (Molecule) -- A Mol is the second level of organization and typically refers to a single contiguous chain within the scene. A Mol can be as simple as a single atom or a single amino acid or be larger and composed of several atoms or amino acids. Mol are defined in the .pdb or .yob file and can be broken into smaller pieces. Molecules are typically called "A" or "B" or another alphabetical name
+  
+  * Res (Residue) -- A residue refers to a subunit of a Molecule. This name comes from classical biochemistry and an refer to a single saccharide within a longer chain, a single amino acid within a protein, or a single nucleotide within a nucleic acid. Residues are composed of one or more Atoms and typically are not split. 
+  
+  For most structural biochemistry, we think about residues and their function within the larger molecule. Residues are typically referred to by the three letter [amino acid](https://en.wikipedia.org/wiki/Amino_acid#Table_of_standard_amino_acid_abbreviations_and_properties), nucleic acid, or carbohydrate name. Search the [RCSB Ligand database](http://ligand-expo.rcsb.org/ld-search.html) if you do not recognize the abbreviation. 
+  
+  * Atom -- Atoms are the smallest unit within YASARA and describe single atoms. Atoms are not split in YASARA (no fission!). 
+  Atoms are referred to by their [IUPAC names](https://iupac.org/what-we-do/periodic-table-of-elements/) but can also be referred to in organic chemistry nomenclature (e.g. C \alpha or N \epsilon). 
+  
+### Why is level of organization important?
 
-
+Like the English language where sentences contain nouns and verbs, which define the action and who/what was involved, YASARA requires a command and what to act on. See
