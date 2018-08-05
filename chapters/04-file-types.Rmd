@@ -21,7 +21,17 @@ A .pdb file consists of a few parts shown in Figure \@ref(fig:pdb). A .pdb file 
 
 .pdb files are easy to move across several programs but are limited in that they contain only location information and the reliability of those locations. Any manipulations that are performed to color or stylize the molecule are not included.
 
-### .yob files
+### .yob files (YASARA object)
+
+Like .pdb files, .yob files contain the 3-D coordinates for each atom, but also contain style information. If a color for a particular residue is set to red, it will be red in the saved .yob file as well. This file format is useful for annotating molecules and keep these annotations to pick up again later (keep a notebook to help remember what it all means though!). A .yob file can only contain one Object from the Scene Content table however. If you want multiple Objects or to save everything you need a Scene file.
+
+### .sce files (Scene files)
+
+.sce files are the most sophisticated file type in YASARA. A scene file can contain 3-D data and stylization on multiple objects. This can also include any labels (\@ref(scenelabel)), colors (\@ref(colors)), and other manipulations you may perform. 
+
+With more content, comes a need to be careful to keep track of the information effectively. So use .sce files for key models or findings and use .yob or .pdb files for intermediate steps. 
+
+## What does Obj vs. Mol vs. Res vs. Atom mean?
 
 
 
