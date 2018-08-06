@@ -19,7 +19,7 @@ pdbh <- image_read("../YASARA_guide/images/pdbheader.PNG")
 pdbat <- image_read("../YASARA_guide/images/pdbatom.PNG")
 
 pdbh <- image_border(image_background(pdbh, "white"), "#FFFFFF", "0x50")
-pdbh <- image_border(image_background(pdbat, "white"), "#FFFFFF", "0x50")
+pdbat <- image_border(image_background(pdbat, "white"), "#FFFFFF", "0x50")
 
 pdbh <- ggdraw() + draw_image(pdbh)
 pdbat <- ggdraw() + draw_image(pdbat)
@@ -160,33 +160,62 @@ YASARA organizes models at several levels, which permits easier control of manip
   * Atom -- Atoms are the smallest unit within YASARA and describe single atoms. Atoms are not split in YASARA (no fission!). 
   Atoms are referred to by their [IUPAC names](https://iupac.org/what-we-do/periodic-table-of-elements/) but can also be referred to in organic chemistry nomenclature (e.g. C \alpha or N \epsilon). 
   
-### Why is level of organization important?
+### Why is the organization important?
 
 Like the English language where sentences contain nouns and verbs, which define the action and who/what was involved, YASARA requires an action to perform and what to act on. The examples below in code chunk below give a few examples of how these commands work. 
 
 ```{r grammar, echo = TRUE, warning=FALSE, message=FALSE, eval=FALSE}
 
-# Load a molecule into the window so we can see the effects of each command
-LoadPDB 1crn
+# Load a molecule into the window so that we can see the effects of each command
+>LoadPDB 1crn
 
 # Command examples to try
 # Color all alanine residues red
-> ColorRes ala, red
+>ColorRes ala, red
 
 # Color Obj 1 blue
-> ColorObj 1, blue
+>ColorObj 1, blue
 
 # Rotate Obj 1 around the y axis 1 degree
-> RotateObj 1, Y = 30
+>RotateObj 1, Y = 30
 
 # Count all the amino acids in Obj 1
-> CountRes Obj 1 # the result of the count will appear on the same line as the command
+>CountRes Obj 1 # the result of the count will appear on the same line as the command
 
 # Show all the Hydrogen bonds in Molecule A
-> ShowHBoMol A
+>ShowHBoMol A
 
 
 ```
 
-The general YASARA syntax or grammar for commands, is Action, Level and then the specifics of the molecule or part of the molecule to affect. 
+The general YASARA syntax or grammar for commands, is ActionLevel and then the specifics of the molecule or part of the molecule to affect. Most commands can be used at any level so:
 
+```{r grammar2, echo = TRUE, warning=FALSE, message=FALSE, eval=FALSE}
+
+# Same action different levels
+>ColorObj 1, red
+
+>ColorMol A, red
+
+>ColorRes 1, red
+
+>ColorAtom 1, red
+
+
+```
+
+Effectively there are 4 nouns and lots of verbs. So if you can remember the levels of organization and the basic verbs, you can manipulate and analyze most any model.
+
+## Saving Models
+
+Once you have your model or scene in a form that is useful, you can also export the data. This is the one action I typically prefer to use the GUI over the command line, however I will show the command line method as well. Additionally, saving via the GUI is a bit tricky early on, so I will show some pictures as well. 
+
+### .pdb files
+
+
+### .yob files
+
+
+### .sce files
+
+## Knowledge Self-Checks^[Answers can be found in Chapter \@ref(fourkey)]

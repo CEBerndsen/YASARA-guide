@@ -156,8 +156,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4.3.4" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#sce-files"><i class="fa fa-check"></i><b>4.3.4</b> .sce files</a></li>
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#what-does-obj-vs.mol-vs.res-vs.atom-mean"><i class="fa fa-check"></i><b>4.4</b> What does Obj vs. Mol vs. Res vs. Atom mean?</a><ul>
-<li class="chapter" data-level="4.4.1" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#why-is-level-of-organization-important"><i class="fa fa-check"></i><b>4.4.1</b> Why is level of organization important?</a></li>
+<li class="chapter" data-level="4.4.1" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#why-is-the-organization-important"><i class="fa fa-check"></i><b>4.4.1</b> Why is the organization important?</a></li>
 </ul></li>
+<li class="chapter" data-level="4.5" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#saving-models"><i class="fa fa-check"></i><b>4.5</b> Saving Models</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#pdb-files-2"><i class="fa fa-check"></i><b>4.5.1</b> .pdb files</a></li>
+<li class="chapter" data-level="4.5.2" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#yob-files-1"><i class="fa fa-check"></i><b>4.5.2</b> .yob files</a></li>
+<li class="chapter" data-level="4.5.3" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#sce-files-1"><i class="fa fa-check"></i><b>4.5.3</b> .sce files</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#exercises"><i class="fa fa-check"></i><b>4.6</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="exercise-answers.html"><a href="exercise-answers.html"><i class="fa fa-check"></i><b>5</b> Exercise Answers</a><ul>
 <li class="chapter" data-level="5.1" data-path="exercise-answers.html"><a href="exercise-answers.html#threekey"><i class="fa fa-check"></i><b>5.1</b> Chapter 3</a></li>
@@ -287,31 +293,62 @@ Figure 4.1: The PDB file format
 <ul>
 <li>Atom – Atoms are the smallest unit within YASARA and describe single atoms. Atoms are not split in YASARA (no fission!). Atoms are referred to by their <a href="https://iupac.org/what-we-do/periodic-table-of-elements/">IUPAC names</a> but can also be referred to in organic chemistry nomenclature (e.g. C or N ).</li>
 </ul>
-<div id="why-is-level-of-organization-important" class="section level3">
-<h3><span class="header-section-number">4.4.1</span> Why is level of organization important?</h3>
+<div id="why-is-the-organization-important" class="section level3">
+<h3><span class="header-section-number">4.4.1</span> Why is the organization important?</h3>
 <p>Like the English language where sentences contain nouns and verbs, which define the action and who/what was involved, YASARA requires an action to perform and what to act on. The examples below in code chunk below give a few examples of how these commands work.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load a molecule into the window so we can see the effects of each command</span>
-LoadPDB 1crn
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load a molecule into the window so that we can see the effects of each command</span>
+<span class="op">&gt;</span>LoadPDB 1crn
 
 <span class="co"># Command examples to try</span>
 <span class="co"># Color all alanine residues red</span>
-<span class="op">&gt;</span><span class="st"> </span>ColorRes ala, red
+<span class="op">&gt;</span>ColorRes ala, red
 
 <span class="co"># Color Obj 1 blue</span>
-<span class="op">&gt;</span><span class="st"> </span>ColorObj <span class="dv">1</span>, blue
+<span class="op">&gt;</span>ColorObj <span class="dv">1</span>, blue
 
 <span class="co"># Rotate Obj 1 around the y axis 1 degree</span>
-<span class="op">&gt;</span><span class="st"> </span>RotateObj <span class="dv">1</span>, Y =<span class="st"> </span><span class="dv">30</span>
+<span class="op">&gt;</span>RotateObj <span class="dv">1</span>, Y =<span class="st"> </span><span class="dv">30</span>
 
 <span class="co"># Count all the amino acids in Obj 1</span>
-<span class="op">&gt;</span><span class="st"> </span>CountRes Obj <span class="dv">1</span> <span class="co"># the result of the count will appear on the same line as the command</span>
+<span class="op">&gt;</span>CountRes Obj <span class="dv">1</span> <span class="co"># the result of the count will appear on the same line as the command</span>
 
 <span class="co"># Show all the Hydrogen bonds in Molecule A</span>
-<span class="op">&gt;</span><span class="st"> </span>ShowHBoMol A</code></pre></div>
-<p>The general YASARA syntax or grammar for commands, is Action, Level and then the specifics of the molecule or part of the molecule to affect.</p>
+<span class="op">&gt;</span>ShowHBoMol A</code></pre></div>
+<p>The general YASARA syntax or grammar for commands, is ActionLevel and then the specifics of the molecule or part of the molecule to affect. Most commands can be used at any level so:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Same action different levels</span>
+<span class="op">&gt;</span>ColorObj <span class="dv">1</span>, red
+
+<span class="op">&gt;</span>ColorMol A, red
+
+<span class="op">&gt;</span>ColorRes <span class="dv">1</span>, red
+
+<span class="op">&gt;</span>ColorAtom <span class="dv">1</span>, red</code></pre></div>
+<p>Effectively there are 4 nouns and lots of verbs. So if you can remember the levels of organization and the basic verbs, you can manipulate and analyze most any model.</p>
+</div>
+</div>
+<div id="saving-models" class="section level2">
+<h2><span class="header-section-number">4.5</span> Saving Models</h2>
+<p>Once you have your model or scene in a form that is useful, you can also export the data. This is the one action I typically prefer to use the GUI over the command line, however I will show the command line method as well. Additionally, saving via the GUI is a bit tricky early on, so I will show some pictures as well.</p>
+<div id="pdb-files-2" class="section level3">
+<h3><span class="header-section-number">4.5.1</span> .pdb files</h3>
+</div>
+<div id="yob-files-1" class="section level3">
+<h3><span class="header-section-number">4.5.2</span> .yob files</h3>
+</div>
+<div id="sce-files-1" class="section level3">
+<h3><span class="header-section-number">4.5.3</span> .sce files</h3>
+</div>
+</div>
+<div id="exercises" class="section level2">
+<h2><span class="header-section-number">4.6</span> Exercises<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a></h2>
 
 </div>
 </div>
+<div class="footnotes">
+<hr />
+<ol start="4">
+<li id="fn4"><p>Answers can be found in Chapter <a href="exercise-answers.html#fourkey">5.2</a><a href="file-types-and-how-to-work-with-them-in-yasara.html#fnref4">↩</a></p></li>
+</ol>
 </div>
             </section>
 
