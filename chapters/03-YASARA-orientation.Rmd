@@ -168,7 +168,7 @@ The help page will open as a webpage in your default web browser (\@ref(fig:help
 
 hlpi <- image_read("../YASARA_guide/images/helpindex.PNG")
 
-hlpp <- image_read("../YASARA_guide/images/helppage1.PNG")
+
 
 
 image_draw(hlpi)
@@ -185,6 +185,8 @@ Clicking on any of the blue links will take you to the page for the command as s
 
 ```{r helppage, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="Results of using SearchDoc part 2: The help page for the ColorBG command", fig.align='center'}
 
+hlpp <- image_read("../YASARA_guide/images/helppage1.PNG")
+
 image_draw(hlpp)
 
 ```
@@ -198,20 +200,12 @@ While not formally part of the help system, users can click on the *Help* catego
 ## File system {#files}
 ```{r filetree, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="File folders created upon installing YASARA in Windows", fig.align='center'}
 
-<<<<<<< HEAD
-file <- image_read("..../YASARA_guide/images/filetree.PNG")
+file <- image_read("../YASARA_guide/images/filetree.PNG")
 
 image_draw(file)
 
 ```
 
-
-
-When YASARA first installs, included with the program is a file folder system (\@ref(fig:filetree)) to help the user stay organized. Depending on your YASARA version and operating system the folders may vary. From a data management perspective, folder system can be useful for keeping different files and analyses from co-mingling. However, this is user specific. Realize when you save files \@ref(save),  
-=======
-```{r filetree, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="File folders created by YASARA after installation", fig.align='center'}
-
-```
 
 Upon installing windows, YASARA creates a series of folders similar to that shown in \@ref(fig:filetree). The number and types of folders will depend on your YASARA version, however there will be several constant folders. Unless you have another data management system, I recommend using the YASARA system to start out. When you save a file, it will go into a folder corresponding to that file type, which can save a number of beginner headaches. 
 
@@ -242,7 +236,7 @@ Answers to questions are found in the Answers chapter under the Chapter Three he
   
   4. How can you bring up the previous command in the console?
   
-  5. What is potentially problematic about the following file names?
+  5. What is potentially problematic about each of the following file names?
   
       ubiquitin.pdb
       

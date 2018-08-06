@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="file-types-and-how-to-work-with-them-in-yasara.html">
-
+<link rel="prev" href="the-yasara-user-interface.html">
+<link rel="next" href="exercise-answers.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -175,42 +175,54 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="exercise-answers" class="section level1">
-<h1><span class="header-section-number">Chapter 5</span> Exercise Answers</h1>
-<div id="threekey" class="section level2">
-<h2><span class="header-section-number">5.1</span> Chapter 3</h2>
-<ol style="list-style-type: decimal">
-<li><p>What action brings up the console in the YASARA window?</p>
-<p><em>Pressing the Space Bar. A second press brings up the larger console</em></p></li>
-<li><p>What console command allows you to swap a residue?</p>
-<p><em>SearchDoc swap bring up the index and with some reading you will find SwapRes is the appropriate command</em></p></li>
-<li><p>Where would you find the distance between to atoms?</p>
-<p><em>Atom Properties in the HUD. If the two atoms are connected it will be in the “Bonds” section, if you are looking between two selections, then in the “Marked Distance” row.</em></p></li>
-<li><p>How can you bring up the previous command in the console?</p>
-<p><em>Up Arrow</em></p></li>
-<li><p>What is potentially problematic about the following file names?</p>
-<p>ubiquitin.pdb –&gt; <em>Non-specific name. Not clear when it was made or what it might be</em></p>
-<p>first model of a protein!.pdb –&gt; <em>Spaces in the name and an !.</em></p>
-<p>1_model_ubiquitin.pdb –&gt; <em>first digit is a single digit not 01 which would be better for ordering in the file explorer</em></p></li>
-</ol>
+<div id="file-types-and-how-to-work-with-them-in-yasara" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> File types and how to work with them in YASARA</h1>
+<div id="common-model-file-types" class="section level2">
+<h2><span class="header-section-number">4.1</span> Common model file types</h2>
+<p>YASARA loads numerous types of files, however we will limit our discussion to just three: .pdb, .yob, and .sce. These file types are the most capable and easiest to export to other programs.</p>
+<p>Information on the other file types that YASARA can work with can be found using the SearchDoc command.</p>
+<div id="pdb-files" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> .pdb files</h3>
+<p><a href="https://www.rcsb.org/pdb/static.do?p=file_formats/pdb/index.html">.pdb formatted files</a> are the gold standard for recording the three dimensional structures of biomolecules. Most visualization programs take .pdb files and many structural analysis methods start with a .pdb file or data generated from a .pdb file. Moreover, the <a href="https://www.rcsb.org/">Research Collaboratory for Structural Bioinformatics or RCSB or Protein Databank</a> stores the structural information on the &gt;100,000 biomolecules in the database in .pdb format. Therefore, the first files you should know how to use are .pdb files.</p>
+<p>A .pdb file consists of a few parts shown in Figure <a href="#fig:pdb"><strong>??</strong></a>. A .pdb file can be viewed in a plain text editor such as TextEdit or NotePad and reveals that it consists largely of the atom identifiers, the coordinates for each atom in the molecule, the temperature or B-factor and the header.</p>
+<p>.pdb files are easy to move across several programs but are limited in that they contain only location information and the reliability of those locations. Any manipulations that are performed to color or stylize the molecule are not included.</p>
+</div>
+<div id="yob-files-yasara-object" class="section level3">
+<h3><span class="header-section-number">4.1.2</span> .yob files (YASARA object)</h3>
+<p>Like .pdb files, .yob files contain the 3-D coordinates for each atom, but also contain style information. If a color for a particular residue is set to red, it will be red in the saved .yob file as well. This file format is useful for annotating molecules and keep these annotations to pick up again later (keep a notebook to help remember what it all means though!). A .yob file can only contain one Object from the Scene Content table however. If you want multiple Objects or to save everything you need a Scene file.</p>
+</div>
+<div id="sce-files-scene-files" class="section level3">
+<h3><span class="header-section-number">4.1.3</span> .sce files (Scene files)</h3>
+<p>.sce files are the most sophisticated file type in YASARA. A scene file can contain 3-D data and stylization on multiple objects. This can also include any labels (<a href="#scenelabel"><strong>??</strong></a>), colors (<a href="#colors"><strong>??</strong></a>), and other manipulations you may perform.</p>
+<p>With more content, comes a need to be careful to keep track of the information effectively. So use .sce files for key models or findings and use .yob or .pdb files for intermediate steps.</p>
+</div>
+</div>
+<div id="what-does-obj-vs.mol-vs.res-vs.atom-mean" class="section level2">
+<h2><span class="header-section-number">4.2</span> What does Obj vs. Mol vs. Res vs. Atom mean?</h2>
+<p>YASARA organizes models at several levels, which permits easier control of manipulations to the model. <strong>In the simplest sense, an Object consists of one or more Mol (Molecules) which consists of one or more Res (Residues) which consist of one or more Atoms.</strong> Let’s unpack each level in a bit more detail before showing how this might be useful.</p>
+<ul>
+<li><p>Obj (Objects) – Objs are the highest level of organization. An object is a complete model composed of one or more molecules. Objects can be split into several objects. Objects are typically numbered.</p></li>
+<li><p>Mol (Molecule) – A Mol is the second level of organization and typically refers to a single contiguous chain within the scene. A Mol can be as simple as a single atom or a single amino acid or be larger and composed of several atoms or amino acids. Mol are defined in the .pdb or .yob file and can be broken into smaller pieces. Molecules are typically called “A” or “B” or another alphabetical name</p></li>
+<li><p>Res (Residue) – A residue refers to a subunit of a Molecule. This name comes from classical biochemistry and an refer to a single saccharide within a longer chain, a single amino acid within a protein, or a single nucleotide within a nucleic acid. Residues are composed of one or more Atoms and typically are not split.</p></li>
+</ul>
+<p>For most structural biochemistry, we think about residues and their function within the larger molecule. Residues are typically referred to by the three letter <a href="https://en.wikipedia.org/wiki/Amino_acid#Table_of_standard_amino_acid_abbreviations_and_properties">amino acid</a>, nucleic acid, or carbohydrate name. Search the <a href="http://ligand-expo.rcsb.org/ld-search.html">RCSB Ligand database</a> if you do not recognize the abbreviation.</p>
+<ul>
+<li>Atom – Atoms are the smallest unit within YASARA and describe single atoms. Atoms are not split in YASARA (no fission!). Atoms are referred to by their <a href="https://iupac.org/what-we-do/periodic-table-of-elements/">IUPAC names</a> but can also be referred to in organic chemistry nomenclature (e.g. C or N ).</li>
+</ul>
+<div id="why-is-level-of-organization-important" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> Why is level of organization important?</h3>
+<p>Like the English language where sentences contain nouns and verbs, which define the action and who/what was involved, YASARA requires a command and what to act on. See</p>
 
 </div>
 </div>
-
-
-
-
-
-
-
-
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="file-types-and-how-to-work-with-them-in-yasara.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="the-yasara-user-interface.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="exercise-answers.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

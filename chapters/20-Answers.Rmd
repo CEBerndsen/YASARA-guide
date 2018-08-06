@@ -4,19 +4,19 @@
 
   1. What action brings up the console in the YASARA window?
   
-        *Pressing the Space Bar. A second press brings up the larger console*
+      *Pressing the Space Bar. A second press brings up the larger console*
   
   2. What console command allows you to swap a residue?
   
-        *>SearchDoc swap bring up the index and with some reading you will find SwapRes is the appropriate command*
+      *SearchDoc swap bring up the index and with some reading you will find SwapRes is the appropriate command*
         
   3. Where would you find the distance between to atoms?
   
-        *Atom Properties in the HUD. If the two atoms are connected it will be in the "Bonds" section, if you are looking between two selections, then in the "Marked Distance" row.*
+      *Atom Properties in the HUD. If the two atoms are connected it will be in the "Bonds" section, if you are looking between two selections, then in the "Marked Distance" row.*
   
   4. How can you bring up the previous command in the console?
   
-        *Up Arrow*
+      *Up Arrow*
   
   5. What is potentially problematic about the following file names?
   

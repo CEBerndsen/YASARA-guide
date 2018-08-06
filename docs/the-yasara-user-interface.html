@@ -25,7 +25,7 @@
 <meta name="author" content="Chris Berndsen">
 
 
-<meta name="date" content="2018-08-03">
+<meta name="date" content="2018-08-06">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -33,7 +33,7 @@
   
   
 <link rel="prev" href="obtaining-yasara.html">
-<link rel="next" href="exercise-answers.html">
+<link rel="next" href="file-types-and-how-to-work-with-them-in-yasara.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -137,10 +137,24 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.4.1" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#searchdoc"><i class="fa fa-check"></i><b>3.4.1</b> SearchDoc</a></li>
 <li class="chapter" data-level="3.4.2" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#help-movies"><i class="fa fa-check"></i><b>3.4.2</b> Help Movies</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#files"><i class="fa fa-check"></i><b>3.5</b> File system</a></li>
+<li class="chapter" data-level="3.5" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#files"><i class="fa fa-check"></i><b>3.5</b> File system</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#naming-files-and-data-management"><i class="fa fa-check"></i><b>3.5.1</b> Naming files and Data Management</a></li>
+</ul></li>
 <li class="chapter" data-level="3.6" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#knowledge-self-checks"><i class="fa fa-check"></i><b>3.6</b> Knowledge Self-Checks</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="exercise-answers.html"><a href="exercise-answers.html"><i class="fa fa-check"></i><b>4</b> Exercise Answers</a></li>
+<li class="chapter" data-level="4" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html"><i class="fa fa-check"></i><b>4</b> File types and how to work with them in YASARA</a><ul>
+<li class="chapter" data-level="4.1" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#common-model-file-types"><i class="fa fa-check"></i><b>4.1</b> Common model file types</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#pdb-files"><i class="fa fa-check"></i><b>4.1.1</b> .pdb files</a></li>
+<li class="chapter" data-level="4.1.2" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#yob-files-yasara-object"><i class="fa fa-check"></i><b>4.1.2</b> .yob files (YASARA object)</a></li>
+<li class="chapter" data-level="4.1.3" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#sce-files-scene-files"><i class="fa fa-check"></i><b>4.1.3</b> .sce files (Scene files)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#what-does-obj-vs.mol-vs.res-vs.atom-mean"><i class="fa fa-check"></i><b>4.2</b> What does Obj vs. Mol vs. Res vs. Atom mean?</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#why-is-level-of-organization-important"><i class="fa fa-check"></i><b>4.2.1</b> Why is level of organization important?</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="exercise-answers.html"><a href="exercise-answers.html"><i class="fa fa-check"></i><b>5</b> Exercise Answers</a><ul>
+<li class="chapter" data-level="5.1" data-path="exercise-answers.html"><a href="exercise-answers.html#threekey"><i class="fa fa-check"></i><b>5.1</b> Chapter 3</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -218,10 +232,11 @@ Figure 3.3: The console in YASARA, just another name for the command line. Left 
 </div>
 <div id="tangent-on-using-the-command-line-and-the-interactive-menus" class="section level3">
 <h3><span class="header-section-number">3.2.2</span> Tangent on using the command line and the interactive menus</h3>
-<p>Users who are new to YASARA are often hesitant to use the console to perform tasks. For my students, they report this is due to inexperience with non-GUI interfaces and a fear of not knowing what to do. <strong><em>I get it</em></strong>. It took me nearly 3 years of using YASARA before I became comfortable even opening the console regularly and even today, I still struggle to get the command line to work and to find the correct commands.</p>
+<p>Users who are new to YASARA are often hesitant to use the console to perform tasks. For my students, they report this is due to inexperience with non-GUI interfaces and a fear of not knowing what to do. <strong><em>I get it</em></strong>. It took me nearly 3 years of using YASARA before I became comfortable opening the console regularly and even today, I still have issues to get the command line to work every time and to find the correct commands.</p>
 <p><strong>BUT</strong></p>
 <p>knowing <em>how</em> the program makes changes to the contents of the window is valuable for understanding what happened if it is not readily apparent and if you need help, having a sense of the command that is causing problems will make finding aid easier. As you become more experienced, you might begin to find command line is more versatile and even faster (assuming you type efficiently).</p>
 <p><strong>For beginners</strong>, start by using the menus and checking the console for the command. Then start using the console to refine choices after using the menus to make the command. Finally, as you feel confident do as much as you can using the console.</p>
+<p>Given the importance of computers to many scientific careers, experience working with command line will only make you more marketable and flexible in many situations.</p>
 </div>
 </div>
 <div id="Menu" class="section level2">
@@ -302,9 +317,38 @@ Figure 3.7: Results of using SearchDoc part 2: The help page for the ColorBG com
 </div>
 <div id="files" class="section level2">
 <h2><span class="header-section-number">3.5</span> File system</h2>
+<div class="figure" style="text-align: center"><span id="fig:filetree"></span>
+<img src="YASARA-guide_files/figure-html/filetree-1.png" alt="File folders created upon installing YASARA in Windows" width="101" />
+<p class="caption">
+Figure 3.8: File folders created upon installing YASARA in Windows
+</p>
+</div>
+<p>Upon installing windows, YASARA creates a series of folders similar to that shown in <a href="the-yasara-user-interface.html#fig:filetree">3.8</a>. The number and types of folders will depend on your YASARA version, however there will be several constant folders. Unless you have another data management system, I recommend using the YASARA system to start out. When you save a file, it will go into a folder corresponding to that file type, which can save a number of beginner headaches.</p>
+<div id="naming-files-and-data-management" class="section level3">
+<h3><span class="header-section-number">3.5.1</span> Naming files and Data Management</h3>
+<p>While not specific to YASARA, having a good system to name and keep track of files that you create can save you many future issues. File names should be readable not only by a human but also the computer, especially if you are making a movie or executing a macro which iterates over a series of files. Therefore, some useful hints:</p>
+<ol style="list-style-type: decimal">
+<li><p><em>Use a single string when naming a file</em> – 01_model_ubiquitin.pdb or 01_ModelUbiquitin.pdb not this is a file with ubiquitin.pdb You can read spaces, but they can do funny things in a program.</p></li>
+<li><p><em>Avoid punctuation in file names</em> – the only punctuation should be between the name and the file type 01_model_ubiquitin.pdb not 1:model/ubiquitin{today}.pdb Exceptions to this rule can be underscores (_) or dashes (-).</p></li>
+<li><p><em>Dates or numbers can help organize your progress</em> – 01_model_ubiquitin.pdb or 2018-08-01_model_ubiquitin.pdb If you use numbers make sure you use two digits even for numbers less than 10. It helps keep files in order in the file viewer. Dates can be in any format but YYYY-MM-DD is most common internationally.</p></li>
+<li><p><em>Keep a key or notebook</em> – This is will help you remember what you did along the way, but also help others who may work with or after you on the project. If you are using <a href="https://osf.io/">Open Science Framework (OSF)</a> or <a href="https://github.com/">Github</a> to help with your project management, then the Wiki in OSF or the Readme in GitHub are great places to provide some insight into what your files are.</p></li>
+<li><p><em>Never be afraid to start over</em> – Sometimes you will dig a hole in your work and not be able to get out. It is okay to start over and try again. Data management takes a while to become routine, but should be a skill that you exercise often.</p></li>
+</ol>
+</div>
 </div>
 <div id="knowledge-self-checks" class="section level2">
 <h2><span class="header-section-number">3.6</span> Knowledge Self-Checks</h2>
+<p>Answers to questions are found in the Answers chapter under the Chapter Three header (<a href="exercise-answers.html#threekey">5.1</a>)</p>
+<ol style="list-style-type: decimal">
+<li><p>What action brings up the console in the YASARA window?</p></li>
+<li><p>What console command allows you to swap a residue?</p></li>
+<li><p>Where would you find the distance between to atoms?</p></li>
+<li><p>How can you bring up the previous command in the console?</p></li>
+<li><p>What is potentially problematic about each of the following file names?</p>
+<p>ubiquitin.pdb</p>
+<p>first model of a protein!.pdb</p>
+<p>1_model_ubiquitin.pdb</p></li>
+</ol>
 
 </div>
 </div>
@@ -322,7 +366,7 @@ Figure 3.7: Results of using SearchDoc part 2: The help page for the ColorBG com
         </div>
       </div>
 <a href="obtaining-yasara.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="exercise-answers.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="file-types-and-how-to-work-with-them-in-yasara.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
