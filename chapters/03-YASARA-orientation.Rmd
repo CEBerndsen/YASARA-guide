@@ -194,8 +194,17 @@ Like this reference, the *Menu* row in the box describes where in the Menus this
 While not formally part of the help system, users can click on the *Help* category in the top menu and then choose *Play Help Movie* (Help>Play Help Movie) to access YASARA rendered movies introducing users to a variety of topics. The movies are interactive and useful for first-time users, however they are not searchable and can take a while to find a specific topic. Therefore, I recommend going through the help movies once or twice early on, but using SearchDoc as you become more experienced. 
 
 ## File system {#files}
+```{r filetree, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="File folders created upon installing YASARA in Windows", fig.align='center'}
+
+file <- image_read("..../YASARA_guide/images/filetree.PNG")
+
+image_draw(file)
+
+```
 
 
+
+When YASARA first installs, included with the program is a file folder system (\@ref(fig:filetree)) to help the user stay organized. Depending on your YASARA version and operating system the folders may vary. From a data management perspective, folder system can be useful for keeping different files and analyses from co-mingling. However, this is user specific. Realize when you save files \@ref(save),  
 
 
 ## Knowledge Self-Checks
