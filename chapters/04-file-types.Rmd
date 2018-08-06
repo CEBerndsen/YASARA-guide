@@ -74,6 +74,28 @@ OR
 
 Drag the file into an empty YASARA window
 
+### Getting a .pdb file from the internet
+
+Files stored on the hard drive can be loaded by:
+
+File > Load > PDB file from Internet, then provide the PDB ID (ex. 1UBQ) in the dialog box that appears.
+
+OR 
+
+```{r loadpdbrcsb, echo=TRUE, eval=FALSE}
+
+# Specify LoadPDB, then put the name of the file. This assumes the file is in the pdb folder within the YASARA file tree or in the working directory
+>LoadPDB <<PDB:ID>>, download=yes
+
+  
+# Example that should work as 1crn is provided with the YASARA software
+>LoadPDB 1crn, download=yes
+
+
+```
+
+Note that the only difference in the commands is adding download = yes. Also realize that you can download the files [directly from the RCSB](https://www.rcsb.org/pdb/download/download.do) via the linked form or from the individual page for the model using the download button. 
+
 ### .yob files
 
 Files stored on the hard drive can be loaded by:
@@ -122,6 +144,7 @@ OR
 Drag the file into an empty YASARA window
 
 
+
 ## What does Obj vs. Mol vs. Res vs. Atom mean?
 
 YASARA organizes models at several levels, which permits easier control of manipulations to the model. **In the simplest sense, an Object consists of one or more Mol (Molecules) which consists of one or more Res (Residues) which consist of one or more Atoms.** Let's unpack each level in a bit more detail before showing how this might be useful.
@@ -143,6 +166,10 @@ Like the English language where sentences contain nouns and verbs, which define 
 
 ```{r grammar, echo = TRUE, warning=FALSE, message=FALSE, eval=FALSE}
 
+# Load a molecule into the window so we can see the effects of each command
+LoadPDB 1crn
+
+# Command examples to try
 # Color all alanine residues red
 > ColorRes ala, red
 
@@ -162,3 +189,4 @@ Like the English language where sentences contain nouns and verbs, which define 
 ```
 
 The general YASARA syntax or grammar for commands, is Action, Level and then the specifics of the molecule or part of the molecule to affect. 
+
