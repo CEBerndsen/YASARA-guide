@@ -79,13 +79,15 @@ If you want to repeat or edit a command that you have already executed, whether 
 
 ### Tangent on using the command line and the interactive menus
 
-Users who are new to YASARA are often hesitant to use the console to perform tasks. For my students, they report this is due to inexperience with non-GUI interfaces and a fear of not knowing what to do. ***I get it***. It took me nearly 3 years of using YASARA before I became comfortable even opening the console regularly and even today, I still struggle to get the command line to work and to find the correct commands. 
+Users who are new to YASARA are often hesitant to use the console to perform tasks. For my students, they report this is due to inexperience with non-GUI interfaces and a fear of not knowing what to do. ***I get it***. It took me nearly 3 years of using YASARA before I became comfortable opening the console regularly and even today, I still have issues to get the command line to work every time and to find the correct commands. 
 
 **BUT**
 
 knowing *how* the program makes changes to the contents of the window is valuable for understanding what happened if it is not readily apparent and if you need help, having a sense of the command that is causing problems will make finding aid easier. As you become more experienced, you might begin to find command line is more versatile and even faster (assuming you type efficiently). 
 
 **For beginners**, start by using the menus and checking the console for the command. Then start using the console to refine choices after using the menus to make the command. Finally, as you feel confident do as much as you can using the console. 
+
+Given the importance of computers to many scientific careers, experience working with command line will only make you more marketable and flexible in many situations.
 
 
 ## Menu System {#Menu}
@@ -196,6 +198,7 @@ While not formally part of the help system, users can click on the *Help* catego
 ## File system {#files}
 ```{r filetree, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="File folders created upon installing YASARA in Windows", fig.align='center'}
 
+<<<<<<< HEAD
 file <- image_read("..../YASARA_guide/images/filetree.PNG")
 
 image_draw(file)
@@ -205,6 +208,44 @@ image_draw(file)
 
 
 When YASARA first installs, included with the program is a file folder system (\@ref(fig:filetree)) to help the user stay organized. Depending on your YASARA version and operating system the folders may vary. From a data management perspective, folder system can be useful for keeping different files and analyses from co-mingling. However, this is user specific. Realize when you save files \@ref(save),  
+=======
+```{r filetree, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="File folders created by YASARA after installation", fig.align='center'}
+
+```
+
+Upon installing windows, YASARA creates a series of folders similar to that shown in \@ref(fig:filetree). The number and types of folders will depend on your YASARA version, however there will be several constant folders. Unless you have another data management system, I recommend using the YASARA system to start out. When you save a file, it will go into a folder corresponding to that file type, which can save a number of beginner headaches. 
+
+### Naming files and Data Management
+
+While not specific to YASARA, having a good system to name and keep track of files that you create can save you many future issues. File names should be readable not only by a human but also the computer, especially if you are making a movie or executing a macro which iterates over a series of files. Therefore, some useful hints:
+
+  1. *Use a single string when naming a file* -- 01_model_ubiquitin.pdb or 01_ModelUbiquitin.pdb not this is a file with ubiquitin.pdb  You can read spaces, but they can do funny things in a program.
+  
+  2. *Avoid punctuation in file names* -- the only punctuation should be between the name and the file type 01_model_ubiquitin.pdb not 1:model/ubiquitin{today}.pdb  Exceptions to this rule can be underscores (_) or dashes (-).
+  
+  3. *Dates or numbers can help organize your progress* -- 01_model_ubiquitin.pdb or 2018-08-01_model_ubiquitin.pdb If you use numbers make sure you use two digits even for numbers less than 10. It helps keep files in order in the file viewer. Dates can be in any format but YYYY-MM-DD is most common internationally.
+  
+  4. *Keep a key or notebook* -- This is will help you remember what you did along the way, but also help others who may work with or after you on the project. If you are using [Open Science Framework (OSF)](https://osf.io/) or [Github](https://github.com/) to help with your project management, then the Wiki in OSF or the Readme in GitHub are great places to provide some insight into what your files are. 
+  
+  5. *Never be afraid to start over* -- Sometimes you will dig a hole in your work and not be able to get out. It is okay to start over and try again. Data management takes a while to become routine, but should be a skill that you exercise often.
 
 
 ## Knowledge Self-Checks
+
+Answers to questions are found in the Answers chapter under the Chapter Three header (\@ref(threekey))
+
+  1. What action brings up the console in the YASARA window?
+  
+  2. What console command allows you to swap a residue?
+  
+  3. Where would you find the distance between to atoms?
+  
+  4. How can you bring up the previous command in the console?
+  
+  5. What is potentially problematic about the following file names?
+  
+      ubiquitin.pdb
+      
+      first model of a protein!.pdb
+      
+      1_model_ubiquitin.pdb

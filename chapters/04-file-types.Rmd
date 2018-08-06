@@ -1,0 +1,51 @@
+# File types and how to work with them in YASARA
+
+## Common model file types
+
+YASARA loads numerous types of files, however we will limit our discussion to just three: .pdb, .yob, and .sce. These file types are the most capable and easiest to export to other programs. 
+
+Information on the other file types that YASARA can work with can be found using the SearchDoc command. 
+
+### .pdb files
+
+[.pdb formatted files](https://www.rcsb.org/pdb/static.do?p=file_formats/pdb/index.html) are the gold standard for recording the three dimensional structures of biomolecules. Most visualization programs take .pdb files and many structural analysis methods start with a .pdb file or data generated from a .pdb file. Moreover, the [Research Collaboratory for Structural Bioinformatics or RCSB or Protein Databank](https://www.rcsb.org/) stores the structural information on the >100,000 biomolecules in the database in .pdb format. Therefore, the first files you should know how to use are .pdb files.
+
+A .pdb file consists of a few parts shown in Figure \@ref(fig:pdb). A .pdb file can be viewed in a plain text editor such as TextEdit or NotePad and reveals that it consists largely of the atom identifiers, the coordinates for each atom in the molecule, the temperature or B-factor and the header.
+
+```{r pdb, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="The PDB file format", fig.align='center'}
+
+
+
+
+```
+
+.pdb files are easy to move across several programs but are limited in that they contain only location information and the reliability of those locations. Any manipulations that are performed to color or stylize the molecule are not included.
+
+### .yob files (YASARA object)
+
+Like .pdb files, .yob files contain the 3-D coordinates for each atom, but also contain style information. If a color for a particular residue is set to red, it will be red in the saved .yob file as well. This file format is useful for annotating molecules and keep these annotations to pick up again later (keep a notebook to help remember what it all means though!). A .yob file can only contain one Object from the Scene Content table however. If you want multiple Objects or to save everything you need a Scene file.
+
+### .sce files (Scene files)
+
+.sce files are the most sophisticated file type in YASARA. A scene file can contain 3-D data and stylization on multiple objects. This can also include any labels (\@ref(scenelabel)), colors (\@ref(colors)), and other manipulations you may perform. 
+
+With more content, comes a need to be careful to keep track of the information effectively. So use .sce files for key models or findings and use .yob or .pdb files for intermediate steps. 
+
+## What does Obj vs. Mol vs. Res vs. Atom mean?
+
+YASARA organizes models at several levels, which permits easier control of manipulations to the model. **In the simplest sense, an Object consists of one or more Mol (Molecules) which consists of one or more Res (Residues) which consist of one or more Atoms.** Let's unpack each level in a bit more detail before showing how this might be useful.
+
+  * Obj (Objects) -- Objs are the highest level of organization. An object is a complete model composed of one or more molecules. Objects can be split into several objects. Objects are typically numbered.
+  
+  * Mol (Molecule) -- A Mol is the second level of organization and typically refers to a single contiguous chain within the scene. A Mol can be as simple as a single atom or a single amino acid or be larger and composed of several atoms or amino acids. Mol are defined in the .pdb or .yob file and can be broken into smaller pieces. Molecules are typically called "A" or "B" or another alphabetical name
+  
+  * Res (Residue) -- A residue refers to a subunit of a Molecule. This name comes from classical biochemistry and an refer to a single saccharide within a longer chain, a single amino acid within a protein, or a single nucleotide within a nucleic acid. Residues are composed of one or more Atoms and typically are not split. 
+  
+  For most structural biochemistry, we think about residues and their function within the larger molecule. Residues are typically referred to by the three letter [amino acid](https://en.wikipedia.org/wiki/Amino_acid#Table_of_standard_amino_acid_abbreviations_and_properties), nucleic acid, or carbohydrate name. Search the [RCSB Ligand database](http://ligand-expo.rcsb.org/ld-search.html) if you do not recognize the abbreviation. 
+  
+  * Atom -- Atoms are the smallest unit within YASARA and describe single atoms. Atoms are not split in YASARA (no fission!). 
+  Atoms are referred to by their [IUPAC names](https://iupac.org/what-we-do/periodic-table-of-elements/) but can also be referred to in organic chemistry nomenclature (e.g. C \alpha or N \epsilon). 
+  
+### Why is level of organization important?
+
+Like the English language where sentences contain nouns and verbs, which define the action and who/what was involved, YASARA requires a command and what to act on. See

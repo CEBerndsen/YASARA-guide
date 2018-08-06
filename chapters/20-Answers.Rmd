@@ -1,2 +1,28 @@
 # Exercise Answers
 
+## Chapter 3 {#threekey}
+
+  1. What action brings up the console in the YASARA window?
+  
+        *Pressing the Space Bar. A second press brings up the larger console*
+  
+  2. What console command allows you to swap a residue?
+  
+        *>SearchDoc swap bring up the index and with some reading you will find SwapRes is the appropriate command*
+        
+  3. Where would you find the distance between to atoms?
+  
+        *Atom Properties in the HUD. If the two atoms are connected it will be in the "Bonds" section, if you are looking between two selections, then in the "Marked Distance" row.*
+  
+  4. How can you bring up the previous command in the console?
+  
+        *Up Arrow*
+  
+  5. What is potentially problematic about the following file names?
+  
+      ubiquitin.pdb --> *Non-specific name. Not clear when it was made or what it might be*
+      
+      first model of a protein!.pdb --> *Spaces in the name and an !.*
+      
+      1_model_ubiquitin.pdb --> *first digit is a single digit not 01 which would be better for ordering in the file explorer*
+
