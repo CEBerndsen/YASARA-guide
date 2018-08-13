@@ -25,7 +25,7 @@
 <meta name="author" content="Chris Berndsen">
 
 
-<meta name="date" content="2018-08-06">
+<meta name="date" content="2018-08-13">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -143,7 +143,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.6" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#knowledge-self-checks"><i class="fa fa-check"></i><b>3.6</b> Knowledge Self-Checks</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html"><i class="fa fa-check"></i><b>4</b> File types and how to work with them in YASARA</a><ul>
-<li class="chapter" data-level="4.1" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#common-model-file-types"><i class="fa fa-check"></i><b>4.1</b> Common model file types</a><ul>
+<li class="chapter" data-level="4.1" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#types"><i class="fa fa-check"></i><b>4.1</b> Common model file types</a><ul>
 <li class="chapter" data-level="4.1.1" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#pdb-files"><i class="fa fa-check"></i><b>4.1.1</b> .pdb files</a></li>
 <li class="chapter" data-level="4.1.2" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#yob-files-yasara-object"><i class="fa fa-check"></i><b>4.1.2</b> .yob files (YASARA object)</a></li>
 <li class="chapter" data-level="4.1.3" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#sce-files-scene-files"><i class="fa fa-check"></i><b>4.1.3</b> .sce files (Scene files)</a></li>
@@ -163,7 +163,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4.5.2" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#yob-files-1"><i class="fa fa-check"></i><b>4.5.2</b> .yob files</a></li>
 <li class="chapter" data-level="4.5.3" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#sce-files-1"><i class="fa fa-check"></i><b>4.5.3</b> .sce files</a></li>
 </ul></li>
-<li class="chapter" data-level="4.6" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#exercises"><i class="fa fa-check"></i><b>4.6</b> Exercises</a></li>
+<li class="chapter" data-level="4.6" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#knowledge-self-checks-1"><i class="fa fa-check"></i><b>4.6</b> Knowledge Self-Checks</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="exercise-answers.html"><a href="exercise-answers.html"><i class="fa fa-check"></i><b>5</b> Exercise Answers</a><ul>
 <li class="chapter" data-level="5.1" data-path="exercise-answers.html"><a href="exercise-answers.html#threekey"><i class="fa fa-check"></i><b>5.1</b> Chapter 3</a></li>
@@ -210,6 +210,23 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="fourkey" class="section level2">
 <h2><span class="header-section-number">5.2</span> Chapter 4</h2>
+<ol style="list-style-type: decimal">
+<li><p>If you had colored a molecule and wanted to save the model and the stylizing of the model, which file types would be best? <em>.yob or .sce will include colors in the file</em></p></li>
+<li><p>What does the asterisk (*) mean in the Filename box when loading or saving a file?</p>
+<p><em>The asterisk is a wild-card operator that is replaced by the appropriate file name</em></p></li>
+<li><p>What is the largest level of model organization in YASARA? The smallest?</p>
+<p><em>Obj&gt;Mol&gt;Res&gt;Atom</em></p></li>
+<li><p>What repository contains most biomolecule models?</p>
+<p><em>The RCSB which is also called the PDB or Protein Data Bank</em></p></li>
+<li><p>What might each of the commands below do? What do they act on?</p></li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span>LoadPDB 1ubq, download=yes <span class="co"># Load the PDB file from the RCSB of 1ubq</span>
+
+<span class="op">&gt;</span>SelectAtom <span class="dv">100</span><span class="op">-</span><span class="dv">150</span> <span class="co"># Select atoms 100 to 150 in the viewing window</span>
+
+<span class="op">&gt;</span>ColorObj <span class="dv">3</span> <span class="dv">4</span>, green <span class="co"># Color objects 3 and 4 green</span>
+
+<span class="op">&gt;</span>CountAtom Obj <span class="dv">2</span> Ala <span class="co"># Count the number of atoms in all of the alanine residues in Obj 2</span></code></pre></div>
 
 </div>
 </div>

@@ -270,7 +270,7 @@ saveyob <- image_border(image_background(saveyob, "white"), "#FFFFFF", "0x80")
 
 saveyob <- ggdraw() + draw_image(saveyob)
 
-lower <- plot_grid("",saveyob,"", nrow = 1)
+lower <- plot_grid(saveyob, nrow = 1)
 
 plot_grid(sa, sap, lower, labels = c("File", "Save As", "Pick Obj, File name, and Destination"))
 

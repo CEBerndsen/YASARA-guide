@@ -25,7 +25,7 @@
 <meta name="author" content="Chris Berndsen">
 
 
-<meta name="date" content="2018-08-06">
+<meta name="date" content="2018-08-13">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -143,7 +143,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.6" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#knowledge-self-checks"><i class="fa fa-check"></i><b>3.6</b> Knowledge Self-Checks</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html"><i class="fa fa-check"></i><b>4</b> File types and how to work with them in YASARA</a><ul>
-<li class="chapter" data-level="4.1" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#common-model-file-types"><i class="fa fa-check"></i><b>4.1</b> Common model file types</a><ul>
+<li class="chapter" data-level="4.1" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#types"><i class="fa fa-check"></i><b>4.1</b> Common model file types</a><ul>
 <li class="chapter" data-level="4.1.1" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#pdb-files"><i class="fa fa-check"></i><b>4.1.1</b> .pdb files</a></li>
 <li class="chapter" data-level="4.1.2" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#yob-files-yasara-object"><i class="fa fa-check"></i><b>4.1.2</b> .yob files (YASARA object)</a></li>
 <li class="chapter" data-level="4.1.3" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#sce-files-scene-files"><i class="fa fa-check"></i><b>4.1.3</b> .sce files (Scene files)</a></li>
@@ -163,7 +163,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4.5.2" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#yob-files-1"><i class="fa fa-check"></i><b>4.5.2</b> .yob files</a></li>
 <li class="chapter" data-level="4.5.3" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#sce-files-1"><i class="fa fa-check"></i><b>4.5.3</b> .sce files</a></li>
 </ul></li>
-<li class="chapter" data-level="4.6" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#exercises"><i class="fa fa-check"></i><b>4.6</b> Exercises</a></li>
+<li class="chapter" data-level="4.6" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#knowledge-self-checks-1"><i class="fa fa-check"></i><b>4.6</b> Knowledge Self-Checks</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="exercise-answers.html"><a href="exercise-answers.html"><i class="fa fa-check"></i><b>5</b> Exercise Answers</a><ul>
 <li class="chapter" data-level="5.1" data-path="exercise-answers.html"><a href="exercise-answers.html#threekey"><i class="fa fa-check"></i><b>5.1</b> Chapter 3</a></li>
@@ -191,7 +191,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="file-types-and-how-to-work-with-them-in-yasara" class="section level1">
 <h1><span class="header-section-number">Chapter 4</span> File types and how to work with them in YASARA</h1>
-<div id="common-model-file-types" class="section level2">
+<div id="types" class="section level2">
 <h2><span class="header-section-number">4.1</span> Common model file types</h2>
 <p>YASARA loads numerous types of files, however we will limit our discussion to just three: .pdb, .yob, and .sce. These file types are the most capable and easiest to export to other programs.</p>
 <p>Information on the other file types that YASARA can work with can be found using the SearchDoc command.</p>
@@ -287,11 +287,9 @@ Figure 4.1: The PDB file format
 <ul>
 <li><p>Obj (Objects) – Objs are the highest level of organization. An object is a complete model composed of one or more molecules. Objects can be split into several objects. Objects are typically numbered.</p></li>
 <li><p>Mol (Molecule) – A Mol is the second level of organization and typically refers to a single contiguous chain within the scene. A Mol can be as simple as a single atom or a single amino acid or be larger and composed of several atoms or amino acids. Mol are defined in the .pdb or .yob file and can be broken into smaller pieces. Molecules are typically called “A” or “B” or another alphabetical name</p></li>
-<li><p>Res (Residue) – A residue refers to a subunit of a Molecule. This name comes from classical biochemistry and an refer to a single saccharide within a longer chain, a single amino acid within a protein, or a single nucleotide within a nucleic acid. Residues are composed of one or more Atoms and typically are not split.</p></li>
-</ul>
-<p>For most structural biochemistry, we think about residues and their function within the larger molecule. Residues are typically referred to by the three letter <a href="https://en.wikipedia.org/wiki/Amino_acid#Table_of_standard_amino_acid_abbreviations_and_properties">amino acid</a>, nucleic acid, or carbohydrate name. Search the <a href="http://ligand-expo.rcsb.org/ld-search.html">RCSB Ligand database</a> if you do not recognize the abbreviation.</p>
-<ul>
-<li>Atom – Atoms are the smallest unit within YASARA and describe single atoms. Atoms are not split in YASARA (no fission!). Atoms are referred to by their <a href="https://iupac.org/what-we-do/periodic-table-of-elements/">IUPAC names</a> but can also be referred to in organic chemistry nomenclature (e.g. C or N ).</li>
+<li><p>Res (Residue) – A residue refers to a subunit of a Molecule. This name comes from classical biochemistry and an refer to a single saccharide within a longer chain, a single amino acid within a protein, or a single nucleotide within a nucleic acid. Residues are composed of one or more Atoms and typically are not split.</p>
+<p>For most structural biochemistry, we think about residues and their function within the larger molecule. Residues are typically referred to by the three letter <a href="https://en.wikipedia.org/wiki/Amino_acid#Table_of_standard_amino_acid_abbreviations_and_properties">amino acid</a>, nucleic acid, or carbohydrate name. Search the <a href="http://ligand-expo.rcsb.org/ld-search.html">RCSB Ligand database</a> if you do not recognize the abbreviation.</p></li>
+<li><p>Atom – Atoms are the smallest unit within YASARA and describe single atoms. Atoms are not split in YASARA (no fission!). Atoms are referred to by their <a href="https://iupac.org/what-we-do/periodic-table-of-elements/">IUPAC names</a> but can also be referred to in organic chemistry nomenclature (e.g. C or N ).</p></li>
 </ul>
 <div id="why-is-the-organization-important" class="section level3">
 <h3><span class="header-section-number">4.4.1</span> Why is the organization important?</h3>
@@ -328,19 +326,62 @@ Figure 4.1: The PDB file format
 </div>
 <div id="saving-models" class="section level2">
 <h2><span class="header-section-number">4.5</span> Saving Models</h2>
-<p>Once you have your model or scene in a form that is useful, you can also export the data. This is the one action I typically prefer to use the GUI over the command line, however I will show the command line method as well. Additionally, saving via the GUI is a bit tricky early on, so I will show some pictures as well.</p>
+<p>Once you have your model or scene in a form that is useful, you can also export the data. This is the one action I typically prefer to use the GUI over the command line, however I will show the command line method as well (For example: <a href="#fig:savepdb"><strong>??</strong></a>). Additionally, saving via the GUI has one trick, so I will show you how to do this in pictures as well (For example: <a href="file-types-and-how-to-work-with-them-in-yasara.html#fig:savepdbmenu">4.2</a>).</p>
+<p><strong>Remember</strong>, there are some advantages and disadvantages to each file type so review the section on file formats (<a href="file-types-and-how-to-work-with-them-in-yasara.html#types">4.1</a>) if you are uncertain about which format to use.</p>
 <div id="pdb-files-2" class="section level3">
 <h3><span class="header-section-number">4.5.1</span> .pdb files</h3>
+<p>File&gt;Save As&gt;PDB file, then pick your Obj(s) and click OK, then select your file name and destination and click OK.</p>
+<div class="figure"><span id="fig:savepdbmenu"></span>
+<img src="YASARA-guide_files/figure-html/savepdbmenu-1.png" alt="Saving a PDB file using the GUI" width="672" />
+<p class="caption">
+Figure 4.2: Saving a PDB file using the GUI
+</p>
+</div>
+<p>You will note that the first menu in <a href="file-types-and-how-to-work-with-them-in-yasara.html#fig:savepdbmenu">4.2</a> where you select Obj(s) has a selection bar at the bottom which you can enter text. This is not the filename, this is for you to pick a Molecule name or atom numbers. The file name goes in the second menu. Sometimes there will be a asterisk before .pdb (*.pdb) in the Filename box. This is a placeholder which you replace with your filename.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Command then which Obj(s) have the source model, </span>
+<span class="co"># then the file name in this case test.pdb and some arguments</span>
+<span class="op">&gt;</span>SavePDB <span class="dv">1</span>,pdb\test.pdb,Format=PDB,Transform=Yes</code></pre></div>
+<p>It is possible to save several Objects or Molecules in the same PDB file, but you will likely need to Transfer them all to the same set of coordinates first. Transfer is found in the Edit menu.</p>
 </div>
 <div id="yob-files-1" class="section level3">
 <h3><span class="header-section-number">4.5.2</span> .yob files</h3>
+<p>Saving a .yob file is very similar to saving a pdb file, only without the issues of coordinates.</p>
+<p>File&gt;Save As&gt;YASARA YOb, then pick your Obj, file name, destination, and then click OK.</p>
+<div class="figure"><span id="fig:saveyoubmenu"></span>
+<img src="YASARA-guide_files/figure-html/saveyoubmenu-1.png" alt="Saving a file in .yob format using the GUI" width="672" />
+<p class="caption">
+Figure 4.3: Saving a file in .yob format using the GUI
+</p>
+</div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Command then which Obj(s) have the source model, </span>
+<span class="co"># then the file name in this case dhfrt.yob</span>
+<span class="op">&gt;</span>SaveYOb <span class="dv">1</span>,yob\dhfrt.yob</code></pre></div>
+<p>A .yob can only contain one Object, if you need to save more than one object in a single file, use .pdb or .sce.</p>
 </div>
 <div id="sce-files-1" class="section level3">
 <h3><span class="header-section-number">4.5.3</span> .sce files</h3>
+<p>Saving a model as a .sce file is the simplest of all the file types as it save everything in the viewing window.</p>
+<p>File&gt;Save As&gt;YASARA Sce, then pick your file name and destination.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Command then the file name in this case dhfr_watertest.sce</span>
+<span class="op">&gt;</span>SaveSce sce\dhfr_watertest.sce</code></pre></div>
 </div>
 </div>
-<div id="exercises" class="section level2">
-<h2><span class="header-section-number">4.6</span> Exercises<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a></h2>
+<div id="knowledge-self-checks-1" class="section level2">
+<h2><span class="header-section-number">4.6</span> Knowledge Self-Checks<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a></h2>
+<ol style="list-style-type: decimal">
+<li><p>If you had colored a molecule and wanted to save the model and the stylizing of the model, which file types would be best?</p></li>
+<li><p>What does the asterisk (*) mean in the Filename box when loading or saving a file?</p></li>
+<li><p>What is the largest level of model organization in YASARA? The smallest?</p></li>
+<li><p>What repository contains most biomolecule models?</p></li>
+<li><p>What might each of the commands below do? What do they act on?</p></li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span>LoadPDB 1ubq, download=yes
+
+<span class="op">&gt;</span>SelectAtom <span class="dv">100</span><span class="op">-</span><span class="dv">150</span>
+
+<span class="op">&gt;</span>ColorObj <span class="dv">3</span> <span class="dv">4</span>, green
+
+<span class="op">&gt;</span>CountAtom Obj <span class="dv">2</span> Ala</code></pre></div>
 
 </div>
 </div>
