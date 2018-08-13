@@ -208,7 +208,7 @@ Effectively there are 4 nouns and lots of verbs. So if you can remember the leve
 
 ## Saving Models
 
-Once you have your model or scene in a form that is useful, you can also export the data. This is the one action I typically prefer to use the GUI over the command line, however I will show the command line method as well (For example: \@ref(fig:savepdb)). Additionally, saving via the GUI has one trick, so I will show you how to do this in pictures as well (For example: \@ref(fig:savepdbmenu)). 
+Once you have your model or scene in a form that is useful, you can also export the data. This is the one action I typically prefer to use the GUI over the command line, however I will show the command line method as well. Additionally, saving via the GUI has one trick, so I will show you how to do this in pictures as well (For example: \@ref(fig:savepdbmenu)). 
 
 **Remember**, there are some advantages and disadvantages to each file type so review the section on file formats (\@ref(types)) if you are uncertain about which format to use. 
 
@@ -244,7 +244,7 @@ plot_grid(sa, sap, sam1, sam2, labels = c("File", "Save As", "Select Obj(s)", "S
 
 You will note that the first menu in \@ref(fig:savepdbmenu) where you select Obj(s) has a selection bar at the bottom which you can enter text. This is not the filename, this is for you to pick a Molecule name or atom numbers. The file name goes in the second menu. Sometimes there will be a asterisk before .pdb (*.pdb) in the Filename box. This is a placeholder which you replace with your filename.  
 
-```{r  savepdb,echo = TRUE, warning=FALSE, message=FALSE, eval=FALSE, fig.cap="Saving a  file via the command line in .pdb format"}
+```{r savepdb, echo = TRUE, warning=FALSE, message=FALSE, eval=FALSE, fig.cap="Saving a file via the command line in .pdb format"}
 
 # Command then which Obj(s) have the source model, 
 # then the file name in this case test.pdb and some arguments
