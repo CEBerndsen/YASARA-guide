@@ -1,6 +1,6 @@
 # File types and how to work with them in YASARA
 
-## Common model file types
+## Common model file types {#types}
 
 YASARA loads numerous types of files, however we will limit our discussion to just three: .pdb, .yob, and .sce. These file types are the most capable and easiest to export to other programs. 
 
@@ -155,7 +155,7 @@ YASARA organizes models at several levels, which permits easier control of manip
   
   * Res (Residue) -- A residue refers to a subunit of a Molecule. This name comes from classical biochemistry and an refer to a single saccharide within a longer chain, a single amino acid within a protein, or a single nucleotide within a nucleic acid. Residues are composed of one or more Atoms and typically are not split. 
   
-  For most structural biochemistry, we think about residues and their function within the larger molecule. Residues are typically referred to by the three letter [amino acid](https://en.wikipedia.org/wiki/Amino_acid#Table_of_standard_amino_acid_abbreviations_and_properties), nucleic acid, or carbohydrate name. Search the [RCSB Ligand database](http://ligand-expo.rcsb.org/ld-search.html) if you do not recognize the abbreviation. 
+    For most structural biochemistry, we think about residues and their function within the larger molecule. Residues are     typically referred to by the three letter [amino             acid](https://en.wikipedia.org/wiki/Amino_acid#Table_of_standard_amino_acid_abbreviations_and_properties), nucleic acid,      or carbohydrate name. Search the [RCSB Ligand database](http://ligand-expo.rcsb.org/ld-search.html) if you do not         recognize the abbreviation. 
   
   * Atom -- Atoms are the smallest unit within YASARA and describe single atoms. Atoms are not split in YASARA (no fission!). 
   Atoms are referred to by their [IUPAC names](https://iupac.org/what-we-do/periodic-table-of-elements/) but can also be referred to in organic chemistry nomenclature (e.g. C \alpha or N \epsilon). 
@@ -208,14 +208,122 @@ Effectively there are 4 nouns and lots of verbs. So if you can remember the leve
 
 ## Saving Models
 
-Once you have your model or scene in a form that is useful, you can also export the data. This is the one action I typically prefer to use the GUI over the command line, however I will show the command line method as well. Additionally, saving via the GUI is a bit tricky early on, so I will show some pictures as well. 
+Once you have your model or scene in a form that is useful, you can also export the data. This is the one action I typically prefer to use the GUI over the command line, however I will show the command line method as well (For example: \@ref(fig:savepdb)). Additionally, saving via the GUI has one trick, so I will show you how to do this in pictures as well (For example: \@ref(fig:savepdbmenu)). 
+
+**Remember**, there are some advantages and disadvantages to each file type so review the section on file formats (\@ref(types)) if you are uncertain about which format to use. 
 
 ### .pdb files
+
+File>Save As>PDB file, then pick your Obj(s) and click OK, then select your file name and destination and click OK. 
+
+
+
+```{r savepdbmenu, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Saving a PDB file using the GUI"}
+sa <- image_read("../YASARA_guide/images/saveas.PNG")
+sap <- image_read("../YASARA_guide/images/savepdb.PNG")
+sam1 <- image_read("../YASARA_guide/images/savemenuone.PNG")
+sam2 <- image_read("../YASARA_guide/images/savemenutwo.PNG")
+
+sa <- image_trim(sa)
+
+sa <- image_border(image_background(sa, "white"), "#FFFFFF", "0x80")
+sap <- image_border(image_background(sap, "white"), "#FFFFFF", "0x80")
+sam1 <- image_border(image_background(sam1, "white"), "#FFFFFF", "0x80")
+sam2 <- image_border(image_background(sam2, "white"), "#FFFFFF", "0x80")
+
+
+sa <- ggdraw() + draw_image(sa)
+sap <- ggdraw() + draw_image(sap)
+sam1 <- ggdraw() + draw_image(sam1)
+sam2 <- ggdraw() + draw_image(sam2)
+
+plot_grid(sa, sap, sam1, sam2, labels = c("File", "Save As", "Select Obj(s)", "Select Filename and Destination"), nrow =  2, align = "both", axis = c("l", "t"))
+
+
+```
+
+You will note that the first menu in \@ref(fig:savepdbmenu) where you select Obj(s) has a selection bar at the bottom which you can enter text. This is not the filename, this is for you to pick a Molecule name or atom numbers. The file name goes in the second menu. Sometimes there will be a asterisk before .pdb (*.pdb) in the Filename box. This is a placeholder which you replace with your filename.  
+
+```{r  savepdb,echo = TRUE, warning=FALSE, message=FALSE, eval=FALSE, fig.cap="Saving a  file via the command line in .pdb format"}
+
+# Command then which Obj(s) have the source model, 
+# then the file name in this case test.pdb and some arguments
+>SavePDB 1,pdb\test.pdb,Format=PDB,Transform=Yes
+
+
+```
+
+It is possible to save several Objects or Molecules in the same PDB file, but you will likely need to Transfer them all to the same set of coordinates first. Transfer is found in the Edit menu. 
 
 
 ### .yob files
 
+Saving a .yob file is very similar to saving a pdb file, only without the issues of coordinates.
+
+File>Save As>YASARA YOb, then pick your Obj, file name, destination, and then click OK.
+
+```{r saveyoubmenu,echo = FALSE, warning=FALSE, message=FALSE, eval=TRUE, fig.cap="Saving a file in .yob format using the GUI"}
+
+saveyob <- image_read("../YASARA_guide/images/saveyob.PNG")
+
+saveyob <- image_border(image_background(saveyob, "white"), "#FFFFFF", "0x80")
+
+saveyob <- ggdraw() + draw_image(saveyob)
+
+lower <- plot_grid("",saveyob,"", nrow = 1)
+
+plot_grid(sa, sap, lower, labels = c("File", "Save As", "Pick Obj, File name, and Destination"))
+
+
+```
+
+
+```{r saveyob, echo = TRUE, warning=FALSE, message=FALSE, eval=FALSE, fig.cap="Saving a file via the command line in .yob format"}
+
+# Command then which Obj(s) have the source model, 
+# then the file name in this case dhfrt.yob
+>SaveYOb 1,yob\dhfrt.yob
+
+```
+
+A .yob can only contain one Object, if you need to save more than one object in a single file, use .pdb or .sce.
 
 ### .sce files
 
+Saving a model as a .sce file is the simplest of all the file types as it save everything in the viewing window.
+
+File>Save As>YASARA Sce, then pick your file name and destination.
+
+```{r savesce, echo=TRUE, warning=FALSE, message=FALSE, eval=FALSE, fig.cap="Saving a .sce file using the command line"}
+
+# Command then the file name in this case dhfr_watertest.sce
+>SaveSce sce\dhfr_watertest.sce
+
+```
+
+
+
 ## Knowledge Self-Checks^[Answers can be found in Chapter \@ref(fourkey)]
+
+  1. If you had colored a molecule and wanted to save the model and the stylizing of the model, which file types would be best?
+  
+  2. What does the asterisk (*) mean in the Filename box when loading or saving a file?
+  
+  3. What is the largest level of model organization in YASARA? The smallest?
+  
+  4. What repository contains most biomolecule models?
+  
+  5. What might each of the commands below do? What do they act on?
+  
+```{r fourcmds, echo=TRUE, eval=FALSE, warning=FALSE, message=FALSE}
+
+>LoadPDB 1ubq, download=yes
+
+>SelectAtom 100-150
+
+>ColorObj 3 4, green
+
+>CountAtom Obj 2 Ala
+
+```
+

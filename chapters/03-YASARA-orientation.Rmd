@@ -189,6 +189,8 @@ hlpp <- image_read("../YASARA_guide/images/helppage1.PNG")
 
 image_draw(hlpp)
 
+
+
 ```
 
 Like this reference, the *Menu* row in the box describes where in the Menus this command is found. This is most useful early on and as you learn more about YASARA, the examples become useful too. Often you can compare what happened in your console to the examples to make sure that you are looking at the right command and using the correct arguments. 

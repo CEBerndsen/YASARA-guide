@@ -23,6 +23,7 @@ prop <- ggdraw() + draw_image(prop, scale = 0.8)
 os <- ggdraw() + draw_image(os, scale = 1)
 
 plot_grid(pc, prop, NULL, os, labels = c(1, 2,"", 3), rel_widths = c(1, 1, 0.3, 2), nrow = 1)
+
 ```
 
 Once you have submitted the information, you will receive an email which will let you download the YASARA program.

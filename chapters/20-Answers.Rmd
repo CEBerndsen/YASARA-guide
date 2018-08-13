@@ -30,4 +30,34 @@
 ## Chapter 4 {#fourkey}
 
 
+  1. If you had colored a molecule and wanted to save the model and the stylizing of the model, which file types would be best?
+      *.yob or .sce will include colors in the file*
+  
+  2. What does the asterisk (*) mean in the Filename box when loading or saving a file?
+  
+      *The asterisk is a wild-card operator that is replaced by the appropriate file name*
+  
+  3. What is the largest level of model organization in YASARA? The smallest?
+  
+      *Obj>Mol>Res>Atom*
+  
+  4. What repository contains most biomolecule models?
+  
+      *The RCSB which is also called the PDB or Protein Data Bank*
+  
+  5. What might each of the commands below do? What do they act on?
+  
+```{r fourcmdsans, echo=TRUE, eval=FALSE, warning=FALSE, message=FALSE}
+
+>LoadPDB 1ubq, download=yes # Load the PDB file from the RCSB of 1ubq
+
+>SelectAtom 100-150 # Select atoms 100 to 150 in the viewing window
+
+>ColorObj 3 4, green # Color objects 3 and 4 green
+
+>CountAtom Obj 2 Ala # Count the number of atoms in all of the alanine residues in Obj 2
+
+```
+
+
 
