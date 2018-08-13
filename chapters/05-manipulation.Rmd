@@ -2,8 +2,24 @@
 
 This chapter will be one of the more useful for students who are using YASARA to make professional and informative looking figures. We will cover how to Position and orient molecules manually and reproducibly (\@ref(orient)) and then stylize the molecule using different representations (\@ref(style)), colors (\@ref(colors)), and how to make surface representations (\@ref(surfaces)). Chapter 7 will cover how to label (\@ref(labels)) and change the color of your background (\@ref(background)),
 
-
 ## Position and orienting the model {#orient}
+
+*This section will focus on mouse and command line based commands. For keyboard based commands, I highly recommend watching the help movie on Working with YASARA found under Help>Play Help Movie, then select 1.1. Working with YASARA.*
+
+Models in YASARA can be manipulated in many ways, however setting how the model looks in window is the simplest command but often the most difficult setting to master. Table \@ref(tab:mousetable) shows the basic mouse commands used in YASARA. If you have a three-button mouse, YASARA is very straightforward to use. However, the differences in the Mac and Windows/Linux actions with a mouse can create some issues. 
+
+```{r mousetable, echo=FALSE, warning=FALSE, messages=FALSE}
+library(tidyverse)
+
+mousedf <- tibble("Mouse Action" = c("Left + move", "Center + move", "Right + move", "Left-click on an atom", "Left-click on an atom, then right-click"),
+                      "Mac Track Pad" = c("One-finger press and move", "Not available", "Two-finger press and move", "One finger click", "One-finger click then Two-finger click"),
+                      "YASARA action" = c("Rotate about center", "Move in plane of screen", "Zoom in or out", "Select Atom", "Select Atom and Bring up pop-up menu"))
+
+knitr::kable(mousedf,  caption = "Table of Mouse-based commands in YASARA")
+
+```
+
+
 
 ## Changing how the model looks {#style}
 
