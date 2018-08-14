@@ -1,0 +1,4 @@
+# Adding annotations to your scene
+
+## Labels {#labels}
+
