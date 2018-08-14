@@ -2,7 +2,7 @@
 
 This chapter will be one of the more useful for students who are using YASARA to make professional and informative looking figures. We will cover how to Position and orient molecules manually and reproducibly (\@ref(orient)) and then stylize the molecule using different representations (\@ref(style)), colors (\@ref(colors)), and how to make surface representations (\@ref(surfaces)). Chapter 7 will cover how to label (\@ref(labels)) and change the color of your background (\@ref(background)),
 
-## Position and orienting the model {#orient}
+## Positioning and orienting the model {#orient}
 
 *I will focus on mouse and command line based commands. For keyboard based commands, I highly recommend watching the help movie on Working with YASARA found under Help>Play Help Movie, then select 1.1. Working with YASARA.*
 
@@ -165,8 +165,111 @@ plot_grid(ubball, ubballstick, ubstick, ubtrace, ubribbon, ubss, ubsstwo, ubside
 
 ```
 
+### Stylizing individual amino acids
 
-## Setting colors {#colors}
+It is possible to take the views in Figure \@ref(fog:stylepics) and apply them to a subset of amino acids or atoms in YASARA. 
+
+From the menu, you would go:
+
+View>Style atoms>*Select Style you want to use*>*Select organization level (Obj, Res, Atom)*, then make your choices in the menu that follows. 
+
+An example set of commands are shown below.
+
+```{r indstyle, echo=TRUE, warning=FALSE, message=FALSE, eval=FALSE}
+#Load 1UBQ from the RCSB
+>LoadPDB 1ubq, download=yes
+
+#Style entire molecule as ribbon
+>Style Ribbon
+
+# Show the Lysine amino acids and style them as Ball
+>ShowRes lys
+>BallRes lys
+
+```
+
+Notice the commands for individual levels are a bit different from those of the entire scene. For depicting a part of the model in the Ball style you type `Ball` then the level of organization and then your selection. The same is true of `Stick` and `BallStick`. 
+
+In addition, you can left-click on an atom, then right-click on the same atom to bring up the pop-up menu. Style is one of the options that you can set here and the sub-menus are similar to those above using the top menu. 
+
+
+## Setting the Colors of the Model {#colors}
+
+Color is one of the most effective ways of designating areas of interest within a model. For example you could color the important amino acids in an active site to make them stand out to the viewer. Setting color is a straight-forward set of steps and can be applied to all of the scene contents or just a single atom and everything in between just as with stylizing of the scene contents.
+
+From the menu, you would go:
+
+View>Color>*Select organization level*, then pick your Obj/Mol/Res, and pick your color as shown in the color menu in Figure \@ref(fig:colormenu). 
+
+Once you have made your selection, click "Apply Unique Color" to apply the single color or you can apply a color gradient. The gradient option is not used frequently and the `SearchDoc` command can provide more information.
+
+```{r colormenu, eval = TRUE, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="YASARA color menu", out.width="150%"}
+knitr::include_graphics("../YASARA_guide/images/colormenu.PNG")
+
+
+```
+
+You can pick colors based on name as shown on the right side of Figure \@ref(fig:colormenu) or feature or by using the color wheel. 
+
+Examples of using the command line method for coloring a model or parts of a model are shown below. The general format is use `Color` with your level of organization, then your target(s) to color followed by a comma and the color. The color can be described by name or number from the color wheel. Amino acids can be referred to by number, three letter code, three letter code and number. 
+
+```{r colorcmd, echo=TRUE, warning=FALSE, message=FALSE, eval=FALSE}
+#Load 1UBQ from the RCSB
+>LoadPDB 1ubq, download=yes
+
+
+# Color the whole object as blue
+>ColorObj 1, blue
+
+# Color only alanine amino acids as red
+>ColorRes alanine, red
+
+# Color lys 48 magenta
+>ColorRes lys 48, magenta
+
+# Color amino acids 10 to 25 in yellow
+>ColorRes 10-25, yellow
+
+# Color phenylalanine amino acids as color 45
+>ColorRes Phe, 45
+
+```
+
+In general, using red and green in the same figure is a bad idea due to the prevalence of red-green colorblindness. Be aware of your audience when choosing colors!
+
+
+### Color Wheel
+
+The color wheel menu is shown on the left side of Figure \@ref(fig:colormenu). You can drag the line around to your favorite color or set the value in the First color box to the lower left of the color wheel. If you have a particular set of colors you want to use, the color wheel numbers are a good way to ensure reproducibility.
+
+
+### Color by Element and other features
+
+In addition to coloring models by specific colors, you can also color be specific features such as the Element or ResType. Using this type of color scheme is really effective for overview models such as finding if certain types of amino acids are clustered in a specific area or when displaying amino acid side chains and showing the colors of the elements contained therein. If you are unsure what atom or amino acid type is represented by a color, remember that you can left-click on an atom and the Atom Properties in the left of the HUD will show you the information (\@ref(HUD)). 
+
+```{r featcolor, echo=TRUE, eval=FALSE}
+#Load 1UBQ from the RCSB
+>LoadPDB 1ubq, download=yes
+
+# Show model as ribbon with sidechains
+>Style Ribbon
+>Style Sidechain=BallStick
+
+# Color Obj by element
+>ColorObj 1, element
+
+# Color Obj by amino acid type
+>ColorObj 1, restype
+
+```
+
+### Changing the color scheme
+
+You can change these feature color schemes by:
+
+View>Color>Parameters, then choosing the scheme (e.g. element, restype) to change, and setting your element and color. 
+
+Only one element color can be changed at a time. You can also restore the defaults if you messed up!
 
 ## Adding a surface {#surfaces}
 
