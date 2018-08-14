@@ -171,14 +171,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="manipulating-the-model.html"><a href="manipulating-the-model.html#style"><i class="fa fa-check"></i><b>5.2</b> Changing how the model looks</a><ul>
 <li class="chapter" data-level="5.2.1" data-path="manipulating-the-model.html"><a href="manipulating-the-model.html#stylizing-individual-amino-acids"><i class="fa fa-check"></i><b>5.2.1</b> Stylizing individual amino acids</a></li>
+<li class="chapter" data-level="5.2.2" data-path="manipulating-the-model.html"><a href="manipulating-the-model.html#showing-and-hiding-atoms-and-amino-acids"><i class="fa fa-check"></i><b>5.2.2</b> Showing and Hiding Atoms and Amino Acids</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="manipulating-the-model.html"><a href="manipulating-the-model.html#colors"><i class="fa fa-check"></i><b>5.3</b> Setting the Colors of the Model</a><ul>
 <li class="chapter" data-level="5.3.1" data-path="manipulating-the-model.html"><a href="manipulating-the-model.html#color-wheel"><i class="fa fa-check"></i><b>5.3.1</b> Color Wheel</a></li>
 <li class="chapter" data-level="5.3.2" data-path="manipulating-the-model.html"><a href="manipulating-the-model.html#color-by-element-and-other-features"><i class="fa fa-check"></i><b>5.3.2</b> Color by Element and other features</a></li>
 <li class="chapter" data-level="5.3.3" data-path="manipulating-the-model.html"><a href="manipulating-the-model.html#changing-the-color-scheme"><i class="fa fa-check"></i><b>5.3.3</b> Changing the color scheme</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="manipulating-the-model.html"><a href="manipulating-the-model.html#surfaces"><i class="fa fa-check"></i><b>5.4</b> Adding a surface</a></li>
-<li class="chapter" data-level="5.5" data-path="manipulating-the-model.html"><a href="manipulating-the-model.html#knowledge-self-checks-2"><i class="fa fa-check"></i><b>5.5</b> Knowledge Self-Checks</a></li>
+<li class="chapter" data-level="5.4" data-path="manipulating-the-model.html"><a href="manipulating-the-model.html#surfaces"><i class="fa fa-check"></i><b>5.4</b> Adding a surface</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="manipulating-the-model.html"><a href="manipulating-the-model.html#hiding-a-surface"><i class="fa fa-check"></i><b>5.4.1</b> Hiding a surface</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="manipulating-the-model.html"><a href="manipulating-the-model.html#knowledge-self-check"><i class="fa fa-check"></i><b>5.5</b> Knowledge Self-Check</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="exercise-answers.html"><a href="exercise-answers.html"><i class="fa fa-check"></i><b>6</b> Exercise Answers</a><ul>
 <li class="chapter" data-level="6.1" data-path="exercise-answers.html"><a href="exercise-answers.html#threekey"><i class="fa fa-check"></i><b>6.1</b> Chapter 3</a></li>
@@ -369,7 +372,7 @@ Figure 5.2: Results of Style commands or Function keys in YASARA
 </div>
 <div id="stylizing-individual-amino-acids" class="section level3">
 <h3><span class="header-section-number">5.2.1</span> Stylizing individual amino acids</h3>
-<p>It is possible to take the views in Figure <a href="#fog:stylepics"><strong>??</strong></a> and apply them to a subset of amino acids or atoms in YASARA.</p>
+<p>It is possible to take the views in Figure <a href="manipulating-the-model.html#fig:stylepics">5.2</a> and apply them to a subset of amino acids or atoms in YASARA.</p>
 <p>From the menu, you would go:</p>
 <p>View&gt;Style atoms&gt;<em>Select Style you want to use</em>&gt;<em>Select organization level (Obj, Res, Atom)</em>, then make your choices in the menu that follows.</p>
 <p>An example set of commands are shown below.</p>
@@ -385,6 +388,32 @@ Figure 5.2: Results of Style commands or Function keys in YASARA
 <p>Notice the commands for individual levels are a bit different from those of the entire scene. For depicting a part of the model in the Ball style you type <code>Ball</code> then the level of organization and then your selection. The same is true of <code>Stick</code> and <code>BallStick</code>.</p>
 <p>In addition, you can left-click on an atom, then right-click on the same atom to bring up the pop-up menu. Style is one of the options that you can set here and the sub-menus are similar to those above using the top menu.</p>
 </div>
+<div id="showing-and-hiding-atoms-and-amino-acids" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> Showing and Hiding Atoms and Amino Acids</h3>
+<p>Sometimes you only want to see certain parts of the molecule or show sidechains for certain amino acids. This is where the <code>Show</code> and <code>Hide</code> commands are useful. As suggested by the names, these commands show or hide parts of the molecule. The code below shows several examples for each.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Load 1UBQ from the RCSB</span>
+<span class="op">&gt;</span>LoadPDB 1ubq, download=yes
+
+<span class="co">#Style entire molecule as Ball and Stick</span>
+<span class="op">&gt;</span>Style BallStick
+
+<span class="co"># The red balls that are not attached to anything are water molecules</span>
+<span class="co"># they can be hidden</span>
+<span class="op">&gt;</span>HideRes HOH
+
+<span class="co"># Style as ribbon and show the side chains</span>
+<span class="op">&gt;</span>Style Ribbon
+<span class="op">&gt;</span>ShowRes all
+
+<span class="co"># Hide the atoms in the sidechain</span>
+<span class="op">&gt;</span>HideAtom backbone
+
+<span class="co"># Hide all of the secondary structure</span>
+<span class="op">&gt;</span>HideSecStrAll
+
+<span class="co"># Show lys amino acids</span>
+<span class="op">&gt;</span>ShowRes lys</code></pre></div>
+</div>
 </div>
 <div id="colors" class="section level2">
 <h2><span class="header-section-number">5.3</span> Setting the Colors of the Model</h2>
@@ -393,7 +422,7 @@ Figure 5.2: Results of Style commands or Function keys in YASARA
 <p>View&gt;Color&gt;<em>Select organization level</em>, then pick your Obj/Mol/Res, and pick your color as shown in the color menu in Figure <a href="manipulating-the-model.html#fig:colormenu">5.3</a>.</p>
 <p>Once you have made your selection, click “Apply Unique Color” to apply the single color or you can apply a color gradient. The gradient option is not used frequently and the <code>SearchDoc</code> command can provide more information.</p>
 <div class="figure"><span id="fig:colormenu"></span>
-<img src="../YASARA_guide/images/colormenu.PNG" alt="YASARA color menu" width="150%" />
+<img src="../YASARA_guide/images/colormenu.PNG" alt="YASARA color menu" width="120%" />
 <p class="caption">
 Figure 5.3: YASARA color menu
 </p>
@@ -402,7 +431,6 @@ Figure 5.3: YASARA color menu
 <p>Examples of using the command line method for coloring a model or parts of a model are shown below. The general format is use <code>Color</code> with your level of organization, then your target(s) to color followed by a comma and the color. The color can be described by name or number from the color wheel. Amino acids can be referred to by number, three letter code, three letter code and number.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Load 1UBQ from the RCSB</span>
 <span class="op">&gt;</span>LoadPDB 1ubq, download=yes
-
 
 <span class="co"># Color the whole object as blue</span>
 <span class="op">&gt;</span>ColorObj <span class="dv">1</span>, blue
@@ -431,7 +459,7 @@ Figure 5.3: YASARA color menu
 
 <span class="co"># Show model as ribbon with sidechains</span>
 <span class="op">&gt;</span>Style Ribbon
-Style Sidechain=BallStick
+<span class="op">&gt;</span>Style Sidechain=BallStick
 
 <span class="co"># Color Obj by element</span>
 <span class="op">&gt;</span>ColorObj <span class="dv">1</span>, element
@@ -441,16 +469,67 @@ Style Sidechain=BallStick
 </div>
 <div id="changing-the-color-scheme" class="section level3">
 <h3><span class="header-section-number">5.3.3</span> Changing the color scheme</h3>
-<p>You can change these feature color schemes by:</p>
+<p>You can change the feature color schemes by:</p>
 <p>View&gt;Color&gt;Parameters, then choosing the scheme (e.g. element, restype) to change, and setting your element and color.</p>
 <p>Only one element color can be changed at a time. You can also restore the defaults if you messed up!</p>
 </div>
 </div>
 <div id="surfaces" class="section level2">
 <h2><span class="header-section-number">5.4</span> Adding a surface</h2>
+<p>Surfaces are another valuable element for visualizing biomolecules. Surfaces can show pockets where ligands or substrates bind as well as the volume occupied by elements of a structure. In combination with coloring and transparency you can also create some fun looking graphics (<a href="manipulating-the-model.html#fig:surfaceex">5.4</a>).</p>
+<div class="figure"><span id="fig:surfaceex"></span>
+<img src="../YASARA_guide/images/ubsurface.PNG" alt="Surface representation of 1Ubq colored by residue type" width="120%" />
+<p class="caption">
+Figure 5.4: Surface representation of 1Ubq colored by residue type
+</p>
 </div>
-<div id="knowledge-self-checks-2" class="section level2">
-<h2><span class="header-section-number">5.5</span> Knowledge Self-Checks<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a></h2>
+<p>To create a surface using the menu</p>
+<p>View&gt;Show surface of&gt;<em>Pick your level of organization</em>, then choose your type of surface. The types of surfaces are:</p>
+<ul>
+<li><p><strong>van der Waals</strong> – surface shows the atom radii</p></li>
+<li><p><strong>Molecular</strong> – a smoothed combination of the model atomic radius and the surface created by rolling a water molecule over the model</p></li>
+<li><p><strong>Solvent accessible</strong> – the van der Waals radius plus the radius of water</p></li>
+</ul>
+<p>Typically the molecular surface is the most valuable for visualization and is the most realistic. For more information on how the surfaces are generated use the <code>SearchDoc</code> command searching for surface or watch Help Movies 2.2, 2.3 and 2.4 in YASARA.</p>
+<p>In addition to the surface type you can also pick the color and transparency of the surface. The menu is shown in Figure <a href="manipulating-the-model.html#fig:surfmenu">5.5</a>. The color is chosen as in Section <a href="manipulating-the-model.html#colors">5.3</a> using the words or color wheel. Alpha is the transparency value. An alpha of 100 is completely opaque while a value of 0 is completely transparent. The transparency of the surface in Figure <a href="manipulating-the-model.html#fig:surfaceex">5.4</a> was 30. An additional option is to color the inside of the surface which is general unnecessary but can be fun to experiment with.</p>
+<div class="figure"><span id="fig:surfmenu"></span>
+<img src="../YASARA_guide/images/surfmenu.PNG" alt="Surface color and transparency menu" width="120%" />
+<p class="caption">
+Figure 5.5: Surface color and transparency menu
+</p>
+</div>
+<p>To generate a surface using the command line you use the <code>ShowSurf</code> command as shown below. You must specific what parts of the scene to make the surface (Obj/Mol/Res/Atom), the type of surface, the <code>OutCol</code> which is the outside color, and the <code>OutAlpha</code> which is the alpha value.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load 1UBQ from the RCSB</span>
+<span class="op">&gt;</span>LoadPDB 1ubq, download=yes
+
+<span class="co"># Show model as ribbon with sidechains</span>
+<span class="op">&gt;</span>Style Ribbon
+<span class="op">&gt;</span>Style Sidechain=BallStick
+
+<span class="co"># Make a blue molecular surface over the entire object</span>
+<span class="op">&gt;</span>ShowSurfObj <span class="dv">1</span>, type =<span class="st"> </span>molecular, Outcol =<span class="st"> </span>blue, OutAlpha =<span class="st"> </span><span class="dv">100</span>
+
+<span class="co"># Make a red transparent molecular surface around all the lysine residues</span>
+<span class="op">&gt;</span>ShowSurfRes lys, type =<span class="st"> </span>molecular, Outcol =<span class="st"> </span>red, OutAlpha =<span class="st"> </span><span class="dv">40</span>
+
+<span class="co"># Make a green transparent van der Waals surface around the obj</span>
+<span class="op">&gt;</span>ShowSurfObj <span class="dv">1</span>, type =<span class="st"> </span>VdW, Outcol =<span class="st"> </span>green, OutAlpha =<span class="st"> </span><span class="dv">20</span></code></pre></div>
+<div id="hiding-a-surface" class="section level3">
+<h3><span class="header-section-number">5.4.1</span> Hiding a surface</h3>
+<p>To hide all surfaces using <code>HideSurfAll</code>.</p>
+</div>
+</div>
+<div id="knowledge-self-check" class="section level2">
+<h2><span class="header-section-number">5.5</span> Knowledge Self-Check<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a></h2>
+<ol style="list-style-type: decimal">
+<li>Try to re-create the image in Figure <a href="manipulating-the-model.html#fig:fivecheck">5.6</a> using PDB <a href="http://www.rcsb.org/structure/1QSN">1QSN</a>. You will use commands from this chapter as well as the previous chapter to make the figure. List the commands.</li>
+</ol>
+<div class="figure"><span id="fig:fivecheck"></span>
+<img src="../YASARA_guide/images/teststructure.PNG" alt="Your mission, if you choose to accept it" width="120%" />
+<p class="caption">
+Figure 5.6: Your mission, if you choose to accept it
+</p>
+</div>
 
 </div>
 </div>

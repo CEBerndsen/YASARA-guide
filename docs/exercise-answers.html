@@ -171,14 +171,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="manipulating-the-model.html"><a href="manipulating-the-model.html#style"><i class="fa fa-check"></i><b>5.2</b> Changing how the model looks</a><ul>
 <li class="chapter" data-level="5.2.1" data-path="manipulating-the-model.html"><a href="manipulating-the-model.html#stylizing-individual-amino-acids"><i class="fa fa-check"></i><b>5.2.1</b> Stylizing individual amino acids</a></li>
+<li class="chapter" data-level="5.2.2" data-path="manipulating-the-model.html"><a href="manipulating-the-model.html#showing-and-hiding-atoms-and-amino-acids"><i class="fa fa-check"></i><b>5.2.2</b> Showing and Hiding Atoms and Amino Acids</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="manipulating-the-model.html"><a href="manipulating-the-model.html#colors"><i class="fa fa-check"></i><b>5.3</b> Setting the Colors of the Model</a><ul>
 <li class="chapter" data-level="5.3.1" data-path="manipulating-the-model.html"><a href="manipulating-the-model.html#color-wheel"><i class="fa fa-check"></i><b>5.3.1</b> Color Wheel</a></li>
 <li class="chapter" data-level="5.3.2" data-path="manipulating-the-model.html"><a href="manipulating-the-model.html#color-by-element-and-other-features"><i class="fa fa-check"></i><b>5.3.2</b> Color by Element and other features</a></li>
 <li class="chapter" data-level="5.3.3" data-path="manipulating-the-model.html"><a href="manipulating-the-model.html#changing-the-color-scheme"><i class="fa fa-check"></i><b>5.3.3</b> Changing the color scheme</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="manipulating-the-model.html"><a href="manipulating-the-model.html#surfaces"><i class="fa fa-check"></i><b>5.4</b> Adding a surface</a></li>
-<li class="chapter" data-level="5.5" data-path="manipulating-the-model.html"><a href="manipulating-the-model.html#knowledge-self-checks-2"><i class="fa fa-check"></i><b>5.5</b> Knowledge Self-Checks</a></li>
+<li class="chapter" data-level="5.4" data-path="manipulating-the-model.html"><a href="manipulating-the-model.html#surfaces"><i class="fa fa-check"></i><b>5.4</b> Adding a surface</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="manipulating-the-model.html"><a href="manipulating-the-model.html#hiding-a-surface"><i class="fa fa-check"></i><b>5.4.1</b> Hiding a surface</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="manipulating-the-model.html"><a href="manipulating-the-model.html#knowledge-self-check"><i class="fa fa-check"></i><b>5.5</b> Knowledge Self-Check</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="exercise-answers.html"><a href="exercise-answers.html"><i class="fa fa-check"></i><b>6</b> Exercise Answers</a><ul>
 <li class="chapter" data-level="6.1" data-path="exercise-answers.html"><a href="exercise-answers.html#threekey"><i class="fa fa-check"></i><b>6.1</b> Chapter 3</a></li>
@@ -246,6 +249,29 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="fivekey" class="section level2">
 <h2><span class="header-section-number">6.3</span> Chapter 5</h2>
+<div class="figure"><span id="fig:fiveanswers"></span>
+<img src="../YASARA_guide/images/teststructure.PNG" alt="Did you make it?" width="120%" />
+<p class="caption">
+Figure 6.1: Did you make it?
+</p>
+</div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Load PDB</span>
+<span class="op">&gt;</span>LoadPDB 1qsn, download=yes
+
+<span class="co"># Position and Orient the molecule</span>
+<span class="op">&gt;</span>PosOriObj <span class="dv">01</span>, X=<span class="fl">0.000</span>, Y=<span class="fl">0.000</span>, Z=<span class="dv">75</span>, Alpha=<span class="dv">45</span>, Beta=<span class="dv">190</span>, Gamma=<span class="dv">50</span>
+
+<span class="co"># Make the surface </span>
+<span class="op">&gt;</span>ShowSurfMol atom <span class="dv">1</span>, type=molecular, OutCol =<span class="st"> </span>red, OutAlpha =<span class="st"> </span><span class="dv">40</span>
+
+<span class="co"># Stylize the coenzyme A</span>
+<span class="op">&gt;</span>BallRes coa
+
+<span class="co"># Show the amino acid side chains in the peptide</span>
+<span class="op">&gt;</span>ShowRes Mol B
+
+<span class="co"># Hide the enzyme secondary structure</span>
+<span class="op">&gt;</span>HideSecStrMol atom <span class="dv">1</span></code></pre></div>
 
 </div>
 </div>

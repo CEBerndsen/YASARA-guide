@@ -62,4 +62,30 @@
 
 ## Chapter 5 {#fivekey}
 
+```{r fiveanswers, echo=FALSE, warning=FALSE, message=FALSE, out.width="120%", fig.cap="Did you make it?"}
+knitr::include_graphics("../YASARA_guide/images/teststructure.PNG")
+
+
+```
+
+```{r fiveanswerscmd, echo=TRUE, eval=FALSE}
+#Load PDB
+>LoadPDB 1qsn, download=yes
+
+# Position and Orient the molecule
+>PosOriObj 01, X=0.000, Y=0.000, Z=75, Alpha=45, Beta=190, Gamma=50
+
+# Make the surface 
+>ShowSurfMol atom 1, type=molecular, OutCol = red, OutAlpha = 40
+
+# Stylize the coenzyme A
+>BallRes coa
+
+# Show the amino acid side chains in the peptide
+>ShowRes Mol B
+
+# Hide the enzyme secondary structure
+>HideSecStrMol atom 1
+
+```
 

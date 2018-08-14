@@ -167,7 +167,7 @@ plot_grid(ubball, ubballstick, ubstick, ubtrace, ubribbon, ubss, ubsstwo, ubside
 
 ### Stylizing individual amino acids
 
-It is possible to take the views in Figure \@ref(fog:stylepics) and apply them to a subset of amino acids or atoms in YASARA. 
+It is possible to take the views in Figure \@ref(fig:stylepics) and apply them to a subset of amino acids or atoms in YASARA. 
 
 From the menu, you would go:
 
@@ -192,6 +192,39 @@ Notice the commands for individual levels are a bit different from those of the 
 
 In addition, you can left-click on an atom, then right-click on the same atom to bring up the pop-up menu. Style is one of the options that you can set here and the sub-menus are similar to those above using the top menu. 
 
+### Showing and Hiding Atoms and Amino Acids
+
+Sometimes you only want to see certain parts of the molecule or show sidechains for certain amino acids. This is where the `Show` and `Hide` commands are useful. As suggested by the names, these commands show or hide parts of the molecule. The code below shows several examples for each.
+
+```{r showhide, echo=TRUE, eval=FALSE}
+#Load 1UBQ from the RCSB
+>LoadPDB 1ubq, download=yes
+
+#Style entire molecule as Ball and Stick
+>Style BallStick
+
+# The red balls that are not attached to anything are water molecules
+# they can be hidden
+>HideRes HOH
+
+# Style as ribbon and show the side chains
+>Style Ribbon
+>ShowRes all
+
+# Hide the atoms in the sidechain
+>HideAtom backbone
+
+# Hide all of the secondary structure
+>HideSecStrAll
+
+# Show lys amino acids
+>ShowRes lys
+
+
+
+```
+
+
 
 ## Setting the Colors of the Model {#colors}
 
@@ -203,7 +236,7 @@ View>Color>*Select organization level*, then pick your Obj/Mol/Res, and pick you
 
 Once you have made your selection, click "Apply Unique Color" to apply the single color or you can apply a color gradient. The gradient option is not used frequently and the `SearchDoc` command can provide more information.
 
-```{r colormenu, eval = TRUE, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="YASARA color menu", out.width="150%"}
+```{r colormenu, eval = TRUE, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="YASARA color menu", out.width="120%"}
 knitr::include_graphics("../YASARA_guide/images/colormenu.PNG")
 
 
@@ -216,7 +249,6 @@ Examples of using the command line method for coloring a model or parts of a mod
 ```{r colorcmd, echo=TRUE, warning=FALSE, message=FALSE, eval=FALSE}
 #Load 1UBQ from the RCSB
 >LoadPDB 1ubq, download=yes
-
 
 # Color the whole object as blue
 >ColorObj 1, blue
@@ -265,7 +297,7 @@ In addition to coloring models by specific colors, you can also color be specifi
 
 ### Changing the color scheme
 
-You can change these feature color schemes by:
+You can change the feature color schemes by:
 
 View>Color>Parameters, then choosing the scheme (e.g. element, restype) to change, and setting your element and color. 
 
@@ -273,4 +305,66 @@ Only one element color can be changed at a time. You can also restore the defaul
 
 ## Adding a surface {#surfaces}
 
-## Knowledge Self-Checks^[Answers can be found in Chapter \@ref(fivekey)]
+Surfaces are another valuable element for visualizing biomolecules. Surfaces can show pockets where ligands or substrates bind as well as the volume occupied by elements of a structure. In combination with coloring and transparency you can also create some fun looking graphics (\@ref(fig:surfaceex)).
+
+```{r surfaceex, echo=FALSE, warning=FALSE, message=FALSE, out.width="120%", fig.cap="Surface representation of 1Ubq colored by residue type"}
+
+knitr::include_graphics("../YASARA_guide/images/ubsurface.PNG")
+
+```
+
+To create a surface using the menu
+
+View>Show surface of>*Pick your level of organization*, then choose your type of surface. The types of surfaces are:
+
+  * **van der Waals** -- surface shows the atom radii
+  
+  * **Molecular** -- a smoothed combination of the model atomic radius and the surface created by rolling a water molecule over the model
+  
+  * **Solvent accessible** -- the van der Waals radius plus the radius of water
+
+Typically the molecular surface is the most valuable for visualization and is the most realistic.  For more information on how the surfaces are generated use the `SearchDoc` command searching for surface or watch Help Movies 2.2, 2.3 and 2.4 in YASARA. 
+
+In addition to the surface type you can also pick the color and transparency of the surface. The menu is shown in Figure \@ref(fig:surfmenu). The color is chosen as in Section \@ref(colors) using the words or color wheel. Alpha is the transparency value. An alpha of 100 is completely opaque while a value of 0 is completely transparent. The transparency of the surface in Figure \@ref(fig:surfaceex) was 30. An additional option is to color the inside of the surface which is general unnecessary but can be fun to experiment with.
+
+```{r surfmenu, echo=FALSE, warning=FALSE, message=FALSE, out.width="120%", fig.cap="Surface color and transparency menu"}
+knitr::include_graphics("../YASARA_guide/images/surfmenu.PNG")
+
+```
+
+To generate a surface using the command line you use the `ShowSurf` command as shown below. You must specific what parts of the scene to make the surface (Obj/Mol/Res/Atom), the type of surface, the `OutCol` which is the outside color, and the `OutAlpha` which is the alpha value.
+
+```{r surfcode, echo=TRUE, eval=FALSE}
+# Load 1UBQ from the RCSB
+>LoadPDB 1ubq, download=yes
+
+# Show model as ribbon with sidechains
+>Style Ribbon
+>Style Sidechain=BallStick
+
+# Make a blue molecular surface over the entire object
+>ShowSurfObj 1, type = molecular, Outcol = blue, OutAlpha = 100
+
+# Make a red transparent molecular surface around all the lysine residues
+>ShowSurfRes lys, type = molecular, Outcol = red, OutAlpha = 40
+
+# Make a green transparent van der Waals surface around the obj
+>ShowSurfObj 1, type = VdW, Outcol = green, OutAlpha = 20
+
+```
+
+### Hiding a surface
+
+To hide all surfaces using `HideSurfAll`. 
+
+
+## Knowledge Self-Check^[Answers can be found in Chapter \@ref(fivekey)]
+
+  1. Try to re-create the image in Figure \@ref(fig:fivecheck) using PDB [1QSN](http://www.rcsb.org/structure/1QSN). You will use commands from this chapter as well as the previous chapter to make the figure. List the commands.
+
+```{r fivecheck, echo=FALSE, warning=FALSE, message=FALSE, out.width="120%", fig.cap="Your mission, if you choose to accept it"}
+knitr::include_graphics("../YASARA_guide/images/teststructure.PNG")
+
+
+```
+
