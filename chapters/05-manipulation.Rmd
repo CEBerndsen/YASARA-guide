@@ -4,22 +4,110 @@ This chapter will be one of the more useful for students who are using YASARA to
 
 ## Position and orienting the model {#orient}
 
-*This section will focus on mouse and command line based commands. For keyboard based commands, I highly recommend watching the help movie on Working with YASARA found under Help>Play Help Movie, then select 1.1. Working with YASARA.*
+*I will focus on mouse and command line based commands. For keyboard based commands, I highly recommend watching the help movie on Working with YASARA found under Help>Play Help Movie, then select 1.1. Working with YASARA.*
 
-Models in YASARA can be manipulated in many ways, however setting how the model looks in window is the simplest command but often the most difficult setting to master. Table \@ref(tab:mousetable) shows the basic mouse commands used in YASARA. If you have a three-button mouse, YASARA is very straightforward to use. However, the differences in the Mac and Windows/Linux actions with a mouse can create some issues. 
+Models in YASARA can be manipulated in many ways. Setting how the model is arrayed in the window is among the simplest command, but often the most difficult setting to master. Table \@ref(tab:mousetable) shows the basic mouse commands used in YASARA. If you have a three-button mouse, YASARA is very straightforward to use. However, the differences in the Mac and Windows/Linux actions with a mouse can create some issues. 
+
 
 ```{r mousetable, echo=FALSE, warning=FALSE, messages=FALSE}
 library(tidyverse)
 
-mousedf <- tibble("Mouse Action" = c("Left + move", "Center + move", "Right + move", "Left-click on an atom", "Left-click on an atom, then right-click"),
-                      "Mac Track Pad" = c("One-finger press and move", "Not available", "Two-finger press and move", "One finger click", "One-finger click then Two-finger click"),
-                      "YASARA action" = c("Rotate about center", "Move in plane of screen", "Zoom in or out", "Select Atom", "Select Atom and Bring up pop-up menu"))
+mousedf <- tibble("YASARA action" = c("Rotate model", "Move in plane of screen", "Zoom in or out", "Select Atom", "Select Atom and Bring up pop-up menu"),
+                  "Mouse Action" = c("Left + move", "Center + move", "Right + move", "Left-click on an atom", "Left-click on an atom, then right-click"),
+                  "Mac Track Pad" = c("One-finger press and move", "Not available", "Two-finger press and move", "One finger click", "One-finger click then Two-finger click")
+                      )
 
 knitr::kable(mousedf,  caption = "Table of Mouse-based commands in YASARA")
 
 ```
 
+### Making Reproducible Views
 
+How a molecule is alinged within the viewing window is dependent on two aspects *Position* and *Orientation*. Position is the coordinates of the Obj/Mol/Res/Atom within the viewing window. In YASARA, position is described by X, Y, and Z values which are given in Angstroms and can be both positive and negative. Orientation is the rotation of the molecule in the window defined by Alpha, Beta, and Gamma angles given in units of degrees.
+
+The orientation and position of a molecule can be found via the menus by:
+
+Effects>Position>Get for Obj, and then select the Obj
+
+and
+
+Effects>Orientation>Get for Obj, and then select the Obj
+
+For either action, the values are returned in the command line.
+
+I find it is easier to use the command line as there is a single command that gives *both* position and orientation.
+
+```{r posori, eval=FALSE, echo=TRUE, warning=FALSE, message=FALSE}
+#Open the command line and load a test molecule from the RCSB
+>LoadPDB 1UBQ, download=yes
+
+#Retrieve the Position and Orientation
+>PosOriObj 1
+#Response from YASARA
+PosOriObj 01, X=0.000, Y=0.000, Z=50.000, Alpha=0.000, Beta=0.000, Gamma=0.000
+
+# You can do Pos and Ori commands separately as well
+>PosObj 1
+#Response from YASARA
+Obj 01: X=0.000, Y=0.000, Z=50.000 A
+
+>OriObj 1
+#Response from YASARA
+Obj 01: Alpha=0.000, Beta=0.000, Gamma=0.000 deg
+
+```
+
+The `PosOriObj` command can also set the orientation so that you can always return to the same view. This seems useless until you need to make figures such as of mutated or altered models and you want the same view for easy comparison by your reader. A simple way to change the position is the call the `PosOriObj`  command and then copy the result back into the command line which can now be edited. Once you make your changes, press enter and the model will move. One key point is that these positions and orientations are **absolute** based on the starting position of the molecule, they are not relative. So applying the same `PosOriObj` command repeatedly will produce the same orientation. 
+
+The code chunk below shows a series of commands and Figure \@ref(fig:posoripics) shows how the molecule changes position.
+
+```{r posorifun, eval=FALSE, echo=TRUE, warning=FALSE, message=FALSE}
+#Open the command line and load a test molecule from the RCSB
+>LoadPDB 1UBQ, download=yes
+
+#Retrieve the Position and Orientation
+>PosOriObj 1
+
+#Initial position after loading
+PosOriObj 01, X=0.000, Y=0.000, Z=50.000, Alpha=0.000, Beta=0.000, Gamma=0.000
+
+#Move the model 40 A closer by changing Z
+>PosOriObj 01, X=0.000, Y=0.000, Z=10.000, Alpha=0.000, Beta=0.000, Gamma=0.000
+
+#Rotate about the Gamma axis
+>PosOriObj 01, X=0.000, Y=0.000, Z=50.000, Alpha=0.000, Beta=0.000, Gamma=90.000
+
+# Move model 10 A up, 10 A closer, rotate 20 degrees around Beta 
+# and 10 degrees around Gamma axis
+>PosOriObj 01, X=0.000, Y=10.000, Z=40.000, Alpha=0.000, Beta=20.000, Gamma=10.000
+```
+
+```{r posoripics, eval=TRUE, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Change in the view of the 1UBQ model using the PosOriObj commands"}
+#Load images
+ubone <- image_read("../YASARA_guide/images/uborigen.PNG")
+ubtwo <- image_read("../YASARA_guide/images/uboritwo.PNG")
+ubthree <- image_read("../YASARA_guide/images/uborithree.PNG")
+ubfour <- image_read("../YASARA_guide/images/uborifour.PNG")
+
+ubone <- image_border(image_background(ubone, "white"), "#FFFFFF", "0x80")
+ubtwo <- image_border(image_background(ubtwo, "white"), "#FFFFFF", "0x80")
+ubthree <- image_border(image_background(ubthree, "white"), "#FFFFFF", "0x80")
+ubfour <- image_border(image_background(ubfour, "white"), "#FFFFFF", "0x80")
+
+ubone <- ggdraw() + draw_image(ubone)
+ubtwo <- ggdraw() + draw_image(ubtwo)
+ubthree <- ggdraw() + draw_image(ubthree)
+ubfour <- ggdraw() + draw_image(ubfour)
+
+plot_grid(ubone, ubtwo, ubthree, ubfour,  
+          align = "v", 
+          hjust = c(0, 0, -0.0, -0.0), 
+          labels = c("Initial", "Z = 10", "Gamma = 90", "Y = 10, Z = 40, Beta = 20, Gamma = 10")) 
+
+
+```
+
+Making note of good orientations and positions by using `PosOriObj` is a huge time saver and makes your figures look more professional.
 
 ## Changing how the model looks {#style}
 

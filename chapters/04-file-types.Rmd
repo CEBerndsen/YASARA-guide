@@ -26,8 +26,6 @@ pdbat <- ggdraw() + draw_image(pdbat)
 
 plot_grid(pdbh, pdbat, labels = c("Header", "Atom Information"))
 
-dev.off()
-
 ```
 
 .pdb files are easy to move across several programs but are limited in that they contain only location information and the reliability of those locations. Any manipulations that are performed to color or stylize the molecule are not included.
@@ -237,7 +235,10 @@ sap <- ggdraw() + draw_image(sap)
 sam1 <- ggdraw() + draw_image(sam1)
 sam2 <- ggdraw() + draw_image(sam2)
 
-plot_grid(sa, sap, sam1, sam2, labels = c("File", "Save As", "Select Obj(s)", "Select Filename and Destination"), nrow =  2, align = "both", axis = c("l", "t"))
+plot_grid(sa, sap, sam1, sam2, 
+          labels = c("File", "Save As", "Select Obj(s)", "Select Filename and Destination"), 
+          nrow =  2, align = "both", axis = c("l", "t"),
+          hjust = c(0, 0, 0, 0))
 
 
 ```
@@ -272,7 +273,8 @@ saveyob <- ggdraw() + draw_image(saveyob)
 
 lower <- plot_grid(saveyob, nrow = 1)
 
-plot_grid(sa, sap, lower, labels = c("File", "Save As", "Pick Obj, File name, and Destination"))
+plot_grid(sa, sap, lower, labels = c("File", "Save As", "Pick Obj, File name, and Destination"),
+          hjust = c(0, 0, 0))
 
 
 ```

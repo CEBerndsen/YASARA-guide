@@ -25,7 +25,7 @@
 <meta name="author" content="Chris Berndsen">
 
 
-<meta name="date" content="2018-08-13">
+<meta name="date" content="2018-08-14">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -166,7 +166,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4.6" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#knowledge-self-checks-1"><i class="fa fa-check"></i><b>4.6</b> Knowledge Self-Checks</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="manipulating-the-model.html"><a href="manipulating-the-model.html"><i class="fa fa-check"></i><b>5</b> Manipulating the model</a><ul>
-<li class="chapter" data-level="5.1" data-path="manipulating-the-model.html"><a href="manipulating-the-model.html#orient"><i class="fa fa-check"></i><b>5.1</b> Position and orienting the model</a></li>
+<li class="chapter" data-level="5.1" data-path="manipulating-the-model.html"><a href="manipulating-the-model.html#orient"><i class="fa fa-check"></i><b>5.1</b> Position and orienting the model</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="manipulating-the-model.html"><a href="manipulating-the-model.html#making-reproducible-views"><i class="fa fa-check"></i><b>5.1.1</b> Making Reproducible Views</a></li>
+</ul></li>
 <li class="chapter" data-level="5.2" data-path="manipulating-the-model.html"><a href="manipulating-the-model.html#style"><i class="fa fa-check"></i><b>5.2</b> Changing how the model looks</a></li>
 <li class="chapter" data-level="5.3" data-path="manipulating-the-model.html"><a href="manipulating-the-model.html#colors"><i class="fa fa-check"></i><b>5.3</b> Setting colors</a></li>
 <li class="chapter" data-level="5.4" data-path="manipulating-the-model.html"><a href="manipulating-the-model.html#surfaces"><i class="fa fa-check"></i><b>5.4</b> Adding a surface</a></li>
@@ -202,45 +204,98 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>This chapter will be one of the more useful for students who are using YASARA to make professional and informative looking figures. We will cover how to Position and orient molecules manually and reproducibly (<a href="manipulating-the-model.html#orient">5.1</a>) and then stylize the molecule using different representations (<a href="manipulating-the-model.html#style">5.2</a>), colors (<a href="manipulating-the-model.html#colors">5.3</a>), and how to make surface representations (<a href="manipulating-the-model.html#surfaces">5.4</a>). Chapter 7 will cover how to label (<a href="#labels"><strong>??</strong></a>) and change the color of your background (<a href="#background"><strong>??</strong></a>),</p>
 <div id="orient" class="section level2">
 <h2><span class="header-section-number">5.1</span> Position and orienting the model</h2>
-<p><em>This section will focus on mouse and command line based commands. For keyboard based commands, I highly recommend watching the help movie on Working with YASARA found under Help&gt;Play Help Movie, then select 1.1. Working with YASARA.</em></p>
-<p>Models in YASARA can be manipulated in many ways, however setting how the model looks in window is the simplest command but often the most difficult setting to master. Table <a href="manipulating-the-model.html#tab:mousetable">5.1</a> shows the basic mouse commands used in YASARA. If you have a three-button mouse, YASARA is very straightforward to use. However, the differences in the Mac and Windows/Linux actions with a mouse can create some issues.</p>
+<p><em>I will focus on mouse and command line based commands. For keyboard based commands, I highly recommend watching the help movie on Working with YASARA found under Help&gt;Play Help Movie, then select 1.1. Working with YASARA.</em></p>
+<p>Models in YASARA can be manipulated in many ways. Setting how the model is arrayed in the window is among the simplest command, but often the most difficult setting to master. Table <a href="manipulating-the-model.html#tab:mousetable">5.1</a> shows the basic mouse commands used in YASARA. If you have a three-button mouse, YASARA is very straightforward to use. However, the differences in the Mac and Windows/Linux actions with a mouse can create some issues.</p>
 <table>
 <caption><span id="tab:mousetable">Table 5.1: </span>Table of Mouse-based commands in YASARA</caption>
 <thead>
 <tr class="header">
+<th align="left">YASARA action</th>
 <th align="left">Mouse Action</th>
 <th align="left">Mac Track Pad</th>
-<th align="left">YASARA action</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
+<td align="left">Rotate model</td>
 <td align="left">Left + move</td>
 <td align="left">One-finger press and move</td>
-<td align="left">Rotate about center</td>
 </tr>
 <tr class="even">
+<td align="left">Move in plane of screen</td>
 <td align="left">Center + move</td>
 <td align="left">Not available</td>
-<td align="left">Move in plane of screen</td>
 </tr>
 <tr class="odd">
+<td align="left">Zoom in or out</td>
 <td align="left">Right + move</td>
 <td align="left">Two-finger press and move</td>
-<td align="left">Zoom in or out</td>
 </tr>
 <tr class="even">
+<td align="left">Select Atom</td>
 <td align="left">Left-click on an atom</td>
 <td align="left">One finger click</td>
-<td align="left">Select Atom</td>
 </tr>
 <tr class="odd">
+<td align="left">Select Atom and Bring up pop-up menu</td>
 <td align="left">Left-click on an atom, then right-click</td>
 <td align="left">One-finger click then Two-finger click</td>
-<td align="left">Select Atom and Bring up pop-up menu</td>
 </tr>
 </tbody>
 </table>
+<div id="making-reproducible-views" class="section level3">
+<h3><span class="header-section-number">5.1.1</span> Making Reproducible Views</h3>
+<p>How a molecule is alinged within the viewing window is dependent on two aspects <em>Position</em> and <em>Orientation</em>. Position is the coordinates of the Obj/Mol/Res/Atom within the viewing window. In YASARA, position is described by X, Y, and Z values which are given in Angstroms and can be both positive and negative. Orientation is the rotation of the molecule in the window defined by Alpha, Beta, and Gamma angles given in units of degrees.</p>
+<p>The orientation and position of a molecule can be found via the menus by:</p>
+<p>Effects&gt;Position&gt;Get for Obj, and then select the Obj</p>
+<p>and</p>
+<p>Effects&gt;Orientation&gt;Get for Obj, and then select the Obj</p>
+<p>For either action, the values are returned in the command line.</p>
+<p>I find it is easier to use the command line as there is a single command that gives <em>both</em> position and orientation.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Open the command line and load a test molecule from the RCSB</span>
+<span class="op">&gt;</span>LoadPDB 1UBQ, download=yes
+
+<span class="co">#Retrieve the Position and Orientation</span>
+<span class="op">&gt;</span>PosOriObj <span class="dv">1</span>
+<span class="co">#Response from YASARA</span>
+PosOriObj <span class="dv">01</span>, X=<span class="fl">0.000</span>, Y=<span class="fl">0.000</span>, Z=<span class="fl">50.000</span>, Alpha=<span class="fl">0.000</span>, Beta=<span class="fl">0.000</span>, Gamma=<span class="fl">0.000</span>
+
+<span class="co"># You can do Pos and Ori commands separately as well</span>
+<span class="op">&gt;</span>PosObj <span class="dv">1</span>
+<span class="co">#Response from YASARA</span>
+Obj <span class="dv">01</span><span class="op">:</span><span class="st"> </span>X=<span class="fl">0.000</span>, Y=<span class="fl">0.000</span>, Z=<span class="fl">50.000</span> A
+
+<span class="op">&gt;</span>OriObj <span class="dv">1</span>
+<span class="co">#Response from YASARA</span>
+Obj <span class="dv">01</span><span class="op">:</span><span class="st"> </span>Alpha=<span class="fl">0.000</span>, Beta=<span class="fl">0.000</span>, Gamma=<span class="fl">0.000</span> deg</code></pre></div>
+<p>The <code>PosOriObj</code> command can also set the orientation so that you can always return to the same view. This seems useless until you need to make figures such as of mutated or altered models and you want the same view for easy comparison by your reader. A simple way to change the position is the call the <code>PosOriObj</code> command and then copy the result back into the command line which can now be edited. Once you make your changes, press enter and the model will move. One key point is that these positions and orientations are <strong>absolute</strong> based on the starting position of the molecule, they are not relative. So applying the same <code>PosOriObj</code> command repeatedly will produce the same orientation.</p>
+<p>The code chunk below shows a series of commands and Figure <a href="manipulating-the-model.html#fig:posoripics">5.1</a> shows how the molecule changes position.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Open the command line and load a test molecule from the RCSB</span>
+<span class="op">&gt;</span>LoadPDB 1UBQ, download=yes
+
+<span class="co">#Retrieve the Position and Orientation</span>
+<span class="op">&gt;</span>PosOriObj <span class="dv">1</span>
+
+<span class="co">#Initial position after loading</span>
+PosOriObj <span class="dv">01</span>, X=<span class="fl">0.000</span>, Y=<span class="fl">0.000</span>, Z=<span class="fl">50.000</span>, Alpha=<span class="fl">0.000</span>, Beta=<span class="fl">0.000</span>, Gamma=<span class="fl">0.000</span>
+
+<span class="co">#Move the model 40 A closer by changing Z</span>
+<span class="op">&gt;</span>PosOriObj <span class="dv">01</span>, X=<span class="fl">0.000</span>, Y=<span class="fl">0.000</span>, Z=<span class="fl">10.000</span>, Alpha=<span class="fl">0.000</span>, Beta=<span class="fl">0.000</span>, Gamma=<span class="fl">0.000</span>
+
+<span class="co">#Rotate about the Gamma axis</span>
+<span class="op">&gt;</span>PosOriObj <span class="dv">01</span>, X=<span class="fl">0.000</span>, Y=<span class="fl">0.000</span>, Z=<span class="fl">50.000</span>, Alpha=<span class="fl">0.000</span>, Beta=<span class="fl">0.000</span>, Gamma=<span class="fl">90.000</span>
+
+<span class="co"># Move model 10 A up, 10 A closer, rotate 20 degrees around Beta </span>
+<span class="co"># and 10 degrees around Gamma axis</span>
+<span class="op">&gt;</span>PosOriObj <span class="dv">01</span>, X=<span class="fl">0.000</span>, Y=<span class="fl">10.000</span>, Z=<span class="fl">40.000</span>, Alpha=<span class="fl">0.000</span>, Beta=<span class="fl">20.000</span>, Gamma=<span class="fl">10.000</span></code></pre></div>
+<div class="figure"><span id="fig:posoripics"></span>
+<img src="YASARA-guide_files/figure-html/posoripics-1.png" alt="Change in the view of the 1UBQ model using the PosOriObj commands" width="672" />
+<p class="caption">
+Figure 5.1: Change in the view of the 1UBQ model using the PosOriObj commands
+</p>
+</div>
+<p>Making note of good orientations and positions by using <code>PosOriObj</code> is a huge time saver and makes your figures look more professional.</p>
+</div>
 </div>
 <div id="style" class="section level2">
 <h2><span class="header-section-number">5.2</span> Changing how the model looks</h2>

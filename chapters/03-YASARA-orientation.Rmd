@@ -150,7 +150,7 @@ Help>Search User Manual^[Remember that menu commands will be designated as Menu 
 
 **OR**
 
-Press the Space Bar to open the console and type SearchDoc followed by the inquiry word or command.  See code chunk below for examples. 
+Press the Space Bar to open the console and type `SearchDoc` followed by the inquiry word or command.  See code chunk below for examples. 
 
 ```{r searchdoc, echo=TRUE, warning=FALSE, message=FALSE, eval=FALSE, fig.cap="Examples of using the SearchDoc command in the YASARA console"}
 # Search for every help page containing the word color
@@ -197,7 +197,7 @@ Like this reference, the *Menu* row in the box describes where in the Menus this
 
 ### Help Movies
 
-While not formally part of the help system, users can click on the *Help* category in the top menu and then choose *Play Help Movie* (Help>Play Help Movie) to access YASARA rendered movies introducing users to a variety of topics. The movies are interactive and useful for first-time users, however they are not searchable and can take a while to find a specific topic. Therefore, I recommend going through the help movies once or twice early on, but using SearchDoc as you become more experienced. 
+While not formally part of the help system, users can click on the *Help* category in the top menu and then choose *Play Help Movie* (Help>Play Help Movie) to access YASARA rendered movies introducing users to a variety of topics. The movies are interactive and useful for first-time users, however they are not searchable and can take a while to find a specific topic. Therefore, I recommend going through the help movies once or twice early on, but using `SearchDoc` as you become more experienced. 
 
 ## File system {#files}
 ```{r filetree, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="File folders created upon installing YASARA in Windows", fig.align='center'}
