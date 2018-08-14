@@ -9,7 +9,7 @@ This chapter will be one of the more useful for students who are using YASARA to
 Models in YASARA can be manipulated in many ways. Setting how the model is arrayed in the window is among the simplest command, but often the most difficult setting to master. Table \@ref(tab:mousetable) shows the basic mouse commands used in YASARA. If you have a three-button mouse, YASARA is very straightforward to use. However, the differences in the Mac and Windows/Linux actions with a mouse can create some issues. 
 
 
-```{r mousetable, echo=FALSE, warning=FALSE, messages=FALSE}
+```{r mousetable, echo=FALSE, warning=FALSE, message=FALSE}
 library(tidyverse)
 
 mousedf <- tibble("YASARA action" = c("Rotate model", "Move in plane of screen", "Zoom in or out", "Select Atom", "Select Atom and Bring up pop-up menu"),
@@ -101,7 +101,7 @@ ubfour <- ggdraw() + draw_image(ubfour)
 
 plot_grid(ubone, ubtwo, ubthree, ubfour,  
           align = "v", 
-          hjust = c(0, 0, -0.0, -0.0), 
+          hjust = c(0, 0, -0.0, -0.0),
           labels = c("Initial", "Z = 10", "Gamma = 90", "Y = 10, Z = 40, Beta = 20, Gamma = 10")) 
 
 
@@ -110,6 +110,61 @@ plot_grid(ubone, ubtwo, ubthree, ubfour,
 Making note of good orientations and positions by using `PosOriObj` is a huge time saver and makes your figures look more professional.
 
 ## Changing how the model looks {#style}
+
+Scientists have several ways of looking at molecules including biomolecules. These representations provide distinct levels of information. YASARA can show the same biomolecule in different ways as well. The commands are shown in Table \@ref(tab:styletable) and Figure \@ref(fig:stylepics). Table \@ref(tab:styletable) also provides information on what information is shown with each representation. Note that when it says F4, it means the F4 function key at the top of the keyboard. Macs and modern laptops often combine the function keys with other uses so you may have to push the Fn + F4 to get it to work. Also shown in both the table and Figure \@ref(fig:stylepics) is the command line.
+
+```{r styletable, echo=FALSE, warning=FALSE, message=FALSE}
+
+styledf <- tibble("Style" = c("Ball", "Ball and Stick", "Stick", "Calpha Trace", "Tube", "Ribbon", "Cartoon", "Add sidechains"),
+                  "Command" = c("F1 or Style Ball", "F2 or Style BallStick", "F3 or Style Stick", "F4 or Trace", "F5 or Style Tube", "F6 or Style Ribbon", "F7 or Style Cartoon", "F8 or Style Sidechain or ShowRes all"),
+                  "Information conveyed" = c("van der Waal radius of atoms", "Connections between atoms", "Connections between atoms", "Location of Calpha carbon of each amino acid", "Calpha location and secondary structure", "Secondary Structure", "Secondary Structure", "Adds sidechains to the existing view. Pressing twice makes the style be BallStick"))
+
+knitr::kable(styledf, caption = "Table of styling commands in YASARA" )
+
+```
+
+\
+
+\
+
+```{r stylepics, eval = TRUE, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Results of Style commands or Function keys in YASARA"}
+ubball <- image_read("../YASARA_guide/images/ubball.PNG")
+ubballstick <- image_read("../YASARA_guide/images/ballstickub.PNG")
+ubstick <- image_read("../YASARA_guide/images/ubstick.PNG")
+ubtrace <- image_read("../YASARA_guide/images/ubtrace.PNG")
+ubribbon <- image_read("../YASARA_guide/images/ubribbon.PNG")
+ubss <- image_read("../YASARA_guide/images/ubsecstr.PNG")
+ubsstwo <- image_read("../YASARA_guide/images/ubsecstrtwo.PNG")
+ubside <- image_read("../YASARA_guide/images/ubsidechains.PNG")
+
+ubball <- image_border(image_background(ubball, "white"), "#FFFFFF", "0x80")
+ubballstick <- image_border(image_background(ubballstick, "white"), "#FFFFFF", "0x80")
+ubstick <- image_border(image_background(ubstick, "white"), "#FFFFFF", "0x80")
+ubtrace <- image_border(image_background(ubtrace, "white"), "#FFFFFF", "0x80")
+ubribbon <- image_border(image_background(ubribbon, "white"), "#FFFFFF", "0x80")
+ubss <- image_border(image_background(ubss, "white"), "#FFFFFF", "0x80")
+ubsstwo <- image_border(image_background(ubsstwo, "white"), "#FFFFFF", "0x80")
+ubside <- image_border(image_background(ubside, "white"), "#FFFFFF", "0x80")
+
+ubball <- ggdraw() + draw_image(ubball)
+ubballstick <- ggdraw() + draw_image(ubballstick)
+ubstick <- ggdraw() + draw_image(ubstick)
+ubtrace <- ggdraw() + draw_image(ubtrace)
+ubribbon <- ggdraw() + draw_image(ubribbon)
+ubss <- ggdraw() + draw_image(ubss)
+ubsstwo <- ggdraw() + draw_image(ubsstwo)
+ubside <- ggdraw() + draw_image(ubside)
+
+plot_grid(ubball, ubballstick, ubstick, ubtrace, ubribbon, ubss, ubsstwo, ubside, 
+          labels = c("Ball", "Ball and Stick", "Stick", "Trace", "Tube", "Ribbon", "Cartoon", "Cartoon with Sidechains"),
+          hjust = c(0, 0,0,0,0,0,0,0),
+          scale = 0.9,
+          vjust = 0.95,
+          align = "hv",
+          label_size = 12)
+
+```
+
 
 ## Setting colors {#colors}
 
