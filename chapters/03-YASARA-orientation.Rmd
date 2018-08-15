@@ -2,11 +2,10 @@
 
 Open YASARA and you should see a screen that looks similar to \@ref(fig:opening).
 
-```{r opening, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="The initial YASARA screen", fig.align='center'}
+```{r opening, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="The initial YASARA screen", fig.align='center', out.width="120%"}
 
-open <- image_read("../YASARA_guide/images/opening.PNG")
 
-open
+knitr::include_graphics("../YASARA_guide/images/opening.PNG")
 
 ```
 
@@ -56,18 +55,20 @@ You can manipulate the view and perform analysis of the molecules in YASARA thro
 
 The console can be accessed by pressing the Space Bar. The console will appear at the bottom of the program window as shown in Figure \@ref(fig:console). Pressing the Space Bar a second time will result in a larger console window. To hide the console, click your mouse in the program window somewhere outside of the console area.
 
-```{r console, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="The console in YASARA, just another name for the command line. Left panel shows the small console window and the right panel shows the large console window", fig.align='center', fig.fullwidth=TRUE}
-library(cowplot)
+```{r console, echo=FALSE, warning=FALSE, message=FALSE, fig.cap='The console in YASARA, just another name for the command line.', fig.subcap= c('the small console window', 'the large console window'),fig.show='hold'}
+library(knitr)
+
+include_graphics("../YASARA_guide/images/littleconsole.PNG")
 
 
-small <- image_read("../YASARA_guide/images/littleconsole.PNG")
+#small <- image_read("../YASARA_guide/images/littleconsole.PNG")
 
-big <- image_read("../YASARA_guide/images/bigconsole.PNG")
+#big <- image_read("../YASARA_guide/images/bigconsole.PNG")
 
-small <- ggdraw() + draw_image(small)
-big <- ggdraw() + draw_image(big)
+#small <- ggdraw() + draw_image(small)
+#big <- ggdraw() + draw_image(big)
 
-plot_grid(small, big, nrow = 1)
+#plot_grid(small, big, nrow = 1)
 
 ```
 
@@ -88,6 +89,16 @@ knowing *how* the program makes changes to the contents of the window is valuabl
 **For beginners**, start by using the menus and checking the console for the command. Then start using the console to refine choices after using the menus to make the command. Finally, as you feel confident do as much as you can using the console. 
 
 Given the importance of computers to many scientific careers, experience working with command line will only make you more marketable and flexible in many situations.
+
+## Sequence Bar {#seq}
+
+Hidden toward the bottom of the screen is the Sequence bar (\@ref(fig:seqbar)). Moving the cursor toward the bottom of the screen brings the bar up. You can click on the amino acids and scroll through the sequence of the model using this bar. This is an easy way to navigate through the model and find the specific part that you are interested. The bar can be pinned on the screen by clicking the blue button on the top left side. 
+
+```{r seqbar, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="The initial YASARA screen", fig.align='center', out.width="120%"}
+
+knitr::include_graphics("../YASARA_guide/images/sequencebar.PNG")
+
+```
 
 
 ## Menu System {#Menu}
@@ -126,11 +137,9 @@ The **Top row buttons** are quick ways to perform tasks such as center the view 
 
 ### Pop-up menu
 
-```{r pop, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="Example of the pop-up menu in YASARA", fig.align='center'}
+```{r pop, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Example of the pop-up menu in YASARA", fig.align='center'}
 
-popm <- image_read("../YASARA_guide/images/pop-menu.png")
-
-image_draw(popm)
+include_graphics("../YASARA_guide/images/pop-menu.png")
 
 ```
 
@@ -164,14 +173,9 @@ Press the Space Bar to open the console and type `SearchDoc` followed by the inq
 
 The help page will open as a webpage in your default web browser (\@ref(fig:helpind)). This page will list every time that word or phrase appears in the YASARA documentation. 
 
-```{r helpind, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="Results of using SearchDoc part 1: Initial search results", fig.align='center'}
+```{r helpind, echo=FALSE, warning=FALSE, message=FALSE,fig.cap="Results of using SearchDoc part 1: Initial search results", fig.align='center'}
 
-hlpi <- image_read("../YASARA_guide/images/helpindex.PNG")
-
-
-
-
-image_draw(hlpi)
+include_graphics("../YASARA_guide/images/helpindex.PNG")
 
 ```
 
@@ -185,11 +189,7 @@ Clicking on any of the blue links will take you to the page for the command as s
 
 ```{r helppage, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="Results of using SearchDoc part 2: The help page for the ColorBG command", fig.align='center'}
 
-hlpp <- image_read("../YASARA_guide/images/helppage1.PNG")
-
-image_draw(hlpp)
-
-
+include_graphics("../YASARA_guide/images/helppage1.PNG")
 
 ```
 
@@ -200,11 +200,9 @@ Like this reference, the *Menu* row in the box describes where in the Menus this
 While not formally part of the help system, users can click on the *Help* category in the top menu and then choose *Play Help Movie* (Help>Play Help Movie) to access YASARA rendered movies introducing users to a variety of topics. The movies are interactive and useful for first-time users, however they are not searchable and can take a while to find a specific topic. Therefore, I recommend going through the help movies once or twice early on, but using `SearchDoc` as you become more experienced. 
 
 ## File system {#files}
-```{r filetree, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="File folders created upon installing YASARA in Windows", fig.align='center'}
+```{r filetree, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="File folders created upon installing YASARA in Windows", fig.align='center'}
 
-file <- image_read("../YASARA_guide/images/filetree.PNG")
-
-image_draw(file)
+include_graphics("../YASARA_guide/images/filetree.PNG")
 
 ```
 

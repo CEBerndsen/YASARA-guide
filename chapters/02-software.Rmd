@@ -22,7 +22,7 @@ pc <- ggdraw() + draw_image(pc, scale = 0.8)
 prop <- ggdraw() + draw_image(prop, scale = 0.8)
 os <- ggdraw() + draw_image(os, scale = 1)
 
-plot_grid(pc, prop, NULL, os, labels = c(1, 2,"", 3), rel_widths = c(1, 1, 0.3, 2), nrow = 1)
+plot_grid(pc, prop, NULL, os, labels = c(1, 2,"", 3), rel_widths = c(1, 1, 0.3, 2), nrow = 1, hjust = c(0, 0, 0, 0))
 
 ```
 
