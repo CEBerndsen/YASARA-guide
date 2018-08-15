@@ -1,6 +1,6 @@
 # Manipulating the model
 
-This chapter will be one of the more useful for students who are using YASARA to make professional and informative looking figures. We will cover how to Position and orient molecules manually and reproducibly (\@ref(orient)) and then stylize the molecule using different representations (\@ref(style)), colors (\@ref(colors)), and how to make surface representations (\@ref(surfaces)). Chapter 7 will cover how to label (\@ref(labels)) and change the color of your background (\@ref(background)),
+This chapter will be one of the more useful for students who are using YASARA to make professional and informative looking figures. We will cover how to Position and orient molecules manually and reproducibly (\@ref(orient)) and then stylize the molecule using different representations (\@ref(style)), colors (\@ref(colors)), and how to make surface representations (\@ref(surfaces)). Chapter 6 will cover how to label (\@ref(labels)) and change the color of your background (\@ref(background)).
 
 ## Positioning and orienting the model {#orient}
 
@@ -192,7 +192,7 @@ Notice the commands for individual levels are a bit different from those of the 
 
 In addition, you can left-click on an atom, then right-click on the same atom to bring up the pop-up menu. Style is one of the options that you can set here and the sub-menus are similar to those above using the top menu. 
 
-### Showing and Hiding Atoms and Amino Acids
+### Showing and Hiding Atoms and Amino Acids {#hide}
 
 Sometimes you only want to see certain parts of the molecule or show sidechains for certain amino acids. This is where the `Show` and `Hide` commands are useful. As suggested by the names, these commands show or hide parts of the molecule. The code below shows several examples for each.
 

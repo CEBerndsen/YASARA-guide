@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="the-yasara-user-interface.html">
-<link rel="next" href="manipulating-the-model.html">
+<link rel="prev" href="manipulating-the-model.html">
+<link rel="next" href="making-measurements-and-comparisons.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -237,241 +237,64 @@ Published with bookdown</a></li>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="file-types-and-how-to-work-with-them-in-yasara" class="section level1">
-<h1><span class="header-section-number">Chapter 4</span> File types and how to work with them in YASARA</h1>
-<div id="types" class="section level2">
-<h2><span class="header-section-number">4.1</span> Common model file types</h2>
-<p>YASARA loads numerous types of files, however we will limit our discussion to just three: .pdb, .yob, and .sce. These file types are the most capable and easiest to export to other programs.</p>
-<p>Information on the other file types that YASARA can work with can be found using the SearchDoc command.</p>
-<div id="pdb-files" class="section level3">
-<h3><span class="header-section-number">4.1.1</span> .pdb files</h3>
-<p><a href="https://www.rcsb.org/pdb/static.do?p=file_formats/pdb/index.html">.pdb formatted files</a> are the gold standard for recording the three dimensional structures of biomolecules. Most visualization programs take .pdb files and many structural analysis methods start with a .pdb file or data generated from a .pdb file. Moreover, the <a href="https://www.rcsb.org/">Research Collaboratory for Structural Bioinformatics or RCSB or Protein Databank</a> stores the structural information on the &gt;100,000 biomolecules in the database in .pdb format. Therefore, the first files you should know how to use are .pdb files.</p>
-<p>A .pdb file consists of a few parts shown in Figure <a href="file-types-and-how-to-work-with-them-in-yasara.html#fig:pdb">4.1</a>. A .pdb file can be viewed in a plain text editor such as TextEdit or NotePad and reveals that it consists largely of the atom identifiers, the coordinates for each atom in the molecule, the temperature or B-factor and the header.</p>
-<div class="figure" style="text-align: left"><span id="fig:pdb"></span>
-<img src="YASARA-guide_files/figure-html/pdb-1.png" alt="The PDB file format" width="672" />
-<p class="caption">
-Figure 4.1: The PDB file format
-</p>
-</div>
-<p>.pdb files are easy to move across several programs but are limited in that they contain only location information and the reliability of those locations. Any manipulations that are performed to color or stylize the molecule are not included.</p>
-</div>
-<div id="yob-files-yasara-object" class="section level3">
-<h3><span class="header-section-number">4.1.2</span> .yob files (YASARA object)</h3>
-<p>Like .pdb files, .yob files contain the 3-D coordinates for each atom, but also contain style information. If a color for a particular residue is set to red, it will be red in the saved .yob file as well. This file format is useful for annotating molecules and keep these annotations to pick up again later (keep a notebook to help remember what it all means though!). A .yob file can only contain one Object from the Scene Content table however. If you want multiple Objects or to save everything you need a Scene file.</p>
-</div>
-<div id="sce-files-scene-files" class="section level3">
-<h3><span class="header-section-number">4.1.3</span> .sce files (Scene files)</h3>
-<p>.sce files are the most sophisticated file type in YASARA. A scene file can contain 3-D data and stylization on multiple objects. This can also include any labels (<a href="adding-annotations-to-your-scene.html#labels">6.2</a>), colors (<a href="manipulating-the-model.html#colors">5.3</a>), and other manipulations you may perform.</p>
-<p>With more content, comes a need to be careful to keep track of the information effectively. So use .sce files for key models or findings and use .yob or .pdb files for intermediate steps.</p>
-</div>
-</div>
-<div id="starting-to-work-with-models-in-yasara" class="section level2">
-<h2><span class="header-section-number">4.2</span> Starting to work with models in YASARA</h2>
-<p>So far, I have shown you what YASARA can tell you and how to find information but we have not yet worked with any models. From this section forward we will be fully immersed in using YASARA. I encourage you to follow along and try to recreate each step that I do. Then test your understanding with the end of chapter exercises.</p>
-</div>
-<div id="load" class="section level2">
-<h2><span class="header-section-number">4.3</span> Loading a model</h2>
-<p>Model files can be loaded into YASARA from the local hardrive or retrieved from the RCSB server.</p>
-<div id="pdb-files-1" class="section level3">
-<h3><span class="header-section-number">4.3.1</span> .pdb files</h3>
-<p>Files stored on the hard drive can be loaded by:</p>
-<p>File &gt; Load &gt; PDB file, then navigate to the file location.</p>
-<p>OR</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Specify LoadPDB, then put the name of the file. This assumes the file is in the pdb folder within the YASARA file tree or in the working directory</span>
-<span class="op">&gt;</span>LoadPDB <span class="op">&lt;</span><span class="er">&lt;</span>PDB<span class="op">:</span>ID<span class="op">&gt;</span><span class="er">&gt;</span>
-
-<span class="st">  </span>
-<span class="co"># Example that should work as 1crn is provided with the YASARA software</span>
-<span class="er">&gt;</span>LoadPDB 1crn</code></pre></div>
-<p>OR</p>
-<p>Drag the file into an empty YASARA window</p>
-</div>
-<div id="getting-a-.pdb-file-from-the-internet" class="section level3">
-<h3><span class="header-section-number">4.3.2</span> Getting a .pdb file from the internet</h3>
-<p>Files stored on the hard drive can be loaded by:</p>
-<p>File &gt; Load &gt; PDB file from Internet, then provide the PDB ID (ex. 1UBQ) in the dialog box that appears.</p>
-<p>OR</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Specify LoadPDB, then put the name of the file. This assumes the file is in the pdb folder within the YASARA file tree or in the working directory</span>
-<span class="op">&gt;</span>LoadPDB <span class="op">&lt;</span><span class="er">&lt;</span>PDB<span class="op">:</span>ID<span class="op">&gt;</span><span class="er">&gt;</span>, download=yes
-
-  
-<span class="co"># Example that should work as 1crn is provided with the YASARA software</span>
-<span class="op">&gt;</span>LoadPDB 1crn, download=yes</code></pre></div>
-<p>Note that the only difference in the commands is adding download = yes. Also realize that you can download the files <a href="https://www.rcsb.org/pdb/download/download.do">directly from the RCSB</a> via the linked form or from the individual page for the model using the download button.</p>
-</div>
-<div id="yob-files" class="section level3">
-<h3><span class="header-section-number">4.3.3</span> .yob files</h3>
-<p>Files stored on the hard drive can be loaded by:</p>
-<p>File &gt; Load &gt; YASARA Object, then navigate to the file location.</p>
-<p>OR</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Specify LoadYOb, then put the name of the file. This assumes the file is in the yob folder within the YASARA file tree or in the working directory</span>
-<span class="op">&gt;</span>LoadYOb filepath<span class="op">/</span>file.yob
-  
-<span class="co"># Example that should work as dopc is provided with the YASARA software</span>
-<span class="op">&gt;</span>LoadYOb yob<span class="op">/</span>dopc</code></pre></div>
-<p>OR</p>
-<p>Drag the file into an empty YASARA window</p>
-</div>
-<div id="sce-files" class="section level3">
-<h3><span class="header-section-number">4.3.4</span> .sce files</h3>
-<p>Loading a scene file will replace and delete anything else that was in the window beforehand. You can add .pdb or .yob files to Scene files, but you cannot add a Scene file to a .pdb or .yob.</p>
-<p>Files stored on the hard drive can be loaded by:</p>
-<p>File &gt; Load &gt; YASARA Scene, then navigate to the file location.</p>
-<p>OR</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Specify LoadPDB, then put the name of the file. This assumes the file is in the yob folder within the YASARA file tree or in the working directory</span>
-<span class="op">&gt;</span>LoadSceb filepath\file.sce
-  
-<span class="co"># Example that should work as dhfr_water.sce is provided with the YASARA software</span>
-<span class="op">&gt;</span>LoadSce sce\dhfr_water.sce,Settings=No</code></pre></div>
-<p>OR</p>
-<p>Drag the file into an empty YASARA window</p>
-</div>
-</div>
-<div id="what-does-obj-vs.mol-vs.res-vs.atom-mean" class="section level2">
-<h2><span class="header-section-number">4.4</span> What does Obj vs. Mol vs. Res vs. Atom mean?</h2>
-<p>YASARA organizes models at several levels, which permits easier control of manipulations to the model. <strong>In the simplest sense, an Object consists of one or more Mol (Molecules) which consists of one or more Res (Residues) which consist of one or more Atoms.</strong> Let’s unpack each level in a bit more detail before showing how this might be useful.</p>
-<ul>
-<li><p>Obj (Objects) – Objs are the highest level of organization. An object is a complete model composed of one or more molecules. Objects can be split into several objects. Objects are typically numbered.</p></li>
-<li><p>Mol (Molecule) – A Mol is the second level of organization and typically refers to a single contiguous chain within the scene. A Mol can be as simple as a single atom or a single amino acid or be larger and composed of several atoms or amino acids. Mol are defined in the .pdb or .yob file and can be broken into smaller pieces. Molecules are typically called “A” or “B” or another alphabetical name</p></li>
-<li><p>Res (Residue) – A residue refers to a subunit of a Molecule. This name comes from classical biochemistry and an refer to a single saccharide within a longer chain, a single amino acid within a protein, or a single nucleotide within a nucleic acid. Residues are composed of one or more Atoms and typically are not split.</p>
-<p>For most structural biochemistry, we think about residues and their function within the larger molecule. Residues are typically referred to by the three letter <a href="https://en.wikipedia.org/wiki/Amino_acid#Table_of_standard_amino_acid_abbreviations_and_properties">amino acid</a>, nucleic acid, or carbohydrate name. Search the <a href="http://ligand-expo.rcsb.org/ld-search.html">RCSB Ligand database</a> if you do not recognize the abbreviation.</p></li>
-<li><p>Atom – Atoms are the smallest unit within YASARA and describe single atoms. Atoms are not split in YASARA (no fission!). Atoms are referred to by their <a href="https://iupac.org/what-we-do/periodic-table-of-elements/">IUPAC names</a> but can also be referred to in organic chemistry nomenclature (e.g. C or N ).</p></li>
-</ul>
-<div id="why-is-the-organization-important" class="section level3">
-<h3><span class="header-section-number">4.4.1</span> Why is the organization important?</h3>
-<p>Like the English language where sentences contain nouns and verbs, which define the action and who/what was involved, YASARA requires an action to perform and what to act on. The examples below in code chunk below give a few examples of how these commands work.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load a molecule into the window so that we can see the effects of each command</span>
+<div id="adding-annotations-to-your-scene" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> Adding annotations to your scene</h1>
+<p>With the various manipulations covered in Chapter <a href="#Manipulating-the-model"><strong>??</strong></a>, we can now start making figures to display biomolecule structures. This chapter will cover the basics of annotation and conclude with some tips on making good figures (<a href="adding-annotations-to-your-scene.html#figurelessons">6.6</a>). We will start with making a basic image of a protein and then add layers of annotation.</p>
+<p>As a note, many of the annotations added here, can be added via standard illustration or photo manipulation software as well. Therefore, do not see this as the only way to make a figure using structural data, just one way.</p>
+<div id="png" class="section level2">
+<h2><span class="header-section-number">6.1</span> Saving an image</h2>
+<p>The first step in making a figure is to know how to save an image of your model. Thus far, I have described how to save the model itself, but not how to take an image. I recommend changing the background color via <code>ColorBG</code> and then choosing a color. White is the typical value however it depends on your medium. There are two levels of image quality when saving, the standard screen shot and <code>RayTrace</code>. The latter is the preferred method however, the standard screen shot works in most cases (see <a href="adding-annotations-to-your-scene.html#hidehud">6.1.1</a> for caveat).</p>
+<p>To save an image via the menu: File&gt;Save As&gt;Normal Screenshot, then choose your filename and destination.</p>
+<p>For a raytraced image via the menu: File&gt;Save As&gt;Ray traced hisres screenshot, then set your options (<a href="adding-annotations-to-your-scene.html#rayopt">6.1.2</a>) and click OK, then select your destination and image dimensions and click OK.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load PDB file</span>
 <span class="op">&gt;</span>LoadPDB 1crn
 
-<span class="co"># Command examples to try</span>
-<span class="co"># Color all alanine residues red</span>
-<span class="op">&gt;</span>ColorRes ala, red
+<span class="co"># Save an image of the model</span>
+<span class="op">&gt;</span>SavePNG png\test.png
 
-<span class="co"># Color Obj 1 blue</span>
-<span class="op">&gt;</span>ColorObj <span class="dv">1</span>, blue
-
-<span class="co"># Rotate Obj 1 around the y axis 1 degree</span>
-<span class="op">&gt;</span>RotateObj <span class="dv">1</span>, Y =<span class="st"> </span><span class="dv">30</span>
-
-<span class="co"># Count all the amino acids in Obj 1</span>
-<span class="op">&gt;</span>CountRes Obj <span class="dv">1</span> <span class="co"># the result of the count will appear on the same line as the command</span>
-
-<span class="co"># Show all the Hydrogen bonds in Molecule A</span>
-<span class="op">&gt;</span>ShowHBoMol A</code></pre></div>
-<p>The general YASARA syntax or grammar for commands, is ActionLevel and then the specifics of the molecule or part of the molecule to affect. Most commands can be used at any level so:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Same action different levels</span>
-<span class="op">&gt;</span>ColorObj <span class="dv">1</span>, red
-
-<span class="op">&gt;</span>ColorMol A, red
-
-<span class="op">&gt;</span>ColorRes <span class="dv">1</span>, red
-
-<span class="op">&gt;</span>ColorAtom <span class="dv">1</span>, red</code></pre></div>
-<p>Effectively there are 4 nouns and lots of verbs. So if you can remember the levels of organization and the basic verbs, you can manipulate and analyze most any model.</p>
+<span class="co"># Ray traced image</span>
+<span class="op">&gt;</span>RayTrace png\test.png,X=<span class="dv">1024</span>,Y=<span class="dv">00541</span>,Zoom=<span class="fl">1.0</span>,Atoms=Balls,LabelShadow=No,SecAlpha=<span class="dv">100</span>,Display=Yes,Outline=<span class="fl">0.0</span>,Background=No</code></pre></div>
+<p>I don’t recommend saving images via the command line, especially ray traced images and all the options. The ability to alter the background texture and image size however are great advantages of using <code>RayTrace</code> over <code>SavePNG</code>.</p>
+<div id="hidehud" class="section level3">
+<h3><span class="header-section-number">6.1.1</span> Hide the HUD!</h3>
+<p>If you use the <code>SavePNG</code> command to take a normal screenshot, everything in the scene including the HUD will appear in the image. To hide the HUD, press the Insert key or type <code>HUD off</code> in the command line. This will save you having the text of the HUD appear and gives you more image space to occupy with your biomolecule.</p>
+</div>
+<div id="rayopt" class="section level3">
+<h3><span class="header-section-number">6.1.2</span> Ray Tracing options</h3>
+<p>Ray tracing requires downloading POV-Ray from www.povray.org and installing it in the pov folder of YASARA. In some versions of YASARA, this can be done via menus by:</p>
+<p>Help&gt;Install&gt;POVRay</p>
+<p>More details of installing can be found by using <code>SearchDoc</code> for the command <code>RayTrace</code>. This page on the <code>RayTrace</code> command also describes all the options for ray tracing in detail and I will summarize the key ones here.</p>
+<ul>
+<li><p><strong>Transparent Background</strong> – When this box is checked or Background=No, then everything that is not model will be transparent. This is a great feature for when making images for articles or presentations as it saves cropping of the background out of the image later.</p></li>
+<li><p><strong>Label Shadow</strong> – if checked or set to Yes, then any labels that you add (see section <a href="adding-annotations-to-your-scene.html#labels">6.2</a>), will have shadows. This is a neat effect for presentations, but not something I would use in a figure in a paper.</p></li>
+<li><p><strong>X and Y values</strong> – this is the size in pixels of the final output from the ray tracing. To make a high resolution image for a paper or article, I recommend increasing these values by 2 to 5-fold and then shrinking the image size after inserting it. This reduces the pixelation issue that haunts structural biologists. Increasing these values will make for a larger file size so do not go crazy.</p></li>
+</ul>
 </div>
 </div>
-<div id="build" class="section level2">
-<h2><span class="header-section-number">4.5</span> Building a molecule</h2>
-<p>In addition to loading existing models, you can construct your own models using a variety of methods. If you are going to use the <code>Build</code> command to make a molecule such as a protein or cholesterol, you will need a set of instructions such as the protein sequence in <a href="https://en.wikipedia.org/wiki/FASTA_format">FASTA format</a> or the <a href="https://en.wikipedia.org/wiki/Simplified_molecular-input_line-entry_system">SMILES string</a>. The sequence can be found in databases such as <a href="https://www.uniprot.org/">Uniprot</a> under “Sequence’ or <a href="https://www.ensembl.org/index.html">Ensembl</a>. The SMILES string can be found in Section 4 of the <a href="https://pubchem.ncbi.nlm.nih.gov/">Pubchem</a> page. Examples of building various atoms and molecules are shown in the code chunk below.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Build a sodium atom</span>
-<span class="op">&gt;</span>BuildAtom Na
-
-<span class="co"># Build an amino acid, lysine in this case</span>
-<span class="op">&gt;</span>BuildRes lys
-
-<span class="co"># Build maltotetraose from a SMILES string</span>
-<span class="co"># Results of this command are shown in Figure 4.2</span>
-BuildSMILES String=<span class="st">&quot;C(C1C(C(C(C(O1)OC2C(OC(C(C2O)O)OC3C(OC(C(C3O)O)OC4C(OC(C(C4O)O)O)CO)CO)CO)O)O)O)O&quot;</span>
-
-<span class="co"># Build a molecule from a fasta file</span>
-<span class="co"># Results of this command are shown in Figure 4.2</span>
-<span class="op">&gt;</span>BuildMol C<span class="op">:</span>path\to\file\testprot.FASTA</code></pre></div>
-<p>The <code>Build</code> command can be used to make a single atom, an amino acid, or a molecule. Realize the <code>Build</code> command will simply make the molecule and it does not “fix” it to make it accurate in any way as shown in Figure <a href="file-types-and-how-to-work-with-them-in-yasara.html#fig:buildres">4.2</a>. Thus molecules made from this method will likely need <a href="http://www.yasara.org/minimizationserver.htm">energy minimization</a> or see section <a href="#em"><strong>??</strong></a>.</p>
-<div class="figure" style="text-align: left"><span id="fig:buildres"></span>
-<img src="../YASARA_guide/images/malto.PNG" alt="Results from using the BuildMol from a SMILES string and from a FASTA file of protein sequence" width="90%" />
-<p class="caption">
-Figure 4.2: Results from using the BuildMol from a SMILES string and from a FASTA file of protein sequence
-</p>
+<div id="labels" class="section level2">
+<h2><span class="header-section-number">6.2</span> Labels</h2>
 </div>
+<div id="arrows" class="section level2">
+<h2><span class="header-section-number">6.3</span> Arrows</h2>
 </div>
-<div id="save" class="section level2">
-<h2><span class="header-section-number">4.6</span> Saving Models</h2>
-<p>Once you have your model or scene in a form that is useful, you can also export the data. This is the one action I typically prefer to use the GUI over the command line, however I will show the command line method as well. Additionally, saving via the GUI has one trick, so I will show you how to do this in pictures as well (For example: <a href="file-types-and-how-to-work-with-them-in-yasara.html#fig:savepdbmenu">4.3</a>).</p>
-<p><strong>Remember</strong>, there are some advantages and disadvantages to each file type so review the section on file formats (<a href="file-types-and-how-to-work-with-them-in-yasara.html#types">4.1</a>) if you are uncertain about which format to use.</p>
-<div id="pdb-files-2" class="section level3">
-<h3><span class="header-section-number">4.6.1</span> .pdb files</h3>
-<p>File&gt;Save As&gt;PDB file, then pick your Obj(s) and click OK, then select your file name and destination and click OK.</p>
-<div class="figure"><span id="fig:savepdbmenu"></span>
-<img src="YASARA-guide_files/figure-html/savepdbmenu-1.png" alt="Saving a PDB file using the GUI" width="672" />
-<p class="caption">
-Figure 4.3: Saving a PDB file using the GUI
-</p>
+<div id="bonds" class="section level2">
+<h2><span class="header-section-number">6.4</span> Hydrogen Bonds</h2>
 </div>
-<p>You will note that the first menu in <a href="file-types-and-how-to-work-with-them-in-yasara.html#fig:savepdbmenu">4.3</a> where you select Obj(s) has a selection bar at the bottom which you can enter text. This is not the filename, this is for you to pick a Molecule name or atom numbers. The file name goes in the second menu. Sometimes there will be a asterisk before .pdb (*.pdb) in the Filename box. This is a placeholder which you replace with your filename.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Command then which Obj(s) have the source model, </span>
-<span class="co"># then the file name in this case test.pdb and some arguments</span>
-<span class="op">&gt;</span>SavePDB <span class="dv">1</span>,pdb\test.pdb,Format=PDB,Transform=Yes</code></pre></div>
-<p>It is possible to save several Objects or Molecules in the same PDB file, but you will likely need to Transfer them all to the same set of coordinates first. Transfer is found in the Edit menu.</p>
+<div id="background" class="section level2">
+<h2><span class="header-section-number">6.5</span> Background color</h2>
 </div>
-<div id="yob-files-1" class="section level3">
-<h3><span class="header-section-number">4.6.2</span> .yob files</h3>
-<p>Saving a .yob file is very similar to saving a pdb file, only without the issues of coordinates.</p>
-<p>File&gt;Save As&gt;YASARA YOb, then pick your Obj, file name, destination, and then click OK.</p>
-<div class="figure"><span id="fig:saveyoubmenu"></span>
-<img src="YASARA-guide_files/figure-html/saveyoubmenu-1.png" alt="Saving a file in .yob format using the GUI" width="672" />
-<p class="caption">
-Figure 4.4: Saving a file in .yob format using the GUI
-</p>
+<div id="figurelessons" class="section level2">
+<h2><span class="header-section-number">6.6</span> Making good figures</h2>
 </div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Command then which Obj(s) have the source model, </span>
-<span class="co"># then the file name in this case dhfrt.yob</span>
-<span class="op">&gt;</span>SaveYOb <span class="dv">1</span>,yob\dhfrt.yob</code></pre></div>
-<p>A .yob can only contain one Object, if you need to save more than one object in a single file, use .pdb or .sce.</p>
-</div>
-<div id="sce-files-1" class="section level3">
-<h3><span class="header-section-number">4.6.3</span> .sce files</h3>
-<p>Saving a model as a .sce file is the simplest of all the file types as it save everything in the viewing window.</p>
-<p>File&gt;Save As&gt;YASARA Sce, then pick your file name and destination.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Command then the file name in this case dhfr_watertest.sce</span>
-<span class="op">&gt;</span>SaveSce sce\dhfr_watertest.sce</code></pre></div>
-</div>
-</div>
-<div id="remove" class="section level2">
-<h2><span class="header-section-number">4.7</span> Adding and Removing Objects</h2>
-<p>Once there is a model loaded into the scene, it is possible to remove one or more objects from the actions and analysis that are occuring. This is useful if you are doing comparisons of multiple objects or for some of the more advanced functions of YASARA covered later. If you are simply looking to make the model invisible, the <code>Hide</code> command covered in section <a href="manipulating-the-model.html#hide">5.2.2</a> is more appropriate.</p>
-<p>The commands to remove an object and bring it back are <code>Remove</code> and <code>Add</code> respectively. This command only works on objects. Notice that when you use <code>Remove</code> that the Object disappears from the screen and the Scene Content columns Act and Vis change to ‘No’ (<a href="the-yasara-user-interface.html#content">3.1.2</a>). When you remove an object, the object still is listed in the scene content and will be included in .sce files that are saved, but it is no longer affected by commands and is invisible until it is added back.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load 1UBQ from the RCSB</span>
-<span class="op">&gt;</span>LoadPDB 1ubq, download=yes
-
-<span class="co"># Remove the object, in this case it is designated as 1</span>
-<span class="op">&gt;</span>RemoveObj <span class="dv">1</span>
-
-<span class="co"># Make the object active again</span>
-<span class="op">&gt;</span>AddObj <span class="dv">1</span></code></pre></div>
-</div>
-<div id="knowledge-self-checks-1" class="section level2">
-<h2><span class="header-section-number">4.8</span> Knowledge Self-Checks<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a></h2>
-<ol style="list-style-type: decimal">
-<li><p>If you had colored a molecule and wanted to save the model and the stylizing of the model, which file types would be best?</p></li>
-<li><p>What does the asterisk (*) mean in the Filename box when loading or saving a file?</p></li>
-<li><p>What is the largest level of model organization in YASARA? The smallest?</p></li>
-<li><p>What repository contains most biomolecule models?</p></li>
-<li><p>What might each of the commands below do? What do they act on?</p></li>
-</ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span>LoadPDB 1ubq, download=yes
-
-<span class="op">&gt;</span>SelectAtom <span class="dv">100</span><span class="op">-</span><span class="dv">150</span>
-
-<span class="op">&gt;</span>ColorObj <span class="dv">3</span> <span class="dv">4</span>, green
-
-<span class="op">&gt;</span>CountAtom Obj <span class="dv">2</span> Ala</code></pre></div>
+<div id="knowledge-checks" class="section level2">
+<h2><span class="header-section-number">6.7</span> Knowledge Checks<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a></h2>
 
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="4">
-<li id="fn4"><p>Answers can be found in Chapter <a href="exercise-answers.html#fourkey">8.2</a><a href="file-types-and-how-to-work-with-them-in-yasara.html#fnref4">↩</a></p></li>
+<ol start="6">
+<li id="fn6"><p>Answers can be found <a href="exercise-answers.html#sixkey">8.4</a><a href="adding-annotations-to-your-scene.html#fnref6">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -479,8 +302,8 @@ Figure 4.4: Saving a file in .yob format using the GUI
           </div>
         </div>
       </div>
-<a href="the-yasara-user-interface.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="manipulating-the-model.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="manipulating-the-model.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="making-measurements-and-comparisons.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

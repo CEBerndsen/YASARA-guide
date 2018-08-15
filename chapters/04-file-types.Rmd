@@ -12,7 +12,7 @@ Information on the other file types that YASARA can work with can be found using
 
 A .pdb file consists of a few parts shown in Figure \@ref(fig:pdb). A .pdb file can be viewed in a plain text editor such as TextEdit or NotePad and reveals that it consists largely of the atom identifiers, the coordinates for each atom in the molecule, the temperature or B-factor and the header.
 
-```{r pdb, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="The PDB file format", fig.align='center'}
+```{r pdb, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="The PDB file format", fig.align='left'}
 
 pdbh <- image_read("../YASARA_guide/images/pdbheader.PNG")
 
@@ -24,7 +24,7 @@ pdbat <- image_border(image_background(pdbat, "white"), "#FFFFFF", "0x50")
 pdbh <- ggdraw() + draw_image(pdbh)
 pdbat <- ggdraw() + draw_image(pdbat)
 
-plot_grid(pdbh, pdbat, labels = c("Header", "Atom Information"))
+plot_grid(pdbh, pdbat, labels = c("Header", "Atom Information"), hjust = c(0,0))
 
 ```
 
@@ -36,7 +36,7 @@ Like .pdb files, .yob files contain the 3-D coordinates for each atom, but also 
 
 ### .sce files (Scene files)
 
-.sce files are the most sophisticated file type in YASARA. A scene file can contain 3-D data and stylization on multiple objects. This can also include any labels (\@ref(scenelabel)), colors (\@ref(colors)), and other manipulations you may perform. 
+.sce files are the most sophisticated file type in YASARA. A scene file can contain 3-D data and stylization on multiple objects. This can also include any labels (\@ref(labels)), colors (\@ref(colors)), and other manipulations you may perform. 
 
 With more content, comes a need to be careful to keep track of the information effectively. So use .sce files for key models or findings and use .yob or .pdb files for intermediate steps. 
 
@@ -141,8 +141,6 @@ OR
 
 Drag the file into an empty YASARA window
 
-
-
 ## What does Obj vs. Mol vs. Res vs. Atom mean?
 
 YASARA organizes models at several levels, which permits easier control of manipulations to the model. **In the simplest sense, an Object consists of one or more Mol (Molecules) which consists of one or more Res (Residues) which consist of one or more Atoms.** Let's unpack each level in a bit more detail before showing how this might be useful.
@@ -203,6 +201,36 @@ The general YASARA syntax or grammar for commands, is ActionLevel and then the s
 ```
 
 Effectively there are 4 nouns and lots of verbs. So if you can remember the levels of organization and the basic verbs, you can manipulate and analyze most any model.
+
+## Building a molecule {#build}
+
+In addition to loading existing models, you can construct your own models using a variety of methods. If you are going to use the `Build` command to make a molecule such as a protein or cholesterol, you will need a set of instructions such as the protein sequence in [FASTA format](https://en.wikipedia.org/wiki/FASTA_format) or the [SMILES string](https://en.wikipedia.org/wiki/Simplified_molecular-input_line-entry_system). The sequence can be found in databases such as [Uniprot](https://www.uniprot.org/) under "Sequence' or [Ensembl](https://www.ensembl.org/index.html). The SMILES string can be found in Section 4 of the [Pubchem](https://pubchem.ncbi.nlm.nih.gov/) page. Examples of building various atoms and molecules are shown in the code chunk below.
+
+```{r buildall, echo=TRUE, eval=FALSE}
+# Build a sodium atom
+>BuildAtom Na
+
+# Build an amino acid, lysine in this case
+>BuildRes lys
+
+# Build maltotetraose from a SMILES string
+# Results of this command are shown in Figure 4.2
+BuildSMILES String="C(C1C(C(C(C(O1)OC2C(OC(C(C2O)O)OC3C(OC(C(C3O)O)OC4C(OC(C(C4O)O)O)CO)CO)CO)O)O)O)O"
+
+# Build a molecule from a fasta file
+# Results of this command are shown in Figure 4.2
+>BuildMol C:path\to\file\testprot.FASTA
+
+```
+
+The `Build` command can be used to make a single atom, an amino acid, or a molecule. Realize the `Build` command will simply make the molecule and it does not "fix" it to make it accurate in any way as shown in Figure \@ref(fig:buildres). Thus molecules made from this method will likely need [energy minimization](http://www.yasara.org/minimizationserver.htm) or see section \@ref(em).
+
+```{r buildres, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Results from using the BuildMol from a SMILES string and from a FASTA file of protein sequence", fig.show='hold', out.width='90%', fig.align='left'}
+
+include_graphics("../YASARA_guide/images/malto.PNG")
+
+```
+
 
 ## Saving Models {#save}
 
@@ -303,6 +331,23 @@ File>Save As>YASARA Sce, then pick your file name and destination.
 
 ```
 
+## Adding and Removing Objects {#remove}
+
+Once there is a model loaded into the scene, it is possible to remove one or more objects from the actions and analysis that are occuring. This is useful if you are doing comparisons of multiple objects or for some of the more advanced functions of YASARA covered later. If you are simply looking to make the model invisible, the `Hide` command covered in section \@ref(hide) is more appropriate. 
+
+The commands to remove an object and bring it back are `Remove` and `Add` respectively. This command only works on objects. Notice that when you use `Remove` that the Object disappears from the screen and the Scene Content columns Act and Vis change to 'No' (\@ref(content)). When you remove an object, the object still is listed in the scene content and will be included in .sce files that are saved, but it is no longer affected by commands and is invisible until it is added back. 
+
+```{r rmcode, echo= TRUE, eval=FALSE}
+# Load 1UBQ from the RCSB
+>LoadPDB 1ubq, download=yes
+
+# Remove the object, in this case it is designated as 1
+>RemoveObj 1
+
+# Make the object active again
+>AddObj 1
+
+```
 
 
 ## Knowledge Self-Checks^[Answers can be found in Chapter \@ref(fourkey)]

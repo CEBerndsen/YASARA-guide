@@ -1,4 +1,63 @@
 # Adding annotations to your scene
 
+With the various manipulations covered in Chapter \@ref(Manipulating-the-model), we can now start making figures to display biomolecule structures. This chapter will cover the basics of annotation and conclude with some tips on making good figures (\@ref(figurelessons)). We will start with making a basic image of a protein and then add layers of annotation.
+
+As a note, many of the annotations added here, can be added via standard illustration or photo manipulation software as well. Therefore, do not see this as the only way to make a figure using structural data, just one way. 
+
+## Saving an image {#png}
+
+The first step in making a figure is to know how to save an image of your model. Thus far, I have described how to save the model itself, but not how to take an image. I recommend changing the background color via `ColorBG` and then choosing a color. White is the typical value however it depends on your medium. There are two levels of image quality when saving, the standard screen shot and `RayTrace`. The latter is the preferred method however, the standard screen shot works in most cases (see \@ref(hidehud) for caveat). 
+
+To save an image via the menu:
+File>Save As>Normal Screenshot, then choose your filename and destination.
+
+For a raytraced image via the menu:
+File>Save As>Ray traced hisres screenshot, then set your options (\@ref(rayopt)) and click OK, then select your destination and image dimensions and click OK.
+
+```{r imagecmd, echo=TRUE, eval=FALSE}
+# Load PDB file
+>LoadPDB 1crn
+
+# Save an image of the model
+>SavePNG png\test.png
+
+# Ray traced image
+>RayTrace png\test.png,X=1024,Y=00541,Zoom=1.0,Atoms=Balls,LabelShadow=No,SecAlpha=100,Display=Yes,Outline=0.0,Background=No
+
+```
+
+
+I don't recommend saving images via the command line, especially ray traced images and all the options. The ability to alter the background texture and image size however are great advantages of using `RayTrace` over `SavePNG`. 
+
+### Hide the HUD! {#hidehud}
+
+If you use the `SavePNG` command to take a normal screenshot, everything in the scene including the HUD will appear in the image. To hide the HUD, press the Insert key or type `HUD off` in the command line. This will save you having the text of the HUD appear and gives you more image space to occupy with your biomolecule. 
+
+### Ray Tracing options {#rayopt}
+
+Ray tracing requires downloading POV-Ray from www.povray.org and installing it in the pov folder of YASARA. In some versions of YASARA, this can be done via menus by:
+
+Help>Install>POVRay 
+
+More details of installing can be found by using `SearchDoc` for the command `RayTrace`. This page on the `RayTrace` command also describes all the options for ray tracing in detail and I will summarize the key ones here. 
+
+  * **Transparent Background** -- When this box is checked or Background=No, then everything that is not model will be transparent. This is a great feature for when making images for articles or presentations as it saves cropping of the background out of the image later.
+  
+  * **Label Shadow** -- if checked or set to Yes, then any labels that you add (see section \@ref(labels)), will have shadows. This is a neat effect for presentations, but not something I would use in a figure in a paper.
+  
+  * **X and Y values** -- this is the size in pixels of the final output from the ray tracing. To make a high resolution image for a paper or article, I recommend increasing these values by 2 to 5-fold and then shrinking the image size after inserting it. This reduces the pixelation issue that haunts structural biologists. Increasing these values will make for a larger file size so do not go crazy.
+
+
 ## Labels {#labels}
 
+
+
+## Arrows {#arrows}
+
+## Hydrogen Bonds {#bonds}
+
+## Background color {#background}
+
+## Making good figures {#figurelessons}
+
+## Knowledge Checks^[Answers can be found \@ref(sixkey)]

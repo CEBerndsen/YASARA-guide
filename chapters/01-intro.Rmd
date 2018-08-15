@@ -9,16 +9,20 @@ This guide serves to introduce students, educators, and other interested parties
 ## What is in this guide?
 
 This guide contains 3 main parts:
-1. Guide to YASARA functions for users 
-2. Analysis and Illustration of molecular structure using YASARA
-3. Incorporating YASARA into an educational setting 
+
+  1. Guide to YASARA functions for users 
+  
+  2. Analysis and Illustration of molecular structure using YASARA
+  
+  3. Incorporating YASARA into an educational setting 
+  
 
 
 ## A note on using the command line
 
 GUIs are great, however it is worth knowing how to use the command line to increase speed and control. Yes, it is not as easy, especially for new users, but restricting your use to activities that are easy is a limited existence. 
 
-I will always describe **both** ways of doing things in YASARA by menu list:
+As often as possible, I will always describe **both** ways of doing things in YASARA by menu list:
 
 Menu1>menu2>menu3>choice 
 
@@ -26,12 +30,14 @@ and code chunk with comments:
 
 ```{r chunkshow, echo=TRUE, warning=FALSE, message=FALSE, eval=FALSE}
 
-# This is a comment in code
-> This is code that can be executed
+# This is a comment in code which includes explanation
+>This is code that can be executed
 
 ```
 
-For R, it will be via code chunks and for Excel via menus. Other programs will be described as appropriate with images.
+For in-text mentions of commands I will highlight the command such as `BuildRes` which describes the command to build an amino acid described in section \@ref(build).
+
+For R scripts, it will be via code chunks and for Excel via menus. Other programs will be described as appropriate with images.
 
 ## End of section checks and active reading 
 

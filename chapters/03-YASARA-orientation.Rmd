@@ -32,7 +32,8 @@ image_draw(openbox)
 ### Atom Properties
 The **Atom Properties** list describes the characteristics of a selected atom. These characteristics include the identifying traits such as element, what residue:Mol:Object it is a part of, and where it is located. Further characteristics place it within the context of the molecule being displayed under the section *Bonds*. Finally, there is a section containing 3 items: *Marked Distance, Marked Angle*, and *Marked Dihedral*. These are types of measurements we will use in Chapter \@ref(measure).   
 
-### Scene Content
+### Scene Content {#content}
+
 The **Scene Content** table shows what models^[When I say **Model** I am referring to a file that is loaded in YASARA that displays as a molecule. The main file types that do this are .pdb, .sce, and .yob and will be covered more extensively in the next chapter] are loaded into the system. There are 5 columns in this table: *Obj, Name, Vis, Act*, and *Atom*. 
 
   * **Obj**: Numerical assignment of the Obj. This is a useful indentifier for commands to maniupulate the Obj.
