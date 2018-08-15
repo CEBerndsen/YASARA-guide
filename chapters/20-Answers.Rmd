@@ -63,7 +63,7 @@
 ## Chapter 5 {#fivekey}
 
 ```{r fiveanswers, echo=FALSE, warning=FALSE, message=FALSE, out.width="120%", fig.cap="Did you make it?"}
-knitr::include_graphics("../YASARA_guide/images/teststructure.PNG")
+knitr::include_graphics("images/teststructure.PNG")
 
 
 ```
