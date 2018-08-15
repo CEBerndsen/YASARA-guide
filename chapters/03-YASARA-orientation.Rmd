@@ -5,7 +5,7 @@ Open YASARA and you should see a screen that looks similar to \@ref(fig:opening)
 ```{r opening, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="The initial YASARA screen", fig.align='center', out.width="120%"}
 
 
-knitr::include_graphics("../YASARA_guide/images/opening.PNG")
+knitr::include_graphics("images/opening.PNG")
 
 ```
 
@@ -59,7 +59,7 @@ The console can be accessed by pressing the Space Bar. The console will appear a
 ```{r console, echo=FALSE, warning=FALSE, message=FALSE, fig.cap='The console in YASARA, just another name for the command line.', fig.subcap= c('the small console window', 'the large console window'),fig.show='hold'}
 library(knitr)
 
-include_graphics("../YASARA_guide/images/littleconsole.PNG")
+include_graphics("images/littleconsole.PNG")
 
 
 #small <- image_read("../YASARA_guide/images/littleconsole.PNG")
@@ -97,7 +97,7 @@ Hidden toward the bottom of the screen is the Sequence bar (\@ref(fig:seqbar)). 
 
 ```{r seqbar, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="The initial YASARA screen", fig.align='center', out.width="120%"}
 
-knitr::include_graphics("../YASARA_guide/images/sequencebar.PNG")
+knitr::include_graphics("images/sequencebar.PNG")
 
 ```
 
@@ -126,21 +126,21 @@ image_draw(boxtop)
 
 The **Top row buttons** are quick ways to perform tasks such as center the view or open a new scene. The buttons are indicated by the light blue box in Figure \@ref(fig:menutree). The buttons will vary depending what version of YASARA being used however there are a few common and useful ones, which are highlighted below. 
 
-  * ![box-select](../YASARA_guide/images/boxsel.PNG) : This button allows you to select parts of a model in a box
+  * ![box-select](images/boxsel.PNG) : This button allows you to select parts of a model in a box
   
-  * ![area-select](../YASARA_guide/images/areasel.PNG) : This button allows you to select parts of a model in an arbitrary area which is somewhat circular. This is similar to the lasso tool seen in other programs.  
+  * ![area-select](images/areasel.PNG) : This button allows you to select parts of a model in an arbitrary area which is somewhat circular. This is similar to the lasso tool seen in other programs.  
   
-  * ![clear](../YASARA_guide/images/clear.PNG) : This button clears everything out of the YASARA window. Typically you will get a warning to avoid inadvertant loss of data.
+  * ![clear](images/clear.PNG) : This button clears everything out of the YASARA window. Typically you will get a warning to avoid inadvertant loss of data.
   
-  * ![center](../YASARA_guide/images/center.PNG) : This button centers the active models in the window. This really useful early on until you gain experience orienting molecules. 
+  * ![center](images/center.PNG) : This button centers the active models in the window. This really useful early on until you gain experience orienting molecules. 
   
-  * ![rotate](../YASARA_guide/images/rotate.PNG) : This button rotates all the active models in the window. This button is often a source of frustrating for you when things start rotating unexpectedly. 
+  * ![rotate](images/rotate.PNG) : This button rotates all the active models in the window. This button is often a source of frustrating for you when things start rotating unexpectedly. 
 
 ### Pop-up menu
 
 ```{r pop, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Example of the pop-up menu in YASARA", fig.align='center'}
 
-include_graphics("../YASARA_guide/images/pop-menu.png")
+include_graphics("images/pop-menu.png")
 
 ```
 
@@ -176,7 +176,7 @@ The help page will open as a webpage in your default web browser (\@ref(fig:help
 
 ```{r helpind, echo=FALSE, warning=FALSE, message=FALSE,fig.cap="Results of using SearchDoc part 1: Initial search results", fig.align='center'}
 
-include_graphics("../YASARA_guide/images/helpindex.PNG")
+include_graphics("images/helpindex.PNG")
 
 ```
 
@@ -190,7 +190,7 @@ Clicking on any of the blue links will take you to the page for the command as s
 
 ```{r helppage, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="Results of using SearchDoc part 2: The help page for the ColorBG command", fig.align='center'}
 
-include_graphics("../YASARA_guide/images/helppage1.PNG")
+include_graphics("images/helppage1.PNG")
 
 ```
 
@@ -203,7 +203,7 @@ While not formally part of the help system, users can click on the *Help* catego
 ## File system {#files}
 ```{r filetree, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="File folders created upon installing YASARA in Windows", fig.align='center'}
 
-include_graphics("../YASARA_guide/images/filetree.PNG")
+include_graphics("images/filetree.PNG")
 
 ```
 

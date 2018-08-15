@@ -227,7 +227,7 @@ The `Build` command can be used to make a single atom, an amino acid, or a molec
 
 ```{r buildres, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Results from using the BuildMol from a SMILES string and from a FASTA file of protein sequence", fig.show='hold', out.width='90%', fig.align='left'}
 
-include_graphics("../YASARA_guide/images/malto.PNG")
+include_graphics("images/malto.PNG")
 
 ```
 

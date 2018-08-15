@@ -105,7 +105,7 @@ LoadPDB 1crn, download=yes
 
 ```{r labelpic, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Resulting image of labeling code", out.width="125%"}
 
-include_graphics("../YASARA_guide/images/labelone.PNG")
+include_graphics("images/labelone.PNG")
 
 ```
 

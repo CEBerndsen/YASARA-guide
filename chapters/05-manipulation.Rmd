@@ -309,7 +309,7 @@ Surfaces are another valuable element for visualizing biomolecules. Surfaces can
 
 ```{r surfaceex, echo=FALSE, warning=FALSE, message=FALSE, out.width="120%", fig.cap="Surface representation of 1Ubq colored by residue type"}
 
-knitr::include_graphics("../YASARA_guide/images/ubsurface.PNG")
+knitr::include_graphics("images/ubsurface.PNG")
 
 ```
 
@@ -328,7 +328,7 @@ Typically the molecular surface is the most valuable for visualization and is th
 In addition to the surface type you can also pick the color and transparency of the surface. The menu is shown in Figure \@ref(fig:surfmenu). The color is chosen as in Section \@ref(colors) using the words or color wheel. Alpha is the transparency value. An alpha of 100 is completely opaque while a value of 0 is completely transparent. The transparency of the surface in Figure \@ref(fig:surfaceex) was 30. An additional option is to color the inside of the surface which is general unnecessary but can be fun to experiment with.
 
 ```{r surfmenu, echo=FALSE, warning=FALSE, message=FALSE, out.width="120%", fig.cap="Surface color and transparency menu"}
-knitr::include_graphics("../YASARA_guide/images/surfmenu.PNG")
+knitr::include_graphics("images/surfmenu.PNG")
 
 ```
 
@@ -363,7 +363,7 @@ To hide all surfaces using `HideSurfAll`.
   1. Try to re-create the image in Figure \@ref(fig:fivecheck) using PDB [1QSN](http://www.rcsb.org/structure/1QSN). You will use commands from this chapter as well as the previous chapter to make the figure. List the commands.
 
 ```{r fivecheck, echo=FALSE, warning=FALSE, message=FALSE, out.width="120%", fig.cap="Your mission, if you choose to accept it"}
-knitr::include_graphics("../YASARA_guide/images/teststructure.PNG")
+knitr::include_graphics("images/teststructure.PNG")
 
 
 ```
