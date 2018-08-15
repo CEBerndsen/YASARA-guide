@@ -237,7 +237,7 @@ View>Color>*Select organization level*, then pick your Obj/Mol/Res, and pick you
 Once you have made your selection, click "Apply Unique Color" to apply the single color or you can apply a color gradient. The gradient option is not used frequently and the `SearchDoc` command can provide more information.
 
 ```{r colormenu, eval = TRUE, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="YASARA color menu", out.width="120%"}
-knitr::include_graphics("../images/colormenu.PNG")
+knitr::include_graphics("images/colormenu.PNG")
 
 
 ```
