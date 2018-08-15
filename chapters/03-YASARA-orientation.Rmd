@@ -2,7 +2,7 @@
 
 Open YASARA and you should see a screen that looks similar to \@ref(fig:opening).
 
-```{r opening, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="The initial YASARA screen", fig.align='center', out.width="120%"}
+```{r opening, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="The initial YASARA screen", out.width="120%"}
 
 
 knitr::include_graphics("images/opening.PNG")
@@ -17,7 +17,7 @@ The next sections will orient you to the Heads-up Display (\@ref(HUD)), the comm
 
 The *Heads-up Display or HUD* in YASARA~view~ consists of two main pieces: the **Atom Properties** list and the **Scene Content** \@ref(fig:hud).
 
-```{r hud, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="Heads-Up Display in YASARA. The Atom properties area is shown inside the yellow box, while the Scene Content table is shown in the red box", fig.align='center'}
+```{r hud, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="Heads-Up Display in YASARA. The Atom properties area is shown inside the yellow box, while the Scene Content table is shown in the red box"}
 
 open <- image_read("../YASARA_guide/images/opening.PNG")
 
@@ -95,7 +95,7 @@ Given the importance of computers to many scientific careers, experience working
 
 Hidden toward the bottom of the screen is the Sequence bar (\@ref(fig:seqbar)). Moving the cursor toward the bottom of the screen brings the bar up. You can click on the amino acids and scroll through the sequence of the model using this bar. This is an easy way to navigate through the model and find the specific part that you are interested. The bar can be pinned on the screen by clicking the blue button on the top left side. 
 
-```{r seqbar, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="The initial YASARA screen", fig.align='center', out.width="120%"}
+```{r seqbar, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="The initial YASARA screen", out.width="120%"}
 
 knitr::include_graphics("images/sequencebar.PNG")
 
@@ -110,7 +110,7 @@ In addition to the console, YASARA can be controlled using the Menu System which
 
 The **Top Menu** will look familiar to users who use the Microsoft suite of programs or most modern productivity software. The 8 top-level categories are shown in the green box in Figure \@ref(fig:menutree). We will explore several of this categories in more depth in later chapters. One note to make now is that the *Analyze* category is inaccessible until a molecule is loaded. This is shown as being in light grey, compared to the black of other categories. In general, if a menu category or option cannot be used under the current conditions, it will be colored grey. 
 
-```{r menutree, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="Menu Bar of YASARA showing the Top Menu inside the green box and the Top row buttons inside the light blue box", fig.align='center'}
+```{r menutree, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="Menu Bar of YASARA showing the Top Menu inside the green box and the Top row buttons inside the light blue box"}
 
 open <- image_read("../YASARA_guide/images/opening.PNG")
 
@@ -138,7 +138,7 @@ The **Top row buttons** are quick ways to perform tasks such as center the view 
 
 ### Pop-up menu
 
-```{r pop, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Example of the pop-up menu in YASARA", fig.align='center'}
+```{r pop, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Example of the pop-up menu in YASARA"}
 
 include_graphics("images/pop-menu.png")
 
@@ -174,7 +174,7 @@ Press the Space Bar to open the console and type `SearchDoc` followed by the inq
 
 The help page will open as a webpage in your default web browser (\@ref(fig:helpind)). This page will list every time that word or phrase appears in the YASARA documentation. 
 
-```{r helpind, echo=FALSE, warning=FALSE, message=FALSE,fig.cap="Results of using SearchDoc part 1: Initial search results", fig.align='center'}
+```{r helpind, echo=FALSE, warning=FALSE, message=FALSE,fig.cap="Results of using SearchDoc part 1: Initial search results"}
 
 include_graphics("images/helpindex.PNG")
 
@@ -188,7 +188,7 @@ Clicking on any of the blue links will take you to the page for the command as s
   
   3. Examples of how to use the command in the console or in a macro.
 
-```{r helppage, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="Results of using SearchDoc part 2: The help page for the ColorBG command", fig.align='center'}
+```{r helppage, echo=FALSE, warning=FALSE, message=FALSE, fig.height=2, fig.cap="Results of using SearchDoc part 2: The help page for the ColorBG command"}
 
 include_graphics("images/helppage1.PNG")
 
@@ -201,7 +201,7 @@ Like this reference, the *Menu* row in the box describes where in the Menus this
 While not formally part of the help system, users can click on the *Help* category in the top menu and then choose *Play Help Movie* (Help>Play Help Movie) to access YASARA rendered movies introducing users to a variety of topics. The movies are interactive and useful for first-time users, however they are not searchable and can take a while to find a specific topic. Therefore, I recommend going through the help movies once or twice early on, but using `SearchDoc` as you become more experienced. 
 
 ## File system {#files}
-```{r filetree, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="File folders created upon installing YASARA in Windows", fig.align='center'}
+```{r filetree, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="File folders created upon installing YASARA in Windows"}
 
 include_graphics("images/filetree.PNG")
 
