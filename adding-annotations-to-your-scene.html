@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>A Guide to YASARA</title>
+  <meta name="description" content="A guide for the visualization program YASARA and the uses of the program">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="A Guide to YASARA" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="..YASARA_guide/images/cover.png" />
+  <meta property="og:description" content="A guide for the visualization program YASARA and the uses of the program" />
+  <meta name="github-repo" content="<a href="https://github.com/CEBerndsen/YASARA-guide" class="uri">https://github.com/CEBerndsen/YASARA-guide</a>" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="A Guide to YASARA" />
+  
+  <meta name="twitter:description" content="A guide for the visualization program YASARA and the uses of the program" />
+  <meta name="twitter:image" content="..YASARA_guide/images/cover.png" />
+
+<meta name="author" content="Chris Berndsen">
+
+
+<meta name="date" content="2018-08-15">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="manipulate.html">
+<link rel="next" href="making-measurements-and-comparisons.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A guide to biomolecule visualization and analysis in YASARA</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#why-read-this-book"><i class="fa fa-check"></i><b>1.1</b> Why read this book</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#what-is-in-this-guide"><i class="fa fa-check"></i><b>1.2</b> What is in this guide?</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#a-note-on-using-the-command-line"><i class="fa fa-check"></i><b>1.3</b> A note on using the command line</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#end-of-section-checks-and-active-reading"><i class="fa fa-check"></i><b>1.4</b> End of section checks and active reading</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#questions-and-corrections"><i class="fa fa-check"></i><b>1.5</b> Questions and corrections</a></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#acknowledgements"><i class="fa fa-check"></i><b>1.6</b> Acknowledgements</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="introduction.html"><a href="introduction.html#who-owns-yasara-and-the-other-programs-in-this-book"><i class="fa fa-check"></i><b>1.6.1</b> Who owns YASARA and the other programs in this book</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="obtaining-yasara.html"><a href="obtaining-yasara.html"><i class="fa fa-check"></i><b>2</b> Obtaining YASARA</a><ul>
+<li class="chapter" data-level="2.1" data-path="obtaining-yasara.html"><a href="obtaining-yasara.html#what-is-yasara"><i class="fa fa-check"></i><b>2.1</b> What is YASARA</a></li>
+<li class="chapter" data-level="2.2" data-path="obtaining-yasara.html"><a href="obtaining-yasara.html#download-yasaraview"><i class="fa fa-check"></i><b>2.2</b> Download YASARA<sub>view</sub></a></li>
+<li class="chapter" data-level="2.3" data-path="obtaining-yasara.html"><a href="obtaining-yasara.html#installing-yasara"><i class="fa fa-check"></i><b>2.3</b> Installing YASARA</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html"><i class="fa fa-check"></i><b>3</b> The YASARA user interface</a><ul>
+<li class="chapter" data-level="3.1" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#HUD"><i class="fa fa-check"></i><b>3.1</b> Heads Up Display (HUD)</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#atom-properties"><i class="fa fa-check"></i><b>3.1.1</b> Atom Properties</a></li>
+<li class="chapter" data-level="3.1.2" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#content"><i class="fa fa-check"></i><b>3.1.2</b> Scene Content</a></li>
+<li class="chapter" data-level="3.1.3" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#hiding-the-hud"><i class="fa fa-check"></i><b>3.1.3</b> Hiding the HUD</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#console"><i class="fa fa-check"></i><b>3.2</b> The Console</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#up-arrow"><i class="fa fa-check"></i><b>3.2.1</b> Up Arrow!</a></li>
+<li class="chapter" data-level="3.2.2" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#tangent-on-using-the-command-line-and-the-interactive-menus"><i class="fa fa-check"></i><b>3.2.2</b> Tangent on using the command line and the interactive menus</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#seq"><i class="fa fa-check"></i><b>3.3</b> Sequence Bar</a></li>
+<li class="chapter" data-level="3.4" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#Menu"><i class="fa fa-check"></i><b>3.4</b> Menu System</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#top-menu"><i class="fa fa-check"></i><b>3.4.1</b> Top Menu</a></li>
+<li class="chapter" data-level="3.4.2" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#top-row-buttons"><i class="fa fa-check"></i><b>3.4.2</b> Top row buttons</a></li>
+<li class="chapter" data-level="3.4.3" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#pop-up-menu"><i class="fa fa-check"></i><b>3.4.3</b> Pop-up menu</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#help"><i class="fa fa-check"></i><b>3.5</b> Where to find help</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#searchdoc"><i class="fa fa-check"></i><b>3.5.1</b> SearchDoc</a></li>
+<li class="chapter" data-level="3.5.2" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#help-movies"><i class="fa fa-check"></i><b>3.5.2</b> Help Movies</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#files"><i class="fa fa-check"></i><b>3.6</b> File system</a><ul>
+<li class="chapter" data-level="3.6.1" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#naming-files-and-data-management"><i class="fa fa-check"></i><b>3.6.1</b> Naming files and Data Management</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#knowledge-self-checks"><i class="fa fa-check"></i><b>3.7</b> Knowledge Self-Checks</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html"><i class="fa fa-check"></i><b>4</b> File types and how to work with them in YASARA</a><ul>
+<li class="chapter" data-level="4.1" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#types"><i class="fa fa-check"></i><b>4.1</b> Common model file types</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#pdb-files"><i class="fa fa-check"></i><b>4.1.1</b> .pdb files</a></li>
+<li class="chapter" data-level="4.1.2" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#yob-files-yasara-object"><i class="fa fa-check"></i><b>4.1.2</b> .yob files (YASARA object)</a></li>
+<li class="chapter" data-level="4.1.3" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#sce-files-scene-files"><i class="fa fa-check"></i><b>4.1.3</b> .sce files (Scene files)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#starting-to-work-with-models-in-yasara"><i class="fa fa-check"></i><b>4.2</b> Starting to work with models in YASARA</a></li>
+<li class="chapter" data-level="4.3" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#load"><i class="fa fa-check"></i><b>4.3</b> Loading a model</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#pdb-files-1"><i class="fa fa-check"></i><b>4.3.1</b> .pdb files</a></li>
+<li class="chapter" data-level="4.3.2" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#getting-a-.pdb-file-from-the-internet"><i class="fa fa-check"></i><b>4.3.2</b> Getting a .pdb file from the internet</a></li>
+<li class="chapter" data-level="4.3.3" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#yob-files"><i class="fa fa-check"></i><b>4.3.3</b> .yob files</a></li>
+<li class="chapter" data-level="4.3.4" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#sce-files"><i class="fa fa-check"></i><b>4.3.4</b> .sce files</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#what-does-obj-vs.mol-vs.res-vs.atom-mean"><i class="fa fa-check"></i><b>4.4</b> What does Obj vs. Mol vs. Res vs. Atom mean?</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#why-is-the-organization-important"><i class="fa fa-check"></i><b>4.4.1</b> Why is the organization important?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#build"><i class="fa fa-check"></i><b>4.5</b> Building a molecule</a></li>
+<li class="chapter" data-level="4.6" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#save"><i class="fa fa-check"></i><b>4.6</b> Saving Models</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#pdb-files-2"><i class="fa fa-check"></i><b>4.6.1</b> .pdb files</a></li>
+<li class="chapter" data-level="4.6.2" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#yob-files-1"><i class="fa fa-check"></i><b>4.6.2</b> .yob files</a></li>
+<li class="chapter" data-level="4.6.3" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#sce-files-1"><i class="fa fa-check"></i><b>4.6.3</b> .sce files</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#remove"><i class="fa fa-check"></i><b>4.7</b> Adding and Removing Objects</a></li>
+<li class="chapter" data-level="4.8" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#knowledge-self-checks-1"><i class="fa fa-check"></i><b>4.8</b> Knowledge Self-Checks</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="manipulate.html"><a href="manipulate.html"><i class="fa fa-check"></i><b>5</b> Manipulating the model</a><ul>
+<li class="chapter" data-level="5.1" data-path="manipulate.html"><a href="manipulate.html#orient"><i class="fa fa-check"></i><b>5.1</b> Positioning and orienting the model</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="manipulate.html"><a href="manipulate.html#making-reproducible-views"><i class="fa fa-check"></i><b>5.1.1</b> Making Reproducible Views</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="manipulate.html"><a href="manipulate.html#style"><i class="fa fa-check"></i><b>5.2</b> Changing how the model looks</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="manipulate.html"><a href="manipulate.html#stylizing-individual-amino-acids"><i class="fa fa-check"></i><b>5.2.1</b> Stylizing individual amino acids</a></li>
+<li class="chapter" data-level="5.2.2" data-path="manipulate.html"><a href="manipulate.html#hide"><i class="fa fa-check"></i><b>5.2.2</b> Showing and Hiding Atoms and Amino Acids</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="manipulate.html"><a href="manipulate.html#colors"><i class="fa fa-check"></i><b>5.3</b> Setting the Colors of the Model</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="manipulate.html"><a href="manipulate.html#color-wheel"><i class="fa fa-check"></i><b>5.3.1</b> Color Wheel</a></li>
+<li class="chapter" data-level="5.3.2" data-path="manipulate.html"><a href="manipulate.html#color-by-element-and-other-features"><i class="fa fa-check"></i><b>5.3.2</b> Color by Element and other features</a></li>
+<li class="chapter" data-level="5.3.3" data-path="manipulate.html"><a href="manipulate.html#changing-the-color-scheme"><i class="fa fa-check"></i><b>5.3.3</b> Changing the color scheme</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="manipulate.html"><a href="manipulate.html#surfaces"><i class="fa fa-check"></i><b>5.4</b> Adding a surface</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="manipulate.html"><a href="manipulate.html#hiding-a-surface"><i class="fa fa-check"></i><b>5.4.1</b> Hiding a surface</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="manipulate.html"><a href="manipulate.html#knowledge-self-check"><i class="fa fa-check"></i><b>5.5</b> Knowledge Self-Check</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="adding-annotations-to-your-scene.html"><a href="adding-annotations-to-your-scene.html"><i class="fa fa-check"></i><b>6</b> Adding annotations to your scene</a><ul>
+<li class="chapter" data-level="6.1" data-path="adding-annotations-to-your-scene.html"><a href="adding-annotations-to-your-scene.html#png"><i class="fa fa-check"></i><b>6.1</b> Saving an image</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="adding-annotations-to-your-scene.html"><a href="adding-annotations-to-your-scene.html#background"><i class="fa fa-check"></i><b>6.1.1</b> Change the background color</a></li>
+<li class="chapter" data-level="6.1.2" data-path="adding-annotations-to-your-scene.html"><a href="adding-annotations-to-your-scene.html#hidehud"><i class="fa fa-check"></i><b>6.1.2</b> Hide the HUD!</a></li>
+<li class="chapter" data-level="6.1.3" data-path="adding-annotations-to-your-scene.html"><a href="adding-annotations-to-your-scene.html#rayopt"><i class="fa fa-check"></i><b>6.1.3</b> Ray Tracing options</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="adding-annotations-to-your-scene.html"><a href="adding-annotations-to-your-scene.html#labels"><i class="fa fa-check"></i><b>6.2</b> Labels</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="adding-annotations-to-your-scene.html"><a href="adding-annotations-to-your-scene.html#labpar"><i class="fa fa-check"></i><b>6.2.1</b> Label parameters</a></li>
+<li class="chapter" data-level="6.2.2" data-path="adding-annotations-to-your-scene.html"><a href="adding-annotations-to-your-scene.html#removing-a-label"><i class="fa fa-check"></i><b>6.2.2</b> Removing a label</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="adding-annotations-to-your-scene.html"><a href="adding-annotations-to-your-scene.html#bonds"><i class="fa fa-check"></i><b>6.3</b> Hydrogen Bonds</a></li>
+<li class="chapter" data-level="6.4" data-path="adding-annotations-to-your-scene.html"><a href="adding-annotations-to-your-scene.html#figurelessons"><i class="fa fa-check"></i><b>6.4</b> Making good figures</a></li>
+<li class="chapter" data-level="6.5" data-path="adding-annotations-to-your-scene.html"><a href="adding-annotations-to-your-scene.html#knowledge-checks"><i class="fa fa-check"></i><b>6.5</b> Knowledge Checks</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html"><i class="fa fa-check"></i><b>7</b> Making measurements and comparisons</a><ul>
+<li class="chapter" data-level="7.1" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html#select"><i class="fa fa-check"></i><b>7.1</b> Making Selections</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html#making-multiple-selections"><i class="fa fa-check"></i><b>7.1.1</b> Making multiple selections</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html#measure"><i class="fa fa-check"></i><b>7.2</b> Measuring Distance</a></li>
+<li class="chapter" data-level="7.3" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html#mangle"><i class="fa fa-check"></i><b>7.3</b> Measuring Angles</a></li>
+<li class="chapter" data-level="7.4" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html#dihedral"><i class="fa fa-check"></i><b>7.4</b> Measurings Dihedrals</a></li>
+<li class="chapter" data-level="7.5" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html#count"><i class="fa fa-check"></i><b>7.5</b> Counting Atoms/Residues</a></li>
+<li class="chapter" data-level="7.6" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html#align"><i class="fa fa-check"></i><b>7.6</b> Alignment</a><ul>
+<li class="chapter" data-level="7.6.1" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html#rmsd"><i class="fa fa-check"></i><b>7.6.1</b> Root Mean Square Deviation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="exercise-answers.html"><a href="exercise-answers.html"><i class="fa fa-check"></i><b>8</b> Exercise Answers</a><ul>
+<li class="chapter" data-level="8.1" data-path="exercise-answers.html"><a href="exercise-answers.html#threekey"><i class="fa fa-check"></i><b>8.1</b> Chapter 3</a></li>
+<li class="chapter" data-level="8.2" data-path="exercise-answers.html"><a href="exercise-answers.html#fourkey"><i class="fa fa-check"></i><b>8.2</b> Chapter 4</a></li>
+<li class="chapter" data-level="8.3" data-path="exercise-answers.html"><a href="exercise-answers.html#fivekey"><i class="fa fa-check"></i><b>8.3</b> Chapter 5</a></li>
+<li class="chapter" data-level="8.4" data-path="exercise-answers.html"><a href="exercise-answers.html#sixkey"><i class="fa fa-check"></i><b>8.4</b> Chapter 6</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">
+Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Guide to YASARA</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="adding-annotations-to-your-scene" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> Adding annotations to your scene</h1>
+<p>With the various manipulations covered in Chapter <a href="manipulate.html#manipulate">5</a>, we can now start making figures to display biomolecule structures. This chapter will cover the basics of annotation and conclude with some tips on making good figures (<a href="adding-annotations-to-your-scene.html#figurelessons">6.4</a>). We will start with making a basic image of a protein and then add layers of annotation.</p>
+<p>As a note, many of the annotations added here, can be added via standard illustration or photo manipulation software as well. Therefore, do not see this as the only way to make a figure using structural data, just one way.</p>
+<div id="png" class="section level2">
+<h2><span class="header-section-number">6.1</span> Saving an image</h2>
+<p>The first step in making a figure is to know how to save an image of your model. Thus far, I have described how to save the model itself, but not how to take an image. There are two levels of image quality when saving, the standard screen shot and <code>RayTrace</code>. The latter is the preferred method however, the standard screen shot works in most cases (see <a href="adding-annotations-to-your-scene.html#hidehud">6.1.2</a> for caveat).</p>
+<p>To save an image via the menu: File&gt;Save As&gt;Normal Screenshot, then choose your filename and destination.</p>
+<p>For a raytraced image via the menu: File&gt;Save As&gt;Ray traced hisres screenshot, then set your options (<a href="adding-annotations-to-your-scene.html#rayopt">6.1.3</a>) and click OK, then select your destination and image dimensions and click OK.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load PDB file</span>
+<span class="op">&gt;</span>LoadPDB 1crn
+
+<span class="co"># Save an image of the model in PNG format</span>
+<span class="op">&gt;</span>SavePNG png\test.png
+
+<span class="co"># Saving a ray traced image in PNG format</span>
+<span class="op">&gt;</span>RayTrace png\test.png,X=<span class="dv">1024</span>,Y=<span class="dv">00541</span>,Zoom=<span class="fl">1.0</span>,Atoms=Balls,LabelShadow=No,SecAlpha=<span class="dv">100</span>,Display=Yes,Outline=<span class="fl">0.0</span>,Background=No</code></pre></div>
+<p>I don’t recommend saving images via the command line, especially ray traced images and all the options. The ability to alter the background texture and image size however are great advantages of using <code>RayTrace</code> over <code>SavePNG</code>.</p>
+<div id="background" class="section level3">
+<h3><span class="header-section-number">6.1.1</span> Change the background color</h3>
+<p>The background color is changed via the <code>ColorBG</code> command followed by the color of choice. White is the typical value however it depends on your medium. You can also set the background to be a gradient between two colors.</p>
+<p>To change the color via menus:</p>
+<p>View&gt;Color&gt;Background, then select your color and click OK.</p>
+<p>If you choosing a gradient, then click Continue with Bottom Color and then selecting a color and clicking OK. In the command line this appears as below.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Color background a single color</span>
+<span class="op">&gt;</span>ColorBG green
+
+<span class="co"># Color background as a two-color gradient</span>
+<span class="op">&gt;</span>ColorBG green, blue</code></pre></div>
+</div>
+<div id="hidehud" class="section level3">
+<h3><span class="header-section-number">6.1.2</span> Hide the HUD!</h3>
+<p>If you use the <code>SavePNG</code> command to take a normal screenshot, everything in the scene including the HUD will appear in the image. To hide the HUD, press the Insert key or type <code>HUD off</code> in the command line. This will save you having the text of the HUD appear and gives you more image space to occupy with your biomolecule.</p>
+</div>
+<div id="rayopt" class="section level3">
+<h3><span class="header-section-number">6.1.3</span> Ray Tracing options</h3>
+<p>Ray tracing requires downloading POV-Ray from www.povray.org and installing it in the pov folder of YASARA. In some versions of YASARA, this can be done via menus by:</p>
+<p>Help&gt;Install&gt;POVRay</p>
+<p>More details of installing POV-Ray can be found by using <code>SearchDoc</code> for the command <code>RayTrace</code>. The page on the <code>RayTrace</code> command also describes all the options for ray tracing in detail and I will summarize the key ones here.</p>
+<ul>
+<li><p><strong>Transparent Background</strong> – When this box is checked or Background=No, then everything that is not model will be transparent. This is a great feature for when making images for articles or presentations as it saves cropping of the background out of the image later.</p></li>
+<li><p><strong>Label Shadow</strong> – If checked or set to Yes, then any labels that you add (see section <a href="adding-annotations-to-your-scene.html#labels">6.2</a>), will have shadows. This is a neat effect for presentations, but not something I would use in a figure in a paper.</p></li>
+<li><p><strong>X and Y values</strong> – This is the size in pixels of the final output from the ray tracing. To make a high resolution image for a paper or article, I recommend increasing these values by 2 to 5-fold and then shrinking the image size after inserting it. This reduces the pixelation issue that haunts structural biologists. Increasing these values will make for a larger file size so do not go crazy.</p></li>
+</ul>
+</div>
+</div>
+<div id="labels" class="section level2">
+<h2><span class="header-section-number">6.2</span> Labels</h2>
+<p>Labels are useful for explicitly marking atoms, distances, molecules, and other aspects of the scene contents. Labels can be positioned freely once they are made and maintain their orientation to the viewer throughout rotations of the scene.</p>
+<p>To add a label via the menus:</p>
+<p>Effects&gt;Label&gt;<em>Pick your option</em>, then select what will be labeled and click OK, then define the label parameters (<a href="adding-annotations-to-your-scene.html#labpar">6.2.1</a>) and then select the color OR click OK.</p>
+<p>The command to add a label is <code>Label</code> followed by the level of organization or distance (<code>Dis</code>). There are a number of parameters to be set afterwards (see Section <a href="adding-annotations-to-your-scene.html#labpar">6.2.1</a> for more details.</p>
+<p>The code below shows how to make the image in Figure <a href="adding-annotations-to-your-scene.html#fig:labelpic">6.1</a>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load PDB file</span>
+LoadPDB 1crn, download=yes
+
+<span class="co"># Position the model for viewing and labeling</span>
+<span class="op">&gt;</span>PosOriObj <span class="dv">01</span>, X=<span class="fl">0.000</span>, Y=<span class="fl">0.000</span>, Z=<span class="fl">50.000</span>, Alpha=<span class="op">-</span><span class="dv">5</span>, Beta=<span class="dv">280</span>, Gamma=<span class="op">-</span><span class="dv">15</span>
+
+<span class="co"># Stylize the molecule</span>
+<span class="op">&gt;</span>ColorBG White
+<span class="op">&gt;</span>Style Ribbon
+<span class="op">&gt;</span>Style Sidechain=stick
+<span class="op">&gt;</span>ColorObj <span class="dv">1</span>, grey
+
+<span class="co"># Color Arg 17 blue and show in Ball style</span>
+<span class="op">&gt;</span>ColorRes <span class="dv">17</span>, blue
+<span class="op">&gt;</span>BallRes <span class="dv">17</span>
+
+<span class="co"># Make a blue label showing Arg 17 and have it be to right of the target</span>
+<span class="op">&gt;</span>LabelRes Arg <span class="dv">17</span>,Format=RESNAME RESNUM,Height=<span class="fl">2.0</span>,Color=Blue,X=<span class="fl">10.0</span>,Y=<span class="op">-</span><span class="dv">1</span>,Z=<span class="fl">0.0</span></code></pre></div>
+<div class="figure"><span id="fig:labelpic"></span>
+<img src="../YASARA_guide/images/labelone.PNG" alt="Resulting image of labeling code" width="125%" />
+<p class="caption">
+Figure 6.1: Resulting image of labeling code
+</p>
+</div>
+<div id="labpar" class="section level3">
+<h3><span class="header-section-number">6.2.1</span> Label parameters</h3>
+<ul>
+<li><p><strong>Scene/Obj/Res/Mol/Atom/Distance</strong> – These options are under the Effects&gt;Label menu. With the exception of Distance, all of them describe a level of organization. Distance will calculate the distance between the selection and display that number.</p></li>
+<li><p><strong>Format</strong> – This option describes what aspect will be labeled. RESNAME is the three letter code for the residue, RESNUM is the residue number. You can also put arbitrary text in this space.</p></li>
+<li><p><strong>Height</strong> – This defines how tall the text will be in Angstroms, which is 10<sup>-10</sup> meters. This is really small compared to a human but is the standard unit of measurement for biomolecules. The text in Figure <a href="adding-annotations-to-your-scene.html#fig:labelpic">6.1</a> is 2 angstroms tall for reference.</p></li>
+<li><p><strong>Color</strong> – Defines the color. Can be chosen using words or numbers as in section <a href="manipulate.html#colors">5.3</a>.</p></li>
+<li><p><strong>X, Y, Z</strong> – Indicates where the label is placed relative to the target of the label. The units are in angstroms. Placing the label is the trickest part of labeling part of a scene.</p></li>
+</ul>
+<p>After you have created the label, if you want to move it to a new location, left-click on the label and you can freely move it around the screen using the mouse commands described in <a href="manipulate.html#tab:mousetable">5.1</a>. This is very useful when making figures.</p>
+</div>
+<div id="removing-a-label" class="section level3">
+<h3><span class="header-section-number">6.2.2</span> Removing a label</h3>
+<p>To remove a label, you can left-click on the label and press delete. Alternative use the command <code>Unlabel</code>. Typing <code>UnlabelResAll</code> removes all amino acid labels.</p>
+</div>
+</div>
+<div id="bonds" class="section level2">
+<h2><span class="header-section-number">6.3</span> Hydrogen Bonds</h2>
+<p><a href="https://www.ncbi.nlm.nih.gov/books/NBK22567/">Hydrogen bonds</a> are important weak interactions found throughout biochemistry.</p>
+</div>
+<div id="figurelessons" class="section level2">
+<h2><span class="header-section-number">6.4</span> Making good figures</h2>
+</div>
+<div id="knowledge-checks" class="section level2">
+<h2><span class="header-section-number">6.5</span> Knowledge Checks<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a></h2>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="6">
+<li id="fn6"><p>Answers can be found <a href="exercise-answers.html#sixkey">8.4</a><a href="adding-annotations-to-your-scene.html#fnref6">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="manipulate.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="making-measurements-and-comparisons.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": true,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"search": true,
+"toolbar": {
+"position": "fixed"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

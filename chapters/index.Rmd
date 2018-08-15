@@ -11,7 +11,7 @@ github-repo: https://github.com/CEBerndsen/YASARA-guide
 description: "A guide for the visualization program YASARA and the uses of the program"
 ---
 
-# Introduction
+# Index
 
 
 ## Why read this book
