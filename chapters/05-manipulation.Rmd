@@ -1,4 +1,4 @@
-# Manipulating the model
+# Manipulating the model {#manipulate}
 
 This chapter will be one of the more useful for students who are using YASARA to make professional and informative looking figures. We will cover how to Position and orient molecules manually and reproducibly (\@ref(orient)) and then stylize the molecule using different representations (\@ref(style)), colors (\@ref(colors)), and how to make surface representations (\@ref(surfaces)). Chapter 6 will cover how to label (\@ref(labels)) and change the color of your background (\@ref(background)).
 

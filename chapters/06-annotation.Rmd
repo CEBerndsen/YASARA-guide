@@ -1,12 +1,12 @@
 # Adding annotations to your scene
 
-With the various manipulations covered in Chapter \@ref(Manipulating-the-model), we can now start making figures to display biomolecule structures. This chapter will cover the basics of annotation and conclude with some tips on making good figures (\@ref(figurelessons)). We will start with making a basic image of a protein and then add layers of annotation.
+With the various manipulations covered in Chapter \@ref(manipulate), we can now start making figures to display biomolecule structures. This chapter will cover the basics of annotation and conclude with some tips on making good figures (\@ref(figurelessons)). We will start with making a basic image of a protein and then add layers of annotation.
 
 As a note, many of the annotations added here, can be added via standard illustration or photo manipulation software as well. Therefore, do not see this as the only way to make a figure using structural data, just one way. 
 
 ## Saving an image {#png}
 
-The first step in making a figure is to know how to save an image of your model. Thus far, I have described how to save the model itself, but not how to take an image. I recommend changing the background color via `ColorBG` and then choosing a color. White is the typical value however it depends on your medium. There are two levels of image quality when saving, the standard screen shot and `RayTrace`. The latter is the preferred method however, the standard screen shot works in most cases (see \@ref(hidehud) for caveat). 
+The first step in making a figure is to know how to save an image of your model. Thus far, I have described how to save the model itself, but not how to take an image. There are two levels of image quality when saving, the standard screen shot and `RayTrace`. The latter is the preferred method however, the standard screen shot works in most cases (see \@ref(hidehud) for caveat). 
 
 To save an image via the menu:
 File>Save As>Normal Screenshot, then choose your filename and destination.
@@ -18,16 +18,37 @@ File>Save As>Ray traced hisres screenshot, then set your options (\@ref(rayopt))
 # Load PDB file
 >LoadPDB 1crn
 
-# Save an image of the model
+# Save an image of the model in PNG format
 >SavePNG png\test.png
 
-# Ray traced image
+# Saving a ray traced image in PNG format
 >RayTrace png\test.png,X=1024,Y=00541,Zoom=1.0,Atoms=Balls,LabelShadow=No,SecAlpha=100,Display=Yes,Outline=0.0,Background=No
 
 ```
 
 
 I don't recommend saving images via the command line, especially ray traced images and all the options. The ability to alter the background texture and image size however are great advantages of using `RayTrace` over `SavePNG`. 
+
+### Change the background color {#background}
+
+The background color is changed via the `ColorBG` command followed by the color of choice. White is the typical value however it depends on your medium. You can also set the background to be a gradient between two colors.
+
+To change the color via menus:
+
+View>Color>Background, then select your color and click OK. 
+
+If you choosing a gradient, then click Continue with Bottom Color and then selecting a color and clicking OK. In the command line this appears as below.
+
+```{r bkgd, echo=TRUE, eval=FALSE}
+# Color background a single color
+>ColorBG green
+
+# Color background as a two-color gradient
+>ColorBG green, blue
+
+```
+
+
 
 ### Hide the HUD! {#hidehud}
 
@@ -39,24 +60,76 @@ Ray tracing requires downloading POV-Ray from www.povray.org and installing it i
 
 Help>Install>POVRay 
 
-More details of installing can be found by using `SearchDoc` for the command `RayTrace`. This page on the `RayTrace` command also describes all the options for ray tracing in detail and I will summarize the key ones here. 
+More details of installing POV-Ray can be found by using `SearchDoc` for the command `RayTrace`. The page on the `RayTrace` command also describes all the options for ray tracing in detail and I will summarize the key ones here. 
 
   * **Transparent Background** -- When this box is checked or Background=No, then everything that is not model will be transparent. This is a great feature for when making images for articles or presentations as it saves cropping of the background out of the image later.
   
-  * **Label Shadow** -- if checked or set to Yes, then any labels that you add (see section \@ref(labels)), will have shadows. This is a neat effect for presentations, but not something I would use in a figure in a paper.
+  * **Label Shadow** -- If checked or set to Yes, then any labels that you add (see section \@ref(labels)), will have shadows. This is a neat effect for presentations, but not something I would use in a figure in a paper.
   
-  * **X and Y values** -- this is the size in pixels of the final output from the ray tracing. To make a high resolution image for a paper or article, I recommend increasing these values by 2 to 5-fold and then shrinking the image size after inserting it. This reduces the pixelation issue that haunts structural biologists. Increasing these values will make for a larger file size so do not go crazy.
+  * **X and Y values** -- This is the size in pixels of the final output from the ray tracing. To make a high resolution image for a paper or article, I recommend increasing these values by 2 to 5-fold and then shrinking the image size after inserting it. This reduces the pixelation issue that haunts structural biologists. Increasing these values will make for a larger file size so do not go crazy.
 
 
 ## Labels {#labels}
 
+Labels are useful for explicitly marking atoms, distances, molecules, and other aspects of the scene contents. Labels can be positioned freely once they are made and maintain their orientation to the viewer throughout rotations of the scene. 
 
+To add a label via the menus:
 
-## Arrows {#arrows}
+Effects>Label>*Pick your option*, then select what will be labeled and click OK, then define the label parameters (\@ref(labpar)) and then select the color OR click OK.
+
+The command to add a label is `Label` followed by the level of organization or distance (`Dis`). There are a number of parameters to be set afterwards (see Section \@ref(labpar) for more details. 
+
+The code below shows how to make the image in Figure \@ref(fig:labelpic). 
+
+```{r label, echo=TRUE, eval=FALSE}
+# Load PDB file
+LoadPDB 1crn, download=yes
+
+# Position the model for viewing and labeling
+>PosOriObj 01, X=0.000, Y=0.000, Z=50.000, Alpha=-5, Beta=280, Gamma=-15
+
+# Stylize the molecule
+>ColorBG White
+>Style Ribbon
+>Style Sidechain=stick
+>ColorObj 1, grey
+
+# Color Arg 17 blue and show in Ball style
+>ColorRes 17, blue
+>BallRes 17
+
+# Make a blue label showing Arg 17 and have it be to the right of the target
+>LabelRes Arg 17,Format=RESNAME RESNUM,Height=2.0,Color=Blue,X=10.0,Y=-1,Z=0.0
+
+```
+
+```{r labelpic, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Resulting image of labeling code", out.width="125%"}
+
+include_graphics("../YASARA_guide/images/labelone.PNG")
+
+```
+
+### Label parameters {#labpar}
+
+  * **Scene/Obj/Res/Mol/Atom/Distance** -- These options are under the Effects>Label menu. With the exception of Distance, all of them describe a level of organization. Distance will calculate the distance between the selection and display that number. 
+  
+  * **Format** -- This option describes what aspect will be labeled. RESNAME is the three letter code for the residue, RESNUM is the residue number. You can also put arbitrary text in this space. 
+  
+  * **Height** -- This defines how tall the text will be in Angstroms, which is 10^-10^ meters. This is really small compared to a human but is the standard unit of measurement for biomolecules. The text in Figure \@ref(fig:labelpic) is 2 angstroms tall for reference.
+  
+  * **Color** -- Defines the color. Can be chosen using words or numbers as in section \@ref(colors). 
+  
+  * **X, Y, Z** -- Indicates where the label is placed relative to the target of the label. The units are in angstroms. Placing the label is the trickest part of labeling part of a scene. 
+  
+After you have created the label, if you want to move it to a new location, left-click on the label and you can freely move it around the screen using the mouse commands described in \@ref(tab:mousetable). This is very useful when making figures. 
+
+### Removing a label
+
+To remove a label, you can left-click on the label and press delete. Alternative use the command `Unlabel`. Typing `UnlabelResAll` removes all amino acid labels.
 
 ## Hydrogen Bonds {#bonds}
 
-## Background color {#background}
+[Hydrogen bonds](https://www.ncbi.nlm.nih.gov/books/NBK22567/) are important weak interactions found throughout biochemistry. 
 
 ## Making good figures {#figurelessons}
 
