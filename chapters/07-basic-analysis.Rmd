@@ -1,8 +1,36 @@
 # Making measurements and comparisons
 
+In addition to being a good program for visualizing biomolecules, YASARA can also be a tool to analyze biomolecule structure. In the free version the analysis capabilities are limited, however for most biomolecules, these simple tools are sufficient. 
+
 ## Making Selections {#select}
 
+All analytical methods in YASARA require a definition of the Obj/Mol/Res/Atoms involved. Selections can be made using the mouse as described in Table \@ref(tab:mousetable) or using the `Select` command in the menu or command line. Once a selection has been made with the mouse you will see "fireflies" (\@ref(fig:fireflies)) around the atom selected.     
+
+```{r fireflies, echo=FALSE, warning=FALSE, message=FALSE, out.width="100%", fig.cap="A selected atom surrounded by fireflies shown as white streaks"}
+
+knitr::include_graphics("images/fireflies.PNG")
+
+```
+
+In contrast, selections made using the `Select` command will become highlighted with in a universe style (\@ref(fig:uni)).
+
+```{r uni, echo=FALSE, warning=FALSE, message=FALSE, out.width="100%", fig.cap="A selected atom with the universe style. It's Full of Stars "}
+
+knitr::include_graphics("images/seluniverse.PNG")
+
+```
+
+By far, the easier way to make single selections is using the mouse. However, when making selections of groups such as all the alanine residues or multiple selections, then you will need the menu (\@ref(selmenu)) or command line (\@ref(selcmd)).
+
 ### Making multiple selections
+
+#### Using the Mouse
+
+To select multiple atoms using the mouse, hold down the CTRL key while left clicking the target atoms. As each atom is selected a new set of fireflies will appear around the atom. The first atom will always have white fireflies while the subsequent selections will have red, green, or blue fireflies. Red fireflies always designate the last atom selected
+
+#### Using Select menu {#selmenu}
+
+#### Using `Select` from the command line {#selcmd}
 
 ## Measuring Distance {#measure}
 
