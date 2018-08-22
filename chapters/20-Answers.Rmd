@@ -130,3 +130,5 @@ knitr::include_graphics("images/annotatetest.png")
 
 ```
 
+## Chapter 6 {#sevenkey}
+

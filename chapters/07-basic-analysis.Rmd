@@ -15,3 +15,5 @@
 ## Alignment {#align}
 
 ### Root Mean Square Deviation {#rmsd}
+
+## Knowledge Checks^[Answers can be found \@ref(sevenkey)]
