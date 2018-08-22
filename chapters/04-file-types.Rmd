@@ -349,6 +349,22 @@ The commands to remove an object and bring it back are `Remove` and `Add` respec
 
 ```
 
+## Clearing the scene
+
+If you want to clear everything out of the scene and start with an empty workspace You need the `Clear` command. If you have unsaved work, you will be prompted to save this work or to delete everything without saving.
+
+From the menu:
+File>New
+
+From the command line:
+
+```{r clear, eval=FALSE, echo=TRUE}
+
+#  Clear everything from the scene
+>Clear
+
+```
+
 
 ## Knowledge Self-Checks^[Answers can be found in Chapter \@ref(fourkey)]
 

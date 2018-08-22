@@ -25,7 +25,7 @@
 <meta name="author" content="Chris Berndsen">
 
 
-<meta name="date" content="2018-08-15">
+<meta name="date" content="2018-08-22">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -166,7 +166,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4.6.3" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#sce-files-1"><i class="fa fa-check"></i><b>4.6.3</b> .sce files</a></li>
 </ul></li>
 <li class="chapter" data-level="4.7" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#remove"><i class="fa fa-check"></i><b>4.7</b> Adding and Removing Objects</a></li>
-<li class="chapter" data-level="4.8" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#knowledge-self-checks-1"><i class="fa fa-check"></i><b>4.8</b> Knowledge Self-Checks</a></li>
+<li class="chapter" data-level="4.8" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#clearing-the-scene"><i class="fa fa-check"></i><b>4.8</b> Clearing the scene</a></li>
+<li class="chapter" data-level="4.9" data-path="file-types-and-how-to-work-with-them-in-yasara.html"><a href="file-types-and-how-to-work-with-them-in-yasara.html#knowledge-self-checks-1"><i class="fa fa-check"></i><b>4.9</b> Knowledge Self-Checks</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="manipulate.html"><a href="manipulate.html"><i class="fa fa-check"></i><b>5</b> Manipulating the model</a><ul>
 <li class="chapter" data-level="5.1" data-path="manipulate.html"><a href="manipulate.html#orient"><i class="fa fa-check"></i><b>5.1</b> Positioning and orienting the model</a><ul>
@@ -196,8 +197,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="6.2.1" data-path="adding-annotations-to-your-scene.html"><a href="adding-annotations-to-your-scene.html#labpar"><i class="fa fa-check"></i><b>6.2.1</b> Label parameters</a></li>
 <li class="chapter" data-level="6.2.2" data-path="adding-annotations-to-your-scene.html"><a href="adding-annotations-to-your-scene.html#removing-a-label"><i class="fa fa-check"></i><b>6.2.2</b> Removing a label</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="adding-annotations-to-your-scene.html"><a href="adding-annotations-to-your-scene.html#bonds"><i class="fa fa-check"></i><b>6.3</b> Hydrogen Bonds</a></li>
-<li class="chapter" data-level="6.4" data-path="adding-annotations-to-your-scene.html"><a href="adding-annotations-to-your-scene.html#figurelessons"><i class="fa fa-check"></i><b>6.4</b> Making good figures</a></li>
+<li class="chapter" data-level="6.3" data-path="adding-annotations-to-your-scene.html"><a href="adding-annotations-to-your-scene.html#bonds"><i class="fa fa-check"></i><b>6.3</b> Adding Hydrogen Bonds</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="adding-annotations-to-your-scene.html"><a href="adding-annotations-to-your-scene.html#coloring-hydrogen-bonds"><i class="fa fa-check"></i><b>6.3.1</b> Coloring hydrogen bonds</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="adding-annotations-to-your-scene.html"><a href="adding-annotations-to-your-scene.html#figurelessons"><i class="fa fa-check"></i><b>6.4</b> Making good figures</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="adding-annotations-to-your-scene.html"><a href="adding-annotations-to-your-scene.html#considerations-when-making-a-biomolecule-figure"><i class="fa fa-check"></i><b>6.4.1</b> Considerations when making a biomolecule figure</a></li>
+</ul></li>
 <li class="chapter" data-level="6.5" data-path="adding-annotations-to-your-scene.html"><a href="adding-annotations-to-your-scene.html#knowledge-checks"><i class="fa fa-check"></i><b>6.5</b> Knowledge Checks</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html"><i class="fa fa-check"></i><b>7</b> Making measurements and comparisons</a><ul>
@@ -298,7 +303,7 @@ LoadPDB 1crn, download=yes
 <span class="co"># Position the model for viewing and labeling</span>
 <span class="op">&gt;</span>PosOriObj <span class="dv">01</span>, X=<span class="fl">0.000</span>, Y=<span class="fl">0.000</span>, Z=<span class="fl">50.000</span>, Alpha=<span class="op">-</span><span class="dv">5</span>, Beta=<span class="dv">280</span>, Gamma=<span class="op">-</span><span class="dv">15</span>
 
-<span class="co"># Stylize the molecule</span>
+<span class="co"># Stylize the molecule and scene area</span>
 <span class="op">&gt;</span>ColorBG White
 <span class="op">&gt;</span>Style Ribbon
 <span class="op">&gt;</span>Style Sidechain=stick
@@ -333,14 +338,95 @@ Figure 6.1: Resulting image of labeling code
 </div>
 </div>
 <div id="bonds" class="section level2">
-<h2><span class="header-section-number">6.3</span> Hydrogen Bonds</h2>
-<p><a href="https://www.ncbi.nlm.nih.gov/books/NBK22567/">Hydrogen bonds</a> are important weak interactions found throughout biochemistry.</p>
+<h2><span class="header-section-number">6.3</span> Adding Hydrogen Bonds</h2>
+<p><a href="https://www.ncbi.nlm.nih.gov/books/NBK22567/">Hydrogen bonds</a> are important weak interactions found throughout biochemistry. Hydrogen bonds hold <span class="math inline">\(\alpha\)</span> helices together, connect <span class="math inline">\(\beta\)</span> strands to form sheets, and can have dramatic effects on protein activity. Showing hydrogen bonds explicitly can show the role that these important interactions play in your biomolecule of interest.</p>
+<p>In the scene we have created, it would be nice to show the role of Arg 17 in the structure of the protein. The side chain of the protein makes one or more hydrogen bonds with other parts of the protein so let’s show them. First you need to add hydrogens if they are not already in the molecule using the <code>AddHyd</code> command. Then use the <code>ShowHBo</code> along with your selection to show the hydrogen bonds.</p>
+<p>From the menu:</p>
+<p>View&gt;Show Interactions&gt;Hydrogen bonds of&gt;<em>Pick your option</em>, then select your Obj/Mol/Res/Atom to show hydrogen bonds and then specify if you only want to show hydrogen bonds <em>within</em> your selection or all the hydrogen bonds that your selection makes. This is the Extend command shown in the code chunk below.</p>
+<p>You can also add hydrogen bonds by selecting an atom and bringing up the pop-up menu. Within the pop-up menu choose Show&gt;Hydrogen Bonds&gt;<em>Pick your option</em>. The menu thereafter will relate to the Extend command described in the previous paragraph.</p>
+<p>From the command line:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load PDB file</span>
+<span class="op">&gt;</span>LoadPDB 1crn, download=yes
+
+<span class="co"># Position the model for viewing and labeling</span>
+<span class="op">&gt;</span>PosOriObj <span class="dv">01</span>, X=<span class="fl">0.000</span>, Y=<span class="fl">0.000</span>, Z=<span class="fl">50.000</span>, Alpha=<span class="op">-</span><span class="dv">5</span>, Beta=<span class="dv">280</span>, Gamma=<span class="op">-</span><span class="dv">15</span>
+
+<span class="co"># Stylize the molecule and scene area</span>
+<span class="op">&gt;</span>ColorBG White
+<span class="op">&gt;</span>Style Ribbon
+<span class="op">&gt;</span>Style Sidechain=stick
+<span class="op">&gt;</span>ColorObj <span class="dv">1</span>, grey
+
+<span class="co"># Color Arg 17 blue and show in Ball style</span>
+<span class="op">&gt;</span>ColorRes <span class="dv">17</span>, blue
+<span class="op">&gt;</span>BallRes <span class="dv">17</span>
+
+<span class="co"># Make a blue label showing Arg 17 and have it be to the right of the target</span>
+<span class="op">&gt;</span>LabelRes <span class="dv">17</span>,Format=RESNAME RESNUM,Height=<span class="fl">2.0</span>,Color=Blue,X=<span class="fl">10.0</span>,Y=<span class="op">-</span><span class="dv">1</span>,Z=<span class="fl">0.0</span>
+
+<span class="co"># Add hydrogens to 1crn</span>
+<span class="op">&gt;</span>AddHyd all
+
+<span class="co"># Add hydrogen bonds to Arg 17</span>
+<span class="op">&gt;</span>ShowHBoRes <span class="dv">17</span>,Extend=Yes</code></pre></div>
+<div class="figure"><span id="fig:hbopic"></span>
+<img src="images/hbo1.png" alt="Resulting image of code adding hydrogen bonds to Arg 17" width="125%" />
+<p class="caption">
+Figure 6.2: Resulting image of code adding hydrogen bonds to Arg 17
+</p>
+</div>
+<p>You will notice that 3 hydrogen bonds appear, although one is hidden by the side chain and requires rotation of the image to view.</p>
+<div id="coloring-hydrogen-bonds" class="section level3">
+<h3><span class="header-section-number">6.3.1</span> Coloring hydrogen bonds</h3>
+<p>You can change the color of hydrogen bonds using the <code>ColorHBo</code> command as shown in the code chunk below. You must specify the color, the transparency (Alpha), and whether the bond inherits the color from the bounding atoms. This latter option is useful if you have certain hydrogen bound atoms colored the same and you want the bonds to be that same color.</p>
+<p>From the menu:</p>
+<p>View&gt;Color&gt;Hydrogen bonds, then select your color, transparency (alpha), and whether it inherits atom colors.</p>
+<p>From the command line:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Change hydrogen bond color to blue with 50% transparency and do not inherit atom colors</span>
+<span class="op">&gt;</span>ColorHBo Color=Blue,Alpha=<span class="dv">50</span>,Inherit=No</code></pre></div>
+</div>
 </div>
 <div id="figurelessons" class="section level2">
 <h2><span class="header-section-number">6.4</span> Making good figures</h2>
+<p>A good figure can convey more than the text ever could, while a bad figure can confuse the reader. Therefore it is important to keep a few considerations in mind when making figures of biomolecules. These ideas can apply to other types of figures and data but we are focused on biomolecule figures. Other tips on making figures can be found <a href="https://ceberndsen.github.io/CEBerndsen.github.io/Data_Fitting.html">here</a>. Additionally, a good illustration or graphics program is useful when combining figures. I recommend <a href="https://inkscape.org/en/">Inkscape</a> or Google Drawings which is found within the <a href="https://www.google.com/docs/about/">Google Drive</a> framework. Both are free and pretty easy to use.</p>
+<div id="considerations-when-making-a-biomolecule-figure" class="section level3">
+<h3><span class="header-section-number">6.4.1</span> Considerations when making a biomolecule figure</h3>
+<ol style="list-style-type: decimal">
+<li><p><strong>Why am I making the figure?</strong> – Don’t make a picture because you can, have a purpose and a point.</p></li>
+<li><p><strong>What am I trying to convey with this figure?</strong> – What are the two or three main ideas that the figure needs to convey. If upon making the figure, these aren’t obvious. Then further work is needed.</p></li>
+<li><p><strong>Don’t be messy</strong> – Remove unecessary parts of the molecule, try to crop the figure appropriately, and don’t go overboard. As in consideration #1, don’t show something because you can, show it because it matters.</p></li>
+<li><p><strong>Use labels, colors, and representations</strong> – This chapter has shown how to add annotations to figures, so use these to your advantage.</p></li>
+<li><p><strong>Make text legible</strong> – If you think the text is too small, then it probably is. If you think it is just right, then it is probably still too small. Claus Wilke’s excellent <a href="https://serialmentor.com/dataviz/small-axis-labels.html">book on data visualization</a> shows this principle very well.</p></li>
+<li><p><strong>Have a figure legend</strong> – Where possible use text to help the reader sort through the figure and the meaning.</p></li>
+</ol>
+<p>Let’s look back at Figure <a href="adding-annotations-to-your-scene.html#fig:hbopic">6.2</a> and you will notice that it violates principles 2, 3, 4, possibly 5 and 6. Now look at a revised figure (Figure <a href="adding-annotations-to-your-scene.html#fig:better">6.3</a>). The unecessary side chains are gone and labels have been added to amino acids that interact with Arg 17. Additionally, the amino acids that are shown are colored by element with hydrogen bonds. So now we not only see the hydrogen bonds made by Arg 17, we also see the hydrogen bonding partners and the types of chemical groups involved. This figure still has an issue: the label for Arg 17 blocks the structure. Moving it away might confuse the reader, so why not save an image of the molecule and move to another program to add an arrow.</p>
+<div class="figure"><span id="fig:better"></span>
+<img src="images/better.png" alt="Better(?) figure of 1CRN showing interactions with Arg 17" width="125%" />
+<p class="caption">
+Figure 6.3: Better(?) figure of 1CRN showing interactions with Arg 17
+</p>
+</div>
+<p>Figure <a href="adding-annotations-to-your-scene.html#fig:betterarrow">6.4</a> shows the figure after moving the Arg 17 label over and adding an arrow in Google Drawings to indicate what the label refers to. You will notice I left the size of the Arg 17 label larger and in blue compared to the other labels. This was intentional to help my reader focus on Arg 17. Also notice I made an informative figure legend.</p>
+<div class="figure"><span id="fig:betterarrow"></span>
+<img src="images/betterarrow.png" alt="Model of structure 1crn showing how Arg 17 (shown by arrow in ball and stick representation) hydrogen bonds within the protein. Hydrogen bonds are shown as dotted red lines between donor and acceptor atoms. Amino acid side chains are colored by element with carbon colored cyan, nitrogen colored blue, oxygen colored red, and hydrogen colored grey." width="125%" />
+<p class="caption">
+Figure 6.4: Model of structure 1crn showing how Arg 17 (shown by arrow in ball and stick representation) hydrogen bonds within the protein. Hydrogen bonds are shown as dotted red lines between donor and acceptor atoms. Amino acid side chains are colored by element with carbon colored cyan, nitrogen colored blue, oxygen colored red, and hydrogen colored grey.
+</p>
+</div>
+<p>If you are still struggling, show your figure to a peer or mentor and get feedback. I also recommend reading <a href="https://serialmentor.com/dataviz/index.html">Fundamentals of Data Visualization</a> by Claus Wilke to get a sense of best practices for other types of data. While not aimed at biomolecules, some of the principles and ideas in this book can help with figures in general.</p>
+</div>
 </div>
 <div id="knowledge-checks" class="section level2">
 <h2><span class="header-section-number">6.5</span> Knowledge Checks<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a></h2>
+<ol style="list-style-type: decimal">
+<li>Try to re-create the image in Figure <a href="adding-annotations-to-your-scene.html#fig:sixtest">6.5</a> using PDB <a href="https://www.rcsb.org/structure/148l">148L</a>. You will use commands from this chapter as well as the previous chapters to make the figure. List the commands.</li>
+</ol>
+<div class="figure"><span id="fig:sixtest"></span>
+<img src="images/annotatetest.png" alt="Your challenge" width="125%" />
+<p class="caption">
+Figure 6.5: Your challenge
+</p>
+</div>
 
 </div>
 </div>
@@ -402,6 +488,19 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

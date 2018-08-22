@@ -90,3 +90,43 @@ knitr::include_graphics("images/teststructure.PNG")
 ```
 
 ## Chapter 6 {#sixkey}
+
+```{r sixanswerfig, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="A labeled figure of structure 148L"}
+
+knitr::include_graphics("images/annotatetest.png")
+
+```
+
+```{r sixanswercmd, echo=TRUE, eval=FALSE}
+# Load PDB
+>LoadPDB 148L, download=yes
+
+# Make the background white
+>ColorBG white
+
+# Position the object
+>PosOriObj 01, X=1.5, Y=-2.5, Z=70, Alpha=-20, Beta=30, Gamma=-60
+
+# Remove the waters
+>DelRes HOH
+
+# Style the enzyme
+>Style Ribbon
+
+# Style the ligand
+>BallStickMol S
+
+# Color the enzyme
+>ColorMol E, grey
+
+# Make the surface
+>ShowSurfMol E,Type=Molecular,OutCol=cyan,OutAlpha=35,Specular=Yes
+
+# Make the label
+>LabelMol S,Format="N-ACETYLMURAMIC ACID",Height=3.0,Color=Red,X=0.0,Y=0.0,Z=0.0
+
+# Move the label around until it is in the proper position
+
+
+```
+

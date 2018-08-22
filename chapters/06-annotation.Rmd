@@ -88,7 +88,7 @@ LoadPDB 1crn, download=yes
 # Position the model for viewing and labeling
 >PosOriObj 01, X=0.000, Y=0.000, Z=50.000, Alpha=-5, Beta=280, Gamma=-15
 
-# Stylize the molecule
+# Stylize the molecule and scene area
 >ColorBG White
 >Style Ribbon
 >Style Sidechain=stick
@@ -127,10 +127,119 @@ After you have created the label, if you want to move it to a new location, left
 
 To remove a label, you can left-click on the label and press delete. Alternative use the command `Unlabel`. Typing `UnlabelResAll` removes all amino acid labels.
 
-## Hydrogen Bonds {#bonds}
+## Adding Hydrogen Bonds {#bonds}
 
-[Hydrogen bonds](https://www.ncbi.nlm.nih.gov/books/NBK22567/) are important weak interactions found throughout biochemistry. 
+[Hydrogen bonds](https://www.ncbi.nlm.nih.gov/books/NBK22567/) are important weak interactions found throughout biochemistry. Hydrogen bonds hold $\alpha$ helices together, connect $\beta$ strands to form sheets, and can have dramatic effects on protein activity. Showing hydrogen bonds explicitly can show the role that these important interactions play in your biomolecule of interest.
+
+In the scene we have created, it would be nice to show the role of Arg 17 in the structure of the protein. The side chain of the protein makes one or more hydrogen bonds with other parts of the protein so let's show them. First you need to add hydrogens if they are not already in the molecule using the `AddHyd` command. Then use the `ShowHBo` along with your selection to show the hydrogen bonds. 
+
+From the menu:
+
+View>Show Interactions>Hydrogen bonds of>*Pick your option*, then select your Obj/Mol/Res/Atom to show hydrogen bonds and then specify if you only want to show hydrogen bonds *within* your selection or all the hydrogen bonds that your selection makes. This is the Extend command shown in the code chunk below. 
+
+You can also add hydrogen bonds by selecting an atom and bringing up the pop-up menu. Within the pop-up menu choose Show>Hydrogen Bonds>*Pick your option*. The menu thereafter will relate to the Extend command described in the previous paragraph.
+
+
+From the command line:
+
+```{r hbo1, echo=TRUE, eval=FALSE}
+# Load PDB file
+>LoadPDB 1crn, download=yes
+
+# Position the model for viewing and labeling
+>PosOriObj 01, X=0.000, Y=0.000, Z=50.000, Alpha=-5, Beta=280, Gamma=-15
+
+# Stylize the molecule and scene area
+>ColorBG White
+>Style Ribbon
+>Style Sidechain=stick
+>ColorObj 1, grey
+
+# Color Arg 17 blue and show in Ball style
+>ColorRes 17, blue
+>BallRes 17
+
+# Make a blue label showing Arg 17 and have it be to the right of the target
+>LabelRes 17,Format=RESNAME RESNUM,Height=2.0,Color=Blue,X=10.0,Y=-1,Z=0.0
+
+# Add hydrogens to 1crn
+>AddHyd all
+
+# Add hydrogen bonds to Arg 17
+>ShowHBoRes 17,Extend=Yes
+
+```
+
+
+```{r hbopic, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Resulting image of code adding hydrogen bonds to Arg 17", out.width="125%"}
+
+include_graphics("images/hbo1.png")
+
+```
+
+You will notice that 3 hydrogen bonds appear, although one is hidden by the side chain and requires rotation of the image to view.
+
+### Coloring hydrogen bonds
+
+You can change the color of hydrogen bonds using the `ColorHBo` command as shown in the code chunk below. You must specify the color, the transparency (Alpha), and whether the bond inherits the color from the bounding atoms. This latter option is useful if you have certain hydrogen bound atoms colored the same and you want the bonds to be that same color.
+
+From the menu:
+
+View>Color>Hydrogen bonds, then select your color, transparency (alpha), and whether it inherits atom colors.
+
+From the command line:
+
+```{r hbocolor, echo=TRUE, eval=FALSE}
+# Change hydrogen bond color to blue with 50% transparency and do not inherit atom colors
+>ColorHBo Color=Blue,Alpha=50,Inherit=No
+
+```
+
 
 ## Making good figures {#figurelessons}
 
+A good figure can convey more than the text ever could, while a bad figure can confuse the reader. Therefore it is important to keep a few considerations in mind when making figures of biomolecules. These ideas can apply to other types of figures and data but we are focused on biomolecule figures. Other tips on making figures can be found [here](https://ceberndsen.github.io/CEBerndsen.github.io/Data_Fitting.html). Additionally, a good illustration or graphics program is useful when combining figures. I recommend [Inkscape](https://inkscape.org/en/) or Google Drawings which is found within the [Google Drive](https://www.google.com/docs/about/) framework. Both are free and pretty easy to use. 
+
+### Considerations when making a biomolecule figure
+
+  1. **Why am I making the figure?** -- Don't make a picture because you can, have a purpose and a point.
+  
+  2. **What am I trying to convey with this figure?** -- What are the two or three main ideas that the figure needs to convey. If upon making the figure, these aren't obvious. Then further work is needed. 
+  
+  3. **Don't be messy** -- Remove unecessary parts of the molecule, try to crop the figure appropriately, and don't go overboard. As in consideration #1, don't show something because you can, show it because it matters. 
+  
+  4. **Use labels, colors, and representations** -- This chapter has shown how to add annotations to figures, so use these to your advantage. 
+  
+  5. **Make text legible** -- If you think the text is too small, then it probably is. If you think it is just right, then it is probably still too small. Claus Wilke's excellent [book on data visualization](https://serialmentor.com/dataviz/small-axis-labels.html) shows this principle very well. 
+  
+  6. **Have a figure legend** -- Where possible use text to help the reader sort through the figure and the meaning.
+  
+Let's look back at Figure \@ref(fig:hbopic) and you will notice that it violates principles 2, 3, 4, possibly 5 and 6. Now look at a revised figure (Figure \@ref(fig:better)). The unecessary side chains are gone and labels have been added to amino acids that interact with Arg 17. Additionally, the amino acids that are shown are colored by element with hydrogen bonds. So now we not only see the hydrogen bonds made by Arg 17, we also see the hydrogen bonding partners and the types of chemical groups involved. This figure still has an issue: the label for Arg 17 blocks the structure. Moving it away might confuse the reader, so why not save an image of the molecule and move to another program to add an arrow.
+
+```{r better, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Better(?) figure of 1CRN showing interactions with Arg 17", out.width="125%"}
+
+include_graphics("images/better.png")
+
+```
+
+Figure \@ref(fig:betterarrow) shows the figure after moving the Arg 17 label over and adding an arrow in Google Drawings to indicate what the label refers to. You will notice I left the size of the Arg 17 label larger and in blue compared to the other labels. This was intentional to help my reader focus on Arg 17. Also notice I made an informative figure legend.
+
+```{r betterarrow, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Model of structure 1crn showing how Arg 17 (shown by arrow in ball and stick representation) hydrogen bonds within the protein. Hydrogen bonds are shown as dotted red lines between donor and acceptor atoms. Amino acid side chains are colored by element with carbon colored cyan, nitrogen colored blue, oxygen colored red, and hydrogen colored grey.", out.width="125%"}
+
+include_graphics("images/betterarrow.png")
+
+```  
+
+If you are still struggling, show your figure to a peer or mentor and get feedback. I also recommend reading [Fundamentals of Data Visualization](https://serialmentor.com/dataviz/index.html) by Claus Wilke to get a sense of best practices for other types of data. While not aimed at biomolecules, some of the principles and ideas in this book can help with figures in general.
+
+
 ## Knowledge Checks^[Answers can be found \@ref(sixkey)]
+
+1. Try to re-create the image in Figure \@ref(fig:sixtest) using PDB [148L](https://www.rcsb.org/structure/148l). You will use commands from this chapter as well as the previous chapters to make the figure. List the commands.
+
+```{r sixtest, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Your challenge", out.width="125%"}
+
+knitr::include_graphics("images/annotatetest.png")
+
+```
+
