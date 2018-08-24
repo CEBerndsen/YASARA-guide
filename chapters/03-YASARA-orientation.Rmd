@@ -122,7 +122,7 @@ image_draw(boxtop)
 
 ```
 
-### Top row buttons
+### Top row buttons {#toprow}
 
 The **Top row buttons** are quick ways to perform tasks such as center the view or open a new scene. The buttons are indicated by the light blue box in Figure \@ref(fig:menutree). The buttons will vary depending what version of YASARA being used however there are a few common and useful ones, which are highlighted below. 
 

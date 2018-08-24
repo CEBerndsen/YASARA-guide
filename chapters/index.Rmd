@@ -7,11 +7,11 @@ documentclass: book
 #biblio-style: apalike
 cover-image: "images/cover.png"
 link-citations: yes
-#github-repo: https://github.com/CEBerndsen/YASARA-guide
+github-repo: https://github.com/CEBerndsen/YASARA-guide
 description: "A guide for the visualization program YASARA and the uses of the program"
 ---
 
-# Index {-}
+# Preface {-}
 
 
 ## Why read this book {-}

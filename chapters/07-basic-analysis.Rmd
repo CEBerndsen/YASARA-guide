@@ -26,11 +26,71 @@ By far, the easier way to make single selections is using the mouse. However, wh
 
 #### Using the Mouse
 
-To select multiple atoms using the mouse, hold down the CTRL key while left clicking the target atoms. As each atom is selected a new set of fireflies will appear around the atom. The first atom will always have white fireflies while the subsequent selections will have red, green, or blue fireflies. Red fireflies always designate the last atom selected
+To select multiple atoms using the mouse, hold down the CTRL key while left clicking the target atoms. As each atom is selected a new set of fireflies will appear around the atom. The first atom will always have white fireflies while the subsequent selections will have red, green, or blue fireflies. Red fireflies always designate the last atom selected. This method of selecting atoms is how we will make measurements of distance (\@ref(measure)) and angles (\@ref(#mangle)). 
 
 #### Using Select menu {#selmenu}
 
+The select menu offers several methods to make selections which each have advantages and quirks.
+
+  * **New** -- This method is similar to the ways we have worked through a menu tree previously. When you do Select>New>*Make your selection*, you enter into the standard menu system of YASARA. If you want to make multiple selections, you can left click and hold down the CTRL key. Alternatively, left click and hold down the SHIFT key to select consecutive lines in the menu. Once the selection is made, they will be come highlighted in the universe style (\@ref(fig:uni)).
+  
+  * **Additional** -- This method *adds* to an *existing* selection.
+  
+  * **In box** -- This method changes the cursor and upon left-click draws a red and yellow box which you can drag to expand. Any Obj/Mol/Res/Atoms within the box that you drew become selected. One caution is that you cannot change the orientation of the scene once you are in this mode, so have the molecule set and then do this method. An additional caution is that everything that can be seen within the box is selected, so you may inadvertantly select Obj/Mol/Res/Atoms you did not intend. After drawing the box, selections are highlighted in the universe style (\@ref(fig:uni)). This method also can be accessed through the top row buttons (\@ref(toprow)).
+  
+  * **In arbitrary area** -- This is similar to the lasso tool used in other programs. As with *In box*, this method changes the cursor so that you can draw a roughly circular shape around the amino acids to be selected. All the cautions of *In box* also exist for this method. After drawing the box, selections are highlighted in the universe style (\@ref(fig:uni)). This method also can be accessed through the top row buttons (\@ref(toprow)).
+  
+  * **In sphere around** -- This method is one of the more interesting and useful ways to make a selection, especially if you want to analyze or style the environment around a specific amino acid. Upon choosing this option, you will be asked to choose the Obj/Mol/Res/Atom that you want to draw the sphere around, and then you can interactively size the sphere. On screen is also a guide showing the radius of the sphere in angstroms. After drawing the box, selections are highlighted in the universe style (\@ref(fig:uni)).
+  
+  * **Invert** -- This method changes an existing selection to select everything that was not previously selected. This can be useful for styling or analyzing two regions of the molecule separately. 
+  
+  
+#### Unselect {#unselect}
+
+In addition to the `Select` command, there is an `UnSelect` command which is good for clearing selections or removing certain elements from your selection. Typically I only use `UnSelectAll`. However, `UnSelect` combined with Obj/Mol/Res/Atom option can be useful in macros (\@ref(macros)) and movies (\@ref(movies)) for creating interesting styles and views of the molecule.
+
 #### Using `Select` from the command line {#selcmd}
+
+Select from the command line involves using `Select` in combination with a level of organization followed by a selection. This method is fast and precise in addition to being useful for manipulation and styling scenes quickly.
+
+```{r selectcmd, echo=TRUE, eval=FALSE}
+# Load a PDB file
+>LoadPDB 1crn, download=yes
+
+# Select all the alanine residues in the protein
+>SelectRes ala
+
+# Select amino acids 1-10 inclusive
+>SelectRes 1-10
+
+# Select molecule A
+>SelectMol A
+
+```
+
+
+### How to manipulate selections
+
+Once a selection has been made using the various methods above, what can you do with that? Selections like Obj or Res can be referred to in commands to produce analysis or changes to the scene. Previously if we wanted to change the style of an amino acid to ball and stick we typed `BallStickRes` followed by the amino acid number or name. Now we can insert `selected` in for the amino acid name or number as shown in the code chunk below. While this seems redundant, if you have a complex set of amino acids that you are interested in. Typing that list for every command would be tedious. Instead, `Select` those amino acids and then refer that selection. This trick can save you a lot of time.
+
+```{r selectmani, echo=TRUE, eval=FALSE}
+# Load a PDB file
+>LoadPDB 1crn, download=yes
+
+# Select all the alanine residues in the protein
+>SelectRes ala
+
+# Change the style of all the alanines to ball and stick
+>BallStickRes selected
+
+# Color the alanines red
+>ColorRes selected, red
+
+# Show an individual surface around each of the alanines
+>ShowSurfRes Selected,Type=Molecular,OutCol=Blue,OutAlpha=50,Specular=Yes
+
+```
+
 
 ## Measuring Distance {#measure}
 
