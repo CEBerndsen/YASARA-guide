@@ -146,6 +146,24 @@ include_graphics("images/pop-menu.png")
 
 In addition to the visible command options and readouts of YASARA like the Top Menu (\@ref(Menu)) and the HUD (\@ref(HUD)), there are ways to access commands on a selection. Referred to here as the pop-up menu (\@ref(fig:pop)), this menu can be accessed after a selection has been made by clicking on the selection using the right mouse button. Many of the options in the pop-up menu are found with some digging through the top menu, so this pop-up menu is a fast, easy way to find some of the most used commands. The pop-up menu is only accessible with a model loaded into YASARA. 
 
+### Selection Menus {#selmenu}
+
+When using the menu system, a box like that shown in Figure \@ref(fig:threemen) asking for input. The three columns can be used alone or in combination to precisely pick the Obj/Mol/Res/Atom or parts thereof you are interested in manipulating or analyzing. 
+
+  * **Sequence** -- Selections in this box are the most specific and allow for the selection of one or more Obj/Mol/Res/Atoms. To make multiple selections hold down the CTRL key and left click on your selection.
+  
+  * **Name** -- Selections in this box pick broad types of Obj/Mol/Res/Atoms with the same name. As shown in Figure \@ref(fig:threemen), the names of the individual amino acids are shown. For Obj or Mol, this would have the name of the Obj/Mol, while atoms will have the atom designation both simple (e.g. O for oxygen) and more specific (e.g. Ca for the $\alpha$ carbon). 
+  
+  * **Belongs to or has** -- Selections here are the least specific and are aimed at broad categories such as Obj/Mol/Res/Atom in the backbone of the biomolecule or those that have certain structures like $\alpha$ helix.
+
+```{r threemen, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Example of the selection menu in YASARA", out.width="85%"}
+
+include_graphics("images/selmenuexplain.PNG")
+
+
+```
+
+
 ## Where to find help {#help}
 
 ***HELP!!!!*** 

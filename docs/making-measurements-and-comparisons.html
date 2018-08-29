@@ -25,7 +25,7 @@
 <meta name="author" content="Chris Berndsen">
 
 
-<meta name="date" content="2018-08-24">
+<meta name="date" content="2018-08-29">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -134,6 +134,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.4.1" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#top-menu"><i class="fa fa-check"></i><b>2.4.1</b> Top Menu</a></li>
 <li class="chapter" data-level="2.4.2" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#toprow"><i class="fa fa-check"></i><b>2.4.2</b> Top row buttons</a></li>
 <li class="chapter" data-level="2.4.3" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#pop-up-menu"><i class="fa fa-check"></i><b>2.4.3</b> Pop-up menu</a></li>
+<li class="chapter" data-level="2.4.4" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#selmenu"><i class="fa fa-check"></i><b>2.4.4</b> Selection Menus</a></li>
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#help"><i class="fa fa-check"></i><b>2.5</b> Where to find help</a><ul>
 <li class="chapter" data-level="2.5.1" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#searchdoc"><i class="fa fa-check"></i><b>2.5.1</b> SearchDoc</a></li>
@@ -211,7 +212,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="6.1.1" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html#making-multiple-selections"><i class="fa fa-check"></i><b>6.1.1</b> Making multiple selections</a></li>
 <li class="chapter" data-level="6.1.2" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html#how-to-manipulate-selections"><i class="fa fa-check"></i><b>6.1.2</b> How to manipulate selections</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html#measure"><i class="fa fa-check"></i><b>6.2</b> Measuring Distance</a></li>
+<li class="chapter" data-level="6.2" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html#measure"><i class="fa fa-check"></i><b>6.2</b> Measuring Distance</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html#labdist"><i class="fa fa-check"></i><b>6.2.1</b> Labeling distances</a></li>
+</ul></li>
 <li class="chapter" data-level="6.3" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html#mangle"><i class="fa fa-check"></i><b>6.3</b> Measuring Angles</a></li>
 <li class="chapter" data-level="6.4" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html#dihedral"><i class="fa fa-check"></i><b>6.4</b> Measurings Dihedrals</a></li>
 <li class="chapter" data-level="6.5" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html#count"><i class="fa fa-check"></i><b>6.5</b> Counting Atoms/Residues</a></li>
@@ -262,12 +265,12 @@ Figure 6.1: A selected atom surrounded by fireflies shown as white streaks
 </div>
 <p>In contrast, selections made using the <code>Select</code> command will become highlighted with in a universe style (<a href="making-measurements-and-comparisons.html#fig:uni">6.2</a>).</p>
 <div class="figure"><span id="fig:uni"></span>
-<img src="images/seluniverse.PNG" alt="A selected atom with the universe style. It's Full of Stars " width="100%" />
+<img src="images/seluniverse.PNG" alt="A selected atom with the universe style. It's Full of Stars" width="100%" />
 <p class="caption">
 Figure 6.2: A selected atom with the universe style. It’s Full of Stars
 </p>
 </div>
-<p>By far, the easier way to make single selections is using the mouse. However, when making selections of groups such as all the alanine residues or multiple selections, then you will need the menu (<a href="making-measurements-and-comparisons.html#selmenu">6.1.1.2</a>) or command line (<a href="making-measurements-and-comparisons.html#selcmd">6.1.1.4</a>).</p>
+<p>By far, the easier way to make single selections is using the mouse. However, when making selections of groups such as all the alanine residues or multiple selections, then you will need the menu (<a href="the-yasara-user-interface.html#selmenu">2.4.4</a>) or command line (<a href="making-measurements-and-comparisons.html#selcmd">6.1.1.4</a>).</p>
 <div id="making-multiple-selections" class="section level3">
 <h3><span class="header-section-number">6.1.1</span> Making multiple selections</h3>
 <div id="using-the-mouse" class="section level4">
@@ -322,20 +325,105 @@ Figure 6.2: A selected atom with the universe style. It’s Full of Stars
 <span class="op">&gt;</span>ColorRes selected, red
 
 <span class="co"># Show an individual surface around each of the alanines</span>
-<span class="op">&gt;</span>ShowSurfRes Selected,Type=Molecular,Update=Dynamic,OutCol=Blue,OutAlpha=<span class="dv">50</span>,Specular=Yes</code></pre></div>
+<span class="op">&gt;</span>ShowSurfRes Selected,Type=Molecular,OutCol=Blue,OutAlpha=<span class="dv">50</span>,Specular=Yes</code></pre></div>
 </div>
 </div>
 <div id="measure" class="section level2">
 <h2><span class="header-section-number">6.2</span> Measuring Distance</h2>
+<p>The interval between atoms is crucial for understanding strong and weak interactions in chemistry and biology<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a>. In YASARA the command to measure this interval is <code>Distance</code> but you can also use the menu system or the mouse. This latter method is by far the easiest.</p>
+<p>Using the mouse:</p>
+<p>Left-click on the first atom and then hold down the CTRL key and left-click on the second atom. Fireflies will appear around both selections and the distance will appear under Marked Distance in the HUD (<a href="the-yasara-user-interface.html#HUD">2.1</a>). The units of distance are <span class="math inline">\(\unicode{x212B}\)</span> or Angstrom, which is equal to 10<sup>-10</sup> meters.</p>
+<p>Using the menu:</p>
+<p>Analyze&gt;Geometry&gt;Distance, then select the two atoms you are want to measure the interval between. There is an option to include only the distance between atoms that are directly connected, however this is not useful in most cases.</p>
+<p>Using the command line:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load a PDB file</span>
+<span class="op">&gt;</span>LoadPDB 1crn, download=yes
+
+<span class="co"># Measure the distance between the Oxygen in the side chain of Threonine 2</span>
+<span class="co"># and the nitrogen in the side chain of Arginine 10</span>
+<span class="op">&gt;</span>Distance <span class="dv">13</span>,<span class="dv">69</span>,bound=No
+<span class="co"># Output from YASARA in the console</span>
+Distance  <span class="dv">13</span>  OG1 THR    <span class="dv">2</span>    <span class="op">-</span><span class="st">  </span><span class="dv">69</span>  NH1 ARG   <span class="dv">10</span>   <span class="op">:</span><span class="st">     </span><span class="fl">2.897</span> A</code></pre></div>
+<p>In most cases, using the mouse is more than sufficient unless you want to use a Macro to analyse the distances of a large number of atoms.</p>
+<div id="labdist" class="section level3">
+<h3><span class="header-section-number">6.2.1</span> Labeling distances</h3>
+<p>For annotating distances for a figure, you would use the command <code>LabelDis</code> or choose to label a distance in the label menu (see section <a href="adding-annotations-to-your-scene.html#labels">5.2</a> for more details on annotating scenes with labels). I will only desribe the command line method here with the results of the command shown in Figure <a href="making-measurements-and-comparisons.html#fig:labeldisfig">6.3</a>. As with text labels, when labeling the distance you need to specify the text to show (format), the size (height), color (color), and the coordinates of the label relative to the <em>center</em> of the gap between the atoms. As with the <code>Distance</code>, you need to specify the atoms to measure between and bound.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load a PDB file</span>
+<span class="op">&gt;</span>LoadPDB 1crn, download=yes
+
+<span class="co"># Measure the distance between the Oxygen in the side chain of Threonine 2</span>
+<span class="co"># and the nitrogen in the side chain of Arginine 10 and add a label</span>
+<span class="op">&gt;</span>LabelDis <span class="dv">13</span>,<span class="dv">69</span>,Format=DIS,Height=<span class="fl">0.7</span>,Color=Black,X=<span class="fl">0.0</span>,Y=<span class="fl">0.0</span>,Z=<span class="fl">0.0</span>,bound=No
+
+<span class="co">#Orient the scene to show the label</span>
+<span class="op">&gt;</span>PosOriObj <span class="dv">01</span>, X=<span class="fl">0.000</span>, Y=<span class="fl">0.000</span>, Z=<span class="fl">35.192</span>, Alpha=<span class="fl">31.934</span>, Beta=<span class="fl">292.437</span>, Gamma=<span class="op">-</span><span class="fl">9.577</span></code></pre></div>
+<div class="figure"><span id="fig:labeldisfig"></span>
+<img src="images/labeldis.png" alt="Annotated distance between Threonine 2 and Arginine 10" width="100%" />
+<p class="caption">
+Figure 6.3: Annotated distance between Threonine 2 and Arginine 10
+</p>
+</div>
+</div>
 </div>
 <div id="mangle" class="section level2">
 <h2><span class="header-section-number">6.3</span> Measuring Angles</h2>
+<p>Angles refers to the distance between two intersecting bonds or imaginary lines between three Obj/Mol/Res/Atom. Like <code>Distance</code>, there are three methods to calculate this value, however three Obj/Mol/Res/Atoms are needed rather than two. I do not use the <code>Angle</code> command frequently except to check that <a href="https://en.wikipedia.org/wiki/Molecular_geometry">bond angles</a> are accurate when building models.</p>
+<p>Using the mouse:</p>
+<p>Left-click on the first atom and then hold down the CTRL key and left-click on the second, third atoms. Fireflies will appear around all selections and the angle will appear under Marked Angle along with the distance between the first two selections under Marked Distance in the HUD (<a href="the-yasara-user-interface.html#HUD">2.1</a>). The units of angle are <sup><span class="math inline">\(\circ\)</span></sup> or degrees.</p>
+<p>Using the menu:</p>
+<p>Analyze&gt;Geometry&gt;Angle, then select the three atoms you are want to measure the angle between There is an option to include only the distance between atoms that are directly connected, however this is not useful in most cases.</p>
+<p>Using the command line:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load a PDB file</span>
+<span class="op">&gt;</span>LoadPDB 1crn, download=yes
+
+<span class="co"># Measure the angle between the Oxygen in the side chain of Threonine 2</span>
+<span class="co"># and the nitrogen in the side chain of Arginine 10 and the carbon in the sidechain</span>
+<span class="op">&gt;</span>Angle <span class="dv">68</span>,<span class="dv">69</span>,<span class="dv">13</span>,bound=No
+<span class="co"># Output from YASARA in the console</span>
+Angle  <span class="dv">68</span>  CZ  ARG   <span class="dv">10</span>    <span class="op">-</span><span class="st">  </span><span class="dv">69</span>  NH1 ARG   <span class="dv">10</span>    <span class="op">-</span><span class="st">  </span><span class="dv">13</span>  OG1 THR    <span class="dv">2</span>   <span class="op">:</span><span class="st">  </span><span class="fl">124.870</span></code></pre></div>
+<p>There is no way to label an angle in YASARA at this point in time, however it would be possible to show using a regular label as described in the section on labeling (<a href="adding-annotations-to-your-scene.html#labels">5.2</a>).</p>
 </div>
 <div id="dihedral" class="section level2">
 <h2><span class="header-section-number">6.4</span> Measurings Dihedrals</h2>
+<p>The Dihedral angle is the angle between two planes created by two attached atoms and therefore involves 4 atoms. The most common dihedral angles to measure in proteins are the <a href="http://proteopedia.org/wiki/index.php/Dihedral/Index">Ramachandran Angles</a>. There are a limited number of stable dihedral angles in biomolecules due to steric clashes, therefore an easy way to check a protein structure is to measure the dihedral angles. To measure dihedral angle requires 4 atom selections.</p>
+<p>Using the mouse:</p>
+<p>Left-click on the first atom and then hold down the CTRL key and left-click on the second, third, and fourth atoms. Fireflies will appear around all selections and the dihedral angle will appear under Marked Dihedral and the angle of the first, third, and fourth atoms under Marked Angle along with the distance between the firsth and fourth selections under Marked Distance in the HUD (<a href="the-yasara-user-interface.html#HUD">2.1</a>). The units of the dihedral angle are <sup><span class="math inline">\(\circ\)</span></sup> or degrees.</p>
+<p>Using the menu:</p>
+<p>Analyze&gt;Geometry&gt;Dihedral, then select the four atoms you are want to measure the angle between. There is an option to include only the distance between atoms that are directly connected, however this is not useful in most cases.</p>
+<p>Using the command line:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load a PDB file</span>
+<span class="op">&gt;</span>LoadPDB 1crn, download=yes
+
+<span class="co"># Measure the dihedral angle beta carbon, alpha carbon, carbonyl carbon, and carbonyl</span>
+<span class="co"># oxygen of Arginine 10. This is also the Phi angle for this amino acid.</span>
+<span class="op">&gt;</span>Dihedral <span class="dv">64</span>,<span class="dv">61</span>,<span class="dv">62</span>,<span class="dv">63</span>,bound=No
+<span class="co"># Output from YASARA in the console</span>
+Dihedral  <span class="dv">64</span>  CB  ARG   <span class="dv">10</span>    <span class="op">-</span><span class="st">  </span><span class="dv">61</span>  CA  ARG   <span class="dv">10</span>    <span class="op">-</span><span class="st">  </span><span class="dv">62</span>  C   ARG   <span class="dv">10</span>    <span class="op">-</span><span class="st">  </span><span class="dv">63</span>  O   ARG   <span class="dv">10</span>   <span class="op">:</span><span class="st">  </span><span class="op">-</span><span class="fl">99.067</span></code></pre></div>
+<p>There is no way to label a dihedral angle in YASARA at this point in time, however it would be possible to show using a regular label as described in the section on labeling (<a href="adding-annotations-to-your-scene.html#labels">5.2</a>).</p>
 </div>
 <div id="count" class="section level2">
 <h2><span class="header-section-number">6.5</span> Counting Atoms/Residues</h2>
+<p>The <code>Count</code> command is for quickly counting the number of Obj/Mol/Res/Atoms or bonds in a scene. This command can also be mixed to determine the number of Res/atoms in all of certain Obj/Mol/Res or within a selection.</p>
+<p>Using the menu:</p>
+<p>Analyze&gt;Count, then select Obj/Mol/Res/Atom or bond. In the menus, then make your selection. I recommend using the Name or Belonds to or has boxes in most cases (see Section <a href="the-yasara-user-interface.html#selmenu">2.4.4</a> for more details).</p>
+<p>Using the command line:</p>
+<p>The primary command is <code>Count</code> followed by Obl/Mol/Res/Atom/Bond and a selection. The number of things that match that selection will be shown in the console.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load a PDB file</span>
+<span class="op">&gt;</span>LoadPDB 1crn, download=yes
+
+<span class="co"># Count the cysteines in the protein</span>
+<span class="op">&gt;</span>CountRes cys
+
+<span class="co"># Count the atoms in the scene</span>
+<span class="op">&gt;</span>CountAtom all
+<span class="co"># or</span>
+<span class="op">&gt;</span>CountAtom Obj <span class="dv">1</span>
+
+<span class="co"># Count the atoms in the cysteines </span>
+<span class="op">&gt;</span>CountAtom Res Cys
+
+<span class="co"># Count the atoms in the backbone of the cysteine</span>
+CountAtom Res Cys backbone</code></pre></div>
 </div>
 <div id="align" class="section level2">
 <h2><span class="header-section-number">6.6</span> Alignment</h2>
@@ -344,14 +432,15 @@ Figure 6.2: A selected atom with the universe style. It’s Full of Stars
 </div>
 </div>
 <div id="knowledge-checks-1" class="section level2">
-<h2><span class="header-section-number">6.7</span> Knowledge Checks<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a></h2>
+<h2><span class="header-section-number">6.7</span> Knowledge Checks<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a></h2>
 
 </div>
 </div>
 <div class="footnotes">
 <hr />
 <ol start="7">
-<li id="fn7"><p>Answers can be found <a href="exercise-answers.html#sevenkey">7.5</a><a href="making-measurements-and-comparisons.html#fnref7">↩</a></p></li>
+<li id="fn7"><p>See the section on <a href="https://www.ncbi.nlm.nih.gov/books/NBK22567/">Chemical Bonds in Biochemistry</a> described within 5<sup>th</sup> edition of Biochemistry by JM Berg, JL Tymoczko, and L Stryer.<a href="making-measurements-and-comparisons.html#fnref7">↩</a></p></li>
+<li id="fn8"><p>Answers can be found <a href="exercise-answers.html#sevenkey">7.5</a><a href="making-measurements-and-comparisons.html#fnref8">↩</a></p></li>
 </ol>
 </div>
             </section>

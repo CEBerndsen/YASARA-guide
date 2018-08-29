@@ -14,7 +14,7 @@ knitr::include_graphics("images/fireflies.PNG")
 
 In contrast, selections made using the `Select` command will become highlighted with in a universe style (\@ref(fig:uni)).
 
-```{r uni, echo=FALSE, warning=FALSE, message=FALSE, out.width="100%", fig.cap="A selected atom with the universe style. It's Full of Stars "}
+```{r uni, echo=FALSE, warning=FALSE, message=FALSE, out.width="100%", fig.cap="A selected atom with the universe style. It's Full of Stars"}
 
 knitr::include_graphics("images/seluniverse.PNG")
 
@@ -94,11 +94,143 @@ Once a selection has been made using the various methods above, what can you do 
 
 ## Measuring Distance {#measure}
 
+The interval between atoms is crucial for understanding strong and weak interactions in chemistry and biology^[See the section on [Chemical Bonds in Biochemistry](https://www.ncbi.nlm.nih.gov/books/NBK22567/) described within 5^th^ edition of Biochemistry by JM Berg, JL Tymoczko, and L Stryer.]. In YASARA the command to measure this interval is `Distance` but you can also use the menu system or the mouse. This latter method is by far the easiest.
+
+Using the mouse:
+
+Left-click on the first atom and then hold down the CTRL key and left-click on the second atom. Fireflies will appear around both selections and the distance will appear under Marked Distance in the HUD (\@ref(HUD)). The units of distance are $\unicode{x212B}$ or Angstrom, which is equal to 10^-10^ meters. 
+
+Using the menu:
+
+Analyze>Geometry>Distance, then select the two atoms you are want to measure the interval between. There is an option to include only the distance between atoms that are directly connected, however this is not useful in most cases. 
+
+Using the command line:
+
+```{r distance, echo=TRUE, eval=FALSE}
+# Load a PDB file
+>LoadPDB 1crn, download=yes
+
+# Measure the distance between the Oxygen in the side chain of Threonine 2
+# and the nitrogen in the side chain of Arginine 10
+>Distance 13,69,bound=No
+# Output from YASARA in the console
+Distance  13  OG1 THR    2    -  69  NH1 ARG   10   :     2.897 A
+
+```
+
+In most cases, using the mouse is more than sufficient unless you want to use a Macro to analyse the distances of a large number of atoms.
+
+### Labeling distances {#labdist}
+
+For annotating distances for a figure, you would use the command `LabelDis` or choose to label a distance in the label menu (see section \@ref(labels) for more details on annotating scenes with labels). I will only desribe the command line method here with the results of the command shown in Figure \@ref(fig:labeldisfig). 
+As with text labels, when labeling the distance you need to specify the text to show (format), the size (height), color (color), and the coordinates of the label relative to the *center* of the gap between the atoms. As with the `Distance`, you need to specify the atoms to measure between and bound. 
+
+```{r labeldis, echo=TRUE, eval=FALSE}
+# Load a PDB file
+>LoadPDB 1crn, download=yes
+
+# Measure the distance between the Oxygen in the side chain of Threonine 2
+# and the nitrogen in the side chain of Arginine 10 and add a label
+>LabelDis 13,69,Format=DIS,Height=0.7,Color=Black,X=0.0,Y=0.0,Z=0.0,bound=No
+
+#Orient the scene to show the label
+>PosOriObj 01, X=0.000, Y=0.000, Z=35.192, Alpha=31.934, Beta=292.437, Gamma=-9.577
+
+```
+
+```{r labeldisfig, echo=FALSE, warning=FALSE, message=FALSE, out.width="100%", fig.cap="Annotated distance between Threonine 2 and Arginine 10"}
+
+knitr::include_graphics("images/labeldis.png")
+
+```
+
+
 ## Measuring Angles {#mangle}
+
+Angles refers to the distance between two intersecting bonds or imaginary lines between three Obj/Mol/Res/Atom. Like `Distance`, there are three methods to calculate this value, however three Obj/Mol/Res/Atoms are needed rather than two. I do not use the `Angle` command frequently except to check that [bond angles](https://en.wikipedia.org/wiki/Molecular_geometry) are accurate when building models.
+
+Using the mouse:
+
+Left-click on the first atom and then hold down the CTRL key and left-click on the second, third atoms. Fireflies will appear around all selections and the angle will appear under Marked Angle along with the distance between the first two selections under Marked Distance in the HUD (\@ref(HUD)). The units of angle are ^$\circ$^ or degrees. 
+
+Using the menu:
+
+Analyze>Geometry>Angle, then select the three atoms you are want to measure the angle between There is an option to include only the distance between atoms that are directly connected, however this is not useful in most cases. 
+
+Using the command line:
+
+```{r angle, echo=TRUE, eval=FALSE}
+# Load a PDB file
+>LoadPDB 1crn, download=yes
+
+# Measure the angle between the Oxygen in the side chain of Threonine 2
+# and the nitrogen in the side chain of Arginine 10 and the carbon in the sidechain
+>Angle 68,69,13,bound=No
+# Output from YASARA in the console
+Angle  68  CZ  ARG   10    -  69  NH1 ARG   10    -  13  OG1 THR    2   :  124.870
+```
+
+There is no way to label an angle in YASARA at this point in time, however it would be possible to show using a regular label as described in the section on labeling (\@ref(labels)).
 
 ## Measurings Dihedrals {#dihedral}
 
+The Dihedral angle is the angle between two planes created by two attached atoms and therefore involves 4 atoms. The most common dihedral angles to measure in proteins are the [Ramachandran Angles](http://proteopedia.org/wiki/index.php/Dihedral/Index). There are a limited number of stable dihedral angles in biomolecules due to steric clashes, therefore an easy way to check a protein structure is to measure the dihedral angles. To measure dihedral angle requires 4 atom selections.
+
+Using the mouse:
+
+Left-click on the first atom and then hold down the CTRL key and left-click on the second, third, and fourth atoms. Fireflies will appear around all selections and the dihedral angle will appear under Marked Dihedral and the angle of the first, third, and fourth atoms under Marked Angle along with the distance between the firsth and fourth selections under Marked Distance in the HUD (\@ref(HUD)). The units of the dihedral angle are ^$\circ$^ or degrees. 
+
+Using the menu:
+
+Analyze>Geometry>Dihedral, then select the four atoms you are want to measure the angle between. There is an option to include only the distance between atoms that are directly connected, however this is not useful in most cases. 
+
+Using the command line:
+
+```{r diangle, echo=TRUE, eval=FALSE}
+# Load a PDB file
+>LoadPDB 1crn, download=yes
+
+# Measure the dihedral angle beta carbon, alpha carbon, carbonyl carbon, and carbonyl
+# oxygen of Arginine 10. This is also the Phi angle for this amino acid.
+>Dihedral 64,61,62,63,bound=No
+# Output from YASARA in the console
+Dihedral  64  CB  ARG   10    -  61  CA  ARG   10    -  62  C   ARG   10    -  63  O   ARG   10   :  -99.067
+
+```
+
+There is no way to label a dihedral angle in YASARA at this point in time, however it would be possible to show using a regular label as described in the section on labeling (\@ref(labels)).
+
 ## Counting Atoms/Residues {#count}
+
+The `Count` command is for quickly counting the number of Obj/Mol/Res/Atoms or bonds in a scene. This command can also be mixed to determine the number of Res/atoms in all of certain Obj/Mol/Res or within a selection. 
+
+Using the menu:
+
+Analyze>Count, then select Obj/Mol/Res/Atom or bond. In the menus, then make your selection. I recommend using the Name or Belonds to or has boxes in most cases (see Section \@ref(selmenu) for more details). 
+
+Using the command line:
+
+The primary command is `Count` followed by Obl/Mol/Res/Atom/Bond and a selection. The number of things that match that selection will be shown in the console.
+
+```{r count, echo=TRUE, eval=FALSE}
+# Load a PDB file
+>LoadPDB 1crn, download=yes
+
+# Count the cysteines in the protein
+>CountRes cys
+
+# Count the atoms in the scene
+>CountAtom all
+# or
+>CountAtom Obj 1
+
+# Count the atoms in the cysteines 
+>CountAtom Res Cys
+
+# Count the atoms in the backbone of the cysteine
+CountAtom Res Cys backbone
+
+```
 
 ## Alignment {#align}
 

@@ -25,7 +25,7 @@
 <meta name="author" content="Chris Berndsen">
 
 
-<meta name="date" content="2018-08-24">
+<meta name="date" content="2018-08-29">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -134,6 +134,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.4.1" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#top-menu"><i class="fa fa-check"></i><b>2.4.1</b> Top Menu</a></li>
 <li class="chapter" data-level="2.4.2" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#toprow"><i class="fa fa-check"></i><b>2.4.2</b> Top row buttons</a></li>
 <li class="chapter" data-level="2.4.3" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#pop-up-menu"><i class="fa fa-check"></i><b>2.4.3</b> Pop-up menu</a></li>
+<li class="chapter" data-level="2.4.4" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#selmenu"><i class="fa fa-check"></i><b>2.4.4</b> Selection Menus</a></li>
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#help"><i class="fa fa-check"></i><b>2.5</b> Where to find help</a><ul>
 <li class="chapter" data-level="2.5.1" data-path="the-yasara-user-interface.html"><a href="the-yasara-user-interface.html#searchdoc"><i class="fa fa-check"></i><b>2.5.1</b> SearchDoc</a></li>
@@ -211,7 +212,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="6.1.1" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html#making-multiple-selections"><i class="fa fa-check"></i><b>6.1.1</b> Making multiple selections</a></li>
 <li class="chapter" data-level="6.1.2" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html#how-to-manipulate-selections"><i class="fa fa-check"></i><b>6.1.2</b> How to manipulate selections</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html#measure"><i class="fa fa-check"></i><b>6.2</b> Measuring Distance</a></li>
+<li class="chapter" data-level="6.2" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html#measure"><i class="fa fa-check"></i><b>6.2</b> Measuring Distance</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html#labdist"><i class="fa fa-check"></i><b>6.2.1</b> Labeling distances</a></li>
+</ul></li>
 <li class="chapter" data-level="6.3" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html#mangle"><i class="fa fa-check"></i><b>6.3</b> Measuring Angles</a></li>
 <li class="chapter" data-level="6.4" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html#dihedral"><i class="fa fa-check"></i><b>6.4</b> Measurings Dihedrals</a></li>
 <li class="chapter" data-level="6.5" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html#count"><i class="fa fa-check"></i><b>6.5</b> Counting Atoms/Residues</a></li>
@@ -356,6 +359,21 @@ Figure 2.6: Example of the pop-up menu in YASARA
 </div>
 <p>In addition to the visible command options and readouts of YASARA like the Top Menu (<a href="the-yasara-user-interface.html#Menu">2.4</a>) and the HUD (<a href="the-yasara-user-interface.html#HUD">2.1</a>), there are ways to access commands on a selection. Referred to here as the pop-up menu (<a href="the-yasara-user-interface.html#fig:pop">2.6</a>), this menu can be accessed after a selection has been made by clicking on the selection using the right mouse button. Many of the options in the pop-up menu are found with some digging through the top menu, so this pop-up menu is a fast, easy way to find some of the most used commands. The pop-up menu is only accessible with a model loaded into YASARA.</p>
 </div>
+<div id="selmenu" class="section level3">
+<h3><span class="header-section-number">2.4.4</span> Selection Menus</h3>
+<p>When using the menu system, a box like that shown in Figure <a href="the-yasara-user-interface.html#fig:threemen">2.7</a> asking for input. The three columns can be used alone or in combination to precisely pick the Obj/Mol/Res/Atom or parts thereof you are interested in manipulating or analyzing.</p>
+<ul>
+<li><p><strong>Sequence</strong> – Selections in this box are the most specific and allow for the selection of one or more Obj/Mol/Res/Atoms. To make multiple selections hold down the CTRL key and left click on your selection.</p></li>
+<li><p><strong>Name</strong> – Selections in this box pick broad types of Obj/Mol/Res/Atoms with the same name. As shown in Figure <a href="the-yasara-user-interface.html#fig:threemen">2.7</a>, the names of the individual amino acids are shown. For Obj or Mol, this would have the name of the Obj/Mol, while atoms will have the atom designation both simple (e.g. O for oxygen) and more specific (e.g. Ca for the <span class="math inline">\(\alpha\)</span> carbon).</p></li>
+<li><p><strong>Belongs to or has</strong> – Selections here are the least specific and are aimed at broad categories such as Obj/Mol/Res/Atom in the backbone of the biomolecule or those that have certain structures like <span class="math inline">\(\alpha\)</span> helix.</p></li>
+</ul>
+<div class="figure"><span id="fig:threemen"></span>
+<img src="images/selmenuexplain.PNG" alt="Example of the selection menu in YASARA" width="85%" />
+<p class="caption">
+Figure 2.7: Example of the selection menu in YASARA
+</p>
+</div>
+</div>
 </div>
 <div id="help" class="section level2">
 <h2><span class="header-section-number">2.5</span> Where to find help</h2>
@@ -372,14 +390,14 @@ Figure 2.6: Example of the pop-up menu in YASARA
 
 <span class="co"># Search for every help page referencing the word PDB</span>
 <span class="op">&gt;</span>SearchDoc PDB</code></pre></div>
-<p>The help page will open as a webpage in your default web browser (<a href="the-yasara-user-interface.html#fig:helpind">2.7</a>). This page will list every time that word or phrase appears in the YASARA documentation.</p>
+<p>The help page will open as a webpage in your default web browser (<a href="the-yasara-user-interface.html#fig:helpind">2.8</a>). This page will list every time that word or phrase appears in the YASARA documentation.</p>
 <div class="figure"><span id="fig:helpind"></span>
 <img src="images/helpindex.PNG" alt="Results of using SearchDoc part 1: Initial search results" width="415" />
 <p class="caption">
-Figure 2.7: Results of using SearchDoc part 1: Initial search results
+Figure 2.8: Results of using SearchDoc part 1: Initial search results
 </p>
 </div>
-<p>Clicking on any of the blue links will take you to the page for the command as shown in <a href="the-yasara-user-interface.html#fig:helppage">2.8</a>. These pages have 3 parts:</p>
+<p>Clicking on any of the blue links will take you to the page for the command as shown in <a href="the-yasara-user-interface.html#fig:helppage">2.9</a>. These pages have 3 parts:</p>
 <ol style="list-style-type: decimal">
 <li><p>The box showing information on the command</p></li>
 <li><p>A brief text description of the command and purpose</p></li>
@@ -388,7 +406,7 @@ Figure 2.7: Results of using SearchDoc part 1: Initial search results
 <div class="figure"><span id="fig:helppage"></span>
 <img src="images/helppage1.PNG" alt="Results of using SearchDoc part 2: The help page for the ColorBG command" width="578" />
 <p class="caption">
-Figure 2.8: Results of using SearchDoc part 2: The help page for the ColorBG command
+Figure 2.9: Results of using SearchDoc part 2: The help page for the ColorBG command
 </p>
 </div>
 <p>Like this reference, the <em>Menu</em> row in the box describes where in the Menus this command is found. This is most useful early on and as you learn more about YASARA, the examples become useful too. Often you can compare what happened in your console to the examples to make sure that you are looking at the right command and using the correct arguments.</p>
@@ -403,10 +421,10 @@ Figure 2.8: Results of using SearchDoc part 2: The help page for the ColorBG com
 <div class="figure"><span id="fig:filetree"></span>
 <img src="images/filetree.PNG" alt="File folders created upon installing YASARA in Windows" width="101" />
 <p class="caption">
-Figure 2.9: File folders created upon installing YASARA in Windows
+Figure 2.10: File folders created upon installing YASARA in Windows
 </p>
 </div>
-<p>Upon installing windows, YASARA creates a series of folders similar to that shown in <a href="the-yasara-user-interface.html#fig:filetree">2.9</a>. The number and types of folders will depend on your YASARA version, however there will be several constant folders. Unless you have another data management system, I recommend using the YASARA system to start out. When you save a file, it will go into a folder corresponding to that file type, which can save a number of beginner headaches.</p>
+<p>Upon installing windows, YASARA creates a series of folders similar to that shown in <a href="the-yasara-user-interface.html#fig:filetree">2.10</a>. The number and types of folders will depend on your YASARA version, however there will be several constant folders. Unless you have another data management system, I recommend using the YASARA system to start out. When you save a file, it will go into a folder corresponding to that file type, which can save a number of beginner headaches.</p>
 <div id="naming-files-and-data-management" class="section level3">
 <h3><span class="header-section-number">2.6.1</span> Naming files and Data Management</h3>
 <p>While not specific to YASARA, having a good system to name and keep track of files that you create can save you many future issues. File names should be readable not only by a human but also the computer, especially if you are making a movie or executing a macro which iterates over a series of files. Therefore, some useful hints:</p>
