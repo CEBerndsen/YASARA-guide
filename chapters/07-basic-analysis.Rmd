@@ -51,7 +51,9 @@ In addition to the `Select` command, there is an `UnSelect` command which is goo
 
 #### Using `Select` from the command line {#selcmd}
 
-Select from the command line involves using `Select` in combination with a level of organization followed by a selection. This method is fast and precise in addition to being useful for manipulation and styling scenes quickly.
+Select from the command line involves using `Select` in combination with a level of organization followed by a selection. This method is fast and precise in addition to being useful for manipulation and styling scenes quickly. 
+
+You can also add on qualifiers to select such as `with distance <5 from Res 10` which would select all the amino acids within 5 $\unicode{x212B}$ of amino acid 10 in the protein. Also you can use `!` to mean not. The command `!lys` would refer to everything except the lysine amino acids in the scene.
 
 ```{r selectcmd, echo=TRUE, eval=FALSE}
 # Load a PDB file
@@ -65,6 +67,12 @@ Select from the command line involves using `Select` in combination with a level
 
 # Select molecule A
 >SelectMol A
+
+# Select amino acids within 4 angstroms of amino acid 10
+>SelectRes all with distance <4
+
+# Select all amino acids except alanine
+>SelectRes !ala
 
 ```
 
@@ -234,6 +242,68 @@ CountAtom Res Cys backbone
 
 ## Alignment {#align}
 
+When trying to understand the function of biomolecules it is often useful to compare the structure of the two molecules after alignment.  There are two functions to align Obj/Mols in YASARA,  Superpose (`Sup`) and `Align`. Each has its own unique style. `Sup` aligns molecules using sequence while `Align` uses structure. The end result of either action should be two or more Obj/Mols shown on top of each other along with a measure of the similarity called the Root Mean Square Deviation (RMSD) which is described more in the next section (\@ref(rmsd)). In general, `Align` is the better option to use, but `Sup` can often work when `Align` fails.
+
+To superpose two or more objects/molecules from the menu:
+
+Analyze>Superpose>then pick whether you want to superpose on a selection (most common) or on the ordered regions. I recommend using `SearchDoc` to get more details on `Sup` if you need them. If you choose Superpose>individual objects on selected, you will then be asked to select the Obj/Mol as we have seen before in selection menus (\@ref(selmenu)) followed by a set of parameters. Here you will choose what properties must match for the superposition to occur. If you have distinct sequences, then atom name may be the only match, more similar sequences you can probably include residue name and number. Because some bonds can rotate, an additional option is to flip chemically equivalent groups. This parameter is especially useful when you are comparing distinct structures of the same protein. Finally, you can have YASARA return RMSD value per Obj, Mol, Residue or Atom. For distinct proteins, choose Obj or Mol, for similar proteins choose Residue or Atom. 
+
+To align two or more objects/molecules from the menu:
+
+Analyze>Align>then pick your method pairwise based on sequence or structure, or multiple based on structure. Once, you pick your method you will be asked to select the Obj/Mol to align using the selection menus (\@ref(selmenu)). If doing pairwise, only pick one Obj/Mol per menu, if doing multiple, then you can pick many structures in the first menu followed by the target of the alignment in the second menu. 
+
+To align or superpose using the command line:
+
+```{r alignsup, echo=TRUE, eval=FALSE}
+# Load two PDB files
+>LoadPDB 1ubq, download=yes
+>LoaDPDB 5ia7, download=yes
+
+# Superpose 5ia7 (Obj 2) on 1ubq (Obj 1) and return RMSD values of the Obj
+>SupObj 2,1,Match=AtomName,Flip=No,Unit=Obj
+# Console output
+Object  2 (5ia7) and Object  1 (1ubq) have 13.5494 A RMSD over 163 matched atoms
+
+# Align 5ia7 (Obj 2) on 1ubq (Obj 1) and return RMSD values
+>AlignObj 2,1,Method=MUSTANGPP
+# Console output
+Single line alignment:
+>Object 1 (1ubq):
+MQIFVKTL-----TGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLI-----FAGKQLEDGRTLSDY------NIQKESTLHLV--------------------------------------------------------------------------------LRLRGG
+>Object 2 (5ia7):
+VSFKITLTSDPRL--PYKVLSVPESTPFTAVLKFAAEEFKVPAATSAIITNDGI----GINPAQTAGNVFLKHGS------ELRII|VSFKITLTSDPRLPYKVLSVPESTPFTAVLKFAAEEFKVPAATSAIITNDGIGINPAQTAGNVFLKHGSELRIIPRDRV------
+
+Multi line alignment of object 1 (1ubq,Query) and object 2 (5ia7,Hit):
+
+Query:    1 MQIFVKTLTG-----KTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGK-----QLEDGRTLSDYNIQKES------TLHLVLRLRGG-------------------------------------------------------------------------------- 77          
+            ::: |             :L:V  S  :  V     |:  |P   : |I          |: ::T ::              L:||                                                                                                   
+Hit  :    1 VSFKITLT--SDPRLPYKVLSVPESTPFTAVLKFAAEEFKVPAATSAII----TNDGIGINPAQTAGNV------FLKHGSELRII------|VSFKITLTSDPRLPYKVLSVPESTPFTAVLKFAAEEFKVPAATSAIITNDGIGINPAQTAGNVFLKHGSELRIIPRDRV 154         
+                                                                                                                                                                                                     
+
+
+The above structural alignment between objects  2 (5ia7) and  1 (1ubq) has an RMSD of 1.629 A over 58 aligned residues with 13.79% sequence identity.
+
+```
+
+`Align` provides a sequence alignment of the protein in the console in addition to the RMSD value. The query is the second molecule in the command, the Hit is the first molecule. Between the two lines are either a gap, an amino acid in one letter code, a **:** or a **|**. The : indicates similar amino acid based side/charge, | means near identity, and if a letter is shown it means that the amino acid is conserved or the same in that position in both molecules. 
+
+As noted above, `Align` is a more robust method, provides more information, and is simpler to do, however it does not always work, especially for structurally divergent molecules or for very large complex biomolecules.
+
+
+### Why did my Obj/Mol move (or not)?
+
+When aligning or superposing Obj/Mol, one or more of the Obj/Mols will move on top of another Obj/Mol. At first, this change in the scene can appear confusing and/or frustrating. When setting up an alignment, whatever Obj/Mol(s) is/are listed *first* will move, while the "target" molecule will remain fixed on the screen. In practice, always have the biomolecule which is better established or which has the longer sequence be the target of the alignment. If molecules disappear you can use the center button in the top row menu (\@ref(toprow)) to bring all the molecules back on the  screen.
+
 ### Root Mean Square Deviation {#rmsd}
 
+The RMSD provides a measure of the average difference in distance between atoms within two or more molecules. The more closely the structures match, the lower the RMSD value^[more information on [RMSD](https://en.wikipedia.org/wiki/Root-mean-square_deviation_of_atomic_positions) and on [programs to calculate RMSD with biomolecules](http://proteopedia.org/wiki/index.php/Structural_alignment_tools)]. If you align one or more molecules using `Align` or `Sup` this value is provided in the console. You can also calculate RMSD without aligning using the `RMSD` command followed by Obj/Mol/Res/Atom. This command is useful for calculating the RMSD of pieces of aligned molecules. The `RMSD` command is found in the Analyze menu and uses a selection menu system as described before (\@ref(selmenu)).
+
+
+
 ## Knowledge Checks^[Answers can be found \@ref(sevenkey)]
+
+  1. Load the PDB file [148L](https://www.rcsb.org/structure/148l) and count the number of water molecules around the protein. The residue code for water is hoh.
+  
+  2. Select and count the amino acids within the active site of the protein that are within 3 $\unicode{x212B}$ of Mol S. You will likely need to exclude the waters for this, either by deleting the waters or by being very precise in your selection commands. 
+  
+  3. 

@@ -132,3 +132,21 @@ knitr::include_graphics("images/annotatetest.png")
 
 ## Chapter 6 {#sevenkey}
 
+  1. `CountRes hoh` should result in 140 residues
+  
+  2. 14 residues contact Mol S
+  
+```{r sixtwoans, echo=TRUE, eval=FALSE}
+# Method 1
+>SelectRes all with distance <5 from Mol S
+>UnselectRes !protein
+>CountRes selected
+
+# Method 2
+>SelectRes protein with distance <5 from Mol S
+>CountRes selected
+
+
+```
+
+  3. 

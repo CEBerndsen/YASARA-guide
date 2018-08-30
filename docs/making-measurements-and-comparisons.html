@@ -25,7 +25,7 @@
 <meta name="author" content="Chris Berndsen">
 
 
-<meta name="date" content="2018-08-29">
+<meta name="date" content="2018-08-30">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -103,15 +103,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="./">A guide to biomolecule visualization and analysis in YASARA</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a><ul>
-<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#why-read-this-book"><i class="fa fa-check"></i>Why read this book</a></li>
-<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#what-is-in-this-guide"><i class="fa fa-check"></i>What is in this guide?</a></li>
-<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#a-note-on-using-the-command-line"><i class="fa fa-check"></i>A note on using the command line</a></li>
-<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#end-of-section-checks-and-active-reading"><i class="fa fa-check"></i>End of section checks and active reading</a></li>
-<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#questions-and-corrections"><i class="fa fa-check"></i>Questions and corrections</a></li>
-<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#copyright"><i class="fa fa-check"></i>Copyright</a></li>
-<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a><ul>
-<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#who-owns-yasara-and-the-other-programs-in-this-book"><i class="fa fa-check"></i>Who owns YASARA and the other programs in this book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Index</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-read-this-book"><i class="fa fa-check"></i>Why read this book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-is-in-this-guide"><i class="fa fa-check"></i>What is in this guide?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#a-note-on-using-the-command-line"><i class="fa fa-check"></i>A note on using the command line</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#end-of-section-checks-and-active-reading"><i class="fa fa-check"></i>End of section checks and active reading</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#questions-and-corrections"><i class="fa fa-check"></i>Questions and corrections</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#copyright"><i class="fa fa-check"></i>Copyright</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#who-owns-yasara-and-the-other-programs-in-this-book"><i class="fa fa-check"></i>Who owns YASARA and the other programs in this book</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="obtaining-yasara.html"><a href="obtaining-yasara.html"><i class="fa fa-check"></i><b>1</b> Obtaining YASARA</a><ul>
@@ -219,7 +219,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="6.4" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html#dihedral"><i class="fa fa-check"></i><b>6.4</b> Measurings Dihedrals</a></li>
 <li class="chapter" data-level="6.5" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html#count"><i class="fa fa-check"></i><b>6.5</b> Counting Atoms/Residues</a></li>
 <li class="chapter" data-level="6.6" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html#align"><i class="fa fa-check"></i><b>6.6</b> Alignment</a><ul>
-<li class="chapter" data-level="6.6.1" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html#rmsd"><i class="fa fa-check"></i><b>6.6.1</b> Root Mean Square Deviation</a></li>
+<li class="chapter" data-level="6.6.1" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html#why-did-my-objmol-move-or-not"><i class="fa fa-check"></i><b>6.6.1</b> Why did my Obj/Mol move (or not)?</a></li>
+<li class="chapter" data-level="6.6.2" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html#rmsd"><i class="fa fa-check"></i><b>6.6.2</b> Root Mean Square Deviation</a></li>
 </ul></li>
 <li class="chapter" data-level="6.7" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html#knowledge-checks-1"><i class="fa fa-check"></i><b>6.7</b> Knowledge Checks</a></li>
 </ul></li>
@@ -296,6 +297,7 @@ Figure 6.2: A selected atom with the universe style. It’s Full of Stars
 <div id="selcmd" class="section level4">
 <h4><span class="header-section-number">6.1.1.4</span> Using <code>Select</code> from the command line</h4>
 <p>Select from the command line involves using <code>Select</code> in combination with a level of organization followed by a selection. This method is fast and precise in addition to being useful for manipulation and styling scenes quickly.</p>
+<p>You can also add on qualifiers to select such as <code>with distance &lt;5 from Res 10</code> which would select all the amino acids within 5 <span class="math inline">\(\unicode{x212B}\)</span> of amino acid 10 in the protein. Also you can use <code>!</code> to mean not. The command <code>!lys</code> would refer to everything except the lysine amino acids in the scene.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load a PDB file</span>
 <span class="op">&gt;</span>LoadPDB 1crn, download=yes
 
@@ -306,7 +308,13 @@ Figure 6.2: A selected atom with the universe style. It’s Full of Stars
 <span class="op">&gt;</span>SelectRes <span class="dv">1</span><span class="op">-</span><span class="dv">10</span>
 
 <span class="co"># Select molecule A</span>
-<span class="op">&gt;</span>SelectMol A</code></pre></div>
+<span class="op">&gt;</span>SelectMol A
+
+<span class="co"># Select amino acids within 4 angstroms of amino acid 10</span>
+<span class="op">&gt;</span>SelectRes all with distance <span class="op">&lt;</span><span class="dv">4</span>
+
+<span class="co"># Select all amino acids except alanine</span>
+<span class="op">&gt;</span>SelectRes <span class="op">!</span>ala</code></pre></div>
 </div>
 </div>
 <div id="how-to-manipulate-selections" class="section level3">
@@ -427,12 +435,57 @@ CountAtom Res Cys backbone</code></pre></div>
 </div>
 <div id="align" class="section level2">
 <h2><span class="header-section-number">6.6</span> Alignment</h2>
+<p>When trying to understand the function of biomolecules it is often useful to compare the structure of the two molecules after alignment. There are two functions to align Obj/Mols in YASARA, Superpose (<code>Sup</code>) and <code>Align</code>. Each has its own unique style. <code>Sup</code> aligns molecules using sequence while <code>Align</code> uses structure. The end result of either action should be two or more Obj/Mols shown on top of each other along with a measure of the similarity called the Root Mean Square Deviation (RMSD) which is described more in the next section (<a href="making-measurements-and-comparisons.html#rmsd">6.6.2</a>). In general, <code>Align</code> is the better option to use, but <code>Sup</code> can often work when <code>Align</code> fails.</p>
+<p>To superpose two or more objects/molecules from the menu:</p>
+<p>Analyze&gt;Superpose&gt;then pick whether you want to superpose on a selection (most common) or on the ordered regions. I recommend using <code>SearchDoc</code> to get more details on <code>Sup</code> if you need them. If you choose Superpose&gt;individual objects on selected, you will then be asked to select the Obj/Mol as we have seen before in selection menus (<a href="the-yasara-user-interface.html#selmenu">2.4.4</a>) followed by a set of parameters. Here you will choose what properties must match for the superposition to occur. If you have distinct sequences, then atom name may be the only match, more similar sequences you can probably include residue name and number. Because some bonds can rotate, an additional option is to flip chemically equivalent groups. This parameter is especially useful when you are comparing distinct structures of the same protein. Finally, you can have YASARA return RMSD value per Obj, Mol, Residue or Atom. For distinct proteins, choose Obj or Mol, for similar proteins choose Residue or Atom.</p>
+<p>To align two or more objects/molecules from the menu:</p>
+<p>Analyze&gt;Align&gt;then pick your method pairwise based on sequence or structure, or multiple based on structure. Once, you pick your method you will be asked to select the Obj/Mol to align using the selection menus (<a href="the-yasara-user-interface.html#selmenu">2.4.4</a>). If doing pairwise, only pick one Obj/Mol per menu, if doing multiple, then you can pick many structures in the first menu followed by the target of the alignment in the second menu.</p>
+<p>To align or superpose using the command line:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load two PDB files</span>
+<span class="op">&gt;</span>LoadPDB 1ubq, download=yes
+<span class="op">&gt;</span>LoaDPDB 5ia7, download=yes
+
+<span class="co"># Superpose 5ia7 (Obj 2) on 1ubq (Obj 1) and return RMSD values of the Obj</span>
+<span class="op">&gt;</span>SupObj <span class="dv">2</span>,<span class="dv">1</span>,Match=AtomName,Flip=No,Unit=Obj
+<span class="co"># Console output</span>
+Object  <span class="dv">2</span> (5ia7) and Object  <span class="dv">1</span> (1ubq) have <span class="fl">13.5494</span> A RMSD over <span class="dv">163</span> matched atoms
+
+<span class="co"># Align 5ia7 (Obj 2) on 1ubq (Obj 1) and return RMSD values</span>
+<span class="op">&gt;</span>AlignObj <span class="dv">2</span>,<span class="dv">1</span>,Method=MUSTANGPP
+<span class="co"># Console output</span>
+Single line alignment<span class="op">:</span>
+<span class="er">&gt;</span>Object <span class="dv">1</span> (1ubq)<span class="op">:</span>
+MQIFVKTL<span class="op">-----</span>TGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLI<span class="op">-----</span>FAGKQLEDGRTLSDY<span class="op">------</span>NIQKESTLHLV<span class="op">--------------------------------------------------------------------------------</span>LRLRGG
+<span class="op">&gt;</span>Object <span class="dv">2</span> (5ia7)<span class="op">:</span>
+VSFKITLTSDPRL<span class="op">--</span>PYKVLSVPESTPFTAVLKFAAEEFKVPAATSAIITNDGI<span class="op">----</span>GINPAQTAGNVFLKHGS<span class="op">------</span>ELRII<span class="op">|</span>VSFKITLTSDPRLPYKVLSVPESTPFTAVLKFAAEEFKVPAATSAIITNDGIGINPAQTAGNVFLKHGSELRIIPRDRV<span class="op">------</span>
+
+Multi line alignment of object <span class="dv">1</span> (1ubq,Query) and object <span class="dv">2</span> (5ia7,Hit)<span class="op">:</span>
+
+Query<span class="op">:</span><span class="st">    </span><span class="dv">1</span> MQIFVKTLTG<span class="op">-----</span>KTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGK<span class="op">-----</span>QLEDGRTLSDYNIQKES<span class="op">------</span>TLHLVLRLRGG<span class="op">--------------------------------------------------------------------------------</span><span class="st"> </span><span class="dv">77</span>          
+            <span class="op">:::</span><span class="st"> </span><span class="er">|</span><span class="st">             </span><span class="er">:</span>L<span class="op">:</span>V  S  <span class="op">:</span><span class="st">  </span>V     <span class="op">|</span><span class="er">:</span><span class="st">  </span><span class="er">|</span>P   <span class="op">:</span><span class="st"> </span><span class="er">|</span>I          <span class="op">|</span><span class="er">:</span><span class="st"> </span><span class="er">::</span>T <span class="op">::</span><span class="st">              </span>L<span class="op">:</span><span class="er">||</span><span class="st">                                                                                                   </span>
+Hit  <span class="op">:</span><span class="st">    </span><span class="dv">1</span> VSFKITLT<span class="op">--</span>SDPRLPYKVLSVPESTPFTAVLKFAAEEFKVPAATSAII<span class="op">----</span>TNDGIGINPAQTAGNV<span class="op">------</span>FLKHGSELRII<span class="op">------</span><span class="er">|</span>VSFKITLTSDPRLPYKVLSVPESTPFTAVLKFAAEEFKVPAATSAIITNDGIGINPAQTAGNVFLKHGSELRIIPRDRV <span class="dv">154</span>         
+                                                                                                                                                                                                     
+
+
+The above structural alignment between objects  <span class="dv">2</span> (5ia7) and  <span class="dv">1</span> (1ubq) has an RMSD of <span class="fl">1.629</span> A over <span class="dv">58</span> aligned residues with <span class="fl">13.79</span>% sequence identity.</code></pre></div>
+<p><code>Align</code> provides a sequence alignment of the protein in the console in addition to the RMSD value. The query is the second molecule in the command, the Hit is the first molecule. Between the two lines are either a gap, an amino acid in one letter code, a <strong>:</strong> or a <strong>|</strong>. The : indicates similar amino acid based side/charge, | means near identity, and if a letter is shown it means that the amino acid is conserved or the same in that position in both molecules.</p>
+<p>As noted above, <code>Align</code> is a more robust method, provides more information, and is simpler to do, however it does not always work, especially for structurally divergent molecules or for very large complex biomolecules.</p>
+<div id="why-did-my-objmol-move-or-not" class="section level3">
+<h3><span class="header-section-number">6.6.1</span> Why did my Obj/Mol move (or not)?</h3>
+<p>When aligning or superposing Obj/Mol, one or more of the Obj/Mols will move on top of another Obj/Mol. At first, this change in the scene can appear confusing and/or frustrating. When setting up an alignment, whatever Obj/Mol(s) is/are listed <em>first</em> will move, while the “target” molecule will remain fixed on the screen. In practice, always have the biomolecule which is better established or which has the longer sequence be the target of the alignment. If molecules disappear you can use the center button in the top row menu (<a href="the-yasara-user-interface.html#toprow">2.4.2</a>) to bring all the molecules back on the screen.</p>
+</div>
 <div id="rmsd" class="section level3">
-<h3><span class="header-section-number">6.6.1</span> Root Mean Square Deviation</h3>
+<h3><span class="header-section-number">6.6.2</span> Root Mean Square Deviation</h3>
+<p>The RMSD provides a measure of the average difference in distance between atoms within two or more molecules. The more closely the structures match, the lower the RMSD value<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a>. If you align one or more molecules using <code>Align</code> or <code>Sup</code> this value is provided in the console. You can also calculate RMSD without aligning using the <code>RMSD</code> command followed by Obj/Mol/Res/Atom. This command is useful for calculating the RMSD of pieces of aligned molecules. The <code>RMSD</code> command is found in the Analyze menu and uses a selection menu system as described before (<a href="the-yasara-user-interface.html#selmenu">2.4.4</a>).</p>
 </div>
 </div>
 <div id="knowledge-checks-1" class="section level2">
-<h2><span class="header-section-number">6.7</span> Knowledge Checks<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a></h2>
+<h2><span class="header-section-number">6.7</span> Knowledge Checks<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a></h2>
+<ol style="list-style-type: decimal">
+<li><p>Load the PDB file <a href="https://www.rcsb.org/structure/148l">148L</a> and count the number of water molecules around the protein. The residue code for water is hoh.</p></li>
+<li><p>Select and count the amino acids within the active site of the protein that are within 3 <span class="math inline">\(\unicode{x212B}\)</span> of Mol S. You will likely need to exclude the waters for this, either by deleting the waters or by being very precise in your selection commands.</p></li>
+<li></li>
+</ol>
 
 </div>
 </div>
@@ -440,7 +493,8 @@ CountAtom Res Cys backbone</code></pre></div>
 <hr />
 <ol start="7">
 <li id="fn7"><p>See the section on <a href="https://www.ncbi.nlm.nih.gov/books/NBK22567/">Chemical Bonds in Biochemistry</a> described within 5<sup>th</sup> edition of Biochemistry by JM Berg, JL Tymoczko, and L Stryer.<a href="making-measurements-and-comparisons.html#fnref7">↩</a></p></li>
-<li id="fn8"><p>Answers can be found <a href="exercise-answers.html#sevenkey">7.5</a><a href="making-measurements-and-comparisons.html#fnref8">↩</a></p></li>
+<li id="fn8"><p>more information on <a href="https://en.wikipedia.org/wiki/Root-mean-square_deviation_of_atomic_positions">RMSD</a> and on <a href="http://proteopedia.org/wiki/index.php/Structural_alignment_tools">programs to calculate RMSD with biomolecules</a><a href="making-measurements-and-comparisons.html#fnref8">↩</a></p></li>
+<li id="fn9"><p>Answers can be found <a href="exercise-answers.html#sevenkey">7.5</a><a href="making-measurements-and-comparisons.html#fnref9">↩</a></p></li>
 </ol>
 </div>
             </section>
