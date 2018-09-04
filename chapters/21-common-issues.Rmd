@@ -1,0 +1,8 @@
+# Errors and quirks
+
+## .mcr --> .txt
+
+## Running in the downloads folder
+
+## Admin permission needed
+
