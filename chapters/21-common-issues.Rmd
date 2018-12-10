@@ -1,8 +1,9 @@
 # Errors and quirks
 
-## .mcr --> .txt
+## .mcr --> .txt and back again {#macrotext}
 
 ## Running in the downloads folder
 
 ## Admin permission needed
 
+## Menu bar disappears
