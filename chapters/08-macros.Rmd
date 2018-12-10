@@ -105,3 +105,56 @@ After the header and the environment settings, the YASARA commands can then be t
 
 #### Rotate {#rotate}
 
+The `Rotate` command is similar to the `PosOri` commands described in section \@ref(orient). In `Rotate`, the Obj is specified along with the axis of rotation (X, Y or Z) and the number of degrees as shown below.
+
+```{r rotate, echo=TRUE, eval=FALSE}
+# Load the structure of crambin from the internet
+>LoadPDB 1crn, download=yes
+
+# Rotate  Obj 1 30 degrees around the Y-axis
+>RotateObj 1, Y = 30
+
+# Rotate the Obj 1 30 degrees around the Y-axis and 20 degrees around the Z-axis
+>RotateObj 1, Y = 30, Z = 20
+
+
+```
+
+For macros that are being used to display information in a presentation style, it is worth using `AutoRotate`, which animates the rotation in a nice format. The command is the same, except `Auto` needs to be inserted before `Rotate` as shown below. One caution is that `AutoRotate` needs a stop command in the form of the same command with the axis rotations set to 0.
+
+```{r autorotate, echo=TRUE, eval=FALSE}
+# Load the structure of crambin from the internet
+>LoadPDB 1crn, download=yes
+
+# Rotate  Obj 1 around the Y-axis in 1 degree steps
+>AutoRotateObj 1, Y = 1
+
+# Rotate the Obj 1 the Y-axis and the Z-axis in 1 degree steps
+>AutoRotateObj 1, Y = 1, Z = 1
+
+# To stop rotate set the axis to zero
+>AutoRotateObj 1, Y = 0, Z = 0
+
+```
+
+**Stylistic suggestion:** Do not set the `AutoRotate` command to move more than 2 degrees per step as it can get disorienting with fast spinning.
+
+#### Inserting images
+
+#### Showing messages
+
+#### Wait
+
+#### Click buttons
+
+### Saving the macro {#macrosave}
+
+### Playing the macro {#macroplay}
+
+#### Drag and Drop
+
+## Macro examples
+
+## Knowledge Checks^[Answers can be found \@ref(sevenkey)]
+
+
