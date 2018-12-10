@@ -298,6 +298,37 @@ When aligning or superposing Obj/Mol, one or more of the Obj/Mols will move on t
 
 The RMSD provides a measure of the average difference in distance between atoms within two or more molecules. The more closely the structures match, the lower the RMSD value^[more information on [RMSD](https://en.wikipedia.org/wiki/Root-mean-square_deviation_of_atomic_positions) and on [programs to calculate RMSD with biomolecules](http://proteopedia.org/wiki/index.php/Structural_alignment_tools)]. If you align one or more molecules using `Align` or `Sup` this value is provided in the console. You can also calculate RMSD without aligning using the `RMSD` command followed by Obj/Mol/Res/Atom. This command is useful for calculating the RMSD of pieces of aligned molecules. The `RMSD` command is found in the Analyze menu and uses a selection menu system as described before (\@ref(selmenu)).
 
+## Making amino acid or nucleotide substitutions {#swap}
+
+A frequent goal of biochemistry is to understand biomolecule structure and function. Along the path to this goal, biochemists often like to make substitutions within the sequence of DNA/RNA or proteins to determine how this change alters the structure and function of the biomolecule. YASARA can show simple changes to biomolecule structure using the `Swap` command which, when combined with energy minimization, molecular dynamics, or experimental data, can explain the structural basis for defects in protein function. 
+
+**One caution** when using YASARA_view_, `Swap` simply inserts the amino acid/nucleotide and does not optimize the interactions or any parameters of the changed molecule. Thus, any data associated with 'Swap' should be considered with skepticism in the absence of confirmatory evidence. 
+
+Using the menu:
+
+Edit>Swap>then select Obj/Mol/Res/Atom or bond. In the next menu, pick your amino acid or nucleotide to change and click OK. In the next menu, choose what to change your selection to. In humans and other living, use L-amino acids. You can initially select multiple amino acids to change, but can only choose one type of amino to change those amino acids/nucleotides to. 
+
+Using the pop-up menu:
+
+Select an atom by left-clicking the mouse, then right-click that selected atom. In the pop-up menu, there is the `Swap` command, which can then be followed as above to change that particular amino acid/nucleotide.
+
+Using the command line:
+
+```{r swap, echo=TRUE, eval=FALSE}
+# Load a PDB file
+>LoadPDB 1crn, download=yes
+
+# Change Cys 16 in the molecule to Arginine
+>SwapRes Cys 16, Arg
+
+# Change all the Asn to Asp
+>SwapRes Asn, Asp
+
+```
+
+### Swapping bonds
+
+During model building of enzymes, it is often useful to build intermediates or transition states of the reactants in order to predict the enzyme active site might interact with these structures. Like for amino acids and nucleotides, `Swap` can be used to change a double bond into a single bond or other combinations to build these intermediates. Like residue substitution, these changes to bonding are not optimized and should be interpreted cautiously. 
 
 
 ## Knowledge Checks^[Answers can be found \@ref(sevenkey)]
