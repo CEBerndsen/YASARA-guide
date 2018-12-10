@@ -1,0 +1,3 @@
+#Macros
+
+Throughout this guide, the command line using syntax such as `ColorRes` and `PosOriObj` has been useful for doing manipulations to the structures and scenes in YASARA. However, typing many commands repeatedly can be tedious and potentially difficult. Static images are great illustrations of simple points, o
