@@ -228,7 +228,7 @@ include_graphics("images/filetree.PNG")
 
 Upon installing windows, YASARA creates a series of folders similar to that shown in \@ref(fig:filetree). The number and types of folders will depend on your YASARA version, however there will be several constant folders. Unless you have another data management system, I recommend using the YASARA system to start out. When you save a file, it will go into a folder corresponding to that file type, which can save a number of beginner headaches. 
 
-### Naming files and Data Management
+### Naming files and Data Management {#datam}
 
 While not specific to YASARA, having a good system to name and keep track of files that you create can save you many future issues. File names should be readable not only by a human but also the computer, especially if you are making a movie or executing a macro which iterates over a series of files. Therefore, some useful hints:
 
@@ -242,6 +242,7 @@ While not specific to YASARA, having a good system to name and keep track of fil
   
   5. *Never be afraid to start over* -- Sometimes you will dig a hole in your work and not be able to get out. It is okay to start over and try again. Data management takes a while to become routine, but should be a skill that you exercise often.
 
+In-depth details on file naming and data management can be found in \@ref(manage)
 
 ## Knowledge Self-Checks
 
