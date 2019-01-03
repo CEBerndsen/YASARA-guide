@@ -33,7 +33,7 @@
   
   
 <link rel="prev" href="exercise-answers.html">
-
+<link rel="next" href="errors-and-quirks.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -247,6 +247,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="8.3" data-path="exercise-answers.html"><a href="exercise-answers.html#fivekey"><i class="fa fa-check"></i><b>8.3</b> Chapter 5</a></li>
 <li class="chapter" data-level="8.4" data-path="exercise-answers.html"><a href="exercise-answers.html#sixkey"><i class="fa fa-check"></i><b>8.4</b> Chapter 6</a></li>
 <li class="chapter" data-level="8.5" data-path="exercise-answers.html"><a href="exercise-answers.html#sevenkey"><i class="fa fa-check"></i><b>8.5</b> Chapter 6</a></li>
+<li class="chapter" data-level="8.6" data-path="exercise-answers.html"><a href="exercise-answers.html#eightkey"><i class="fa fa-check"></i><b>8.6</b> Chapter 7</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="manage.html"><a href="manage.html"><i class="fa fa-check"></i><b>9</b> Data Management</a><ul>
 <li class="chapter" data-level="9.1" data-path="manage.html"><a href="manage.html#introduction-to-the-problem"><i class="fa fa-check"></i><b>9.1</b> Introduction to the problem</a></li>
@@ -258,6 +259,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="9.5" data-path="manage.html"><a href="manage.html#data-management-plan"><i class="fa fa-check"></i><b>9.5</b> Data Management Plan</a><ul>
 <li class="chapter" data-level="9.5.1" data-path="manage.html"><a href="manage.html#data-management-plan-questions-for-students-in-biochemistry-class"><i class="fa fa-check"></i><b>9.5.1</b> Data Management Plan questions for students in Biochemistry class:</a></li>
 </ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html"><i class="fa fa-check"></i><b>10</b> Errors and quirks</a><ul>
+<li class="chapter" data-level="10.1" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html#macrotext"><i class="fa fa-check"></i><b>10.1</b> .mcr –&gt; .txt and back again</a></li>
+<li class="chapter" data-level="10.2" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html#running-in-the-downloads-folder"><i class="fa fa-check"></i><b>10.2</b> Running in the downloads folder</a></li>
+<li class="chapter" data-level="10.3" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html#admin-permission-needed"><i class="fa fa-check"></i><b>10.3</b> Admin permission needed</a></li>
+<li class="chapter" data-level="10.4" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html#menu-bar-disappears"><i class="fa fa-check"></i><b>10.4</b> Menu bar disappears</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">
@@ -283,7 +290,7 @@ Published with bookdown</a></li>
 <div id="manage" class="section level1">
 <h1><span class="header-section-number">Chapter 9</span> Data Management</h1>
 <p><em>Adapted from the guides of Y. Shorish for CHEM361 by C. Berndsen</em></p>
-<p>The descriptions below are a more general guide to file naming and data management using in the Biochemistry class at JMU. For YASARA specific suggestions see <a href="the-yasara-user-interface.html#datam">2.6.1</a>. For those that wish to use this in a class assignment, a suggested assignment can be found <img src="https://osf.io/d3esr/" alt="here" />.</p>
+<p>The descriptions below are a more general guide to file naming and data management using in the Biochemistry class at JMU. For YASARA specific suggestions see <a href="the-yasara-user-interface.html#datam">2.6.1</a>. For those that wish to use this in a class assignment, a suggested assignment can be found <a href="https://osf.io/d3esr/">here</a>.</p>
 <div id="introduction-to-the-problem" class="section level2">
 <h2><span class="header-section-number">9.1</span> Introduction to the problem</h2>
 <p>We all have had the problem of saving a file and then having to find that file a year or more later. Once we find where we stored the file and what we named it, we then have to figure out what we did. While this is annoying, the rise of search engines that can search within files has reduced the time spent trying to find a file.</p>
@@ -348,56 +355,87 @@ Published with bookdown</a></li>
 <div id="data-management-plan" class="section level2">
 <h2><span class="header-section-number">9.5</span> Data Management Plan</h2>
 <p>While described last, the data management plan should be one of the first steps in the research process as it lays out the organization of the results. Investing time on the front end of the project to think about how data will be stored and organized will save a lot of time at the end of the project when you have to start interpreting results and drawing conclusions. Trying to find the “good” results in a mess of files is not fun and can lead to lots of unnecessary stress.</p>
-<p>An example data management plan for a set of biochemical and computational experiments is shown <embed src="https://github.com/CEBerndsen/YASARA-guide/blob/master/docs/DataManagementPlanex.pdf" />.</p>
+<p>An example data management plan for a set of biochemical and computational experiments is shown <a href="https://github.com/CEBerndsen/YASARA-guide/blob/master/docs/DataManagementPlanex.pdf">here</a>.</p>
 <div id="data-management-plan-questions-for-students-in-biochemistry-class" class="section level3">
 <h3><span class="header-section-number">9.5.1</span> Data Management Plan questions for students in Biochemistry class:</h3>
 <div id="types-of-data" class="section level4">
 <h4><span class="header-section-number">9.5.1.1</span> Types of Data</h4>
-<p>• What data will be generated in the research? – Is it sequence data? Sensor readings? Observational data? Environmental information? Structural models? • What data types will you be creating or capturing? – Actual data types here: textual data, image data, tabular, sound, structural… • How will you collect or create the data? – Handwritten field notes transcribed to Excel, downloads from instruments, recorded on a device, typed into a text document, written in Python… • If you will be using existing data, state this and include how you will obtain it. – Are you pulling from Uniprot, Ensembl, RCSB PDB or other existing data repository? • How will the data be processed? – What software will you be using to process the data: Excel, YASARA, R, ATSAS, Coot, PHENIX, Hadoop, ROOT, etc.</p>
+<ol style="list-style-type: decimal">
+<li><p>What data will be generated in the research?</p>
+<p>– Is it sequence data? Sensor readings? Observational data? Environmental information? Structural models?</p></li>
+<li><p>What data types will you be creating or capturing?</p>
+<p>– Actual data types here: textual data, image data, tabular, sound, structural…</p>
+<ul>
+<li>How will you collect or create the data?</li>
+</ul>
+<p>– Handwritten field notes transcribed to Excel, downloads from instruments, recorded on a device, typed into a text document, written in Python…</p>
+<ul>
+<li>If you will be using existing data, state this and include how you will obtain it.</li>
+</ul>
+– Are you pulling from Uniprot, Ensembl, RCSB PDB or other existing data repository?
+<ul>
+<li>How will the data be processed?</li>
+</ul>
+<p>– What software will you be using to process the data: Excel, YASARA, R, ATSAS, Coot, PHENIX, Hadoop, ROOT, etc.</p></li>
+</ol>
 </div>
 <div id="standards-for-data" class="section level4">
 <h4><span class="header-section-number">9.5.1.2</span> Standards for Data</h4>
-<p>• Which file formats will you use for your data, and why? - It is best here to use non-proprietary formats. Example: CSV instead of XLSX, TXT instead of DOCX. If it is necessary to use a proprietary format, explain why. • What form will the metadata describing/documenting your data take? – This is your data dictionary and the details that you will record therein. • How will you create or capture these details? – Will this be captured as a data dictionary in a spreadsheet? As a separate file? Will each data set have a separate file, or will you create one ‘master’ README?<br />
-• What contextual details (metadata) are needed to make the data you capture or collect meaningful? – Essentially what methods are necessary to reproduce your data.</p>
+<ol style="list-style-type: decimal">
+<li><p>Which file formats will you use for your data, and why?</p>
+<ul>
+<li>It is best here to use non-proprietary formats. Example: CSV instead of XLSX, TXT instead of DOCX. If it is necessary to use a proprietary format, explain why.</li>
+</ul></li>
+<li><p>What form will the metadata describing/documenting your data take?</p>
+<p>– This is your data dictionary and the details that you will record therein.</p></li>
+<li><p>How will you create or capture these details?</p>
+<p>– Will this be captured as a data dictionary in a spreadsheet? As a separate file? Will each data set have a separate file, or will you create one ‘master’ README?</p></li>
+<li><p>What contextual details (metadata) are needed to make the data you capture or collect meaningful?</p>
+<p>– Essentially what methods are necessary to reproduce your data.</p></li>
+</ol>
 </div>
 <div id="how-will-you-share-your-data" class="section level4">
 <h4><span class="header-section-number">9.5.1.3</span> How will you share your data?</h4>
-<p>• Open Science Framework  You have no choice o This is set for this course but for other research would be dependent on standards for the field/discipline.  In biochemistry, the RCSB PDB, BMRB, or SASDB are examples of data sharing platforms that are required for publication of biomolecule structure data.</p>
+<ol style="list-style-type: decimal">
+<li><p><a href="osf.io">Open Science Framework</a></p>
+<ul>
+<li><p>This is set for this course but for other research would be dependent on standards for the field/discipline.</p></li>
+<li><p>In biochemistry, the <a href="rcsb.org">RCSB PDB</a>, <a href="http://www.bmrb.wisc.edu/">BMRB</a>, or <a href="https://www.sasbdb.org/">SASBDB</a> are examples of data sharing platforms that are required for publication of biomolecule structure data.</p></li>
+</ul></li>
+</ol>
 </div>
 <div id="policies-for-re-use-and-redistribution" class="section level4">
 <h4><span class="header-section-number">9.5.1.4</span> Policies for re-use and redistribution</h4>
-<p>• Open access with attribution (CC-BY-4.0)  You have no choice unless you discuss it with your instructor. - This is set for this course but for other research would be dependent on standards for the field/discipline. • You can set your re-use policy depending on your feelings about sharing and the type of data involved. There are many types of licenses. See here() for details.</p>
+<ol style="list-style-type: decimal">
+<li>Open access with attribution (CC-BY-4.0) 
+<ul>
+<li>This is set for this course but for other research would be dependent on standards for the field/discipline.</li>
+</ul></li>
+<li>You can set your re-use policy depending on your feelings about sharing and the type of data involved. There are many types of licenses. See here() for details.</li>
+</ol>
 </div>
 <div id="plans-for-archiving-and-preservation" class="section level4">
 <h4><span class="header-section-number">9.5.1.5</span> Plans for archiving and preservation</h4>
-<p>• Open Science Framework  You have no choice. o This is set for this course but for other research would be dependent on standards for the field/discipline.  Your instructor backs all data up to a second cloud-based source and a local hard drive. • Think about how file formats change over time (example. Word doc vs. Word docx). You want to store your data in the most compatible format for use by future users. This is one reason why .csv and .txt are preferred to Microsoft formats. Microsoft may not exist in 20 years!</p>
+<ol style="list-style-type: decimal">
+<li><pre><code>Open Science Framework</code></pre>
+<ul>
+<li><p>This is set for this course but for other research would be dependent on standards for the field/discipline.</p></li>
+<li><p>Your instructor backs all data up to a second cloud-based source and a local hard drive.</p></li>
+</ul></li>
+<li>Think about how file formats change over time (example. Word doc vs. Word docx). You want to store your data in the most compatible format for use by future users. This is one reason why .csv and .txt are preferred to Microsoft formats. Microsoft may not exist in 20 years!</li>
+</ol>
 
 </div>
 </div>
 </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             </section>
 
           </div>
         </div>
       </div>
-<a href="exercise-answers.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="exercise-answers.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="errors-and-quirks.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -247,6 +247,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="8.3" data-path="exercise-answers.html"><a href="exercise-answers.html#fivekey"><i class="fa fa-check"></i><b>8.3</b> Chapter 5</a></li>
 <li class="chapter" data-level="8.4" data-path="exercise-answers.html"><a href="exercise-answers.html#sixkey"><i class="fa fa-check"></i><b>8.4</b> Chapter 6</a></li>
 <li class="chapter" data-level="8.5" data-path="exercise-answers.html"><a href="exercise-answers.html#sevenkey"><i class="fa fa-check"></i><b>8.5</b> Chapter 6</a></li>
+<li class="chapter" data-level="8.6" data-path="exercise-answers.html"><a href="exercise-answers.html#eightkey"><i class="fa fa-check"></i><b>8.6</b> Chapter 7</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="manage.html"><a href="manage.html"><i class="fa fa-check"></i><b>9</b> Data Management</a><ul>
 <li class="chapter" data-level="9.1" data-path="manage.html"><a href="manage.html#introduction-to-the-problem"><i class="fa fa-check"></i><b>9.1</b> Introduction to the problem</a></li>
@@ -258,6 +259,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="9.5" data-path="manage.html"><a href="manage.html#data-management-plan"><i class="fa fa-check"></i><b>9.5</b> Data Management Plan</a><ul>
 <li class="chapter" data-level="9.5.1" data-path="manage.html"><a href="manage.html#data-management-plan-questions-for-students-in-biochemistry-class"><i class="fa fa-check"></i><b>9.5.1</b> Data Management Plan questions for students in Biochemistry class:</a></li>
 </ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html"><i class="fa fa-check"></i><b>10</b> Errors and quirks</a><ul>
+<li class="chapter" data-level="10.1" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html#macrotext"><i class="fa fa-check"></i><b>10.1</b> .mcr –&gt; .txt and back again</a></li>
+<li class="chapter" data-level="10.2" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html#running-in-the-downloads-folder"><i class="fa fa-check"></i><b>10.2</b> Running in the downloads folder</a></li>
+<li class="chapter" data-level="10.3" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html#admin-permission-needed"><i class="fa fa-check"></i><b>10.3</b> Admin permission needed</a></li>
+<li class="chapter" data-level="10.4" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html#menu-bar-disappears"><i class="fa fa-check"></i><b>10.4</b> Menu bar disappears</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">
@@ -396,9 +403,68 @@ Figure 8.2: A labeled figure of structure 148L
 <span class="co"># Method 2</span>
 <span class="op">&gt;</span>SelectRes protein with distance <span class="op">&lt;</span><span class="dv">5</span> from Mol S
 <span class="op">&gt;</span>CountRes selected</code></pre></div>
-<ol start="3" style="list-style-type: decimal">
-<li></li>
-</ol>
+</div>
+<div id="eightkey" class="section level2">
+<h2><span class="header-section-number">8.6</span> Chapter 7</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">LoadPDB 1UBQ, download=yes
+DelRes hoh
+ZoomAll Steps=<span class="dv">20</span>
+
+BallObj <span class="dv">1</span>
+AutoRotateObj <span class="dv">1</span>, Y =<span class="st"> </span><span class="dv">1</span>
+ShowMessage Ball representation
+Wait <span class="dv">360</span>
+HideMessage
+PosOriObj <span class="dv">01</span>, X=<span class="op">-</span><span class="fl">1.650</span>, Y=<span class="op">-</span><span class="fl">0.442</span>, Z=<span class="fl">35.671</span>, Alpha=<span class="fl">0.000</span>, Beta=<span class="fl">0.000</span>, Gamma=<span class="fl">0.000</span>
+
+BallStickObj <span class="dv">1</span>
+AutoRotateObj <span class="dv">1</span>, Y =<span class="st"> </span><span class="dv">1</span>
+ShowMessage Ball<span class="op">-</span>Stick representation
+Wait <span class="dv">360</span>
+HideMessage
+PosOriObj <span class="dv">01</span>, X=<span class="op">-</span><span class="fl">1.650</span>, Y=<span class="op">-</span><span class="fl">0.442</span>, Z=<span class="fl">35.671</span>, Alpha=<span class="fl">0.000</span>, Beta=<span class="fl">0.000</span>, Gamma=<span class="fl">0.000</span>
+
+StickObj <span class="dv">1</span>
+AutoRotateObj <span class="dv">1</span>, Y =<span class="st"> </span><span class="dv">1</span>
+ShowMessage Stick representation
+Wait <span class="dv">360</span>
+HideMessage
+PosOriObj <span class="dv">01</span>, X=<span class="op">-</span><span class="fl">1.650</span>, Y=<span class="op">-</span><span class="fl">0.442</span>, Z=<span class="fl">35.671</span>, Alpha=<span class="fl">0.000</span>, Beta=<span class="fl">0.000</span>, Gamma=<span class="fl">0.000</span>
+
+Style Trace
+AutoRotateObj <span class="dv">1</span>, Y =<span class="st"> </span><span class="dv">1</span>
+ShowMessage Trace representation
+Wait <span class="dv">360</span>
+HideMessage
+PosOriObj <span class="dv">01</span>, X=<span class="op">-</span><span class="fl">1.650</span>, Y=<span class="op">-</span><span class="fl">0.442</span>, Z=<span class="fl">35.671</span>, Alpha=<span class="fl">0.000</span>, Beta=<span class="fl">0.000</span>, Gamma=<span class="fl">0.000</span>
+
+Style Tube
+AutoRotateObj <span class="dv">1</span>, Y =<span class="st"> </span><span class="dv">1</span>
+ShowMessage Tube representation
+Wait <span class="dv">360</span>
+HideMessage
+PosOriObj <span class="dv">01</span>, X=<span class="op">-</span><span class="fl">1.650</span>, Y=<span class="op">-</span><span class="fl">0.442</span>, Z=<span class="fl">35.671</span>, Alpha=<span class="fl">0.000</span>, Beta=<span class="fl">0.000</span>, Gamma=<span class="fl">0.000</span>
+
+Style Ribbon
+AutoRotateObj <span class="dv">1</span>, Y =<span class="st"> </span><span class="dv">1</span>
+ShowMessage Ribbon representation
+Wait <span class="dv">360</span>
+HideMessage
+PosOriObj <span class="dv">01</span>, X=<span class="op">-</span><span class="fl">1.650</span>, Y=<span class="op">-</span><span class="fl">0.442</span>, Z=<span class="fl">35.671</span>, Alpha=<span class="fl">0.000</span>, Beta=<span class="fl">0.000</span>, Gamma=<span class="fl">0.000</span>
+
+Style Cartoon
+AutoRotateObj <span class="dv">1</span>, Y =<span class="st"> </span><span class="dv">1</span>
+ShowMessage Cartoon representation
+Wait <span class="dv">360</span>
+HideMessage
+PosOriObj <span class="dv">01</span>, X=<span class="op">-</span><span class="fl">1.650</span>, Y=<span class="op">-</span><span class="fl">0.442</span>, Z=<span class="fl">35.671</span>, Alpha=<span class="fl">0.000</span>, Beta=<span class="fl">0.000</span>, Gamma=<span class="fl">0.000</span>
+
+Style Sidechain
+AutoRotateObj <span class="dv">1</span>, Y =<span class="st"> </span><span class="dv">1</span>
+ShowMessage Cartoon with sidechains representation
+Wait <span class="dv">360</span>
+HideMessage
+PosOriObj <span class="dv">01</span>, X=<span class="op">-</span><span class="fl">1.650</span>, Y=<span class="op">-</span><span class="fl">0.442</span>, Z=<span class="fl">35.671</span>, Alpha=<span class="fl">0.000</span>, Beta=<span class="fl">0.000</span>, Gamma=<span class="fl">0.000</span></code></pre></div>
 
 </div>
 </div>

@@ -149,4 +149,68 @@ knitr::include_graphics("images/annotatetest.png")
 
 ```
 
-  3. 
+## Chapter 7 {#eightkey}
+
+```{r eightkey, echo=TRUE, eval=FALSE}
+
+LoadPDB 1UBQ, download=yes
+DelRes hoh
+ZoomAll Steps=20
+
+BallObj 1
+AutoRotateObj 1, Y = 1
+ShowMessage Ball representation
+Wait 360
+HideMessage
+PosOriObj 01, X=-1.650, Y=-0.442, Z=35.671, Alpha=0.000, Beta=0.000, Gamma=0.000
+
+BallStickObj 1
+AutoRotateObj 1, Y = 1
+ShowMessage Ball-Stick representation
+Wait 360
+HideMessage
+PosOriObj 01, X=-1.650, Y=-0.442, Z=35.671, Alpha=0.000, Beta=0.000, Gamma=0.000
+
+StickObj 1
+AutoRotateObj 1, Y = 1
+ShowMessage Stick representation
+Wait 360
+HideMessage
+PosOriObj 01, X=-1.650, Y=-0.442, Z=35.671, Alpha=0.000, Beta=0.000, Gamma=0.000
+
+Style Trace
+AutoRotateObj 1, Y = 1
+ShowMessage Trace representation
+Wait 360
+HideMessage
+PosOriObj 01, X=-1.650, Y=-0.442, Z=35.671, Alpha=0.000, Beta=0.000, Gamma=0.000
+
+Style Tube
+AutoRotateObj 1, Y = 1
+ShowMessage Tube representation
+Wait 360
+HideMessage
+PosOriObj 01, X=-1.650, Y=-0.442, Z=35.671, Alpha=0.000, Beta=0.000, Gamma=0.000
+
+Style Ribbon
+AutoRotateObj 1, Y = 1
+ShowMessage Ribbon representation
+Wait 360
+HideMessage
+PosOriObj 01, X=-1.650, Y=-0.442, Z=35.671, Alpha=0.000, Beta=0.000, Gamma=0.000
+
+Style Cartoon
+AutoRotateObj 1, Y = 1
+ShowMessage Cartoon representation
+Wait 360
+HideMessage
+PosOriObj 01, X=-1.650, Y=-0.442, Z=35.671, Alpha=0.000, Beta=0.000, Gamma=0.000
+
+Style Sidechain
+AutoRotateObj 1, Y = 1
+ShowMessage Cartoon with sidechains representation
+Wait 360
+HideMessage
+PosOriObj 01, X=-1.650, Y=-0.442, Z=35.671, Alpha=0.000, Beta=0.000, Gamma=0.000
+```
+

@@ -116,7 +116,7 @@ Scientists have several ways of looking at molecules including biomolecules. The
 ```{r styletable, echo=FALSE, warning=FALSE, message=FALSE}
 
 styledf <- tibble("Style" = c("Ball", "Ball and Stick", "Stick", "Calpha Trace", "Tube", "Ribbon", "Cartoon", "Add sidechains"),
-                  "Command" = c("F1 or Style Ball", "F2 or Style BallStick", "F3 or Style Stick", "F4 or Trace", "F5 or Style Tube", "F6 or Style Ribbon", "F7 or Style Cartoon", "F8 or Style Sidechain or ShowRes all"),
+                  "Command" = c("F1 or Style Ball", "F2 or Style BallStick", "F3 or Style Stick", "F4 or Style Trace", "F5 or Style Tube", "F6 or Style Ribbon", "F7 or Style Cartoon", "F8 or Style Sidechain or ShowRes all"),
                   "Information conveyed" = c("van der Waal radius of atoms", "Connections between atoms", "Connections between atoms", "Location of Calpha carbon of each amino acid", "Calpha location and secondary structure", "Secondary Structure", "Secondary Structure", "Adds sidechains to the existing view. Pressing twice makes the style be BallStick"))
 
 knitr::kable(styledf, caption = "Table of styling commands in YASARA" )

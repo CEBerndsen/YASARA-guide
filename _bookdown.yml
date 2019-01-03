@@ -2,5 +2,5 @@ book_filename: "YASARA-guide"
 chapter_name: "Chapter "
 repo: https://github.com/CEBerndsen/YASARA-guide
 output_dir: docs
-rmd_files: ["chapters/index.Rmd", "chapters/02-software.Rmd", "chapters/03-YASARA-orientation.Rmd", "chapters/04-file-types.Rmd", "chapters/05-manipulation.Rmd", "chapters/06-annotation.Rmd", "chapters/07-basic-analysis.Rmd", "chapters/08-macros.Rmd", "chapters/20-Answers.Rmd", "chapters/19-data-manage.Rmd"]
+rmd_files: ["chapters/index.Rmd", "chapters/02-software.Rmd", "chapters/03-YASARA-orientation.Rmd", "chapters/04-file-types.Rmd", "chapters/05-manipulation.Rmd", "chapters/06-annotation.Rmd", "chapters/07-basic-analysis.Rmd", "chapters/08-macros.Rmd", "chapters/20-Answers.Rmd", "chapters/19-data-manage.Rmd", "chapters/21-common-issues.Rmd"]
 clean: [packages.bib, bookdown.bbl]
