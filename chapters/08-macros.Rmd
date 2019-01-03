@@ -4,7 +4,7 @@ Throughout this guide, the command line using syntax such as `ColorRes` and `Pos
 
 ## Text editors
 
-Making a macro for YASARA requires a text editor such as ![NotePad](https://en.wikipedia.org/wiki/Microsoft_Notepad), ![WordPad](https://en.wikipedia.org/wiki/WordPad), or ![TextEdit](https://support.apple.com/guide/textedit/welcome/mac). Each command is listed on a separate line and the entire file saved as a .mcr file type.  See \@ref(macrosave) and \@ref(macrotext) for more information about saving YASARA appropriate macro files. 
+Making a macro for YASARA requires a text editor such as [NotePad](https://en.wikipedia.org/wiki/Microsoft_Notepad), [WordPad](https://en.wikipedia.org/wiki/WordPad), or [TextEdit](https://support.apple.com/guide/textedit/welcome/mac). Each command is listed on a separate line and the entire file saved as a .mcr file type.  See \@ref(macrosave) and \@ref(macrotext) for more information about saving YASARA appropriate macro files. 
 
 ## Organization of a macro {#macro}
 
@@ -63,7 +63,7 @@ Just reading this list of commands and finding the one you need is difficult. An
 
 Reading the annotated commands above, it is clearer what is intended and how the code leads to this result. Use `#` as a note to your future self so that if you need to re-use code or want to troubleshoot, you can find your target easier.
 
-## Making a macro
+## Making a macro {#macrotext}
 
 To make a macro, open your text editor then make your header followed by your commands. HERE is a general template that can be derived as needed. The first set of commands are shown in the code box below and they set the environment. These settings can be adjusted as needed (use `SearchDoc` for more details) but are good places to start for most computers.
 
@@ -139,9 +139,68 @@ For macros that are being used to display information in a presentation style, i
 
 **Stylistic suggestion:** Do not set the `AutoRotate` command to move more than 2 degrees per step as it can get disorienting with fast spinning.
 
-#### Inserting images
+#### Displaying images
+
+Images can also be added to a macro and positioned within the viewing window, however it is a two step process. 
+
+  1. **Load** the image file into the program using the commands `LoadPNG` and `LoadJPG` depending on your file type
+  
+  2. **Show** the image using the command `ShowImage` followed by a number. If you have only loaded 1 image, this value is likely 1.
+  
+`ShowImage` also takes commands to position and size the image within the viewing window as detailed below and shown in the code chunk with the results shown in Figure \@ref(fig:images).
+
+
+  - **X and Y :** These set the coordinates for the top left corner of the image. These can be negative if you want the image to be moved down and right.
+  
+  - ** Width and Height:** Sets the width and height of the image. If they are larger than the image itself, then the image will be reduced on the screen.
+  
+  - **Alpha:** Like surfaces, you can adjust the transparency of an image. 100 is non-transparent, while 0 is completely transparent.
+  
+  - **Priority:** This is the layering function of the command. If set to 1, then the images is on top, if set to 0, then it is on the bottom and any structures will appear over the image.
+  
+```{r showimage, eval=FALSE, echo=TRUE}
+# Load the image called slide_1 into the memory
+>LoadJPG example
+
+# Show the image at full size
+>ShowImage 1
+
+# Show the image, but at a different position
+>ShowImage 1, X = -1100, Y = -500, Alpha=100, Priority=1
+
+# Show the image, but at a different position and scaling
+>ShowImage 1, X = -100, Y = -500, Width = 5000, Height = 5000, Alpha=100, Priority=1
+
+# Show the image underneath of DNA
+>LoadPDB 1BNA, download=yes
+>ShowImage 1, Priority=0
+
+```
+
+
+```{r images, echo=FALSE, warning=FALSE, message=FALSE, out.width="100%", fig.cap="Results from Load and ShowImage commands"}
+#Load images
+ubone <- image_read("../images/example1.PNG")
+ubtwo <- image_read("../images/example2.PNG")
+ubthree <- image_read("../images/example3.PNG")
+ubfour <- image_read("../images/example4.PNG")
+
+ubone <- ggdraw() + draw_image(ubone)
+ubtwo <- ggdraw() + draw_image(ubtwo)
+ubthree <- ggdraw() + draw_image(ubthree)
+ubfour <- ggdraw() + draw_image(ubfour)
+
+plot_grid(ubone, ubtwo, ubthree, ubfour, labels = "AUTO")
+
+```
+
+##### Hiding or removing images
+
+When an image is no longer needed, it is prudent to hide the image on the screen or delete the image from the memory. To hide the image, the command is `HideImage` followed by the image number. To delete the image, the command is `DelImage` followed by the image number. Hide is preferred if the image will be needed again, such as a background image. 
 
 #### Showing messages
+
+
 
 #### Wait
 

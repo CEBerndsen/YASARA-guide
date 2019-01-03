@@ -2,7 +2,7 @@
 
 *Adapted from the guides of Y. Shorish for CHEM361 by C. Berndsen*
 
-The descriptions below are a more general guide to file naming and data management using in the Biochemistry class at JMU. For YASARA specific suggestions see \@ref(datam). For those that wish to use this in a class assignment, a suggested assignment can be found ![here](https://osf.io/d3esr/).
+The descriptions below are a more general guide to file naming and data management using in the Biochemistry class at JMU. For YASARA specific suggestions see \@ref(datam). For those that wish to use this in a class assignment, a suggested assignment can be found [here](https://osf.io/d3esr/).
 
 
 
@@ -80,55 +80,78 @@ Another use of the Data Dictionary is to help users once the file is open. If yo
 
 While described last, the data management plan should be one of the first steps in the research process as it lays out the organization of the results. Investing time on the front end of the project to think about how data will be stored and organized will save a lot of time at the end of the project when you have to start interpreting results and drawing conclusions. Trying to find the “good” results in a mess of files is not fun and can lead to lots of unnecessary stress.
 
-An example data management plan for a set of biochemical and computational experiments is shown ![here](https://github.com/CEBerndsen/YASARA-guide/blob/master/docs/DataManagementPlanex.pdf).
+An example data management plan for a set of biochemical and computational experiments is shown [here](https://github.com/CEBerndsen/YASARA-guide/blob/master/docs/DataManagementPlanex.pdf).
 
 ### Data Management Plan questions for students in Biochemistry class:
 
 #### Types of Data
-•	What data will be generated in the research? 
-–	Is it sequence data? Sensor readings? Observational data? Environmental information? Structural models?
-•	What data types will you be creating or capturing?
-–	Actual data types here: textual data, image data, tabular, sound, structural…
-•	How will you collect or create the data?
-–	Handwritten field notes transcribed to Excel, downloads from instruments, recorded on a device, typed into a text document, written in Python…
-•	If you will be using existing data, state this and include how you will obtain it.
-–	Are you pulling from Uniprot, Ensembl, RCSB PDB or other existing data repository? 
-•	How will the data be processed?
-–	What software will you be using to process the data: Excel, YASARA, R, ATSAS, Coot, PHENIX, Hadoop, ROOT, etc.
+
+  1. What data will be generated in the research?
+  
+    –	Is it sequence data? Sensor readings? Observational data? Environmental information? Structural models?
+    
+  2. What data types will you be creating or capturing?
+  
+    –	Actual data types here: textual data, image data, tabular, sound, structural…
+    
+    - How will you collect or create the data?
+    
+    –	Handwritten field notes transcribed to Excel, downloads from instruments, recorded on a device, typed into a text document, written in Python…
+    
+    - If you will be using existing data, state this and include how you will obtain it.
+    
+    –	Are you pulling from Uniprot, Ensembl, RCSB PDB or other existing data repository? 
+    - How will the data be processed?
+    
+    –	What software will you be using to process the data: Excel, YASARA, R, ATSAS, Coot, PHENIX, Hadoop, ROOT, etc.
 
 
 #### Standards for Data
 
-•	Which file formats will you use for your data, and why? 
--	It is best here to use non-proprietary formats. Example: CSV instead of XLSX, TXT instead of DOCX. If it is necessary to use a proprietary format, explain why. 
-•	What form will the metadata describing/documenting your data take?
-–	This is your data dictionary and the details that you will record therein. 
-•	How will you create or capture these details?
-–	Will this be captured as a data dictionary in a spreadsheet? As a separate file? Will each data set have a separate file, or will you create one ‘master’ README?  
-•	What contextual details (metadata) are needed to make the data you capture or collect meaningful?
-–	Essentially what methods are necessary to reproduce your data.
+  1. Which file formats will you use for your data, and why?
+  
+    -	It is best here to use non-proprietary formats. Example: CSV instead of XLSX, TXT instead of DOCX. If it is necessary to use a proprietary format, explain why.
+    
+  2. What form will the metadata describing/documenting your data take?
+  
+    –	This is your data dictionary and the details that you will record therein. 
+    
+  3. How will you create or capture these details?
+  
+    –	Will this be captured as a data dictionary in a spreadsheet? As a separate file? Will each data set have a separate file, or will you create one ‘master’ README?  
+    
+  4. What contextual details (metadata) are needed to make the data you capture or collect meaningful?
+  
+    –	Essentially what methods are necessary to reproduce your data.
 
 
 #### How will you share your data?
 
-•	Open Science Framework  You have no choice
-o	This is set for this course but for other research would be dependent on standards for the field/discipline.
-	In biochemistry, the RCSB PDB, BMRB, or SASDB are examples of data sharing platforms that are required for publication of biomolecule structure data.
+  1. [Open Science Framework](osf.io)
+  
+    - This is set for this course but for other research would be dependent on standards for the field/discipline.
+    
+    - In biochemistry, the [RCSB PDB](rcsb.org), [BMRB](http://www.bmrb.wisc.edu/), or [SASBDB](https://www.sasbdb.org/) are examples of data sharing platforms that are required for publication of biomolecule structure data.
 
 
 #### Policies for re-use and redistribution
 
-•	Open access with attribution (CC-BY-4.0)  You have no choice unless you discuss it with your instructor. 
--	This is set for this course but for other research would be dependent on standards for the field/discipline.
-•	You can set your re-use policy depending on your feelings about sharing and the type of data involved. There are many types of licenses. See here() for details.
+  1. Open access with attribution (CC-BY-4.0) 
+  
+    -	This is set for this course but for other research would be dependent on standards for the field/discipline.
+    
+  2. You can set your re-use policy depending on your feelings about sharing and the type of data involved. There are many types of licenses. See here() for details.
 
 
 #### Plans for archiving and preservation
 
-•	Open Science Framework  You have no choice.
-o	This is set for this course but for other research would be dependent on standards for the field/discipline.
-	Your instructor backs all data up to a second cloud-based source and a local hard drive. 
-•	Think about how file formats change over time (example. Word doc vs. Word docx). You want to store your data in the most compatible format for use by future users. This is one reason why .csv and .txt are preferred to Microsoft formats. Microsoft may not exist in 20 years!
+  1. 	Open Science Framework
+  
+    - This is set for this course but for other research would be dependent on standards for the field/discipline.
+    
+    - Your instructor backs all data up to a second cloud-based source and a local hard drive.
+    
+  2. Think about how file formats change over time (example. Word doc vs. Word docx). You want to store your data in the most compatible format for use by future users. This is one reason why .csv and .txt are preferred to Microsoft formats. Microsoft may not exist in 20 years!
 
 
 

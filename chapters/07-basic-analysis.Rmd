@@ -236,7 +236,7 @@ The primary command is `Count` followed by Obl/Mol/Res/Atom/Bond and a selection
 >CountAtom Res Cys
 
 # Count the atoms in the backbone of the cysteine
-CountAtom Res Cys backbone
+>CountAtom Res Cys backbone
 
 ```
 
