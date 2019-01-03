@@ -182,10 +182,10 @@ ShowImage 1, Priority=0
 
 ```{r images, echo=FALSE, warning=FALSE, message=FALSE, out.width="100%", fig.cap="Results from Load and ShowImage commands"}
 #Load images
-ubone <- image_read("../YASARA_guide/images/example1.PNG")
-ubtwo <- image_read("../YASARA_guide/images/example2.PNG")
-ubthree <- image_read("../YASARA_guide/images/example3.PNG")
-ubfour <- image_read("../YASARA_guide/images/example4.PNG")
+ubone <- image_read("images/example1.PNG")
+ubtwo <- image_read("images/example2.PNG")
+ubthree <- image_read("images/example3.PNG")
+ubfour <- image_read("images/example4.PNG")
 
 ubone <- ggdraw() + draw_image(ubone)
 ubtwo <- ggdraw() + draw_image(ubtwo)
