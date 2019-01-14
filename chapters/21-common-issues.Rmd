@@ -2,8 +2,48 @@
 
 ## .mcr --> .txt and back again {#macrotext}
 
+When downloading a macro from Canvas, Dropbox, OSF or other cloud-based sources, sometimes the file extension (.mcr) gets changed to .txt. This is especially common with MacOS users. Alternatively, the extension gets modified to .mcr.txt. In both cases, YASARA may reject or ignore the file. 
+
+### Fix
+
+Rename the file and use only .mcr in the file name. You may get a warning saying that changing file extensions can cause problems, (which is what the system did) however in this instance changing the file extension is fine. 
+
 ## Running in the downloads folder
+
+After downloading YASARA, the program does not load or start. If the program is still in the downloads folder, the security settings for MacOS and sometimes Windows do not allow programs to write if they are stored in the downloads folder.
+
+### Fix
+
+Move the YASARA application or YASARA program folder to the Applications directory on a Mac or into Program Files on a Windows computer.
 
 ## Admin permission needed
 
+YASARA loads but then fails because it cannot write the start-up file. This may be because the program has not been allowed to write to the current directory.
+
+### Fix
+
+Right click on the YASARA program to bring up the menu and then click "Run as administrator".  You may be asked for your password afterwards.
+
+## MacOS won't allow YASARA to run because not from App Store
+
+This is a common issue on modern Apple computers. When trying to start YASARA, a warning appears saying that the application may not be trustworthy. 
+
+### Fix
+
+To fix this problem, you should follow the instructions under the question mark to change the security settings for the computer or shown [here](https://support.apple.com/kb/ph25088?locale=en_US) or [here](https://appleinsider.com/articles/16/04/13/how-to-install-and-run-mac-apps-that-dont-come-from-the-mac-app-store).
+
 ## Menu bar disappears
+
+When the window is maximized sometimes the menu bar disappears. 
+
+### Fix
+
+This is a screen resolution or size issue. Go to Window>Screen Size, then select a smaller size or lower resolution. There is a bit of trial and error here and multiple attempts may be required.
+
+## Menu bar or Continue Button does not respond to clicks
+
+When trying to click on the Menu bar or the Continue button, it is necessary to click below the button or menu to get it to respond. 
+
+### Fix
+
+his is a screen resolution or size issue. Go to Window>Screen Size, then select a smaller size or lower resolution. There is a bit of trial and error here and multiple attempts may be required.
