@@ -69,6 +69,23 @@ Using descriptive file names is a simple way to organize even cluttered data for
   
   5. Do not use spaces; they are not recognized by some software. Instead, use underscores (file_name), dashes (file-name), no separation (filename), or camel case (FileName).
   
+## Organizing files
+
+### Use sub-folders
+
+Having all the data and analysis in the same folder can be overwhelming, especially on the first glance through a data folder. Creating sub-folders which organize data by experiment type is highly recommended along with further sub-sub folders by date or analysis type or sample name as shown in Figure \@ref(fig:subfolder). This is only one organization approach, however any method of organization should be accessible to anyone (including future you).
+
+```{r subfolder, echo=FALSE, warning=FALSE, message=FALSE, out.width="120%", fig.cap="One way to organize data in folders"}
+
+knitr::include_graphics("images/sub-folders.png")
+
+
+```
+
+
+### Separate raw data from analysis files
+
+Data are precious and there should be limited or no changes to the raw files. While Excel and other programs make it easy to do plotting and math in the raw data files or to annotate directly on an image file, **do not do this**. Always create a separate file which is the working copy so that in the event you need to redo the analysis or the file gets corrupted, the raw data are still pristine and ready for new use. 
 
 ## Data and File Naming Dictionary
 
@@ -136,8 +153,7 @@ An example data management plan for a set of biochemical and computational exper
 
 #### Policies for re-use and redistribution
 
-  1. Open access with attribution (CC-BY-4.0) 
-  
+  1. Open access with attribution (CC-BY-4.0)
     -	This is set for this course but for other research would be dependent on standards for the field/discipline.
     
   2. You can set your re-use policy depending on your feelings about sharing and the type of data involved. There are many types of licenses. See here() for details.
