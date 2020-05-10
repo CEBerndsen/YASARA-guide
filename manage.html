@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html >
-
+<html lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Chapter 9 Data Management | A Guide to YASARA</title>
-  <meta name="description" content="A guide for the visualization program YASARA and the uses of the program">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 10 Data Management | A Guide to YASARA</title>
+  <meta name="description" content="A guide for the visualization program YASARA and the uses of the program" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 9 Data Management | A Guide to YASARA" />
+  <meta property="og:title" content="Chapter 10 Data Management | A Guide to YASARA" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="images/cover.png" />
@@ -17,23 +16,23 @@
   <meta name="github-repo" content="https://github.com/CEBerndsen/YASARA-guide" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 9 Data Management | A Guide to YASARA" />
+  <meta name="twitter:title" content="Chapter 10 Data Management | A Guide to YASARA" />
   
   <meta name="twitter:description" content="A guide for the visualization program YASARA and the uses of the program" />
   <meta name="twitter:image" content="images/cover.png" />
 
-<meta name="author" content="Chris Berndsen">
+<meta name="author" content="Chris Berndsen" />
 
 
-<meta name="date" content="2019-01-14">
+<meta name="date" content="2020-05-10" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="exercise-answers.html">
-<link rel="next" href="errors-and-quirks.html">
+<link rel="prev" href="exercise-answers.html"/>
+<link rel="next" href="errors-and-quirks.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -41,6 +40,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -51,41 +53,66 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -229,11 +256,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="6.8" data-path="making-measurements-and-comparisons.html"><a href="making-measurements-and-comparisons.html#knowledge-checks-1"><i class="fa fa-check"></i><b>6.8</b> Knowledge Checks</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="movies.html"><a href="movies.html"><i class="fa fa-check"></i><b>7</b> Macros</a><ul>
-<li class="chapter" data-level="7.1" data-path="movies.html"><a href="movies.html#text-editors"><i class="fa fa-check"></i><b>7.1</b> Text editors</a></li>
+<li class="chapter" data-level="7.1" data-path="movies.html"><a href="movies.html#editors"><i class="fa fa-check"></i><b>7.1</b> Text editors</a></li>
 <li class="chapter" data-level="7.2" data-path="movies.html"><a href="movies.html#macro"><i class="fa fa-check"></i><b>7.2</b> Organization of a macro</a><ul>
 <li class="chapter" data-level="7.2.1" data-path="movies.html"><a href="movies.html#the-as-a-way-to-help-your-reader-and-you"><i class="fa fa-check"></i><b>7.2.1</b> The <code>#</code> as a way to help your reader (and you!)</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="movies.html"><a href="movies.html#making-a-macro"><i class="fa fa-check"></i><b>7.3</b> Making a macro</a><ul>
+<li class="chapter" data-level="7.3" data-path="movies.html"><a href="movies.html#making"><i class="fa fa-check"></i><b>7.3</b> Making a macro</a><ul>
 <li class="chapter" data-level="7.3.1" data-path="movies.html"><a href="movies.html#commands-that-can-be-used-in-a-macro"><i class="fa fa-check"></i><b>7.3.1</b> Commands that can be used in a macro</a></li>
 <li class="chapter" data-level="7.3.2" data-path="movies.html"><a href="movies.html#macrosave"><i class="fa fa-check"></i><b>7.3.2</b> Saving the macro</a></li>
 <li class="chapter" data-level="7.3.3" data-path="movies.html"><a href="movies.html#macroplay"><i class="fa fa-check"></i><b>7.3.3</b> Playing the macro</a></li>
@@ -241,43 +268,52 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.4" data-path="movies.html"><a href="movies.html#macro-examples"><i class="fa fa-check"></i><b>7.4</b> Macro examples</a></li>
 <li class="chapter" data-level="7.5" data-path="movies.html"><a href="movies.html#knowledge-checks-2"><i class="fa fa-check"></i><b>7.5</b> Knowledge Checks</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="exercise-answers.html"><a href="exercise-answers.html"><i class="fa fa-check"></i><b>8</b> Exercise Answers</a><ul>
-<li class="chapter" data-level="8.1" data-path="exercise-answers.html"><a href="exercise-answers.html#threekey"><i class="fa fa-check"></i><b>8.1</b> Chapter 3</a></li>
-<li class="chapter" data-level="8.2" data-path="exercise-answers.html"><a href="exercise-answers.html#fourkey"><i class="fa fa-check"></i><b>8.2</b> Chapter 4</a></li>
-<li class="chapter" data-level="8.3" data-path="exercise-answers.html"><a href="exercise-answers.html#fivekey"><i class="fa fa-check"></i><b>8.3</b> Chapter 5</a></li>
-<li class="chapter" data-level="8.4" data-path="exercise-answers.html"><a href="exercise-answers.html#sixkey"><i class="fa fa-check"></i><b>8.4</b> Chapter 6</a></li>
-<li class="chapter" data-level="8.5" data-path="exercise-answers.html"><a href="exercise-answers.html#sevenkey"><i class="fa fa-check"></i><b>8.5</b> Chapter 6</a></li>
-<li class="chapter" data-level="8.6" data-path="exercise-answers.html"><a href="exercise-answers.html#eightkey"><i class="fa fa-check"></i><b>8.6</b> Chapter 7</a></li>
+<li class="chapter" data-level="8" data-path="analysis.html"><a href="analysis.html"><i class="fa fa-check"></i><b>8</b> Analysis Macros</a><ul>
+<li class="chapter" data-level="8.1" data-path="analysis.html"><a href="analysis.html#the-file-for-the-macro"><i class="fa fa-check"></i><b>8.1</b> The file for the macro</a></li>
+<li class="chapter" data-level="8.2" data-path="analysis.html"><a href="analysis.html#loop"><i class="fa fa-check"></i><b>8.2</b> The <code>for</code> loop</a></li>
+<li class="chapter" data-level="8.3" data-path="analysis.html"><a href="analysis.html#section"><i class="fa fa-check"></i><b>8.3</b> </a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="manage.html"><a href="manage.html"><i class="fa fa-check"></i><b>9</b> Data Management</a><ul>
-<li class="chapter" data-level="9.1" data-path="manage.html"><a href="manage.html#introduction-to-the-problem"><i class="fa fa-check"></i><b>9.1</b> Introduction to the problem</a></li>
-<li class="chapter" data-level="9.2" data-path="manage.html"><a href="manage.html#what-are-data"><i class="fa fa-check"></i><b>9.2</b> What are Data?</a></li>
-<li class="chapter" data-level="9.3" data-path="manage.html"><a href="manage.html#effective-file-naming"><i class="fa fa-check"></i><b>9.3</b> Effective File naming</a><ul>
-<li class="chapter" data-level="9.3.1" data-path="manage.html"><a href="manage.html#information-to-consider-including-in-file-names"><i class="fa fa-check"></i><b>9.3.1</b> Information to consider including in file names</a></li>
+<li class="chapter" data-level="9" data-path="exercise-answers.html"><a href="exercise-answers.html"><i class="fa fa-check"></i><b>9</b> Exercise Answers</a><ul>
+<li class="chapter" data-level="9.1" data-path="exercise-answers.html"><a href="exercise-answers.html#threekey"><i class="fa fa-check"></i><b>9.1</b> Chapter 3</a></li>
+<li class="chapter" data-level="9.2" data-path="exercise-answers.html"><a href="exercise-answers.html#fourkey"><i class="fa fa-check"></i><b>9.2</b> Chapter 4</a></li>
+<li class="chapter" data-level="9.3" data-path="exercise-answers.html"><a href="exercise-answers.html#fivekey"><i class="fa fa-check"></i><b>9.3</b> Chapter 5</a></li>
+<li class="chapter" data-level="9.4" data-path="exercise-answers.html"><a href="exercise-answers.html#sixkey"><i class="fa fa-check"></i><b>9.4</b> Chapter 6</a></li>
+<li class="chapter" data-level="9.5" data-path="exercise-answers.html"><a href="exercise-answers.html#sevenkey"><i class="fa fa-check"></i><b>9.5</b> Chapter 6</a></li>
+<li class="chapter" data-level="9.6" data-path="exercise-answers.html"><a href="exercise-answers.html#eightkey"><i class="fa fa-check"></i><b>9.6</b> Chapter 7</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="manage.html"><a href="manage.html#data-and-file-naming-dictionary"><i class="fa fa-check"></i><b>9.4</b> Data and File Naming Dictionary</a></li>
-<li class="chapter" data-level="9.5" data-path="manage.html"><a href="manage.html#data-management-plan"><i class="fa fa-check"></i><b>9.5</b> Data Management Plan</a><ul>
-<li class="chapter" data-level="9.5.1" data-path="manage.html"><a href="manage.html#data-management-plan-questions-for-students-in-biochemistry-class"><i class="fa fa-check"></i><b>9.5.1</b> Data Management Plan questions for students in Biochemistry class:</a></li>
+<li class="chapter" data-level="10" data-path="manage.html"><a href="manage.html"><i class="fa fa-check"></i><b>10</b> Data Management</a><ul>
+<li class="chapter" data-level="10.1" data-path="manage.html"><a href="manage.html#introduction-to-the-problem"><i class="fa fa-check"></i><b>10.1</b> Introduction to the problem</a></li>
+<li class="chapter" data-level="10.2" data-path="manage.html"><a href="manage.html#what-are-data"><i class="fa fa-check"></i><b>10.2</b> What are Data?</a></li>
+<li class="chapter" data-level="10.3" data-path="manage.html"><a href="manage.html#effective-file-naming"><i class="fa fa-check"></i><b>10.3</b> Effective File naming</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="manage.html"><a href="manage.html#information-to-consider-including-in-file-names"><i class="fa fa-check"></i><b>10.3.1</b> Information to consider including in file names</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="manage.html"><a href="manage.html#organizing-files"><i class="fa fa-check"></i><b>10.4</b> Organizing files</a><ul>
+<li class="chapter" data-level="10.4.1" data-path="manage.html"><a href="manage.html#use-sub-folders"><i class="fa fa-check"></i><b>10.4.1</b> Use sub-folders</a></li>
+<li class="chapter" data-level="10.4.2" data-path="manage.html"><a href="manage.html#separate-raw-data-from-analysis-files"><i class="fa fa-check"></i><b>10.4.2</b> Separate raw data from analysis files</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="manage.html"><a href="manage.html#data-and-file-naming-dictionary"><i class="fa fa-check"></i><b>10.5</b> Data and File Naming Dictionary</a></li>
+<li class="chapter" data-level="10.6" data-path="manage.html"><a href="manage.html#data-management-plan"><i class="fa fa-check"></i><b>10.6</b> Data Management Plan</a><ul>
+<li class="chapter" data-level="10.6.1" data-path="manage.html"><a href="manage.html#data-management-plan-questions-for-students-in-biochemistry-class"><i class="fa fa-check"></i><b>10.6.1</b> Data Management Plan questions for students in Biochemistry class:</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html"><i class="fa fa-check"></i><b>10</b> Errors and quirks</a><ul>
-<li class="chapter" data-level="10.1" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html#macrotext"><i class="fa fa-check"></i><b>10.1</b> .mcr –&gt; .txt and back again</a><ul>
-<li class="chapter" data-level="10.1.1" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html#fix"><i class="fa fa-check"></i><b>10.1.1</b> Fix</a></li>
+<li class="chapter" data-level="11" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html"><i class="fa fa-check"></i><b>11</b> Errors and quirks</a><ul>
+<li class="chapter" data-level="11.1" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html#macrotext"><i class="fa fa-check"></i><b>11.1</b> .mcr –&gt; .txt and back again</a><ul>
+<li class="chapter" data-level="11.1.1" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html#fix"><i class="fa fa-check"></i><b>11.1.1</b> Fix</a></li>
 </ul></li>
-<li class="chapter" data-level="10.2" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html#running-in-the-downloads-folder"><i class="fa fa-check"></i><b>10.2</b> Running in the downloads folder</a><ul>
-<li class="chapter" data-level="10.2.1" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html#fix-1"><i class="fa fa-check"></i><b>10.2.1</b> Fix</a></li>
+<li class="chapter" data-level="11.2" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html#running-in-the-downloads-folder"><i class="fa fa-check"></i><b>11.2</b> Running in the downloads folder</a><ul>
+<li class="chapter" data-level="11.2.1" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html#fix-1"><i class="fa fa-check"></i><b>11.2.1</b> Fix</a></li>
 </ul></li>
-<li class="chapter" data-level="10.3" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html#admin-permission-needed"><i class="fa fa-check"></i><b>10.3</b> Admin permission needed</a><ul>
-<li class="chapter" data-level="10.3.1" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html#fix-2"><i class="fa fa-check"></i><b>10.3.1</b> Fix</a></li>
+<li class="chapter" data-level="11.3" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html#admin-permission-needed"><i class="fa fa-check"></i><b>11.3</b> Admin permission needed</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html#fix-2"><i class="fa fa-check"></i><b>11.3.1</b> Fix</a></li>
 </ul></li>
-<li class="chapter" data-level="10.4" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html#macos-wont-allow-yasara-to-run-because-not-from-app-store"><i class="fa fa-check"></i><b>10.4</b> MacOS won’t allow YASARA to run because not from App Store</a><ul>
-<li class="chapter" data-level="10.4.1" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html#fix-3"><i class="fa fa-check"></i><b>10.4.1</b> Fix</a></li>
+<li class="chapter" data-level="11.4" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html#macos-wont-allow-yasara-to-run-because-not-from-app-store"><i class="fa fa-check"></i><b>11.4</b> MacOS won’t allow YASARA to run because not from App Store</a><ul>
+<li class="chapter" data-level="11.4.1" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html#fix-3"><i class="fa fa-check"></i><b>11.4.1</b> Fix</a></li>
 </ul></li>
-<li class="chapter" data-level="10.5" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html#menu-bar-disappears"><i class="fa fa-check"></i><b>10.5</b> Menu bar disappears</a><ul>
-<li class="chapter" data-level="10.5.1" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html#fix-4"><i class="fa fa-check"></i><b>10.5.1</b> Fix</a></li>
+<li class="chapter" data-level="11.5" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html#menu-bar-disappears"><i class="fa fa-check"></i><b>11.5</b> Menu bar disappears</a><ul>
+<li class="chapter" data-level="11.5.1" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html#fix-4"><i class="fa fa-check"></i><b>11.5.1</b> Fix</a></li>
 </ul></li>
-<li class="chapter" data-level="10.6" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html#menu-bar-or-continue-button-does-not-respond-to-clicks"><i class="fa fa-check"></i><b>10.6</b> Menu bar or Continue Button does not respond to clicks</a><ul>
-<li class="chapter" data-level="10.6.1" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html#fix-5"><i class="fa fa-check"></i><b>10.6.1</b> Fix</a></li>
+<li class="chapter" data-level="11.6" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html#menu-bar-or-continue-button-does-not-respond-to-clicks"><i class="fa fa-check"></i><b>11.6</b> Menu bar or Continue Button does not respond to clicks</a><ul>
+<li class="chapter" data-level="11.6.1" data-path="errors-and-quirks.html"><a href="errors-and-quirks.html#fix-5"><i class="fa fa-check"></i><b>11.6.1</b> Fix</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -302,13 +338,14 @@ Published with bookdown</a></li>
 
             <section class="normal" id="section-">
 <div id="manage" class="section level1">
-<h1><span class="header-section-number">Chapter 9</span> Data Management</h1>
+<h1><span class="header-section-number">Chapter 10</span> Data Management</h1>
 <p><em>Adapted from the guides of Y. Shorish for CHEM361 by C. Berndsen</em></p>
 <p>The descriptions below are a more general guide to file naming and data management using in the Biochemistry class at JMU. For YASARA specific suggestions see <a href="the-yasara-user-interface.html#datam">2.6.1</a>. For those that wish to use this in a class assignment, a suggested assignment can be found <a href="https://osf.io/d3esr/">here</a>.</p>
 <div id="introduction-to-the-problem" class="section level2">
-<h2><span class="header-section-number">9.1</span> Introduction to the problem</h2>
+<h2><span class="header-section-number">10.1</span> Introduction to the problem</h2>
 <p>We all have had the problem of saving a file and then having to find that file a year or more later. Once we find where we stored the file and what we named it, we then have to figure out what we did. While this is annoying, the rise of search engines that can search within files has reduced the time spent trying to find a file.</p>
-<p>Now imagine you are trying to find a file on someone else’s computer… The challenges would be:</p>
+<p>Now imagine you are trying to find a file on someone else’s computer…
+The challenges would be:</p>
 <ul>
 <li><p>How does this person organize (or not) their files?</p></li>
 <li><p>What format did they save the data in?</p></li>
@@ -317,14 +354,14 @@ Published with bookdown</a></li>
 <p>The rise of electronic data and open data practices has led to an increase in the need for best practices when recording data. Data files should be easy to read for both humans and computers as well as should be stored and named in a fashion that is easy to follow for the experimenter but also those who might use the data at a later date.</p>
 </div>
 <div id="what-are-data" class="section level2">
-<h2><span class="header-section-number">9.2</span> What are Data?</h2>
+<h2><span class="header-section-number">10.2</span> What are Data?</h2>
 <p>There are many possible definitions, we will consider any structure, image, number/measurement, or observation as data.</p>
 </div>
 <div id="effective-file-naming" class="section level2">
-<h2><span class="header-section-number">9.3</span> Effective File naming</h2>
+<h2><span class="header-section-number">10.3</span> Effective File naming</h2>
 <p>Using descriptive file names is a simple way to organize even cluttered data for you and others. At minimum, a good file name conveys the contents of the file, the creator, the version, and creation date. Other useful information can also be included as indicated below, however the key is to be consistent.</p>
 <div id="information-to-consider-including-in-file-names" class="section level3">
-<h3><span class="header-section-number">9.3.1</span> Information to consider including in file names</h3>
+<h3><span class="header-section-number">10.3.1</span> Information to consider including in file names</h3>
 <ol style="list-style-type: decimal">
 <li>Project or experiment name or acronym</li>
 </ol>
@@ -350,92 +387,112 @@ Published with bookdown</a></li>
 </ol>
 <p><em>(e.g. .docx, .tiff, .pdb. Some operating systems mask this by default, which is unadvisable)</em></p>
 <div id="other-tips-for-file-naming" class="section level4">
-<h4><span class="header-section-number">9.3.1.1</span> Other tips for file naming</h4>
+<h4><span class="header-section-number">10.3.1.1</span> Other tips for file naming</h4>
 <ol style="list-style-type: decimal">
 <li><p>A good format for dates is YYYYMMDD (or YYMMDD). This makes sure all your files stay in chronological order, across years.</p></li>
 <li><p>Don’t make file names longer than ~10 characters; longer names do not work well with all types of software.</p></li>
-<li><p>Special characters should be avoided, such as: ~! @ # $ % ^ &amp; * ( ) ` ; &lt; &gt; ? , [ ] { } ‘ ”</p></li>
+<li><p>Special characters should be avoided, such as: ~! @ # $ % ^ &amp; * ( ) ` ; &lt; &gt; ? , <a href="analysis.html#section"></a> { } ‘ ”</p></li>
 <li><p>For sequential numbering, use leading zeroes to ensure files sort properly. For example, use “0001, 0002…1001, etc” instead of “1, 2…1001, etc.”</p></li>
 <li><p>Do not use spaces; they are not recognized by some software. Instead, use underscores (file_name), dashes (file-name), no separation (filename), or camel case (FileName).</p></li>
 </ol>
 </div>
 </div>
 </div>
+<div id="organizing-files" class="section level2">
+<h2><span class="header-section-number">10.4</span> Organizing files</h2>
+<div id="use-sub-folders" class="section level3">
+<h3><span class="header-section-number">10.4.1</span> Use sub-folders</h3>
+<p>Having all the data and analysis in the same folder can be overwhelming, especially on the first glance through a data folder. Creating sub-folders which organize data by experiment type is highly recommended along with further sub-sub folders by date or analysis type or sample name as shown in Figure <a href="manage.html#fig:subfolder">10.1</a>. This is only one organization approach, however any method of organization should be accessible to anyone (including future you).</p>
+<div class="figure"><span id="fig:subfolder"></span>
+<img src="images/sub-folders.png" alt="One way to organize data in folders" width="120%" />
+<p class="caption">
+Figure 10.1: One way to organize data in folders
+</p>
+</div>
+</div>
+<div id="separate-raw-data-from-analysis-files" class="section level3">
+<h3><span class="header-section-number">10.4.2</span> Separate raw data from analysis files</h3>
+<p>Data are precious and there should be limited or no changes to the raw files. While Excel and other programs make it easy to do plotting and math in the raw data files or to annotate directly on an image file, <strong>do not do this</strong>. Always create a separate file which is the working copy so that in the event you need to redo the analysis or the file gets corrupted, the raw data are still pristine and ready for new use.</p>
+</div>
+</div>
 <div id="data-and-file-naming-dictionary" class="section level2">
-<h2><span class="header-section-number">9.4</span> Data and File Naming Dictionary</h2>
+<h2><span class="header-section-number">10.5</span> Data and File Naming Dictionary</h2>
 <p>Once you have named your file, how do you guide users (sometimes including yourself!) about what your file names and abbreviations mean? This is the function of a data dictionary. This is most often a README.txt file in your directory that explains your naming convention, along with any abbreviations or codes you have used. This could be captured in a Wiki on OSF as well.</p>
 <p>Another use of the Data Dictionary is to help users once the file is open. If you have a spreadsheet containing numbers, describe what each column of data show along with any other information needed to read the file. This can include units of numbers, calculations used to derive or transform information, what NA or blanks mean, and any shorthand/abbreviations that might be in the data.</p>
 </div>
 <div id="data-management-plan" class="section level2">
-<h2><span class="header-section-number">9.5</span> Data Management Plan</h2>
+<h2><span class="header-section-number">10.6</span> Data Management Plan</h2>
 <p>While described last, the data management plan should be one of the first steps in the research process as it lays out the organization of the results. Investing time on the front end of the project to think about how data will be stored and organized will save a lot of time at the end of the project when you have to start interpreting results and drawing conclusions. Trying to find the “good” results in a mess of files is not fun and can lead to lots of unnecessary stress.</p>
 <p>An example data management plan for a set of biochemical and computational experiments is shown <a href="https://github.com/CEBerndsen/YASARA-guide/blob/master/docs/DataManagementPlanex.pdf">here</a>.</p>
 <div id="data-management-plan-questions-for-students-in-biochemistry-class" class="section level3">
-<h3><span class="header-section-number">9.5.1</span> Data Management Plan questions for students in Biochemistry class:</h3>
+<h3><span class="header-section-number">10.6.1</span> Data Management Plan questions for students in Biochemistry class:</h3>
 <div id="types-of-data" class="section level4">
-<h4><span class="header-section-number">9.5.1.1</span> Types of Data</h4>
+<h4><span class="header-section-number">10.6.1.1</span> Types of Data</h4>
 <ol style="list-style-type: decimal">
-<li><p>What data will be generated in the research?</p>
-<p>– Is it sequence data? Sensor readings? Observational data? Environmental information? Structural models?</p></li>
-<li><p>What data types will you be creating or capturing?</p>
-<p>– Actual data types here: textual data, image data, tabular, sound, structural…</p>
-<ul>
-<li>How will you collect or create the data?</li>
-</ul>
-<p>– Handwritten field notes transcribed to Excel, downloads from instruments, recorded on a device, typed into a text document, written in Python…</p>
-<ul>
-<li>If you will be using existing data, state this and include how you will obtain it.</li>
-</ul>
-– Are you pulling from Uniprot, Ensembl, RCSB PDB or other existing data repository?
-<ul>
-<li>How will the data be processed?</li>
-</ul>
-<p>– What software will you be using to process the data: Excel, YASARA, R, ATSAS, Coot, PHENIX, Hadoop, ROOT, etc.</p></li>
+<li>What data will be generated in the research?</li>
 </ol>
+<pre><code>–   Is it sequence data? Sensor readings? Observational data? Environmental information? Structural models?</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>What data types will you be creating or capturing?</li>
+</ol>
+<pre><code>–   Actual data types here: textual data, image data, tabular, sound, structural…
+
+- How will you collect or create the data?
+
+–   Handwritten field notes transcribed to Excel, downloads from instruments, recorded on a device, typed into a text document, written in Python…
+
+- If you will be using existing data, state this and include how you will obtain it.
+
+–   Are you pulling from Uniprot, Ensembl, RCSB PDB or other existing data repository? 
+- How will the data be processed?
+
+–   What software will you be using to process the data: Excel, YASARA, R, ATSAS, Coot, PHENIX, Hadoop, ROOT, etc.</code></pre>
 </div>
 <div id="standards-for-data" class="section level4">
-<h4><span class="header-section-number">9.5.1.2</span> Standards for Data</h4>
+<h4><span class="header-section-number">10.6.1.2</span> Standards for Data</h4>
 <ol style="list-style-type: decimal">
-<li><p>Which file formats will you use for your data, and why?</p>
-<ul>
-<li>It is best here to use non-proprietary formats. Example: CSV instead of XLSX, TXT instead of DOCX. If it is necessary to use a proprietary format, explain why.</li>
-</ul></li>
-<li><p>What form will the metadata describing/documenting your data take?</p>
-<p>– This is your data dictionary and the details that you will record therein.</p></li>
-<li><p>How will you create or capture these details?</p>
-<p>– Will this be captured as a data dictionary in a spreadsheet? As a separate file? Will each data set have a separate file, or will you create one ‘master’ README?</p></li>
-<li><p>What contextual details (metadata) are needed to make the data you capture or collect meaningful?</p>
-<p>– Essentially what methods are necessary to reproduce your data.</p></li>
+<li>Which file formats will you use for your data, and why?</li>
 </ol>
+<pre><code>-   It is best here to use non-proprietary formats. Example: CSV instead of XLSX, TXT instead of DOCX. If it is necessary to use a proprietary format, explain why.</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>What form will the metadata describing/documenting your data take?</li>
+</ol>
+<pre><code>–   This is your data dictionary and the details that you will record therein. </code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>How will you create or capture these details?</li>
+</ol>
+<pre><code>–   Will this be captured as a data dictionary in a spreadsheet? As a separate file? Will each data set have a separate file, or will you create one ‘master’ README?  </code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>What contextual details (metadata) are needed to make the data you capture or collect meaningful?</li>
+</ol>
+<pre><code>–   Essentially what methods are necessary to reproduce your data.</code></pre>
 </div>
 <div id="how-will-you-share-your-data" class="section level4">
-<h4><span class="header-section-number">9.5.1.3</span> How will you share your data?</h4>
+<h4><span class="header-section-number">10.6.1.3</span> How will you share your data?</h4>
 <ol style="list-style-type: decimal">
-<li><p><a href="osf.io">Open Science Framework</a></p>
-<ul>
-<li><p>This is set for this course but for other research would be dependent on standards for the field/discipline.</p></li>
-<li><p>In biochemistry, the <a href="rcsb.org">RCSB PDB</a>, <a href="http://www.bmrb.wisc.edu/">BMRB</a>, or <a href="https://www.sasbdb.org/">SASBDB</a> are examples of data sharing platforms that are required for publication of biomolecule structure data.</p></li>
-</ul></li>
+<li><a href="osf.io">Open Science Framework</a></li>
 </ol>
+<pre><code>- This is set for this course but for other research would be dependent on standards for the field/discipline.
+
+- In biochemistry, the [RCSB PDB](rcsb.org), [BMRB](http://www.bmrb.wisc.edu/), or [SASBDB](https://www.sasbdb.org/) are examples of data sharing platforms that are required for publication of biomolecule structure data.</code></pre>
 </div>
 <div id="policies-for-re-use-and-redistribution" class="section level4">
-<h4><span class="header-section-number">9.5.1.4</span> Policies for re-use and redistribution</h4>
+<h4><span class="header-section-number">10.6.1.4</span> Policies for re-use and redistribution</h4>
 <ol style="list-style-type: decimal">
-<li>Open access with attribution (CC-BY-4.0) 
-<ul>
-<li>This is set for this course but for other research would be dependent on standards for the field/discipline.</li>
-</ul></li>
-<li>You can set your re-use policy depending on your feelings about sharing and the type of data involved. There are many types of licenses. See here() for details.</li>
+<li><p>Open access with attribution (CC-BY-4.0)
+- This is set for this course but for other research would be dependent on standards for the field/discipline.</p></li>
+<li><p>You can set your re-use policy depending on your feelings about sharing and the type of data involved. There are many types of licenses. See here() for details.</p></li>
 </ol>
 </div>
 <div id="plans-for-archiving-and-preservation" class="section level4">
-<h4><span class="header-section-number">9.5.1.5</span> Plans for archiving and preservation</h4>
+<h4><span class="header-section-number">10.6.1.5</span> Plans for archiving and preservation</h4>
 <ol style="list-style-type: decimal">
-<li><pre><code>Open Science Framework</code></pre>
-<ul>
-<li><p>This is set for this course but for other research would be dependent on standards for the field/discipline.</p></li>
-<li><p>Your instructor backs all data up to a second cloud-based source and a local hard drive.</p></li>
-</ul></li>
+<li>Open Science Framework</li>
+</ol>
+<pre><code>- This is set for this course but for other research would be dependent on standards for the field/discipline.
+
+- Your instructor backs all data up to a second cloud-based source and a local hard drive.</code></pre>
+<ol start="2" style="list-style-type: decimal">
 <li>Think about how file formats change over time (example. Word doc vs. Word docx). You want to store your data in the most compatible format for use by future users. This is one reason why .csv and .txt are preferred to Microsoft formats. Microsoft may not exist in 20 years!</li>
 </ol>
 
@@ -454,11 +511,13 @@ Published with bookdown</a></li>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -466,12 +525,12 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": true,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"],
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"],
+"google": true,
 "instapper": false
 },
 "fontsettings": {
@@ -484,6 +543,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -505,10 +568,11 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
